@@ -1,5 +1,21 @@
 import type { World } from "./World.js";
 
+export interface GamedataDefinition {
+  name: string;
+  offset: number;
+  length: number;
+}
+
+/**
+ * Read the contents of a Legacy Console Edition save. One example is the PS3 `GAMEDATA` world save file.
+*/
+export declare function readGamedata(data: Uint8Array): File[];
+
+/**
+ * Read the contents header of a Legacy Console Edition save.
+*/
+export declare function readGamedataDefinitions(data: Uint8Array): GamedataDefinition[];
+
 /**
  * Reads a world from a single source file, like `.zip` or `.mcworld`.
 */

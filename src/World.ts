@@ -2,16 +2,21 @@ import type { Region, BedrockRegion, JavaRegion, LegacyConsoleRegion } from "./R
 
 export type Kind = "bedrock" | "java" | "legacy-console";
 
-export abstract class World {
-  abstract readonly kind: Kind;
-  abstract [Symbol.iterator](): IterableIterator<Region>;
+export type World =
+  | BedrockWorld
+  | JavaWorld
+  | LegacyConsoleWorld;
 
-  abstract toBedrock(): Promise<BedrockWorld>;
-  abstract toJava(): Promise<JavaWorld>;
-  abstract toLegacyConsole(): Promise<LegacyConsoleWorld>;
+export interface WorldLike {
+  readonly kind: Kind;
+  [Symbol.iterator](): IterableIterator<Region>;
+
+  toBedrock(): Promise<BedrockWorld>;
+  toJava(): Promise<JavaWorld>;
+  toLegacyConsole(): Promise<LegacyConsoleWorld>;
 }
 
-export declare class BedrockWorld extends World {
+export declare class BedrockWorld implements WorldLike {
   readonly kind: "bedrock";
   [Symbol.iterator](): IterableIterator<BedrockRegion>;
 
@@ -20,7 +25,7 @@ export declare class BedrockWorld extends World {
   toLegacyConsole(): Promise<LegacyConsoleWorld>;
 }
 
-export declare class JavaWorld extends World {
+export declare class JavaWorld implements WorldLike {
   readonly kind = "java";
   [Symbol.iterator](): IterableIterator<JavaRegion>;
 
@@ -29,7 +34,7 @@ export declare class JavaWorld extends World {
   toLegacyConsole(): Promise<LegacyConsoleWorld>;
 }
 
-export declare class LegacyConsoleWorld extends World {
+export declare class LegacyConsoleWorld implements WorldLike {
   readonly kind = "legacy-console";
   [Symbol.iterator](): IterableIterator<LegacyConsoleRegion>;
 

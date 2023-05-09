@@ -1,10 +1,15 @@
 import type { Kind } from "./World.js";
 
-export abstract class Chunk {
-  abstract readonly kind: Kind;
+export type Chunk =
+  | BedrockChunk
+  | JavaChunk
+  | LegacyConsoleChunk;
+
+export interface ChunkLike {
+  readonly kind: Kind;
 }
 
-export declare class BedrockChunk extends Chunk {
+export declare class BedrockChunk implements ChunkLike {
   readonly kind = "bedrock";
 
   /**
@@ -13,10 +18,10 @@ export declare class BedrockChunk extends Chunk {
   readonly Version: string;
 }
 
-export class JavaChunk extends Chunk {
+export class JavaChunk implements ChunkLike {
   readonly kind = "java";
 }
 
-export declare class LegacyConsoleChunk extends Chunk {
+export declare class LegacyConsoleChunk implements ChunkLike {
   readonly kind = "legacy-console";
 }

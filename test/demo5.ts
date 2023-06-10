@@ -1,4 +1,4 @@
-import type { Chunk, Region, World } from "../src/index.js";
+import type { Chunk, Region, World } from "./src/index.js";
 
 declare const chunk: Chunk;
 

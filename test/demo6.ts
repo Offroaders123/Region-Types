@@ -1,6 +1,8 @@
-import { read, write, NBTData, type FormatOptions, type ShortTag, type IntTag } from "nbtify";
+import { read, write, NBTData } from "nbtify";
 
-export interface LegacyConsoleChunk {
+import type { FormatOptions, ShortTag, IntTag, CompoundTag } from "nbtify";
+
+export interface LegacyConsoleChunk extends CompoundTag {
   FormatVersion: ShortTag;
   X: IntTag;
 }

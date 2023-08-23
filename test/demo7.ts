@@ -1,20 +1,25 @@
 export type World = BedrockWorld | JavaWorld;
 
-export interface BedrockWorld {
-  "level.dat": File;
-  "levelname.txt": File;
-  "world_icon.jpeg": File;
+export type BedrockWorld = {
+  [K in BedrockWorldFile]: File;
+};
+
+export type BedrockWorldFile = "level.dat" | "levelname.txt" | "world_icon.jpeg";
+
+export type JavaWorld = {
+  [K in JavaWorldFile]: File;
+};
+
+export type JavaWorldFile = "icon.png" | "level.dat";
+
+export function readWorld(world: World) {
+  if ("levelname.txt" in world){
+    world;
+  } else {
+    world;
+  }
 }
 
-export interface JavaWorld {
-  "icon.png": File;
-  "level.dat": File;
+export function isBedrockWorld(world: World): world is BedrockWorld {
+  return "levelname.txt" in world;
 }
-
-export function readWorld<T extends World>(world: Uint8Array | ArrayBufferLike | File[]): T {
-  const files: Record<string, File> = getWorldFileEntries(world);
-
-  const levelDat = files["level.dat"];
-}
-
-export declare function getWorldFileEntries(world: Uint8Array | ArrayBufferLike | File[]): Record<string, File>;

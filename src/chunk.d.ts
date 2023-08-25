@@ -1,8 +1,8 @@
-import { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, ByteArrayTag, IntArrayTag, LongArrayTag } from "nbtify";
+import { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, ByteArrayTag, CompoundTag, IntArrayTag, LongArrayTag } from "nbtify";
 
 export type ResourceLocation = `${string}:${string}`;
 
-export interface Chunk {
+export interface Chunk extends CompoundTag {
   DataVersion: IntTag;
   xPos: IntTag;
   zPos: IntTag;
@@ -39,7 +39,7 @@ export interface Chunk {
   };
 }
 
-export interface Section {
+export interface Section extends CompoundTag {
   Y: ByteTag;
   block_states: {
     palette: BlockState[];
@@ -53,12 +53,12 @@ export interface Section {
   SkyLight: ByteArrayTag;
 }
 
-export interface BlockState {
+export interface BlockState extends CompoundTag {
   Name: ResourceLocation;
   [property: string]: any;
 }
 
-export interface BlockEntity {
+export interface BlockEntity extends CompoundTag {
   id: ResourceLocation;
   keepPacked: BooleanTag;
   x: IntTag;
@@ -67,7 +67,7 @@ export interface BlockEntity {
   [property: string]: any;
 }
 
-export interface Entity {
+export interface Entity extends CompoundTag {
   Air: ShortTag;
   CustomName: StringTag;
   CustomNameVisible?: BooleanTag;
@@ -93,7 +93,7 @@ export interface Entity {
 
 export type Scoreboard = unknown;
 
-export interface TileTick {
+export interface TileTick extends CompoundTag {
   i: ResourceLocation;
   p: IntTag;
   t: IntTag;
@@ -104,7 +104,7 @@ export interface TileTick {
 
 export type ToBeTicked = ShortTag[];
 
-export interface Structure {
+export interface Structure extends CompoundTag {
   BB: IntArrayTag;
   biome: ResourceLocation;
   Children: StructurePiece[];
@@ -116,7 +116,7 @@ export interface Structure {
   [property: string]: any;
 }
 
-export interface StructurePiece {
+export interface StructurePiece extends CompoundTag {
   BB: IntArrayTag;
   BiomeType: "WARM" | "COLD";
   C: ByteTag;
@@ -180,12 +180,12 @@ export interface StructurePiece {
   Zombie: BooleanTag;
 }
 
-export interface VillageBlock {
+export interface VillageBlock extends CompoundTag {
   Name: ResourceLocation;
   Properties: BlockState;
 }
 
-export interface VillageJunction {
+export interface VillageJunction extends CompoundTag {
   source_x: IntTag;
   source_ground_y: IntTag;
   source_z: IntTag;
@@ -193,7 +193,7 @@ export interface VillageJunction {
   dest_proj: "terrain_matching" | "rigid";
 }
 
-export interface MonumentProcessed {
+export interface MonumentProcessed extends CompoundTag {
   X: IntTag;
   Z: IntTag;
 }

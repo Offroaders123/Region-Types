@@ -1,10 +1,9 @@
 import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
-
-export type BooleanStringTag = `${boolean}`;
+import type { ResourceLocation } from "./chunk.js";
 
 export interface LevelDat extends CompoundTag {
   Data: {
-    Difficulty: ByteTag;
+    Difficulty: ByteTag<0 | 1 | 2 | 3>;
     thunderTime: IntTag;
     BorderSize: DoubleTag;
     LastPlayed: LongTag;
@@ -55,8 +54,8 @@ export interface LevelDat extends CompoundTag {
           generator: {
             type: StringTag;
             settings: {
-              features: ByteTag;
-              lakes: ByteTag;
+              features: BooleanTag;
+              lakes: BooleanTag;
               layers: [
                 {
                   block: StringTag;
@@ -92,41 +91,41 @@ export interface LevelDat extends CompoundTag {
     };
     DataVersion: IntTag;
     GameRules: {
-      forgiveDeadPlayers: BooleanStringTag;
-      doInsomnia: BooleanStringTag;
-      fallDamage: BooleanStringTag;
-      doDaylightCycle: BooleanStringTag;
-      spawnRadius: StringTag;
-      doWeatherCycle: BooleanStringTag;
-      doPatrolSpawning: BooleanStringTag;
-      maxCommandChainLength: StringTag;
-      universalAnger: BooleanStringTag;
-      fireDamage: BooleanStringTag;
-      doImmediateRespawn: BooleanStringTag;
-      playersSleepingPercentage: StringTag;
-      maxEntityCramming: BooleanStringTag;
-      doMobSpawning: BooleanStringTag;
-      showDeathMessages: BooleanStringTag;
-      announceAdvancements: BooleanStringTag;
-      disableRaids: BooleanStringTag;
-      naturalRegeneration: BooleanStringTag;
-      reducedDebugInfo: BooleanStringTag;
-      drowningDamage: BooleanStringTag;
-      sendCommandFeedback: BooleanStringTag;
-      doLimitedCrafting: BooleanStringTag;
-      commandBlockOutput: BooleanStringTag;
-      doTraderSpawning: BooleanStringTag;
-      doFireTick: BooleanStringTag;
-      mobGriefing: BooleanStringTag;
-      spectatorsGenerateChunks: BooleanStringTag;
-      doEntityDrops: BooleanStringTag;
-      doTileDrops: BooleanStringTag;
-      keepInventory: BooleanStringTag;
-      randomTickSpeed: BooleanStringTag;
-      freezeDamage: BooleanStringTag;
-      doMobLoot: BooleanStringTag;
-      disableElytraMovementCheck: BooleanStringTag;
-      logAdminCommands: BooleanStringTag;
+      forgiveDeadPlayers: `${boolean}`;
+      doInsomnia: `${boolean}`;
+      fallDamage: `${boolean}`;
+      doDaylightCycle: `${boolean}`;
+      spawnRadius: `${number}`;
+      doWeatherCycle: `${boolean}`;
+      doPatrolSpawning: `${boolean}`;
+      maxCommandChainLength: `${number}`;
+      universalAnger: `${boolean}`;
+      fireDamage: `${boolean}`;
+      doImmediateRespawn: `${boolean}`;
+      playersSleepingPercentage: `${number}`;
+      maxEntityCramming: `${boolean}`;
+      doMobSpawning: `${boolean}`;
+      showDeathMessages: `${boolean}`;
+      announceAdvancements: `${boolean}`;
+      disableRaids: `${boolean}`;
+      naturalRegeneration: `${boolean}`;
+      reducedDebugInfo: `${boolean}`;
+      drowningDamage: `${boolean}`;
+      sendCommandFeedback: `${boolean}`;
+      doLimitedCrafting: `${boolean}`;
+      commandBlockOutput: `${boolean}`;
+      doTraderSpawning: `${boolean}`;
+      doFireTick: `${boolean}`;
+      mobGriefing: `${boolean}`;
+      spectatorsGenerateChunks: `${boolean}`;
+      doEntityDrops: `${boolean}`;
+      doTileDrops: `${boolean}`;
+      keepInventory: `${boolean}`;
+      randomTickSpeed: `${boolean}`;
+      freezeDamage: `${boolean}`;
+      doMobLoot: `${boolean}`;
+      disableElytraMovementCheck: `${boolean}`;
+      logAdminCommands: `${boolean}`;
     };
     DragonFight: {
       PreviouslyKilled: BooleanTag;
@@ -139,16 +138,16 @@ export interface LevelDat extends CompoundTag {
       DeathTime: ShortTag;
       foodTickTimer: IntTag;
       recipeBook: {
-        recipes: [StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag];
-        isGuiOpen: ByteTag;
-        toBeDisplayed: [StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag, StringTag];
-        isSmokerGuiOpen: ByteTag;
-        isFurnaceFilteringCraftable: ByteTag;
-        isFurnaceGuiOpen: ByteTag;
-        isBlastingFurnaceFilteringCraftable: ByteTag;
-        isBlastingFurnaceGuiOpen: ByteTag;
-        isFilteringCraftable: ByteTag;
-        isSmokerFilteringCraftable: ByteTag;
+        recipes: ResourceLocation[];
+        isGuiOpen: BooleanTag;
+        toBeDisplayed: ResourceLocation[];
+        isSmokerGuiOpen: BooleanTag;
+        isFurnaceFilteringCraftable: BooleanTag;
+        isFurnaceGuiOpen: BooleanTag;
+        isBlastingFurnaceFilteringCraftable: BooleanTag;
+        isBlastingFurnaceGuiOpen: BooleanTag;
+        isFilteringCraftable: BooleanTag;
+        isSmokerFilteringCraftable: BooleanTag;
       };
       XpTotal: IntTag;
       OnGround: BooleanTag;
@@ -168,22 +167,22 @@ export interface LevelDat extends CompoundTag {
       Dimension: StringTag;
       ActiveEffects: [
         {
-          ShowIcon: ByteTag;
-          ShowParticles: ByteTag;
+          ShowIcon: BooleanTag;
+          ShowParticles: BooleanTag;
           Id: ByteTag;
           Duration: IntTag;
-          Ambient: ByteTag;
-          Amplifier: ByteTag;
+          Ambient: BooleanTag;
+          Amplifier?: ByteTag;
         }
       ];
       abilities: {
         walkSpeed: FloatTag;
-        instabuild: ByteTag;
-        flying: ByteTag;
+        instabuild: BooleanTag;
+        flying: BooleanTag;
         flySpeed: FloatTag;
-        mayfly: ByteTag;
-        invulnerable: ByteTag;
-        mayBuild: ByteTag;
+        mayfly: BooleanTag;
+        invulnerable: BooleanTag;
+        mayBuild: BooleanTag;
       };
       Score: IntTag;
       Rotation: [FloatTag, FloatTag];
@@ -195,21 +194,7 @@ export interface LevelDat extends CompoundTag {
       foodLevel: IntTag;
       UUID: IntArrayTag;
       XpLevel: IntTag;
-      Inventory: [
-        {
-          Slot: ByteTag;
-          id: StringTag;
-          Count: ByteTag;
-        },
-        {
-          Slot: ByteTag;
-          id: StringTag;
-          tag: {
-            Damage: IntTag;
-          };
-          Count: ByteTag;
-        }
-      ];
+      Inventory: Item[];
       Motion: [DoubleTag, DoubleTag, DoubleTag];
       FallDistance: FloatTag;
       DataVersion: IntTag;
@@ -219,12 +204,12 @@ export interface LevelDat extends CompoundTag {
       Pos: [DoubleTag, DoubleTag, DoubleTag];
       Health: FloatTag;
       HurtTime: ShortTag;
-      FallFlying: ByteTag;
+      FallFlying: BooleanTag;
       Fire: ShortTag;
       PortalCooldown: IntTag;
       foodExhaustionLevel: FloatTag;
     };
-    DifficultyLocked: ByteTag;
+    DifficultyLocked: BooleanTag;
     DayTime: LongTag;
     BorderCenterZ: DoubleTag;
     BorderSizeLerpTarget: DoubleTag;
@@ -232,8 +217,17 @@ export interface LevelDat extends CompoundTag {
       Id: IntTag;
       Name: StringTag;
       Series: StringTag;
-      Snapshot: ByteTag;
+      Snapshot: BooleanTag;
     };
     CustomBossEvents: {};
   };
+}
+
+export interface Item extends CompoundTag {
+  Slot: ByteTag;
+  id: StringTag;
+  tag?: {
+    Damage: IntTag;
+  };
+  Count: ByteTag;
 }

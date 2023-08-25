@@ -1,4 +1,4 @@
-import { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, ByteArrayTag, CompoundTag, IntArrayTag, LongArrayTag } from "nbtify";
+import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, ByteArrayTag, CompoundTag, IntArrayTag, LongArrayTag } from "nbtify";
 
 export type ResourceLocation = `${string}:${string}`;
 

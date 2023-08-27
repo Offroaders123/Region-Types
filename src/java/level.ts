@@ -1,1167 +1,1168 @@
 import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
 
-export type RecipeResource =
-  | "minecraft:yellow_dye_from_dandelion"
-  | "minecraft:charcoal"
-  | "minecraft:dark_oak_button"
-  | "minecraft:emerald_from_smelting_deepslate_emerald_ore"
-  | "minecraft:diorite_wall_from_diorite_stonecutting"
-  | "minecraft:polished_blackstone_brick_slab"
-  | "minecraft:chiseled_deepslate"
-  | "minecraft:gray_candle"
-  | "minecraft:rabbit_stew_from_brown_mushroom"
-  | "minecraft:sentry_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:stripped_dark_oak_wood"
-  | "minecraft:stonecutter"
-  | "minecraft:soul_torch"
-  | "minecraft:bone_block"
-  | "minecraft:raw_iron"
-  | "minecraft:eye_armor_trim_smithing_template"
-  | "minecraft:melon"
-  | "minecraft:iron_nugget"
-  | "minecraft:birch_fence"
-  | "minecraft:cracked_deepslate_tiles"
-  | "minecraft:deepslate_brick_stairs_from_cobbled_deepslate_stonecutting"
-  | "minecraft:waxed_oxidized_cut_copper_from_honeycomb"
-  | "minecraft:red_nether_brick_slab"
-  | "minecraft:gold_nugget_from_blasting"
-  | "minecraft:cooked_rabbit"
-  | "minecraft:warped_fence_gate"
-  | "minecraft:cooked_salmon_from_campfire_cooking"
-  | "minecraft:nether_wart_block"
-  | "minecraft:bamboo_fence_gate"
-  | "minecraft:polished_blackstone_brick_slab_from_blackstone_stonecutting"
-  | "minecraft:magenta_banner"
-  | "minecraft:weathered_cut_copper_from_weathered_copper_stonecutting"
-  | "minecraft:polished_blackstone_brick_wall_from_polished_blackstone_stonecutting"
-  | "minecraft:cobblestone_wall"
-  | "minecraft:gray_dye"
-  | "minecraft:lime_stained_glass_pane"
-  | "minecraft:mangrove_fence_gate"
-  | "minecraft:warped_pressure_plate"
-  | "minecraft:waxed_cut_copper_slab"
-  | "minecraft:cut_sandstone_slab_from_cut_sandstone_stonecutting"
-  | "minecraft:raw_copper"
-  | "minecraft:coal_block"
-  | "minecraft:sugar_from_honey_bottle"
-  | "minecraft:mangrove_button"
-  | "minecraft:slime_ball"
-  | "minecraft:spruce_fence_gate"
-  | "minecraft:leather_chestplate"
-  | "minecraft:yellow_bed"
-  | "minecraft:iron_block"
-  | "minecraft:beehive"
-  | "minecraft:nether_brick_slab_from_nether_bricks_stonecutting"
-  | "minecraft:spruce_sign"
-  | "minecraft:white_stained_glass_pane_from_glass_pane"
-  | "minecraft:dark_oak_door"
-  | "minecraft:cooked_porkchop"
-  | "minecraft:waxed_cut_copper_slab_from_waxed_cut_copper_stonecutting"
-  | "minecraft:cut_copper_slab_from_copper_block_stonecutting"
-  | "minecraft:cooked_salmon_from_smoking"
-  | "minecraft:dye_light_gray_wool"
-  | "minecraft:writable_book"
-  | "minecraft:birch_wood"
-  | "minecraft:cyan_dye_from_pitcher_plant"
-  | "minecraft:leather_helmet"
-  | "minecraft:glow_item_frame"
-  | "minecraft:light_blue_bed"
-  | "minecraft:scaffolding"
-  | "minecraft:oak_wood"
-  | "minecraft:bamboo_mosaic"
-  | "minecraft:emerald_block"
-  | "minecraft:golden_apple"
-  | "minecraft:diamond_pickaxe"
-  | "minecraft:chiseled_nether_bricks"
-  | "minecraft:flower_pot"
-  | "minecraft:acacia_button"
-  | "minecraft:light_gray_dye_from_oxeye_daisy"
-  | "minecraft:polished_granite_from_granite_stonecutting"
-  | "minecraft:magenta_stained_glass_pane"
-  | "minecraft:copper_block"
-  | "minecraft:nether_brick_stairs"
-  | "minecraft:purple_candle"
-  | "minecraft:chiseled_stone_bricks_from_stone_bricks_stonecutting"
-  | "minecraft:lapis_lazuli_from_smelting_deepslate_lapis_ore"
-  | "minecraft:polished_blackstone_bricks_from_blackstone_stonecutting"
-  | "minecraft:recovery_compass"
-  | "minecraft:magenta_bed"
-  | "minecraft:oxidized_cut_copper_stairs_from_oxidized_copper_stonecutting"
-  | "minecraft:end_stone_brick_slab_from_end_stone_brick_stonecutting"
-  | "minecraft:iron_sword"
-  | "minecraft:spruce_wood"
-  | "minecraft:green_stained_glass"
-  | "minecraft:magenta_dye_from_blue_red_white_dye"
-  | "minecraft:spruce_fence"
-  | "minecraft:cherry_fence"
-  | "minecraft:mossy_stone_brick_slab"
-  | "minecraft:andesite_slab"
-  | "minecraft:bamboo_chest_raft"
-  | "minecraft:dark_prismarine_slab"
-  | "minecraft:sandstone_slab_from_sandstone_stonecutting"
-  | "minecraft:polished_blackstone_wall_from_polished_blackstone_stonecutting"
-  | "minecraft:honey_block"
-  | "minecraft:bamboo_planks"
-  | "minecraft:green_dye"
-  | "minecraft:pink_glazed_terracotta"
-  | "minecraft:pink_terracotta"
-  | "minecraft:dried_kelp_from_smoking"
-  | "minecraft:waxed_exposed_cut_copper_stairs"
-  | "minecraft:chiseled_sandstone_from_sandstone_stonecutting"
-  | "minecraft:spire_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:orange_stained_glass"
-  | "minecraft:exposed_cut_copper_slab"
-  | "minecraft:polished_blackstone_wall"
-  | "minecraft:copper_ingot_from_blasting_deepslate_copper_ore"
-  | "minecraft:cobblestone_stairs"
-  | "minecraft:redstone_from_smelting_redstone_ore"
-  | "minecraft:cut_sandstone_slab"
-  | "minecraft:smooth_red_sandstone_slab"
-  | "minecraft:stone_brick_stairs_from_stone_bricks_stonecutting"
-  | "minecraft:cut_copper_stairs_from_cut_copper_stonecutting"
-  | "minecraft:bamboo_pressure_plate"
-  | "minecraft:cherry_door"
-  | "minecraft:weathered_cut_copper_slab"
-  | "minecraft:birch_trapdoor"
-  | "minecraft:prismarine_brick_stairs_from_prismarine_stonecutting"
-  | "minecraft:deepslate_brick_wall_from_deepslate_bricks_stonecutting"
-  | "minecraft:waxed_weathered_copper_from_honeycomb"
-  | "minecraft:golden_boots"
-  | "minecraft:pink_dye_from_red_white_dye"
-  | "minecraft:netherite_shovel_smithing"
-  | "minecraft:coal_from_blasting_coal_ore"
-  | "minecraft:andesite_wall_from_andesite_stonecutting"
-  | "minecraft:acacia_door"
-  | "minecraft:mangrove_wood"
-  | "minecraft:polished_basalt"
-  | "minecraft:prismarine_stairs"
-  | "minecraft:cyan_concrete_powder"
-  | "minecraft:conduit"
-  | "minecraft:dye_green_carpet"
-  | "minecraft:mojang_banner_pattern"
-  | "minecraft:polished_granite_slab"
-  | "minecraft:dye_pink_wool"
-  | "minecraft:sticky_piston"
-  | "minecraft:fire_charge"
-  | "minecraft:golden_hoe"
-  | "minecraft:white_dye"
-  | "minecraft:sentry_armor_trim_smithing_template"
-  | "minecraft:redstone"
-  | "minecraft:blue_glazed_terracotta"
-  | "minecraft:emerald"
-  | "minecraft:polished_andesite_slab"
-  | "minecraft:dye_green_bed"
-  | "minecraft:wooden_pickaxe"
-  | "minecraft:powered_rail"
-  | "minecraft:cherry_planks"
-  | "minecraft:exposed_cut_copper_slab_from_exposed_copper_stonecutting"
-  | "minecraft:wild_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:warped_hanging_sign"
-  | "minecraft:nether_brick_wall_from_nether_bricks_stonecutting"
-  | "minecraft:green_concrete_powder"
-  | "minecraft:oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting"
-  | "minecraft:smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting"
-  | "minecraft:oak_stairs"
-  | "minecraft:silence_armor_trim_smithing_template"
-  | "minecraft:cracked_deepslate_bricks"
-  | "minecraft:orange_dye_from_torchflower"
-  | "minecraft:dye_white_bed"
-  | "minecraft:stone_button"
-  | "minecraft:polished_blackstone_brick_stairs"
-  | "minecraft:brown_stained_glass"
-  | "minecraft:tinted_glass"
-  | "minecraft:stick_from_bamboo_item"
-  | "minecraft:blue_terracotta"
-  | "minecraft:yellow_candle"
-  | "minecraft:stripped_oak_wood"
-  | "minecraft:sandstone"
-  | "minecraft:yellow_concrete_powder"
-  | "minecraft:gray_terracotta"
-  | "minecraft:jungle_fence_gate"
-  | "minecraft:diamond_from_blasting_diamond_ore"
-  | "minecraft:comparator"
-  | "minecraft:lodestone"
-  | "minecraft:repeater"
-  | "minecraft:red_concrete_powder"
-  | "minecraft:netherite_boots_smithing"
-  | "minecraft:purpur_block"
-  | "minecraft:cut_copper_stairs_from_copper_block_stonecutting"
-  | "minecraft:glass"
-  | "minecraft:polished_blackstone_slab"
-  | "minecraft:stone_stairs"
-  | "minecraft:fishing_rod"
-  | "minecraft:cooked_beef_from_smoking"
-  | "minecraft:end_stone_brick_stairs"
-  | "minecraft:iron_leggings"
-  | "minecraft:dried_kelp_block"
-  | "minecraft:terracotta"
-  | "minecraft:stripped_crimson_hyphae"
-  | "minecraft:quartz"
-  | "minecraft:cyan_carpet"
-  | "minecraft:polished_deepslate_stairs_from_polished_deepslate_stonecutting"
-  | "minecraft:nether_brick_wall"
-  | "minecraft:polished_basalt_from_basalt_stonecutting"
-  | "minecraft:gray_concrete_powder"
-  | "minecraft:light_blue_concrete_powder"
-  | "minecraft:smooth_sandstone_stairs_from_smooth_sandstone_stonecutting"
-  | "minecraft:wayfinder_armor_trim_smithing_template"
-  | "minecraft:granite_wall_from_granite_stonecutting"
-  | "minecraft:dye_light_blue_bed"
-  | "minecraft:redstone_from_blasting_redstone_ore"
-  | "minecraft:granite_stairs"
-  | "minecraft:cyan_terracotta"
-  | "minecraft:polished_granite_slab_from_polished_granite_stonecutting"
-  | "minecraft:cut_red_sandstone"
-  | "minecraft:mushroom_stew"
-  | "minecraft:mangrove_fence"
-  | "minecraft:polished_deepslate_from_cobbled_deepslate_stonecutting"
-  | "minecraft:red_dye_from_tulip"
-  | "minecraft:warped_planks"
-  | "minecraft:lime_candle"
-  | "minecraft:red_nether_brick_wall_from_red_nether_bricks_stonecutting"
-  | "minecraft:red_dye_from_beetroot"
-  | "minecraft:beacon"
-  | "minecraft:tnt"
-  | "minecraft:mossy_stone_bricks_from_vine"
-  | "minecraft:waxed_weathered_cut_copper_stairs_from_waxed_weathered_cut_copper_stonecutting"
-  | "minecraft:dye_white_carpet"
-  | "minecraft:andesite_slab_from_andesite_stonecutting"
-  | "minecraft:dye_yellow_bed"
-  | "minecraft:light_gray_bed"
-  | "minecraft:flint_and_steel"
-  | "minecraft:red_candle"
-  | "minecraft:orange_dye_from_orange_tulip"
-  | "minecraft:brown_carpet"
-  | "minecraft:jungle_door"
-  | "minecraft:black_dye"
-  | "minecraft:prismarine_brick_slab"
-  | "minecraft:black_stained_glass_pane"
-  | "minecraft:prismarine_bricks"
-  | "minecraft:nether_bricks"
-  | "minecraft:blue_carpet"
-  | "minecraft:deepslate_brick_stairs_from_polished_deepslate_stonecutting"
-  | "minecraft:bamboo_door"
-  | "minecraft:iron_chestplate"
-  | "minecraft:crimson_fence"
-  | "minecraft:stone_bricks"
-  | "minecraft:oxidized_cut_copper_slab"
-  | "minecraft:lapis_lazuli_from_blasting_deepslate_lapis_ore"
-  | "minecraft:birch_stairs"
-  | "minecraft:exposed_cut_copper_slab_from_exposed_cut_copper_stonecutting"
-  | "minecraft:dune_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:vex_armor_trim_smithing_template"
-  | "minecraft:dye_orange_wool"
-  | "minecraft:white_wool_from_string"
-  | "minecraft:light_gray_stained_glass"
-  | "minecraft:spruce_chest_boat"
-  | "minecraft:cobblestone_wall_from_cobblestone_stonecutting"
-  | "minecraft:polished_andesite_from_andesite_stonecutting"
-  | "minecraft:white_stained_glass_pane"
-  | "minecraft:golden_axe"
-  | "minecraft:crimson_stairs"
-  | "minecraft:dye_light_blue_wool"
-  | "minecraft:light_blue_stained_glass_pane"
-  | "minecraft:decorated_pot_simple"
-  | "minecraft:mud_brick_slab_from_mud_bricks_stonecutting"
-  | "minecraft:brown_concrete_powder"
-  | "minecraft:cooked_chicken_from_smoking"
-  | "minecraft:cyan_glazed_terracotta"
-  | "minecraft:cyan_stained_glass"
-  | "minecraft:oak_pressure_plate"
-  | "minecraft:stone_sword"
-  | "minecraft:stone_brick_stairs"
-  | "minecraft:yellow_dye_from_sunflower"
-  | "minecraft:cut_red_sandstone_from_red_sandstone_stonecutting"
-  | "minecraft:diorite"
-  | "minecraft:acacia_fence"
-  | "minecraft:waxed_weathered_cut_copper_slab_from_waxed_weathered_copper_stonecutting"
-  | "minecraft:crimson_hyphae"
-  | "minecraft:coal_from_smelting_coal_ore"
-  | "minecraft:oak_slab"
-  | "minecraft:snout_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:cyan_banner"
-  | "minecraft:polished_blackstone_wall_from_blackstone_stonecutting"
-  | "minecraft:glistering_melon_slice"
-  | "minecraft:dripstone_block"
-  | "minecraft:smooth_stone_slab_from_smooth_stone_stonecutting"
-  | "minecraft:mangrove_chest_boat"
-  | "minecraft:warped_door"
-  | "minecraft:crimson_button"
-  | "minecraft:iron_hoe"
-  | "minecraft:jungle_hanging_sign"
-  | "minecraft:iron_ingot_from_iron_block"
-  | "minecraft:netherite_axe_smithing"
-  | "minecraft:jungle_planks"
-  | "minecraft:snow"
-  | "minecraft:acacia_fence_gate"
-  | "minecraft:clock"
-  | "minecraft:mangrove_sign"
-  | "minecraft:dye_yellow_wool"
-  | "minecraft:magenta_carpet"
-  | "minecraft:orange_stained_glass_pane_from_glass_pane"
-  | "minecraft:blackstone_wall_from_blackstone_stonecutting"
-  | "minecraft:jungle_trapdoor"
-  | "minecraft:grindstone"
-  | "minecraft:blue_ice"
-  | "minecraft:polished_deepslate_slab_from_polished_deepslate_stonecutting"
-  | "minecraft:red_nether_bricks"
-  | "minecraft:granite_slab_from_granite_stonecutting"
-  | "minecraft:glass_pane"
-  | "minecraft:dye_brown_carpet"
-  | "minecraft:diamond_leggings"
-  | "minecraft:granite_stairs_from_granite_stonecutting"
-  | "minecraft:emerald_from_smelting_emerald_ore"
-  | "minecraft:warped_slab"
-  | "minecraft:mangrove_stairs"
-  | "minecraft:lectern"
-  | "minecraft:prismarine"
-  | "minecraft:golden_sword"
-  | "minecraft:purple_stained_glass"
-  | "minecraft:iron_ingot_from_nuggets"
-  | "minecraft:chiseled_sandstone"
-  | "minecraft:clay"
-  | "minecraft:golden_pickaxe"
-  | "minecraft:cut_copper_stairs"
-  | "minecraft:bamboo_raft"
-  | "minecraft:chiseled_bookshelf"
-  | "minecraft:magenta_dye_from_allium"
-  | "minecraft:smooth_stone_slab"
-  | "minecraft:polished_blackstone_slab_from_polished_blackstone_stonecutting"
-  | "minecraft:ladder"
-  | "minecraft:dye_lime_wool"
-  | "minecraft:redstone_torch"
-  | "minecraft:moss_carpet"
-  | "minecraft:oxidized_cut_copper_stairs_from_oxidized_cut_copper_stonecutting"
-  | "minecraft:polished_andesite_slab_from_andesite_stonecutting"
-  | "minecraft:mossy_cobblestone_slab"
-  | "minecraft:furnace_minecart"
-  | "minecraft:dye_black_bed"
-  | "minecraft:mossy_cobblestone_from_vine"
-  | "minecraft:target"
-  | "minecraft:polished_diorite_slab_from_diorite_stonecutting"
-  | "minecraft:white_concrete_powder"
-  | "minecraft:yellow_terracotta"
-  | "minecraft:orange_carpet"
-  | "minecraft:mossy_stone_bricks_from_moss_block"
-  | "minecraft:waxed_weathered_cut_copper"
-  | "minecraft:cake"
-  | "minecraft:gray_bed"
-  | "minecraft:orange_banner"
-  | "minecraft:dark_oak_sign"
-  | "minecraft:granite_slab"
-  | "minecraft:cherry_boat"
-  | "minecraft:mud_brick_stairs"
-  | "minecraft:chiseled_nether_bricks_from_nether_bricks_stonecutting"
-  | "minecraft:white_terracotta"
-  | "minecraft:leather_boots"
-  | "minecraft:diamond_from_blasting_deepslate_diamond_ore"
-  | "minecraft:netherite_ingot_from_netherite_block"
-  | "minecraft:oak_hanging_sign"
-  | "minecraft:armor_stand"
-  | "minecraft:pink_stained_glass_pane"
-  | "minecraft:mangrove_slab"
-  | "minecraft:lime_concrete_powder"
-  | "minecraft:leather_leggings"
-  | "minecraft:sandstone_wall_from_sandstone_stonecutting"
-  | "minecraft:blue_dye_from_cornflower"
-  | "minecraft:brick_slab_from_bricks_stonecutting"
-  | "minecraft:stripped_cherry_wood"
-  | "minecraft:polished_blackstone_bricks_from_polished_blackstone_stonecutting"
-  | "minecraft:quartz_slab_from_stonecutting"
-  | "minecraft:brown_banner"
-  | "minecraft:barrel"
-  | "minecraft:cherry_pressure_plate"
-  | "minecraft:polished_blackstone_slab_from_blackstone_stonecutting"
-  | "minecraft:polished_blackstone_button"
-  | "minecraft:warped_hyphae"
-  | "minecraft:redstone_from_blasting_deepslate_redstone_ore"
-  | "minecraft:netherite_scrap_from_blasting"
-  | "minecraft:jungle_chest_boat"
-  | "minecraft:red_nether_brick_slab_from_red_nether_bricks_stonecutting"
-  | "minecraft:dark_prismarine_slab_from_dark_prismarine_stonecutting"
-  | "minecraft:lime_stained_glass_pane_from_glass_pane"
-  | "minecraft:magenta_glazed_terracotta"
-  | "minecraft:baked_potato_from_smoking"
-  | "minecraft:deepslate_brick_slab_from_polished_deepslate_stonecutting"
-  | "minecraft:dye_black_carpet"
-  | "minecraft:chiseled_stone_bricks_stone_from_stonecutting"
-  | "minecraft:book"
-  | "minecraft:chiseled_stone_bricks"
-  | "minecraft:polished_blackstone_brick_wall_from_blackstone_stonecutting"
-  | "minecraft:netherite_sword_smithing"
-  | "minecraft:wooden_shovel"
-  | "minecraft:end_stone_brick_slab"
-  | "minecraft:smithing_table"
-  | "minecraft:green_bed"
-  | "minecraft:dye_gray_carpet"
-  | "minecraft:deepslate_tile_slab_from_polished_deepslate_stonecutting"
-  | "minecraft:magma_block"
-  | "minecraft:shaper_armor_trim_smithing_template"
-  | "minecraft:polished_granite_stairs_from_granite_stonecutting"
-  | "minecraft:red_sandstone_slab_from_red_sandstone_stonecutting"
-  | "minecraft:spruce_pressure_plate"
-  | "minecraft:polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting"
-  | "minecraft:purple_terracotta"
-  | "minecraft:pink_concrete_powder"
-  | "minecraft:cauldron"
-  | "minecraft:red_nether_brick_stairs_from_red_nether_bricks_stonecutting"
-  | "minecraft:bamboo_trapdoor"
-  | "minecraft:waxed_copper_block_from_honeycomb"
-  | "minecraft:brush"
-  | "minecraft:red_dye_from_poppy"
-  | "minecraft:magenta_concrete_powder"
-  | "minecraft:redstone_from_smelting_deepslate_redstone_ore"
-  | "minecraft:diamond_shovel"
-  | "minecraft:warped_fungus_on_a_stick"
-  | "minecraft:waxed_weathered_cut_copper_slab_from_honeycomb"
-  | "minecraft:deepslate_tiles_from_deepslate_bricks_stonecutting"
-  | "minecraft:prismarine_brick_slab_from_prismarine_stonecutting"
-  | "minecraft:deepslate_tile_slab_from_deepslate_tiles_stonecutting"
-  | "minecraft:andesite_wall"
-  | "minecraft:sandstone_slab"
-  | "minecraft:hay_block"
-  | "minecraft:light_blue_candle"
-  | "minecraft:raiser_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_cut_copper_stonecutting"
-  | "minecraft:iron_ingot_from_blasting_deepslate_iron_ore"
-  | "minecraft:cobblestone_slab"
-  | "minecraft:gold_ingot_from_smelting_raw_gold"
-  | "minecraft:gray_banner"
-  | "minecraft:warped_stairs"
-  | "minecraft:spruce_hanging_sign"
-  | "minecraft:wild_armor_trim_smithing_template"
-  | "minecraft:gold_ingot_from_smelting_gold_ore"
-  | "minecraft:deepslate_brick_slab_from_cobbled_deepslate_stonecutting"
-  | "minecraft:cracked_polished_blackstone_bricks"
-  | "minecraft:end_stone_bricks_from_end_stone_stonecutting"
-  | "minecraft:deepslate_tile_wall_from_deepslate_tiles_stonecutting"
-  | "minecraft:mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting"
-  | "minecraft:popped_chorus_fruit"
-  | "minecraft:cooked_cod_from_smoking"
-  | "minecraft:snout_armor_trim_smithing_template"
-  | "minecraft:shaper_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:minecart"
-  | "minecraft:stone_bricks_from_stone_stonecutting"
-  | "minecraft:smooth_sandstone_slab"
-  | "minecraft:smooth_quartz_slab_from_smooth_quartz_stonecutting"
-  | "minecraft:chest"
-  | "minecraft:gray_stained_glass"
-  | "minecraft:rail"
-  | "minecraft:pink_candle"
-  | "minecraft:diamond_sword"
-  | "minecraft:red_terracotta"
-  | "minecraft:yellow_banner"
-  | "minecraft:creeper_banner_pattern"
-  | "minecraft:waxed_exposed_cut_copper_slab"
-  | "minecraft:red_bed"
-  | "minecraft:dark_oak_fence"
-  | "minecraft:golden_shovel"
-  | "minecraft:ward_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:deepslate_tile_stairs"
-  | "minecraft:cut_copper"
-  | "minecraft:dye_gray_wool"
-  | "minecraft:purpur_stairs_from_purpur_block_stonecutting"
-  | "minecraft:soul_lantern"
-  | "minecraft:copper_ingot"
-  | "minecraft:deepslate_bricks_from_cobbled_deepslate_stonecutting"
-  | "minecraft:waxed_weathered_cut_copper_slab"
-  | "minecraft:white_dye_from_lily_of_the_valley"
-  | "minecraft:waxed_oxidized_cut_copper_slab_from_waxed_oxidized_copper_stonecutting"
-  | "minecraft:crimson_trapdoor"
-  | "minecraft:pink_dye_from_pink_petals"
-  | "minecraft:oxidized_cut_copper_slab_from_oxidized_copper_stonecutting"
-  | "minecraft:brick_wall_from_bricks_stonecutting"
-  | "minecraft:dye_gray_bed"
-  | "minecraft:end_stone_brick_wall"
-  | "minecraft:eye_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:polished_diorite_slab"
-  | "minecraft:dye_light_gray_bed"
-  | "minecraft:bamboo_stairs"
-  | "minecraft:smooth_sandstone_stairs"
-  | "minecraft:brown_glazed_terracotta"
-  | "minecraft:waxed_exposed_cut_copper_slab_from_waxed_exposed_cut_copper_stonecutting"
-  | "minecraft:blaze_powder"
-  | "minecraft:end_stone_brick_slab_from_end_stone_stonecutting"
-  | "minecraft:copper_ingot_from_blasting_copper_ore"
-  | "minecraft:smooth_basalt"
-  | "minecraft:chain"
-  | "minecraft:polished_blackstone_from_blackstone_stonecutting"
-  | "minecraft:blue_concrete_powder"
-  | "minecraft:blue_stained_glass"
-  | "minecraft:iron_ingot_from_smelting_deepslate_iron_ore"
-  | "minecraft:oak_fence"
-  | "minecraft:warped_trapdoor"
-  | "minecraft:rabbit_stew_from_red_mushroom"
-  | "minecraft:chiseled_deepslate_from_cobbled_deepslate_stonecutting"
-  | "minecraft:prismarine_brick_stairs"
-  | "minecraft:iron_boots"
-  | "minecraft:polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting"
-  | "minecraft:netherite_hoe_smithing"
-  | "minecraft:diamond_chestplate"
-  | "minecraft:waxed_oxidized_cut_copper_stairs_from_honeycomb"
-  | "minecraft:golden_chestplate"
-  | "minecraft:netherite_chestplate_smithing"
-  | "minecraft:copper_ingot_from_smelting_raw_copper"
-  | "minecraft:prismarine_stairs_from_prismarine_stonecutting"
-  | "minecraft:smooth_red_sandstone"
-  | "minecraft:oak_sign"
-  | "minecraft:crimson_planks"
-  | "minecraft:quartz_stairs_from_quartz_block_stonecutting"
-  | "minecraft:netherite_ingot"
-  | "minecraft:blue_candle"
-  | "minecraft:birch_sign"
-  | "minecraft:exposed_cut_copper_stairs_from_exposed_copper_stonecutting"
-  | "minecraft:wayfinder_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:diamond_from_smelting_deepslate_diamond_ore"
-  | "minecraft:birch_pressure_plate"
-  | "minecraft:flower_banner_pattern"
-  | "minecraft:netherite_block"
-  | "minecraft:deepslate"
-  | "minecraft:light_blue_terracotta"
-  | "minecraft:orange_dye_from_red_yellow"
-  | "minecraft:red_sandstone_stairs_from_red_sandstone_stonecutting"
-  | "minecraft:spruce_stairs"
-  | "minecraft:mangrove_planks"
-  | "minecraft:emerald_from_blasting_deepslate_emerald_ore"
-  | "minecraft:polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting"
-  | "minecraft:smooth_sandstone_slab_from_smooth_sandstone_stonecutting"
-  | "minecraft:black_bed"
-  | "minecraft:gold_ingot_from_blasting_raw_gold"
-  | "minecraft:jungle_sign"
-  | "minecraft:cyan_candle"
-  | "minecraft:iron_nugget_from_blasting"
-  | "minecraft:diamond_from_smelting_diamond_ore"
-  | "minecraft:cut_red_sandstone_slab_from_red_sandstone_stonecutting"
-  | "minecraft:gold_ingot_from_blasting_gold_ore"
-  | "minecraft:crossbow"
-  | "minecraft:light_gray_dye_from_azure_bluet"
-  | "minecraft:light_gray_dye_from_white_tulip"
-  | "minecraft:calibrated_sculk_sensor"
-  | "minecraft:deepslate_tile_wall_from_cobbled_deepslate_stonecutting"
-  | "minecraft:bowl"
-  | "minecraft:magenta_candle"
-  | "minecraft:diamond"
-  | "minecraft:green_stained_glass_pane"
-  | "minecraft:magenta_dye_from_blue_red_pink"
-  | "minecraft:crimson_slab"
-  | "minecraft:black_concrete_powder"
-  | "minecraft:prismarine_slab_from_prismarine_stonecutting"
-  | "minecraft:purple_banner"
-  | "minecraft:lime_carpet"
-  | "minecraft:purple_concrete_powder"
-  | "minecraft:sugar_from_sugar_cane"
-  | "minecraft:polished_deepslate_slab_from_cobbled_deepslate_stonecutting"
-  | "minecraft:birch_planks"
-  | "minecraft:light_gray_dye_from_black_white_dye"
-  | "minecraft:deepslate_tile_wall_from_deepslate_bricks_stonecutting"
-  | "minecraft:light_gray_stained_glass_pane"
-  | "minecraft:spectral_arrow"
-  | "minecraft:tnt_minecart"
-  | "minecraft:green_terracotta"
-  | "minecraft:red_carpet"
-  | "minecraft:white_stained_glass"
-  | "minecraft:slime_block"
-  | "minecraft:acacia_planks"
-  | "minecraft:cooked_beef_from_campfire_cooking"
-  | "minecraft:wooden_hoe"
-  | "minecraft:quartz_pillar"
-  | "minecraft:cooked_rabbit_from_campfire_cooking"
-  | "minecraft:dye_red_wool"
-  | "minecraft:cherry_button"
-  | "minecraft:mud_bricks"
-  | "minecraft:dye_magenta_bed"
-  | "minecraft:waxed_cut_copper_from_honeycomb"
-  | "minecraft:netherite_upgrade_smithing_template"
-  | "minecraft:waxed_oxidized_cut_copper_from_waxed_oxidized_copper_stonecutting"
-  | "minecraft:purpur_stairs"
-  | "minecraft:dye_magenta_carpet"
-  | "minecraft:brown_terracotta"
-  | "minecraft:waxed_oxidized_cut_copper_stairs"
-  | "minecraft:bamboo_block"
-  | "minecraft:mossy_cobblestone_stairs"
-  | "minecraft:note_block"
-  | "minecraft:mud_brick_stairs_from_mud_bricks_stonecutting"
-  | "minecraft:weathered_cut_copper_stairs_from_weathered_cut_copper_stonecutting"
-  | "minecraft:dye_orange_bed"
-  | "minecraft:blue_dye"
-  | "minecraft:waxed_weathered_cut_copper_stairs_from_waxed_weathered_copper_stonecutting"
-  | "minecraft:polished_diorite_slab_from_polished_diorite_stonecutting"
-  | "minecraft:acacia_hanging_sign"
-  | "minecraft:muddy_mangrove_roots"
-  | "minecraft:blackstone_stairs_from_blackstone_stonecutting"
-  | "minecraft:piston"
-  | "minecraft:waxed_weathered_cut_copper_from_waxed_weathered_copper_stonecutting"
-  | "minecraft:brown_bed"
-  | "minecraft:blue_bed"
-  | "minecraft:ward_armor_trim_smithing_template"
-  | "minecraft:light_gray_carpet"
-  | "minecraft:white_banner"
-  | "minecraft:weathered_cut_copper_slab_from_weathered_copper_stonecutting"
-  | "minecraft:smooth_quartz"
-  | "minecraft:magenta_stained_glass_pane_from_glass_pane"
-  | "minecraft:smooth_sandstone"
-  | "minecraft:smooth_red_sandstone_stairs"
-  | "minecraft:end_crystal"
-  | "minecraft:light_gray_banner"
-  | "minecraft:stone_pickaxe"
-  | "minecraft:light_blue_glazed_terracotta"
-  | "minecraft:shulker_box"
-  | "minecraft:cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting"
-  | "minecraft:wooden_axe"
-  | "minecraft:dispenser"
-  | "minecraft:cyan_stained_glass_pane"
-  | "minecraft:daylight_detector"
-  | "minecraft:sponge"
-  | "minecraft:quartz_stairs"
-  | "minecraft:diorite_wall"
-  | "minecraft:quartz_from_blasting"
-  | "minecraft:purple_glazed_terracotta"
-  | "minecraft:white_carpet"
-  | "minecraft:spruce_planks"
-  | "minecraft:mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting"
-  | "minecraft:red_stained_glass"
-  | "minecraft:light_gray_stained_glass_pane_from_glass_pane"
-  | "minecraft:polished_blackstone_bricks"
-  | "minecraft:waxed_exposed_cut_copper_from_honeycomb"
-  | "minecraft:purpur_slab"
-  | "minecraft:green_carpet"
-  | "minecraft:mossy_cobblestone_from_moss_block"
-  | "minecraft:cracked_stone_bricks"
-  | "minecraft:jack_o_lantern"
-  | "minecraft:tripwire_hook"
-  | "minecraft:chiseled_polished_blackstone_from_blackstone_stonecutting"
-  | "minecraft:trapped_chest"
-  | "minecraft:diorite_stairs_from_diorite_stonecutting"
-  | "minecraft:hopper"
-  | "minecraft:cut_sandstone_from_sandstone_stonecutting"
-  | "minecraft:stone_stairs_from_stone_stonecutting"
-  | "minecraft:raw_gold"
-  | "minecraft:lantern"
-  | "minecraft:waxed_cut_copper_slab_from_waxed_copper_block_stonecutting"
-  | "minecraft:green_banner"
-  | "minecraft:dried_kelp"
-  | "minecraft:magenta_stained_glass"
-  | "minecraft:ender_chest"
-  | "minecraft:polished_andesite_stairs_from_andesite_stonecutting"
-  | "minecraft:gold_nugget"
-  | "minecraft:iron_bars"
-  | "minecraft:beetroot_soup"
-  | "minecraft:iron_trapdoor"
-  | "minecraft:deepslate_brick_wall"
-  | "minecraft:green_glazed_terracotta"
-  | "minecraft:brown_candle"
-  | "minecraft:lime_terracotta"
-  | "minecraft:cooked_cod"
-  | "minecraft:diamond_axe"
-  | "minecraft:iron_helmet"
-  | "minecraft:blackstone_slab_from_blackstone_stonecutting"
-  | "minecraft:jungle_wood"
-  | "minecraft:waxed_oxidized_cut_copper"
-  | "minecraft:cartography_table"
-  | "minecraft:gray_stained_glass_pane_from_glass_pane"
-  | "minecraft:polished_diorite"
-  | "minecraft:stone_slab"
-  | "minecraft:acacia_pressure_plate"
-  | "minecraft:lime_bed"
-  | "minecraft:dye_blue_wool"
-  | "minecraft:dark_oak_pressure_plate"
-  | "minecraft:brick_stairs_from_bricks_stonecutting"
-  | "minecraft:acacia_slab"
-  | "minecraft:jungle_stairs"
-  | "minecraft:cooked_porkchop_from_smoking"
-  | "minecraft:blast_furnace"
-  | "minecraft:polished_andesite_stairs"
-  | "minecraft:deepslate_brick_stairs_from_deepslate_bricks_stonecutting"
-  | "minecraft:magenta_dye_from_lilac"
-  | "minecraft:waxed_weathered_cut_copper_from_honeycomb"
-  | "minecraft:light_blue_stained_glass_pane_from_glass_pane"
-  | "minecraft:dye_red_bed"
-  | "minecraft:cherry_chest_boat"
-  | "minecraft:waxed_cut_copper"
-  | "minecraft:rib_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:blue_stained_glass_pane_from_glass_pane"
-  | "minecraft:light_blue_carpet"
-  | "minecraft:chiseled_polished_blackstone"
-  | "minecraft:turtle_helmet"
-  | "minecraft:red_sandstone_wall_from_red_sandstone_stonecutting"
-  | "minecraft:polished_andesite_slab_from_polished_andesite_stonecutting"
-  | "minecraft:gold_ingot_from_smelting_deepslate_gold_ore"
-  | "minecraft:cobbled_deepslate_stairs"
-  | "minecraft:baked_potato"
-  | "minecraft:light_blue_banner"
-  | "minecraft:fletching_table"
-  | "minecraft:mud_brick_wall_from_mud_bricks_stonecutting"
-  | "minecraft:dye_lime_bed"
-  | "minecraft:waxed_exposed_cut_copper_stairs_from_waxed_exposed_copper_stonecutting"
-  | "minecraft:cooked_salmon"
-  | "minecraft:light_gray_dye_from_gray_white_dye"
-  | "minecraft:mossy_cobblestone_wall"
-  | "minecraft:spyglass"
-  | "minecraft:magenta_dye_from_purple_and_pink"
-  | "minecraft:red_banner"
-  | "minecraft:purpur_pillar"
-  | "minecraft:heavy_weighted_pressure_plate"
-  | "minecraft:stone_shovel"
-  | "minecraft:deepslate_tile_slab"
-  | "minecraft:pink_stained_glass"
-  | "minecraft:golden_leggings"
-  | "minecraft:oak_chest_boat"
-  | "minecraft:stripped_birch_wood"
-  | "minecraft:waxed_oxidized_cut_copper_slab"
-  | "minecraft:deepslate_tiles_from_polished_deepslate_stonecutting"
-  | "minecraft:end_stone_brick_wall_from_end_stone_brick_stonecutting"
-  | "minecraft:polished_blackstone_stairs"
-  | "minecraft:lime_banner"
-  | "minecraft:netherite_pickaxe_smithing"
-  | "minecraft:stone_pressure_plate"
-  | "minecraft:deepslate_brick_stairs"
-  | "minecraft:dropper"
-  | "minecraft:redstone_lamp"
-  | "minecraft:yellow_stained_glass_pane"
-  | "minecraft:black_carpet"
-  | "minecraft:deepslate_brick_wall_from_cobbled_deepslate_stonecutting"
-  | "minecraft:end_rod"
-  | "minecraft:diorite_slab_from_diorite_stonecutting"
-  | "minecraft:cut_copper_from_copper_block_stonecutting"
-  | "minecraft:iron_ingot_from_blasting_iron_ore"
-  | "minecraft:polished_andesite_stairs_from_polished_andesite_stonecutting"
-  | "minecraft:lime_dye_from_smelting"
-  | "minecraft:tide_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:dye_magenta_wool"
-  | "minecraft:raiser_armor_trim_smithing_template"
-  | "minecraft:deepslate_tile_stairs_from_deepslate_tiles_stonecutting"
-  | "minecraft:bamboo_mosaic_stairs"
-  | "minecraft:golden_helmet"
-  | "minecraft:light_blue_dye_from_blue_orchid"
-  | "minecraft:weathered_cut_copper_stairs"
-  | "minecraft:mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting"
-  | "minecraft:waxed_oxidized_cut_copper_slab_from_honeycomb"
-  | "minecraft:warped_button"
-  | "minecraft:polished_deepslate"
-  | "minecraft:oxidized_cut_copper_from_oxidized_copper_stonecutting"
-  | "minecraft:bone_meal_from_bone_block"
-  | "minecraft:mangrove_boat"
-  | "minecraft:bread"
-  | "minecraft:torch"
-  | "minecraft:polished_granite_stairs"
-  | "minecraft:acacia_boat"
-  | "minecraft:lever"
-  | "minecraft:end_stone_brick_wall_from_end_stone_stonecutting"
-  | "minecraft:dye_blue_bed"
-  | "minecraft:cobbled_deepslate_slab_from_cobbled_deepslate_stonecutting"
-  | "minecraft:map"
-  | "minecraft:detector_rail"
-  | "minecraft:pink_bed"
-  | "minecraft:shield"
-  | "minecraft:blackstone_slab"
-  | "minecraft:dye_light_blue_carpet"
-  | "minecraft:cooked_porkchop_from_campfire_cooking"
-  | "minecraft:cyan_stained_glass_pane_from_glass_pane"
-  | "minecraft:crimson_sign"
-  | "minecraft:bamboo_slab"
-  | "minecraft:dark_oak_chest_boat"
-  | "minecraft:waxed_exposed_cut_copper_slab_from_waxed_exposed_copper_stonecutting"
-  | "minecraft:dark_oak_trapdoor"
-  | "minecraft:black_banner"
-  | "minecraft:painting"
-  | "minecraft:iron_shovel"
-  | "minecraft:stone_brick_slab"
-  | "minecraft:dye_red_carpet"
-  | "minecraft:cooked_rabbit_from_smoking"
-  | "minecraft:polished_blackstone_pressure_plate"
-  | "minecraft:quartz_bricks"
-  | "minecraft:crafting_table"
-  | "minecraft:sandstone_wall"
-  | "minecraft:green_stained_glass_pane_from_glass_pane"
-  | "minecraft:polished_deepslate_slab"
-  | "minecraft:red_sandstone_wall"
-  | "minecraft:acacia_chest_boat"
-  | "minecraft:cut_copper_slab"
-  | "minecraft:dark_oak_wood"
-  | "minecraft:birch_hanging_sign"
-  | "minecraft:stone_slab_from_stone_stonecutting"
-  | "minecraft:orange_glazed_terracotta"
-  | "minecraft:pink_carpet"
-  | "minecraft:gray_glazed_terracotta"
-  | "minecraft:acacia_stairs"
-  | "minecraft:cherry_slab"
-  | "minecraft:stone_brick_slab_from_stone_stonecutting"
-  | "minecraft:deepslate_bricks"
-  | "minecraft:raw_gold_block"
-  | "minecraft:iron_nugget_from_smelting"
-  | "minecraft:birch_door"
-  | "minecraft:waxed_exposed_copper_from_honeycomb"
-  | "minecraft:anvil"
-  | "minecraft:stripped_acacia_wood"
-  | "minecraft:waxed_weathered_cut_copper_stairs"
-  | "minecraft:gold_ingot_from_nuggets"
-  | "minecraft:mossy_stone_brick_stairs"
-  | "minecraft:cooked_chicken"
-  | "minecraft:smooth_quartz_stairs_from_smooth_quartz_stonecutting"
-  | "minecraft:oak_trapdoor"
-  | "minecraft:amethyst_block"
-  | "minecraft:oak_door"
-  | "minecraft:chiseled_polished_blackstone_from_polished_blackstone_stonecutting"
-  | "minecraft:netherite_leggings_smithing"
-  | "minecraft:waxed_cut_copper_slab_from_honeycomb"
-  | "minecraft:orange_bed"
-  | "minecraft:birch_button"
-  | "minecraft:nether_brick"
-  | "minecraft:wooden_sword"
-  | "minecraft:birch_fence_gate"
-  | "minecraft:bone_meal"
-  | "minecraft:stone_brick_stairs_from_stone_stonecutting"
-  | "minecraft:gold_ingot_from_blasting_nether_gold_ore"
-  | "minecraft:black_glazed_terracotta"
-  | "minecraft:polished_diorite_stairs_from_diorite_stonecutting"
-  | "minecraft:weathered_cut_copper_stairs_from_weathered_copper_stonecutting"
-  | "minecraft:honey_bottle"
-  | "minecraft:cyan_bed"
-  | "minecraft:spruce_door"
-  | "minecraft:smooth_quartz_slab"
-  | "minecraft:carrot_on_a_stick"
-  | "minecraft:red_stained_glass_pane"
-  | "minecraft:brick_wall"
-  | "minecraft:lapis_lazuli_from_smelting_lapis_ore"
-  | "minecraft:raw_copper_block"
-  | "minecraft:polished_diorite_from_diorite_stonecutting"
-  | "minecraft:purple_bed"
-  | "minecraft:mud_brick_wall"
-  | "minecraft:waxed_exposed_cut_copper_stairs_from_waxed_exposed_cut_copper_stonecutting"
-  | "minecraft:dark_prismarine"
-  | "minecraft:prismarine_wall_from_prismarine_stonecutting"
-  | "minecraft:purple_stained_glass_pane_from_glass_pane"
-  | "minecraft:leather_horse_armor"
-  | "minecraft:cookie"
-  | "minecraft:raw_iron_block"
-  | "minecraft:dark_oak_planks"
-  | "minecraft:lapis_lazuli"
-  | "minecraft:candle"
-  | "minecraft:lightning_rod"
-  | "minecraft:brown_stained_glass_pane_from_glass_pane"
-  | "minecraft:oak_button"
-  | "minecraft:granite_wall"
-  | "minecraft:orange_concrete_powder"
-  | "minecraft:dark_oak_hanging_sign"
-  | "minecraft:polished_blackstone_brick_slab_from_polished_blackstone_stonecutting"
-  | "minecraft:redstone_block"
-  | "minecraft:shears"
-  | "minecraft:waxed_oxidized_cut_copper_slab_from_waxed_oxidized_cut_copper_stonecutting"
-  | "minecraft:wheat"
-  | "minecraft:polished_deepslate_wall_from_cobbled_deepslate_stonecutting"
-  | "minecraft:honeycomb_block"
-  | "minecraft:orange_stained_glass_pane"
-  | "minecraft:quartz_block"
-  | "minecraft:yellow_stained_glass_pane_from_glass_pane"
-  | "minecraft:brick"
-  | "minecraft:deepslate_tile_slab_from_cobbled_deepslate_stonecutting"
-  | "minecraft:exposed_cut_copper_from_exposed_copper_stonecutting"
-  | "minecraft:music_disc_5"
-  | "minecraft:mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting"
-  | "minecraft:diamond_helmet"
-  | "minecraft:warped_fence"
-  | "minecraft:bow"
-  | "minecraft:andesite_stairs_from_andesite_stonecutting"
-  | "minecraft:stone_brick_slab_from_stone_bricks_stonecutting"
-  | "minecraft:dark_oak_fence_gate"
-  | "minecraft:waxed_exposed_cut_copper"
-  | "minecraft:coal"
-  | "minecraft:compass"
-  | "minecraft:dye_pink_bed"
-  | "minecraft:gold_ingot_from_blasting_deepslate_gold_ore"
-  | "minecraft:andesite_stairs"
-  | "minecraft:item_frame"
-  | "minecraft:waxed_weathered_cut_copper_slab_from_waxed_weathered_cut_copper_stonecutting"
-  | "minecraft:iron_ingot_from_smelting_iron_ore"
-  | "minecraft:loom"
-  | "minecraft:jungle_slab"
-  | "minecraft:polished_granite_stairs_from_polished_granite_stonecutting"
-  | "minecraft:smoker"
-  | "minecraft:skull_banner_pattern"
-  | "minecraft:dark_oak_boat"
-  | "minecraft:coast_armor_trim_smithing_template"
-  | "minecraft:pink_dye_from_pink_tulip"
-  | "minecraft:dune_armor_trim_smithing_template"
-  | "minecraft:arrow"
-  | "minecraft:oak_fence_gate"
-  | "minecraft:copper_ingot_from_smelting_deepslate_copper_ore"
-  | "minecraft:mossy_stone_brick_wall"
-  | "minecraft:brown_dye"
-  | "minecraft:granite"
-  | "minecraft:melon_seeds"
-  | "minecraft:waxed_exposed_cut_copper_stairs_from_honeycomb"
-  | "minecraft:polished_blackstone_stairs_from_blackstone_stonecutting"
-  | "minecraft:dye_cyan_carpet"
-  | "minecraft:brick_slab"
-  | "minecraft:firework_rocket_simple"
-  | "minecraft:black_dye_from_wither_rose"
-  | "minecraft:red_sandstone_stairs"
-  | "minecraft:coast_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:sandstone_stairs_from_sandstone_stonecutting"
-  | "minecraft:bundle"
-  | "minecraft:bricks"
-  | "minecraft:red_sandstone_slab"
-  | "minecraft:gray_stained_glass_pane"
-  | "minecraft:gray_carpet"
-  | "minecraft:oxidized_cut_copper_stairs"
-  | "minecraft:yellow_glazed_terracotta"
-  | "minecraft:mangrove_trapdoor"
-  | "minecraft:diamond_boots"
-  | "minecraft:andesite"
-  | "minecraft:deepslate_tile_wall"
-  | "minecraft:crimson_hanging_sign"
-  | "minecraft:polished_deepslate_stairs"
-  | "minecraft:exposed_cut_copper"
-  | "minecraft:polished_blackstone"
-  | "minecraft:mangrove_hanging_sign"
-  | "minecraft:waxed_exposed_cut_copper_slab_from_honeycomb"
-  | "minecraft:stick"
-  | "minecraft:red_nether_brick_stairs"
-  | "minecraft:dark_oak_stairs"
-  | "minecraft:jungle_pressure_plate"
-  | "minecraft:brewing_stand"
-  | "minecraft:dye_yellow_carpet"
-  | "minecraft:white_candle"
-  | "minecraft:polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting"
-  | "minecraft:bamboo_mosaic_slab"
-  | "minecraft:host_armor_trim_smithing_template"
-  | "minecraft:dye_white_wool"
-  | "minecraft:emerald_from_blasting_emerald_ore"
-  | "minecraft:smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting"
-  | "minecraft:cobbled_deepslate_wall_from_cobbled_deepslate_stonecutting"
-  | "minecraft:dye_light_gray_carpet"
-  | "minecraft:spire_armor_trim_smithing_template"
-  | "minecraft:polished_blackstone_brick_wall"
-  | "minecraft:stone_axe"
-  | "minecraft:jungle_button"
-  | "minecraft:packed_ice"
-  | "minecraft:golden_carrot"
-  | "minecraft:stone"
-  | "minecraft:blackstone_stairs"
-  | "minecraft:dried_kelp_from_campfire_cooking"
-  | "minecraft:blue_banner"
-  | "minecraft:dye_purple_carpet"
-  | "minecraft:dye_orange_carpet"
-  | "minecraft:prismarine_wall"
-  | "minecraft:diamond_block"
-  | "minecraft:deepslate_tile_slab_from_deepslate_bricks_stonecutting"
-  | "minecraft:deepslate_tile_stairs_from_deepslate_bricks_stonecutting"
-  | "minecraft:dye_cyan_bed"
-  | "minecraft:waxed_oxidized_copper_from_honeycomb"
-  | "minecraft:diorite_slab"
-  | "minecraft:spruce_trapdoor"
-  | "minecraft:yellow_stained_glass"
-  | "minecraft:light_blue_stained_glass"
-  | "minecraft:waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting"
-  | "minecraft:glowstone"
-  | "minecraft:respawn_anchor"
-  | "minecraft:pumpkin_seeds"
-  | "minecraft:vex_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:deepslate_brick_slab"
-  | "minecraft:cobbled_deepslate_wall"
-  | "minecraft:purpur_slab_from_purpur_block_stonecutting"
-  | "minecraft:red_nether_brick_wall"
-  | "minecraft:chiseled_red_sandstone"
-  | "minecraft:nether_brick_fence"
-  | "minecraft:polished_blackstone_brick_stairs_from_blackstone_stonecutting"
-  | "minecraft:magma_cream"
-  | "minecraft:blackstone_wall"
-  | "minecraft:smooth_stone"
-  | "minecraft:cooked_mutton"
-  | "minecraft:bookshelf"
-  | "minecraft:dark_prismarine_stairs"
-  | "minecraft:iron_ingot_from_blasting_raw_iron"
-  | "minecraft:light_gray_candle"
-  | "minecraft:lapis_block"
-  | "minecraft:purple_carpet"
-  | "minecraft:cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting"
-  | "minecraft:birch_chest_boat"
-  | "minecraft:polished_deepslate_stairs_from_cobbled_deepslate_stonecutting"
-  | "minecraft:brown_stained_glass_pane"
-  | "minecraft:dried_kelp_from_smelting"
-  | "minecraft:black_terracotta"
-  | "minecraft:polished_granite_slab_from_granite_stonecutting"
-  | "minecraft:snow_block"
-  | "minecraft:cherry_sign"
-  | "minecraft:iron_axe"
-  | "minecraft:dye_lime_carpet"
-  | "minecraft:sandstone_stairs"
-  | "minecraft:composter"
-  | "minecraft:ender_eye"
-  | "minecraft:jukebox"
-  | "minecraft:polished_deepslate_wall_from_polished_deepslate_stonecutting"
-  | "minecraft:light_gray_terracotta"
-  | "minecraft:white_bed"
-  | "minecraft:birch_slab"
-  | "minecraft:spruce_slab"
-  | "minecraft:deepslate_tile_stairs_from_cobbled_deepslate_stonecutting"
-  | "minecraft:coarse_dirt"
-  | "minecraft:acacia_sign"
-  | "minecraft:chest_minecart"
-  | "minecraft:oak_boat"
-  | "minecraft:cobblestone_slab_from_cobblestone_stonecutting"
-  | "minecraft:waxed_cut_copper_stairs"
-  | "minecraft:mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting"
-  | "minecraft:sea_lantern"
-  | "minecraft:yellow_carpet"
-  | "minecraft:quartz_bricks_from_quartz_block_stonecutting"
-  | "minecraft:green_candle"
-  | "minecraft:dye_blue_carpet"
-  | "minecraft:waxed_weathered_cut_copper_stairs_from_honeycomb"
-  | "minecraft:pink_stained_glass_pane_from_glass_pane"
-  | "minecraft:prismarine_slab"
-  | "minecraft:red_dye_from_rose_bush"
-  | "minecraft:exposed_cut_copper_stairs"
-  | "minecraft:fermented_spider_eye"
-  | "minecraft:light_gray_glazed_terracotta"
-  | "minecraft:magenta_terracotta"
-  | "minecraft:baked_potato_from_campfire_cooking"
-  | "minecraft:stone_hoe"
-  | "minecraft:diamond_hoe"
-  | "minecraft:jungle_boat"
-  | "minecraft:coal_from_smelting_deepslate_coal_ore"
-  | "minecraft:dye_cyan_wool"
-  | "minecraft:pumpkin_pie"
-  | "minecraft:stripped_mangrove_wood"
-  | "minecraft:exposed_cut_copper_stairs_from_exposed_cut_copper_stonecutting"
-  | "minecraft:deepslate_bricks_from_polished_deepslate_stonecutting"
-  | "minecraft:jungle_fence"
-  | "minecraft:gold_ingot_from_gold_block"
-  | "minecraft:light_weighted_pressure_plate"
-  | "minecraft:cobbled_deepslate_slab"
-  | "minecraft:cooked_mutton_from_campfire_cooking"
-  | "minecraft:tide_armor_trim_smithing_template"
-  | "minecraft:glass_bottle"
-  | "minecraft:weathered_cut_copper"
-  | "minecraft:iron_ingot_from_smelting_raw_iron"
-  | "minecraft:dye_black_wool"
-  | "minecraft:deepslate_brick_slab_from_deepslate_bricks_stonecutting"
-  | "minecraft:dye_green_wool"
-  | "minecraft:iron_door"
-  | "minecraft:purple_stained_glass_pane"
-  | "minecraft:polished_granite"
-  | "minecraft:cooked_beef"
-  | "minecraft:mud_brick_slab"
-  | "minecraft:cooked_mutton_from_smoking"
-  | "minecraft:hopper_minecart"
-  | "minecraft:blue_stained_glass_pane"
-  | "minecraft:pink_banner"
-  | "minecraft:oxidized_cut_copper"
-  | "minecraft:black_stained_glass_pane_from_glass_pane"
-  | "minecraft:chiseled_quartz_block"
-  | "minecraft:soul_campfire"
-  | "minecraft:cobblestone_stairs_from_cobblestone_stonecutting"
-  | "minecraft:stripped_warped_hyphae"
-  | "minecraft:bamboo_button"
-  | "minecraft:crimson_door"
-  | "minecraft:copper_ingot_from_waxed_copper_block"
-  | "minecraft:end_stone_brick_stairs_from_end_stone_brick_stonecutting"
-  | "minecraft:dye_pink_carpet"
-  | "minecraft:gold_ingot_from_smelting_nether_gold_ore"
-  | "minecraft:leather"
-  | "minecraft:cherry_trapdoor"
-  | "minecraft:cherry_hanging_sign"
-  | "minecraft:gold_nugget_from_smelting"
-  | "minecraft:chiseled_quartz_block_from_quartz_block_stonecutting"
-  | "minecraft:end_stone_bricks"
-  | "minecraft:waxed_cut_copper_stairs_from_honeycomb"
-  | "minecraft:dye_brown_bed"
-  | "minecraft:red_stained_glass_pane_from_glass_pane"
-  | "minecraft:acacia_trapdoor"
-  | "minecraft:stone_brick_wall_from_stone_bricks_stonecutting"
-  | "minecraft:waxed_cut_copper_stairs_from_waxed_copper_block_stonecutting"
-  | "minecraft:black_candle"
-  | "minecraft:cut_copper_slab_from_cut_copper_stonecutting"
-  | "minecraft:light_gray_concrete_powder"
-  | "minecraft:smooth_quartz_stairs"
-  | "minecraft:furnace"
-  | "minecraft:diorite_stairs"
-  | "minecraft:mangrove_pressure_plate"
-  | "minecraft:cracked_nether_bricks"
-  | "minecraft:dark_prismarine_stairs_from_dark_prismarine_stonecutting"
-  | "minecraft:purpur_pillar_from_purpur_block_stonecutting"
-  | "minecraft:crimson_fence_gate"
-  | "minecraft:dye_brown_wool"
-  | "minecraft:activator_rail"
-  | "minecraft:lime_dye"
-  | "minecraft:bamboo_hanging_sign"
-  | "minecraft:polished_diorite_stairs_from_polished_diorite_stonecutting"
-  | "minecraft:crimson_pressure_plate"
-  | "minecraft:oak_planks"
-  | "minecraft:orange_candle"
-  | "minecraft:deepslate_brick_wall_from_polished_deepslate_stonecutting"
-  | "minecraft:weathered_cut_copper_slab_from_weathered_cut_copper_stonecutting"
-  | "minecraft:waxed_exposed_cut_copper_from_waxed_exposed_copper_stonecutting"
-  | "minecraft:end_stone_brick_stairs_from_end_stone_stonecutting"
-  | "minecraft:warped_sign"
-  | "minecraft:lapis_lazuli_from_blasting_lapis_ore"
-  | "minecraft:copper_ingot_from_smelting_copper_ore"
-  | "minecraft:rib_armor_trim_smithing_template"
-  | "minecraft:mangrove_door"
-  | "minecraft:cherry_stairs"
-  | "minecraft:cooked_chicken_from_campfire_cooking"
-  | "minecraft:purple_dye"
-  | "minecraft:deepslate_tile_wall_from_polished_deepslate_stonecutting"
-  | "minecraft:red_sandstone"
-  | "minecraft:netherite_scrap"
-  | "minecraft:stone_brick_wall"
-  | "minecraft:iron_pickaxe"
-  | "minecraft:quartz_slab"
-  | "minecraft:cut_sandstone"
-  | "minecraft:bamboo_sign"
-  | "minecraft:spruce_button"
-  | "minecraft:light_blue_dye_from_blue_white_dye"
-  | "minecraft:nether_brick_slab"
-  | "minecraft:host_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:cyan_dye"
-  | "minecraft:quartz_pillar_from_quartz_block_stonecutting"
-  | "minecraft:waxed_cut_copper_stairs_from_waxed_cut_copper_stonecutting"
-  | "minecraft:orange_terracotta"
-  | "minecraft:deepslate_tiles"
-  | "minecraft:deepslate_tile_stairs_from_polished_deepslate_stonecutting"
-  | "minecraft:bamboo_fence"
-  | "minecraft:enchanting_table"
-  | "minecraft:red_glazed_terracotta"
-  | "minecraft:white_glazed_terracotta"
-  | "minecraft:deepslate_tiles_from_cobbled_deepslate_stonecutting"
-  | "minecraft:lead"
-  | "minecraft:spruce_boat"
-  | "minecraft:birch_boat"
-  | "minecraft:gold_block"
-  | "minecraft:polished_diorite_stairs"
-  | "minecraft:mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting"
-  | "minecraft:nether_brick_stairs_from_nether_bricks_stonecutting"
-  | "minecraft:observer"
-  | "minecraft:polished_deepslate_wall"
-  | "minecraft:campfire"
-  | "minecraft:paper"
-  | "minecraft:cherry_wood"
-  | "minecraft:dark_oak_slab"
-  | "minecraft:lime_glazed_terracotta"
-  | "minecraft:cooked_cod_from_campfire_cooking"
-  | "minecraft:packed_mud"
-  | "minecraft:brick_stairs"
-  | "minecraft:lime_stained_glass"
-  | "minecraft:dye_purple_bed"
-  | "minecraft:cut_sandstone_slab_from_sandstone_stonecutting"
-  | "minecraft:stripped_spruce_wood"
-  | "minecraft:acacia_wood"
-  | "minecraft:netherite_helmet_smithing"
-  | "minecraft:cherry_fence_gate"
-  | "minecraft:polished_blackstone_stairs_from_polished_blackstone_stonecutting"
-  | "minecraft:stripped_jungle_wood"
-  | "minecraft:pink_dye_from_peony"
-  | "minecraft:stone_brick_walls_from_stone_stonecutting"
-  | "minecraft:copper_ingot_from_blasting_raw_copper"
-  | "minecraft:bucket"
-  | "minecraft:waxed_cut_copper_from_waxed_copper_block_stonecutting"
-  | "minecraft:cut_red_sandstone_slab"
-  | "minecraft:silence_armor_trim_smithing_template_smithing_trim"
-  | "minecraft:coal_from_blasting_deepslate_coal_ore"
-  | "minecraft:chiseled_red_sandstone_from_red_sandstone_stonecutting"
-  | "minecraft:polished_andesite"
-  | "minecraft:black_stained_glass"
-  | "minecraft:dye_purple_wool";
+export enum RecipeResource {
+  yellow_dye_from_dandelion = "minecraft:yellow_dye_from_dandelion",
+  charcoal = "minecraft:charcoal",
+  dark_oak_button = "minecraft:dark_oak_button",
+  emerald_from_smelting_deepslate_emerald_ore = "minecraft:emerald_from_smelting_deepslate_emerald_ore",
+  diorite_wall_from_diorite_stonecutting = "minecraft:diorite_wall_from_diorite_stonecutting",
+  polished_blackstone_brick_slab = "minecraft:polished_blackstone_brick_slab",
+  chiseled_deepslate = "minecraft:chiseled_deepslate",
+  gray_candle = "minecraft:gray_candle",
+  rabbit_stew_from_brown_mushroom = "minecraft:rabbit_stew_from_brown_mushroom",
+  sentry_armor_trim_smithing_template_smithing_trim = "minecraft:sentry_armor_trim_smithing_template_smithing_trim",
+  stripped_dark_oak_wood = "minecraft:stripped_dark_oak_wood",
+  stonecutter = "minecraft:stonecutter",
+  soul_torch = "minecraft:soul_torch",
+  bone_block = "minecraft:bone_block",
+  raw_iron = "minecraft:raw_iron",
+  eye_armor_trim_smithing_template = "minecraft:eye_armor_trim_smithing_template",
+  melon = "minecraft:melon",
+  iron_nugget = "minecraft:iron_nugget",
+  birch_fence = "minecraft:birch_fence",
+  cracked_deepslate_tiles = "minecraft:cracked_deepslate_tiles",
+  deepslate_brick_stairs_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_brick_stairs_from_cobbled_deepslate_stonecutting",
+  waxed_oxidized_cut_copper_from_honeycomb = "minecraft:waxed_oxidized_cut_copper_from_honeycomb",
+  red_nether_brick_slab = "minecraft:red_nether_brick_slab",
+  gold_nugget_from_blasting = "minecraft:gold_nugget_from_blasting",
+  cooked_rabbit = "minecraft:cooked_rabbit",
+  warped_fence_gate = "minecraft:warped_fence_gate",
+  cooked_salmon_from_campfire_cooking = "minecraft:cooked_salmon_from_campfire_cooking",
+  nether_wart_block = "minecraft:nether_wart_block",
+  bamboo_fence_gate = "minecraft:bamboo_fence_gate",
+  polished_blackstone_brick_slab_from_blackstone_stonecutting = "minecraft:polished_blackstone_brick_slab_from_blackstone_stonecutting",
+  magenta_banner = "minecraft:magenta_banner",
+  weathered_cut_copper_from_weathered_copper_stonecutting = "minecraft:weathered_cut_copper_from_weathered_copper_stonecutting",
+  polished_blackstone_brick_wall_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_brick_wall_from_polished_blackstone_stonecutting",
+  cobblestone_wall = "minecraft:cobblestone_wall",
+  gray_dye = "minecraft:gray_dye",
+  lime_stained_glass_pane = "minecraft:lime_stained_glass_pane",
+  mangrove_fence_gate = "minecraft:mangrove_fence_gate",
+  warped_pressure_plate = "minecraft:warped_pressure_plate",
+  waxed_cut_copper_slab = "minecraft:waxed_cut_copper_slab",
+  cut_sandstone_slab_from_cut_sandstone_stonecutting = "minecraft:cut_sandstone_slab_from_cut_sandstone_stonecutting",
+  raw_copper = "minecraft:raw_copper",
+  coal_block = "minecraft:coal_block",
+  sugar_from_honey_bottle = "minecraft:sugar_from_honey_bottle",
+  mangrove_button = "minecraft:mangrove_button",
+  slime_ball = "minecraft:slime_ball",
+  spruce_fence_gate = "minecraft:spruce_fence_gate",
+  leather_chestplate = "minecraft:leather_chestplate",
+  yellow_bed = "minecraft:yellow_bed",
+  iron_block = "minecraft:iron_block",
+  beehive = "minecraft:beehive",
+  nether_brick_slab_from_nether_bricks_stonecutting = "minecraft:nether_brick_slab_from_nether_bricks_stonecutting",
+  spruce_sign = "minecraft:spruce_sign",
+  white_stained_glass_pane_from_glass_pane = "minecraft:white_stained_glass_pane_from_glass_pane",
+  dark_oak_door = "minecraft:dark_oak_door",
+  cooked_porkchop = "minecraft:cooked_porkchop",
+  waxed_cut_copper_slab_from_waxed_cut_copper_stonecutting = "minecraft:waxed_cut_copper_slab_from_waxed_cut_copper_stonecutting",
+  cut_copper_slab_from_copper_block_stonecutting = "minecraft:cut_copper_slab_from_copper_block_stonecutting",
+  cooked_salmon_from_smoking = "minecraft:cooked_salmon_from_smoking",
+  dye_light_gray_wool = "minecraft:dye_light_gray_wool",
+  writable_book = "minecraft:writable_book",
+  birch_wood = "minecraft:birch_wood",
+  cyan_dye_from_pitcher_plant = "minecraft:cyan_dye_from_pitcher_plant",
+  leather_helmet = "minecraft:leather_helmet",
+  glow_item_frame = "minecraft:glow_item_frame",
+  light_blue_bed = "minecraft:light_blue_bed",
+  scaffolding = "minecraft:scaffolding",
+  oak_wood = "minecraft:oak_wood",
+  bamboo_mosaic = "minecraft:bamboo_mosaic",
+  emerald_block = "minecraft:emerald_block",
+  golden_apple = "minecraft:golden_apple",
+  diamond_pickaxe = "minecraft:diamond_pickaxe",
+  chiseled_nether_bricks = "minecraft:chiseled_nether_bricks",
+  flower_pot = "minecraft:flower_pot",
+  acacia_button = "minecraft:acacia_button",
+  light_gray_dye_from_oxeye_daisy = "minecraft:light_gray_dye_from_oxeye_daisy",
+  polished_granite_from_granite_stonecutting = "minecraft:polished_granite_from_granite_stonecutting",
+  magenta_stained_glass_pane = "minecraft:magenta_stained_glass_pane",
+  copper_block = "minecraft:copper_block",
+  nether_brick_stairs = "minecraft:nether_brick_stairs",
+  purple_candle = "minecraft:purple_candle",
+  chiseled_stone_bricks_from_stone_bricks_stonecutting = "minecraft:chiseled_stone_bricks_from_stone_bricks_stonecutting",
+  lapis_lazuli_from_smelting_deepslate_lapis_ore = "minecraft:lapis_lazuli_from_smelting_deepslate_lapis_ore",
+  polished_blackstone_bricks_from_blackstone_stonecutting = "minecraft:polished_blackstone_bricks_from_blackstone_stonecutting",
+  recovery_compass = "minecraft:recovery_compass",
+  magenta_bed = "minecraft:magenta_bed",
+  oxidized_cut_copper_stairs_from_oxidized_copper_stonecutting = "minecraft:oxidized_cut_copper_stairs_from_oxidized_copper_stonecutting",
+  end_stone_brick_slab_from_end_stone_brick_stonecutting = "minecraft:end_stone_brick_slab_from_end_stone_brick_stonecutting",
+  iron_sword = "minecraft:iron_sword",
+  spruce_wood = "minecraft:spruce_wood",
+  green_stained_glass = "minecraft:green_stained_glass",
+  magenta_dye_from_blue_red_white_dye = "minecraft:magenta_dye_from_blue_red_white_dye",
+  spruce_fence = "minecraft:spruce_fence",
+  cherry_fence = "minecraft:cherry_fence",
+  mossy_stone_brick_slab = "minecraft:mossy_stone_brick_slab",
+  andesite_slab = "minecraft:andesite_slab",
+  bamboo_chest_raft = "minecraft:bamboo_chest_raft",
+  dark_prismarine_slab = "minecraft:dark_prismarine_slab",
+  sandstone_slab_from_sandstone_stonecutting = "minecraft:sandstone_slab_from_sandstone_stonecutting",
+  polished_blackstone_wall_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_wall_from_polished_blackstone_stonecutting",
+  honey_block = "minecraft:honey_block",
+  bamboo_planks = "minecraft:bamboo_planks",
+  green_dye = "minecraft:green_dye",
+  pink_glazed_terracotta = "minecraft:pink_glazed_terracotta",
+  pink_terracotta = "minecraft:pink_terracotta",
+  dried_kelp_from_smoking = "minecraft:dried_kelp_from_smoking",
+  waxed_exposed_cut_copper_stairs = "minecraft:waxed_exposed_cut_copper_stairs",
+  chiseled_sandstone_from_sandstone_stonecutting = "minecraft:chiseled_sandstone_from_sandstone_stonecutting",
+  spire_armor_trim_smithing_template_smithing_trim = "minecraft:spire_armor_trim_smithing_template_smithing_trim",
+  orange_stained_glass = "minecraft:orange_stained_glass",
+  exposed_cut_copper_slab = "minecraft:exposed_cut_copper_slab",
+  polished_blackstone_wall = "minecraft:polished_blackstone_wall",
+  copper_ingot_from_blasting_deepslate_copper_ore = "minecraft:copper_ingot_from_blasting_deepslate_copper_ore",
+  cobblestone_stairs = "minecraft:cobblestone_stairs",
+  redstone_from_smelting_redstone_ore = "minecraft:redstone_from_smelting_redstone_ore",
+  cut_sandstone_slab = "minecraft:cut_sandstone_slab",
+  smooth_red_sandstone_slab = "minecraft:smooth_red_sandstone_slab",
+  stone_brick_stairs_from_stone_bricks_stonecutting = "minecraft:stone_brick_stairs_from_stone_bricks_stonecutting",
+  cut_copper_stairs_from_cut_copper_stonecutting = "minecraft:cut_copper_stairs_from_cut_copper_stonecutting",
+  bamboo_pressure_plate = "minecraft:bamboo_pressure_plate",
+  cherry_door = "minecraft:cherry_door",
+  weathered_cut_copper_slab = "minecraft:weathered_cut_copper_slab",
+  birch_trapdoor = "minecraft:birch_trapdoor",
+  prismarine_brick_stairs_from_prismarine_stonecutting = "minecraft:prismarine_brick_stairs_from_prismarine_stonecutting",
+  deepslate_brick_wall_from_deepslate_bricks_stonecutting = "minecraft:deepslate_brick_wall_from_deepslate_bricks_stonecutting",
+  waxed_weathered_copper_from_honeycomb = "minecraft:waxed_weathered_copper_from_honeycomb",
+  golden_boots = "minecraft:golden_boots",
+  pink_dye_from_red_white_dye = "minecraft:pink_dye_from_red_white_dye",
+  netherite_shovel_smithing = "minecraft:netherite_shovel_smithing",
+  coal_from_blasting_coal_ore = "minecraft:coal_from_blasting_coal_ore",
+  andesite_wall_from_andesite_stonecutting = "minecraft:andesite_wall_from_andesite_stonecutting",
+  acacia_door = "minecraft:acacia_door",
+  mangrove_wood = "minecraft:mangrove_wood",
+  polished_basalt = "minecraft:polished_basalt",
+  prismarine_stairs = "minecraft:prismarine_stairs",
+  cyan_concrete_powder = "minecraft:cyan_concrete_powder",
+  conduit = "minecraft:conduit",
+  dye_green_carpet = "minecraft:dye_green_carpet",
+  mojang_banner_pattern = "minecraft:mojang_banner_pattern",
+  polished_granite_slab = "minecraft:polished_granite_slab",
+  dye_pink_wool = "minecraft:dye_pink_wool",
+  sticky_piston = "minecraft:sticky_piston",
+  fire_charge = "minecraft:fire_charge",
+  golden_hoe = "minecraft:golden_hoe",
+  white_dye = "minecraft:white_dye",
+  sentry_armor_trim_smithing_template = "minecraft:sentry_armor_trim_smithing_template",
+  redstone = "minecraft:redstone",
+  blue_glazed_terracotta = "minecraft:blue_glazed_terracotta",
+  emerald = "minecraft:emerald",
+  polished_andesite_slab = "minecraft:polished_andesite_slab",
+  dye_green_bed = "minecraft:dye_green_bed",
+  wooden_pickaxe = "minecraft:wooden_pickaxe",
+  powered_rail = "minecraft:powered_rail",
+  cherry_planks = "minecraft:cherry_planks",
+  exposed_cut_copper_slab_from_exposed_copper_stonecutting = "minecraft:exposed_cut_copper_slab_from_exposed_copper_stonecutting",
+  wild_armor_trim_smithing_template_smithing_trim = "minecraft:wild_armor_trim_smithing_template_smithing_trim",
+  warped_hanging_sign = "minecraft:warped_hanging_sign",
+  nether_brick_wall_from_nether_bricks_stonecutting = "minecraft:nether_brick_wall_from_nether_bricks_stonecutting",
+  green_concrete_powder = "minecraft:green_concrete_powder",
+  oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting = "minecraft:oxidized_cut_copper_slab_from_oxidized_cut_copper_stonecutting",
+  smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting = "minecraft:smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting",
+  oak_stairs = "minecraft:oak_stairs",
+  silence_armor_trim_smithing_template = "minecraft:silence_armor_trim_smithing_template",
+  cracked_deepslate_bricks = "minecraft:cracked_deepslate_bricks",
+  orange_dye_from_torchflower = "minecraft:orange_dye_from_torchflower",
+  dye_white_bed = "minecraft:dye_white_bed",
+  stone_button = "minecraft:stone_button",
+  polished_blackstone_brick_stairs = "minecraft:polished_blackstone_brick_stairs",
+  brown_stained_glass = "minecraft:brown_stained_glass",
+  tinted_glass = "minecraft:tinted_glass",
+  stick_from_bamboo_item = "minecraft:stick_from_bamboo_item",
+  blue_terracotta = "minecraft:blue_terracotta",
+  yellow_candle = "minecraft:yellow_candle",
+  stripped_oak_wood = "minecraft:stripped_oak_wood",
+  sandstone = "minecraft:sandstone",
+  yellow_concrete_powder = "minecraft:yellow_concrete_powder",
+  gray_terracotta = "minecraft:gray_terracotta",
+  jungle_fence_gate = "minecraft:jungle_fence_gate",
+  diamond_from_blasting_diamond_ore = "minecraft:diamond_from_blasting_diamond_ore",
+  comparator = "minecraft:comparator",
+  lodestone = "minecraft:lodestone",
+  repeater = "minecraft:repeater",
+  red_concrete_powder = "minecraft:red_concrete_powder",
+  netherite_boots_smithing = "minecraft:netherite_boots_smithing",
+  purpur_block = "minecraft:purpur_block",
+  cut_copper_stairs_from_copper_block_stonecutting = "minecraft:cut_copper_stairs_from_copper_block_stonecutting",
+  glass = "minecraft:glass",
+  polished_blackstone_slab = "minecraft:polished_blackstone_slab",
+  stone_stairs = "minecraft:stone_stairs",
+  fishing_rod = "minecraft:fishing_rod",
+  cooked_beef_from_smoking = "minecraft:cooked_beef_from_smoking",
+  end_stone_brick_stairs = "minecraft:end_stone_brick_stairs",
+  iron_leggings = "minecraft:iron_leggings",
+  dried_kelp_block = "minecraft:dried_kelp_block",
+  terracotta = "minecraft:terracotta",
+  stripped_crimson_hyphae = "minecraft:stripped_crimson_hyphae",
+  quartz = "minecraft:quartz",
+  cyan_carpet = "minecraft:cyan_carpet",
+  polished_deepslate_stairs_from_polished_deepslate_stonecutting = "minecraft:polished_deepslate_stairs_from_polished_deepslate_stonecutting",
+  nether_brick_wall = "minecraft:nether_brick_wall",
+  polished_basalt_from_basalt_stonecutting = "minecraft:polished_basalt_from_basalt_stonecutting",
+  gray_concrete_powder = "minecraft:gray_concrete_powder",
+  light_blue_concrete_powder = "minecraft:light_blue_concrete_powder",
+  smooth_sandstone_stairs_from_smooth_sandstone_stonecutting = "minecraft:smooth_sandstone_stairs_from_smooth_sandstone_stonecutting",
+  wayfinder_armor_trim_smithing_template = "minecraft:wayfinder_armor_trim_smithing_template",
+  granite_wall_from_granite_stonecutting = "minecraft:granite_wall_from_granite_stonecutting",
+  dye_light_blue_bed = "minecraft:dye_light_blue_bed",
+  redstone_from_blasting_redstone_ore = "minecraft:redstone_from_blasting_redstone_ore",
+  granite_stairs = "minecraft:granite_stairs",
+  cyan_terracotta = "minecraft:cyan_terracotta",
+  polished_granite_slab_from_polished_granite_stonecutting = "minecraft:polished_granite_slab_from_polished_granite_stonecutting",
+  cut_red_sandstone = "minecraft:cut_red_sandstone",
+  mushroom_stew = "minecraft:mushroom_stew",
+  mangrove_fence = "minecraft:mangrove_fence",
+  polished_deepslate_from_cobbled_deepslate_stonecutting = "minecraft:polished_deepslate_from_cobbled_deepslate_stonecutting",
+  red_dye_from_tulip = "minecraft:red_dye_from_tulip",
+  warped_planks = "minecraft:warped_planks",
+  lime_candle = "minecraft:lime_candle",
+  red_nether_brick_wall_from_red_nether_bricks_stonecutting = "minecraft:red_nether_brick_wall_from_red_nether_bricks_stonecutting",
+  red_dye_from_beetroot = "minecraft:red_dye_from_beetroot",
+  beacon = "minecraft:beacon",
+  tnt = "minecraft:tnt",
+  mossy_stone_bricks_from_vine = "minecraft:mossy_stone_bricks_from_vine",
+  waxed_weathered_cut_copper_stairs_from_waxed_weathered_cut_copper_stonecutting = "minecraft:waxed_weathered_cut_copper_stairs_from_waxed_weathered_cut_copper_stonecutting",
+  dye_white_carpet = "minecraft:dye_white_carpet",
+  andesite_slab_from_andesite_stonecutting = "minecraft:andesite_slab_from_andesite_stonecutting",
+  dye_yellow_bed = "minecraft:dye_yellow_bed",
+  light_gray_bed = "minecraft:light_gray_bed",
+  flint_and_steel = "minecraft:flint_and_steel",
+  red_candle = "minecraft:red_candle",
+  orange_dye_from_orange_tulip = "minecraft:orange_dye_from_orange_tulip",
+  brown_carpet = "minecraft:brown_carpet",
+  jungle_door = "minecraft:jungle_door",
+  black_dye = "minecraft:black_dye",
+  prismarine_brick_slab = "minecraft:prismarine_brick_slab",
+  black_stained_glass_pane = "minecraft:black_stained_glass_pane",
+  prismarine_bricks = "minecraft:prismarine_bricks",
+  nether_bricks = "minecraft:nether_bricks",
+  blue_carpet = "minecraft:blue_carpet",
+  deepslate_brick_stairs_from_polished_deepslate_stonecutting = "minecraft:deepslate_brick_stairs_from_polished_deepslate_stonecutting",
+  bamboo_door = "minecraft:bamboo_door",
+  iron_chestplate = "minecraft:iron_chestplate",
+  crimson_fence = "minecraft:crimson_fence",
+  stone_bricks = "minecraft:stone_bricks",
+  oxidized_cut_copper_slab = "minecraft:oxidized_cut_copper_slab",
+  lapis_lazuli_from_blasting_deepslate_lapis_ore = "minecraft:lapis_lazuli_from_blasting_deepslate_lapis_ore",
+  birch_stairs = "minecraft:birch_stairs",
+  exposed_cut_copper_slab_from_exposed_cut_copper_stonecutting = "minecraft:exposed_cut_copper_slab_from_exposed_cut_copper_stonecutting",
+  dune_armor_trim_smithing_template_smithing_trim = "minecraft:dune_armor_trim_smithing_template_smithing_trim",
+  vex_armor_trim_smithing_template = "minecraft:vex_armor_trim_smithing_template",
+  dye_orange_wool = "minecraft:dye_orange_wool",
+  white_wool_from_string = "minecraft:white_wool_from_string",
+  light_gray_stained_glass = "minecraft:light_gray_stained_glass",
+  spruce_chest_boat = "minecraft:spruce_chest_boat",
+  cobblestone_wall_from_cobblestone_stonecutting = "minecraft:cobblestone_wall_from_cobblestone_stonecutting",
+  polished_andesite_from_andesite_stonecutting = "minecraft:polished_andesite_from_andesite_stonecutting",
+  white_stained_glass_pane = "minecraft:white_stained_glass_pane",
+  golden_axe = "minecraft:golden_axe",
+  crimson_stairs = "minecraft:crimson_stairs",
+  dye_light_blue_wool = "minecraft:dye_light_blue_wool",
+  light_blue_stained_glass_pane = "minecraft:light_blue_stained_glass_pane",
+  decorated_pot_simple = "minecraft:decorated_pot_simple",
+  mud_brick_slab_from_mud_bricks_stonecutting = "minecraft:mud_brick_slab_from_mud_bricks_stonecutting",
+  brown_concrete_powder = "minecraft:brown_concrete_powder",
+  cooked_chicken_from_smoking = "minecraft:cooked_chicken_from_smoking",
+  cyan_glazed_terracotta = "minecraft:cyan_glazed_terracotta",
+  cyan_stained_glass = "minecraft:cyan_stained_glass",
+  oak_pressure_plate = "minecraft:oak_pressure_plate",
+  stone_sword = "minecraft:stone_sword",
+  stone_brick_stairs = "minecraft:stone_brick_stairs",
+  yellow_dye_from_sunflower = "minecraft:yellow_dye_from_sunflower",
+  cut_red_sandstone_from_red_sandstone_stonecutting = "minecraft:cut_red_sandstone_from_red_sandstone_stonecutting",
+  diorite = "minecraft:diorite",
+  acacia_fence = "minecraft:acacia_fence",
+  waxed_weathered_cut_copper_slab_from_waxed_weathered_copper_stonecutting = "minecraft:waxed_weathered_cut_copper_slab_from_waxed_weathered_copper_stonecutting",
+  crimson_hyphae = "minecraft:crimson_hyphae",
+  coal_from_smelting_coal_ore = "minecraft:coal_from_smelting_coal_ore",
+  oak_slab = "minecraft:oak_slab",
+  snout_armor_trim_smithing_template_smithing_trim = "minecraft:snout_armor_trim_smithing_template_smithing_trim",
+  cyan_banner = "minecraft:cyan_banner",
+  polished_blackstone_wall_from_blackstone_stonecutting = "minecraft:polished_blackstone_wall_from_blackstone_stonecutting",
+  glistering_melon_slice = "minecraft:glistering_melon_slice",
+  dripstone_block = "minecraft:dripstone_block",
+  smooth_stone_slab_from_smooth_stone_stonecutting = "minecraft:smooth_stone_slab_from_smooth_stone_stonecutting",
+  mangrove_chest_boat = "minecraft:mangrove_chest_boat",
+  warped_door = "minecraft:warped_door",
+  crimson_button = "minecraft:crimson_button",
+  iron_hoe = "minecraft:iron_hoe",
+  jungle_hanging_sign = "minecraft:jungle_hanging_sign",
+  iron_ingot_from_iron_block = "minecraft:iron_ingot_from_iron_block",
+  netherite_axe_smithing = "minecraft:netherite_axe_smithing",
+  jungle_planks = "minecraft:jungle_planks",
+  snow = "minecraft:snow",
+  acacia_fence_gate = "minecraft:acacia_fence_gate",
+  clock = "minecraft:clock",
+  mangrove_sign = "minecraft:mangrove_sign",
+  dye_yellow_wool = "minecraft:dye_yellow_wool",
+  magenta_carpet = "minecraft:magenta_carpet",
+  orange_stained_glass_pane_from_glass_pane = "minecraft:orange_stained_glass_pane_from_glass_pane",
+  blackstone_wall_from_blackstone_stonecutting = "minecraft:blackstone_wall_from_blackstone_stonecutting",
+  jungle_trapdoor = "minecraft:jungle_trapdoor",
+  grindstone = "minecraft:grindstone",
+  blue_ice = "minecraft:blue_ice",
+  polished_deepslate_slab_from_polished_deepslate_stonecutting = "minecraft:polished_deepslate_slab_from_polished_deepslate_stonecutting",
+  red_nether_bricks = "minecraft:red_nether_bricks",
+  granite_slab_from_granite_stonecutting = "minecraft:granite_slab_from_granite_stonecutting",
+  glass_pane = "minecraft:glass_pane",
+  dye_brown_carpet = "minecraft:dye_brown_carpet",
+  diamond_leggings = "minecraft:diamond_leggings",
+  granite_stairs_from_granite_stonecutting = "minecraft:granite_stairs_from_granite_stonecutting",
+  emerald_from_smelting_emerald_ore = "minecraft:emerald_from_smelting_emerald_ore",
+  warped_slab = "minecraft:warped_slab",
+  mangrove_stairs = "minecraft:mangrove_stairs",
+  lectern = "minecraft:lectern",
+  prismarine = "minecraft:prismarine",
+  golden_sword = "minecraft:golden_sword",
+  purple_stained_glass = "minecraft:purple_stained_glass",
+  iron_ingot_from_nuggets = "minecraft:iron_ingot_from_nuggets",
+  chiseled_sandstone = "minecraft:chiseled_sandstone",
+  clay = "minecraft:clay",
+  golden_pickaxe = "minecraft:golden_pickaxe",
+  cut_copper_stairs = "minecraft:cut_copper_stairs",
+  bamboo_raft = "minecraft:bamboo_raft",
+  chiseled_bookshelf = "minecraft:chiseled_bookshelf",
+  magenta_dye_from_allium = "minecraft:magenta_dye_from_allium",
+  smooth_stone_slab = "minecraft:smooth_stone_slab",
+  polished_blackstone_slab_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_slab_from_polished_blackstone_stonecutting",
+  ladder = "minecraft:ladder",
+  dye_lime_wool = "minecraft:dye_lime_wool",
+  redstone_torch = "minecraft:redstone_torch",
+  moss_carpet = "minecraft:moss_carpet",
+  oxidized_cut_copper_stairs_from_oxidized_cut_copper_stonecutting = "minecraft:oxidized_cut_copper_stairs_from_oxidized_cut_copper_stonecutting",
+  polished_andesite_slab_from_andesite_stonecutting = "minecraft:polished_andesite_slab_from_andesite_stonecutting",
+  mossy_cobblestone_slab = "minecraft:mossy_cobblestone_slab",
+  furnace_minecart = "minecraft:furnace_minecart",
+  dye_black_bed = "minecraft:dye_black_bed",
+  mossy_cobblestone_from_vine = "minecraft:mossy_cobblestone_from_vine",
+  target = "minecraft:target",
+  polished_diorite_slab_from_diorite_stonecutting = "minecraft:polished_diorite_slab_from_diorite_stonecutting",
+  white_concrete_powder = "minecraft:white_concrete_powder",
+  yellow_terracotta = "minecraft:yellow_terracotta",
+  orange_carpet = "minecraft:orange_carpet",
+  mossy_stone_bricks_from_moss_block = "minecraft:mossy_stone_bricks_from_moss_block",
+  waxed_weathered_cut_copper = "minecraft:waxed_weathered_cut_copper",
+  cake = "minecraft:cake",
+  gray_bed = "minecraft:gray_bed",
+  orange_banner = "minecraft:orange_banner",
+  dark_oak_sign = "minecraft:dark_oak_sign",
+  granite_slab = "minecraft:granite_slab",
+  cherry_boat = "minecraft:cherry_boat",
+  mud_brick_stairs = "minecraft:mud_brick_stairs",
+  chiseled_nether_bricks_from_nether_bricks_stonecutting = "minecraft:chiseled_nether_bricks_from_nether_bricks_stonecutting",
+  white_terracotta = "minecraft:white_terracotta",
+  leather_boots = "minecraft:leather_boots",
+  diamond_from_blasting_deepslate_diamond_ore = "minecraft:diamond_from_blasting_deepslate_diamond_ore",
+  netherite_ingot_from_netherite_block = "minecraft:netherite_ingot_from_netherite_block",
+  oak_hanging_sign = "minecraft:oak_hanging_sign",
+  armor_stand = "minecraft:armor_stand",
+  pink_stained_glass_pane = "minecraft:pink_stained_glass_pane",
+  mangrove_slab = "minecraft:mangrove_slab",
+  lime_concrete_powder = "minecraft:lime_concrete_powder",
+  leather_leggings = "minecraft:leather_leggings",
+  sandstone_wall_from_sandstone_stonecutting = "minecraft:sandstone_wall_from_sandstone_stonecutting",
+  blue_dye_from_cornflower = "minecraft:blue_dye_from_cornflower",
+  brick_slab_from_bricks_stonecutting = "minecraft:brick_slab_from_bricks_stonecutting",
+  stripped_cherry_wood = "minecraft:stripped_cherry_wood",
+  polished_blackstone_bricks_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_bricks_from_polished_blackstone_stonecutting",
+  quartz_slab_from_stonecutting = "minecraft:quartz_slab_from_stonecutting",
+  brown_banner = "minecraft:brown_banner",
+  barrel = "minecraft:barrel",
+  cherry_pressure_plate = "minecraft:cherry_pressure_plate",
+  polished_blackstone_slab_from_blackstone_stonecutting = "minecraft:polished_blackstone_slab_from_blackstone_stonecutting",
+  polished_blackstone_button = "minecraft:polished_blackstone_button",
+  warped_hyphae = "minecraft:warped_hyphae",
+  redstone_from_blasting_deepslate_redstone_ore = "minecraft:redstone_from_blasting_deepslate_redstone_ore",
+  netherite_scrap_from_blasting = "minecraft:netherite_scrap_from_blasting",
+  jungle_chest_boat = "minecraft:jungle_chest_boat",
+  red_nether_brick_slab_from_red_nether_bricks_stonecutting = "minecraft:red_nether_brick_slab_from_red_nether_bricks_stonecutting",
+  dark_prismarine_slab_from_dark_prismarine_stonecutting = "minecraft:dark_prismarine_slab_from_dark_prismarine_stonecutting",
+  lime_stained_glass_pane_from_glass_pane = "minecraft:lime_stained_glass_pane_from_glass_pane",
+  magenta_glazed_terracotta = "minecraft:magenta_glazed_terracotta",
+  baked_potato_from_smoking = "minecraft:baked_potato_from_smoking",
+  deepslate_brick_slab_from_polished_deepslate_stonecutting = "minecraft:deepslate_brick_slab_from_polished_deepslate_stonecutting",
+  dye_black_carpet = "minecraft:dye_black_carpet",
+  chiseled_stone_bricks_stone_from_stonecutting = "minecraft:chiseled_stone_bricks_stone_from_stonecutting",
+  book = "minecraft:book",
+  chiseled_stone_bricks = "minecraft:chiseled_stone_bricks",
+  polished_blackstone_brick_wall_from_blackstone_stonecutting = "minecraft:polished_blackstone_brick_wall_from_blackstone_stonecutting",
+  netherite_sword_smithing = "minecraft:netherite_sword_smithing",
+  wooden_shovel = "minecraft:wooden_shovel",
+  end_stone_brick_slab = "minecraft:end_stone_brick_slab",
+  smithing_table = "minecraft:smithing_table",
+  green_bed = "minecraft:green_bed",
+  dye_gray_carpet = "minecraft:dye_gray_carpet",
+  deepslate_tile_slab_from_polished_deepslate_stonecutting = "minecraft:deepslate_tile_slab_from_polished_deepslate_stonecutting",
+  magma_block = "minecraft:magma_block",
+  shaper_armor_trim_smithing_template = "minecraft:shaper_armor_trim_smithing_template",
+  polished_granite_stairs_from_granite_stonecutting = "minecraft:polished_granite_stairs_from_granite_stonecutting",
+  red_sandstone_slab_from_red_sandstone_stonecutting = "minecraft:red_sandstone_slab_from_red_sandstone_stonecutting",
+  spruce_pressure_plate = "minecraft:spruce_pressure_plate",
+  polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting",
+  purple_terracotta = "minecraft:purple_terracotta",
+  pink_concrete_powder = "minecraft:pink_concrete_powder",
+  cauldron = "minecraft:cauldron",
+  red_nether_brick_stairs_from_red_nether_bricks_stonecutting = "minecraft:red_nether_brick_stairs_from_red_nether_bricks_stonecutting",
+  bamboo_trapdoor = "minecraft:bamboo_trapdoor",
+  waxed_copper_block_from_honeycomb = "minecraft:waxed_copper_block_from_honeycomb",
+  brush = "minecraft:brush",
+  red_dye_from_poppy = "minecraft:red_dye_from_poppy",
+  magenta_concrete_powder = "minecraft:magenta_concrete_powder",
+  redstone_from_smelting_deepslate_redstone_ore = "minecraft:redstone_from_smelting_deepslate_redstone_ore",
+  diamond_shovel = "minecraft:diamond_shovel",
+  warped_fungus_on_a_stick = "minecraft:warped_fungus_on_a_stick",
+  waxed_weathered_cut_copper_slab_from_honeycomb = "minecraft:waxed_weathered_cut_copper_slab_from_honeycomb",
+  deepslate_tiles_from_deepslate_bricks_stonecutting = "minecraft:deepslate_tiles_from_deepslate_bricks_stonecutting",
+  prismarine_brick_slab_from_prismarine_stonecutting = "minecraft:prismarine_brick_slab_from_prismarine_stonecutting",
+  deepslate_tile_slab_from_deepslate_tiles_stonecutting = "minecraft:deepslate_tile_slab_from_deepslate_tiles_stonecutting",
+  andesite_wall = "minecraft:andesite_wall",
+  sandstone_slab = "minecraft:sandstone_slab",
+  hay_block = "minecraft:hay_block",
+  light_blue_candle = "minecraft:light_blue_candle",
+  raiser_armor_trim_smithing_template_smithing_trim = "minecraft:raiser_armor_trim_smithing_template_smithing_trim",
+  waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_cut_copper_stonecutting = "minecraft:waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_cut_copper_stonecutting",
+  iron_ingot_from_blasting_deepslate_iron_ore = "minecraft:iron_ingot_from_blasting_deepslate_iron_ore",
+  cobblestone_slab = "minecraft:cobblestone_slab",
+  gold_ingot_from_smelting_raw_gold = "minecraft:gold_ingot_from_smelting_raw_gold",
+  gray_banner = "minecraft:gray_banner",
+  warped_stairs = "minecraft:warped_stairs",
+  spruce_hanging_sign = "minecraft:spruce_hanging_sign",
+  wild_armor_trim_smithing_template = "minecraft:wild_armor_trim_smithing_template",
+  gold_ingot_from_smelting_gold_ore = "minecraft:gold_ingot_from_smelting_gold_ore",
+  deepslate_brick_slab_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_brick_slab_from_cobbled_deepslate_stonecutting",
+  cracked_polished_blackstone_bricks = "minecraft:cracked_polished_blackstone_bricks",
+  end_stone_bricks_from_end_stone_stonecutting = "minecraft:end_stone_bricks_from_end_stone_stonecutting",
+  deepslate_tile_wall_from_deepslate_tiles_stonecutting = "minecraft:deepslate_tile_wall_from_deepslate_tiles_stonecutting",
+  mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting = "minecraft:mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting",
+  popped_chorus_fruit = "minecraft:popped_chorus_fruit",
+  cooked_cod_from_smoking = "minecraft:cooked_cod_from_smoking",
+  snout_armor_trim_smithing_template = "minecraft:snout_armor_trim_smithing_template",
+  shaper_armor_trim_smithing_template_smithing_trim = "minecraft:shaper_armor_trim_smithing_template_smithing_trim",
+  minecart = "minecraft:minecart",
+  stone_bricks_from_stone_stonecutting = "minecraft:stone_bricks_from_stone_stonecutting",
+  smooth_sandstone_slab = "minecraft:smooth_sandstone_slab",
+  smooth_quartz_slab_from_smooth_quartz_stonecutting = "minecraft:smooth_quartz_slab_from_smooth_quartz_stonecutting",
+  chest = "minecraft:chest",
+  gray_stained_glass = "minecraft:gray_stained_glass",
+  rail = "minecraft:rail",
+  pink_candle = "minecraft:pink_candle",
+  diamond_sword = "minecraft:diamond_sword",
+  red_terracotta = "minecraft:red_terracotta",
+  yellow_banner = "minecraft:yellow_banner",
+  creeper_banner_pattern = "minecraft:creeper_banner_pattern",
+  waxed_exposed_cut_copper_slab = "minecraft:waxed_exposed_cut_copper_slab",
+  red_bed = "minecraft:red_bed",
+  dark_oak_fence = "minecraft:dark_oak_fence",
+  golden_shovel = "minecraft:golden_shovel",
+  ward_armor_trim_smithing_template_smithing_trim = "minecraft:ward_armor_trim_smithing_template_smithing_trim",
+  deepslate_tile_stairs = "minecraft:deepslate_tile_stairs",
+  cut_copper = "minecraft:cut_copper",
+  dye_gray_wool = "minecraft:dye_gray_wool",
+  purpur_stairs_from_purpur_block_stonecutting = "minecraft:purpur_stairs_from_purpur_block_stonecutting",
+  soul_lantern = "minecraft:soul_lantern",
+  copper_ingot = "minecraft:copper_ingot",
+  deepslate_bricks_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_bricks_from_cobbled_deepslate_stonecutting",
+  waxed_weathered_cut_copper_slab = "minecraft:waxed_weathered_cut_copper_slab",
+  white_dye_from_lily_of_the_valley = "minecraft:white_dye_from_lily_of_the_valley",
+  waxed_oxidized_cut_copper_slab_from_waxed_oxidized_copper_stonecutting = "minecraft:waxed_oxidized_cut_copper_slab_from_waxed_oxidized_copper_stonecutting",
+  crimson_trapdoor = "minecraft:crimson_trapdoor",
+  pink_dye_from_pink_petals = "minecraft:pink_dye_from_pink_petals",
+  oxidized_cut_copper_slab_from_oxidized_copper_stonecutting = "minecraft:oxidized_cut_copper_slab_from_oxidized_copper_stonecutting",
+  brick_wall_from_bricks_stonecutting = "minecraft:brick_wall_from_bricks_stonecutting",
+  dye_gray_bed = "minecraft:dye_gray_bed",
+  end_stone_brick_wall = "minecraft:end_stone_brick_wall",
+  eye_armor_trim_smithing_template_smithing_trim = "minecraft:eye_armor_trim_smithing_template_smithing_trim",
+  polished_diorite_slab = "minecraft:polished_diorite_slab",
+  dye_light_gray_bed = "minecraft:dye_light_gray_bed",
+  bamboo_stairs = "minecraft:bamboo_stairs",
+  smooth_sandstone_stairs = "minecraft:smooth_sandstone_stairs",
+  brown_glazed_terracotta = "minecraft:brown_glazed_terracotta",
+  waxed_exposed_cut_copper_slab_from_waxed_exposed_cut_copper_stonecutting = "minecraft:waxed_exposed_cut_copper_slab_from_waxed_exposed_cut_copper_stonecutting",
+  blaze_powder = "minecraft:blaze_powder",
+  end_stone_brick_slab_from_end_stone_stonecutting = "minecraft:end_stone_brick_slab_from_end_stone_stonecutting",
+  copper_ingot_from_blasting_copper_ore = "minecraft:copper_ingot_from_blasting_copper_ore",
+  smooth_basalt = "minecraft:smooth_basalt",
+  chain = "minecraft:chain",
+  polished_blackstone_from_blackstone_stonecutting = "minecraft:polished_blackstone_from_blackstone_stonecutting",
+  blue_concrete_powder = "minecraft:blue_concrete_powder",
+  blue_stained_glass = "minecraft:blue_stained_glass",
+  iron_ingot_from_smelting_deepslate_iron_ore = "minecraft:iron_ingot_from_smelting_deepslate_iron_ore",
+  oak_fence = "minecraft:oak_fence",
+  warped_trapdoor = "minecraft:warped_trapdoor",
+  rabbit_stew_from_red_mushroom = "minecraft:rabbit_stew_from_red_mushroom",
+  chiseled_deepslate_from_cobbled_deepslate_stonecutting = "minecraft:chiseled_deepslate_from_cobbled_deepslate_stonecutting",
+  prismarine_brick_stairs = "minecraft:prismarine_brick_stairs",
+  iron_boots = "minecraft:iron_boots",
+  polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting = "minecraft:polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting",
+  netherite_hoe_smithing = "minecraft:netherite_hoe_smithing",
+  diamond_chestplate = "minecraft:diamond_chestplate",
+  waxed_oxidized_cut_copper_stairs_from_honeycomb = "minecraft:waxed_oxidized_cut_copper_stairs_from_honeycomb",
+  golden_chestplate = "minecraft:golden_chestplate",
+  netherite_chestplate_smithing = "minecraft:netherite_chestplate_smithing",
+  copper_ingot_from_smelting_raw_copper = "minecraft:copper_ingot_from_smelting_raw_copper",
+  prismarine_stairs_from_prismarine_stonecutting = "minecraft:prismarine_stairs_from_prismarine_stonecutting",
+  smooth_red_sandstone = "minecraft:smooth_red_sandstone",
+  oak_sign = "minecraft:oak_sign",
+  crimson_planks = "minecraft:crimson_planks",
+  quartz_stairs_from_quartz_block_stonecutting = "minecraft:quartz_stairs_from_quartz_block_stonecutting",
+  netherite_ingot = "minecraft:netherite_ingot",
+  blue_candle = "minecraft:blue_candle",
+  birch_sign = "minecraft:birch_sign",
+  exposed_cut_copper_stairs_from_exposed_copper_stonecutting = "minecraft:exposed_cut_copper_stairs_from_exposed_copper_stonecutting",
+  wayfinder_armor_trim_smithing_template_smithing_trim = "minecraft:wayfinder_armor_trim_smithing_template_smithing_trim",
+  diamond_from_smelting_deepslate_diamond_ore = "minecraft:diamond_from_smelting_deepslate_diamond_ore",
+  birch_pressure_plate = "minecraft:birch_pressure_plate",
+  flower_banner_pattern = "minecraft:flower_banner_pattern",
+  netherite_block = "minecraft:netherite_block",
+  deepslate = "minecraft:deepslate",
+  light_blue_terracotta = "minecraft:light_blue_terracotta",
+  orange_dye_from_red_yellow = "minecraft:orange_dye_from_red_yellow",
+  red_sandstone_stairs_from_red_sandstone_stonecutting = "minecraft:red_sandstone_stairs_from_red_sandstone_stonecutting",
+  spruce_stairs = "minecraft:spruce_stairs",
+  mangrove_planks = "minecraft:mangrove_planks",
+  emerald_from_blasting_deepslate_emerald_ore = "minecraft:emerald_from_blasting_deepslate_emerald_ore",
+  polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting = "minecraft:polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting",
+  smooth_sandstone_slab_from_smooth_sandstone_stonecutting = "minecraft:smooth_sandstone_slab_from_smooth_sandstone_stonecutting",
+  black_bed = "minecraft:black_bed",
+  gold_ingot_from_blasting_raw_gold = "minecraft:gold_ingot_from_blasting_raw_gold",
+  jungle_sign = "minecraft:jungle_sign",
+  cyan_candle = "minecraft:cyan_candle",
+  iron_nugget_from_blasting = "minecraft:iron_nugget_from_blasting",
+  diamond_from_smelting_diamond_ore = "minecraft:diamond_from_smelting_diamond_ore",
+  cut_red_sandstone_slab_from_red_sandstone_stonecutting = "minecraft:cut_red_sandstone_slab_from_red_sandstone_stonecutting",
+  gold_ingot_from_blasting_gold_ore = "minecraft:gold_ingot_from_blasting_gold_ore",
+  crossbow = "minecraft:crossbow",
+  light_gray_dye_from_azure_bluet = "minecraft:light_gray_dye_from_azure_bluet",
+  light_gray_dye_from_white_tulip = "minecraft:light_gray_dye_from_white_tulip",
+  calibrated_sculk_sensor = "minecraft:calibrated_sculk_sensor",
+  deepslate_tile_wall_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_tile_wall_from_cobbled_deepslate_stonecutting",
+  bowl = "minecraft:bowl",
+  magenta_candle = "minecraft:magenta_candle",
+  diamond = "minecraft:diamond",
+  green_stained_glass_pane = "minecraft:green_stained_glass_pane",
+  magenta_dye_from_blue_red_pink = "minecraft:magenta_dye_from_blue_red_pink",
+  crimson_slab = "minecraft:crimson_slab",
+  black_concrete_powder = "minecraft:black_concrete_powder",
+  prismarine_slab_from_prismarine_stonecutting = "minecraft:prismarine_slab_from_prismarine_stonecutting",
+  purple_banner = "minecraft:purple_banner",
+  lime_carpet = "minecraft:lime_carpet",
+  purple_concrete_powder = "minecraft:purple_concrete_powder",
+  sugar_from_sugar_cane = "minecraft:sugar_from_sugar_cane",
+  polished_deepslate_slab_from_cobbled_deepslate_stonecutting = "minecraft:polished_deepslate_slab_from_cobbled_deepslate_stonecutting",
+  birch_planks = "minecraft:birch_planks",
+  light_gray_dye_from_black_white_dye = "minecraft:light_gray_dye_from_black_white_dye",
+  deepslate_tile_wall_from_deepslate_bricks_stonecutting = "minecraft:deepslate_tile_wall_from_deepslate_bricks_stonecutting",
+  light_gray_stained_glass_pane = "minecraft:light_gray_stained_glass_pane",
+  spectral_arrow = "minecraft:spectral_arrow",
+  tnt_minecart = "minecraft:tnt_minecart",
+  green_terracotta = "minecraft:green_terracotta",
+  red_carpet = "minecraft:red_carpet",
+  white_stained_glass = "minecraft:white_stained_glass",
+  slime_block = "minecraft:slime_block",
+  acacia_planks = "minecraft:acacia_planks",
+  cooked_beef_from_campfire_cooking = "minecraft:cooked_beef_from_campfire_cooking",
+  wooden_hoe = "minecraft:wooden_hoe",
+  quartz_pillar = "minecraft:quartz_pillar",
+  cooked_rabbit_from_campfire_cooking = "minecraft:cooked_rabbit_from_campfire_cooking",
+  dye_red_wool = "minecraft:dye_red_wool",
+  cherry_button = "minecraft:cherry_button",
+  mud_bricks = "minecraft:mud_bricks",
+  dye_magenta_bed = "minecraft:dye_magenta_bed",
+  waxed_cut_copper_from_honeycomb = "minecraft:waxed_cut_copper_from_honeycomb",
+  netherite_upgrade_smithing_template = "minecraft:netherite_upgrade_smithing_template",
+  waxed_oxidized_cut_copper_from_waxed_oxidized_copper_stonecutting = "minecraft:waxed_oxidized_cut_copper_from_waxed_oxidized_copper_stonecutting",
+  purpur_stairs = "minecraft:purpur_stairs",
+  dye_magenta_carpet = "minecraft:dye_magenta_carpet",
+  brown_terracotta = "minecraft:brown_terracotta",
+  waxed_oxidized_cut_copper_stairs = "minecraft:waxed_oxidized_cut_copper_stairs",
+  bamboo_block = "minecraft:bamboo_block",
+  mossy_cobblestone_stairs = "minecraft:mossy_cobblestone_stairs",
+  note_block = "minecraft:note_block",
+  mud_brick_stairs_from_mud_bricks_stonecutting = "minecraft:mud_brick_stairs_from_mud_bricks_stonecutting",
+  weathered_cut_copper_stairs_from_weathered_cut_copper_stonecutting = "minecraft:weathered_cut_copper_stairs_from_weathered_cut_copper_stonecutting",
+  dye_orange_bed = "minecraft:dye_orange_bed",
+  blue_dye = "minecraft:blue_dye",
+  waxed_weathered_cut_copper_stairs_from_waxed_weathered_copper_stonecutting = "minecraft:waxed_weathered_cut_copper_stairs_from_waxed_weathered_copper_stonecutting",
+  polished_diorite_slab_from_polished_diorite_stonecutting = "minecraft:polished_diorite_slab_from_polished_diorite_stonecutting",
+  acacia_hanging_sign = "minecraft:acacia_hanging_sign",
+  muddy_mangrove_roots = "minecraft:muddy_mangrove_roots",
+  blackstone_stairs_from_blackstone_stonecutting = "minecraft:blackstone_stairs_from_blackstone_stonecutting",
+  piston = "minecraft:piston",
+  waxed_weathered_cut_copper_from_waxed_weathered_copper_stonecutting = "minecraft:waxed_weathered_cut_copper_from_waxed_weathered_copper_stonecutting",
+  brown_bed = "minecraft:brown_bed",
+  blue_bed = "minecraft:blue_bed",
+  ward_armor_trim_smithing_template = "minecraft:ward_armor_trim_smithing_template",
+  light_gray_carpet = "minecraft:light_gray_carpet",
+  white_banner = "minecraft:white_banner",
+  weathered_cut_copper_slab_from_weathered_copper_stonecutting = "minecraft:weathered_cut_copper_slab_from_weathered_copper_stonecutting",
+  smooth_quartz = "minecraft:smooth_quartz",
+  magenta_stained_glass_pane_from_glass_pane = "minecraft:magenta_stained_glass_pane_from_glass_pane",
+  smooth_sandstone = "minecraft:smooth_sandstone",
+  smooth_red_sandstone_stairs = "minecraft:smooth_red_sandstone_stairs",
+  end_crystal = "minecraft:end_crystal",
+  light_gray_banner = "minecraft:light_gray_banner",
+  stone_pickaxe = "minecraft:stone_pickaxe",
+  light_blue_glazed_terracotta = "minecraft:light_blue_glazed_terracotta",
+  shulker_box = "minecraft:shulker_box",
+  cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting = "minecraft:cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting",
+  wooden_axe = "minecraft:wooden_axe",
+  dispenser = "minecraft:dispenser",
+  cyan_stained_glass_pane = "minecraft:cyan_stained_glass_pane",
+  daylight_detector = "minecraft:daylight_detector",
+  sponge = "minecraft:sponge",
+  quartz_stairs = "minecraft:quartz_stairs",
+  diorite_wall = "minecraft:diorite_wall",
+  quartz_from_blasting = "minecraft:quartz_from_blasting",
+  purple_glazed_terracotta = "minecraft:purple_glazed_terracotta",
+  white_carpet = "minecraft:white_carpet",
+  spruce_planks = "minecraft:spruce_planks",
+  mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting = "minecraft:mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting",
+  red_stained_glass = "minecraft:red_stained_glass",
+  light_gray_stained_glass_pane_from_glass_pane = "minecraft:light_gray_stained_glass_pane_from_glass_pane",
+  polished_blackstone_bricks = "minecraft:polished_blackstone_bricks",
+  waxed_exposed_cut_copper_from_honeycomb = "minecraft:waxed_exposed_cut_copper_from_honeycomb",
+  purpur_slab = "minecraft:purpur_slab",
+  green_carpet = "minecraft:green_carpet",
+  mossy_cobblestone_from_moss_block = "minecraft:mossy_cobblestone_from_moss_block",
+  cracked_stone_bricks = "minecraft:cracked_stone_bricks",
+  jack_o_lantern = "minecraft:jack_o_lantern",
+  tripwire_hook = "minecraft:tripwire_hook",
+  chiseled_polished_blackstone_from_blackstone_stonecutting = "minecraft:chiseled_polished_blackstone_from_blackstone_stonecutting",
+  trapped_chest = "minecraft:trapped_chest",
+  diorite_stairs_from_diorite_stonecutting = "minecraft:diorite_stairs_from_diorite_stonecutting",
+  hopper = "minecraft:hopper",
+  cut_sandstone_from_sandstone_stonecutting = "minecraft:cut_sandstone_from_sandstone_stonecutting",
+  stone_stairs_from_stone_stonecutting = "minecraft:stone_stairs_from_stone_stonecutting",
+  raw_gold = "minecraft:raw_gold",
+  lantern = "minecraft:lantern",
+  waxed_cut_copper_slab_from_waxed_copper_block_stonecutting = "minecraft:waxed_cut_copper_slab_from_waxed_copper_block_stonecutting",
+  green_banner = "minecraft:green_banner",
+  dried_kelp = "minecraft:dried_kelp",
+  magenta_stained_glass = "minecraft:magenta_stained_glass",
+  ender_chest = "minecraft:ender_chest",
+  polished_andesite_stairs_from_andesite_stonecutting = "minecraft:polished_andesite_stairs_from_andesite_stonecutting",
+  gold_nugget = "minecraft:gold_nugget",
+  iron_bars = "minecraft:iron_bars",
+  beetroot_soup = "minecraft:beetroot_soup",
+  iron_trapdoor = "minecraft:iron_trapdoor",
+  deepslate_brick_wall = "minecraft:deepslate_brick_wall",
+  green_glazed_terracotta = "minecraft:green_glazed_terracotta",
+  brown_candle = "minecraft:brown_candle",
+  lime_terracotta = "minecraft:lime_terracotta",
+  cooked_cod = "minecraft:cooked_cod",
+  diamond_axe = "minecraft:diamond_axe",
+  iron_helmet = "minecraft:iron_helmet",
+  blackstone_slab_from_blackstone_stonecutting = "minecraft:blackstone_slab_from_blackstone_stonecutting",
+  jungle_wood = "minecraft:jungle_wood",
+  waxed_oxidized_cut_copper = "minecraft:waxed_oxidized_cut_copper",
+  cartography_table = "minecraft:cartography_table",
+  gray_stained_glass_pane_from_glass_pane = "minecraft:gray_stained_glass_pane_from_glass_pane",
+  polished_diorite = "minecraft:polished_diorite",
+  stone_slab = "minecraft:stone_slab",
+  acacia_pressure_plate = "minecraft:acacia_pressure_plate",
+  lime_bed = "minecraft:lime_bed",
+  dye_blue_wool = "minecraft:dye_blue_wool",
+  dark_oak_pressure_plate = "minecraft:dark_oak_pressure_plate",
+  brick_stairs_from_bricks_stonecutting = "minecraft:brick_stairs_from_bricks_stonecutting",
+  acacia_slab = "minecraft:acacia_slab",
+  jungle_stairs = "minecraft:jungle_stairs",
+  cooked_porkchop_from_smoking = "minecraft:cooked_porkchop_from_smoking",
+  blast_furnace = "minecraft:blast_furnace",
+  polished_andesite_stairs = "minecraft:polished_andesite_stairs",
+  deepslate_brick_stairs_from_deepslate_bricks_stonecutting = "minecraft:deepslate_brick_stairs_from_deepslate_bricks_stonecutting",
+  magenta_dye_from_lilac = "minecraft:magenta_dye_from_lilac",
+  waxed_weathered_cut_copper_from_honeycomb = "minecraft:waxed_weathered_cut_copper_from_honeycomb",
+  light_blue_stained_glass_pane_from_glass_pane = "minecraft:light_blue_stained_glass_pane_from_glass_pane",
+  dye_red_bed = "minecraft:dye_red_bed",
+  cherry_chest_boat = "minecraft:cherry_chest_boat",
+  waxed_cut_copper = "minecraft:waxed_cut_copper",
+  rib_armor_trim_smithing_template_smithing_trim = "minecraft:rib_armor_trim_smithing_template_smithing_trim",
+  blue_stained_glass_pane_from_glass_pane = "minecraft:blue_stained_glass_pane_from_glass_pane",
+  light_blue_carpet = "minecraft:light_blue_carpet",
+  chiseled_polished_blackstone = "minecraft:chiseled_polished_blackstone",
+  turtle_helmet = "minecraft:turtle_helmet",
+  red_sandstone_wall_from_red_sandstone_stonecutting = "minecraft:red_sandstone_wall_from_red_sandstone_stonecutting",
+  polished_andesite_slab_from_polished_andesite_stonecutting = "minecraft:polished_andesite_slab_from_polished_andesite_stonecutting",
+  gold_ingot_from_smelting_deepslate_gold_ore = "minecraft:gold_ingot_from_smelting_deepslate_gold_ore",
+  cobbled_deepslate_stairs = "minecraft:cobbled_deepslate_stairs",
+  baked_potato = "minecraft:baked_potato",
+  light_blue_banner = "minecraft:light_blue_banner",
+  fletching_table = "minecraft:fletching_table",
+  mud_brick_wall_from_mud_bricks_stonecutting = "minecraft:mud_brick_wall_from_mud_bricks_stonecutting",
+  dye_lime_bed = "minecraft:dye_lime_bed",
+  waxed_exposed_cut_copper_stairs_from_waxed_exposed_copper_stonecutting = "minecraft:waxed_exposed_cut_copper_stairs_from_waxed_exposed_copper_stonecutting",
+  cooked_salmon = "minecraft:cooked_salmon",
+  light_gray_dye_from_gray_white_dye = "minecraft:light_gray_dye_from_gray_white_dye",
+  mossy_cobblestone_wall = "minecraft:mossy_cobblestone_wall",
+  spyglass = "minecraft:spyglass",
+  magenta_dye_from_purple_and_pink = "minecraft:magenta_dye_from_purple_and_pink",
+  red_banner = "minecraft:red_banner",
+  purpur_pillar = "minecraft:purpur_pillar",
+  heavy_weighted_pressure_plate = "minecraft:heavy_weighted_pressure_plate",
+  stone_shovel = "minecraft:stone_shovel",
+  deepslate_tile_slab = "minecraft:deepslate_tile_slab",
+  pink_stained_glass = "minecraft:pink_stained_glass",
+  golden_leggings = "minecraft:golden_leggings",
+  oak_chest_boat = "minecraft:oak_chest_boat",
+  stripped_birch_wood = "minecraft:stripped_birch_wood",
+  waxed_oxidized_cut_copper_slab = "minecraft:waxed_oxidized_cut_copper_slab",
+  deepslate_tiles_from_polished_deepslate_stonecutting = "minecraft:deepslate_tiles_from_polished_deepslate_stonecutting",
+  end_stone_brick_wall_from_end_stone_brick_stonecutting = "minecraft:end_stone_brick_wall_from_end_stone_brick_stonecutting",
+  polished_blackstone_stairs = "minecraft:polished_blackstone_stairs",
+  lime_banner = "minecraft:lime_banner",
+  netherite_pickaxe_smithing = "minecraft:netherite_pickaxe_smithing",
+  stone_pressure_plate = "minecraft:stone_pressure_plate",
+  deepslate_brick_stairs = "minecraft:deepslate_brick_stairs",
+  dropper = "minecraft:dropper",
+  redstone_lamp = "minecraft:redstone_lamp",
+  yellow_stained_glass_pane = "minecraft:yellow_stained_glass_pane",
+  black_carpet = "minecraft:black_carpet",
+  deepslate_brick_wall_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_brick_wall_from_cobbled_deepslate_stonecutting",
+  end_rod = "minecraft:end_rod",
+  diorite_slab_from_diorite_stonecutting = "minecraft:diorite_slab_from_diorite_stonecutting",
+  cut_copper_from_copper_block_stonecutting = "minecraft:cut_copper_from_copper_block_stonecutting",
+  iron_ingot_from_blasting_iron_ore = "minecraft:iron_ingot_from_blasting_iron_ore",
+  polished_andesite_stairs_from_polished_andesite_stonecutting = "minecraft:polished_andesite_stairs_from_polished_andesite_stonecutting",
+  lime_dye_from_smelting = "minecraft:lime_dye_from_smelting",
+  tide_armor_trim_smithing_template_smithing_trim = "minecraft:tide_armor_trim_smithing_template_smithing_trim",
+  dye_magenta_wool = "minecraft:dye_magenta_wool",
+  raiser_armor_trim_smithing_template = "minecraft:raiser_armor_trim_smithing_template",
+  deepslate_tile_stairs_from_deepslate_tiles_stonecutting = "minecraft:deepslate_tile_stairs_from_deepslate_tiles_stonecutting",
+  bamboo_mosaic_stairs = "minecraft:bamboo_mosaic_stairs",
+  golden_helmet = "minecraft:golden_helmet",
+  light_blue_dye_from_blue_orchid = "minecraft:light_blue_dye_from_blue_orchid",
+  weathered_cut_copper_stairs = "minecraft:weathered_cut_copper_stairs",
+  mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting = "minecraft:mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting",
+  waxed_oxidized_cut_copper_slab_from_honeycomb = "minecraft:waxed_oxidized_cut_copper_slab_from_honeycomb",
+  warped_button = "minecraft:warped_button",
+  polished_deepslate = "minecraft:polished_deepslate",
+  oxidized_cut_copper_from_oxidized_copper_stonecutting = "minecraft:oxidized_cut_copper_from_oxidized_copper_stonecutting",
+  bone_meal_from_bone_block = "minecraft:bone_meal_from_bone_block",
+  mangrove_boat = "minecraft:mangrove_boat",
+  bread = "minecraft:bread",
+  torch = "minecraft:torch",
+  polished_granite_stairs = "minecraft:polished_granite_stairs",
+  acacia_boat = "minecraft:acacia_boat",
+  lever = "minecraft:lever",
+  end_stone_brick_wall_from_end_stone_stonecutting = "minecraft:end_stone_brick_wall_from_end_stone_stonecutting",
+  dye_blue_bed = "minecraft:dye_blue_bed",
+  cobbled_deepslate_slab_from_cobbled_deepslate_stonecutting = "minecraft:cobbled_deepslate_slab_from_cobbled_deepslate_stonecutting",
+  map = "minecraft:map",
+  detector_rail = "minecraft:detector_rail",
+  pink_bed = "minecraft:pink_bed",
+  shield = "minecraft:shield",
+  blackstone_slab = "minecraft:blackstone_slab",
+  dye_light_blue_carpet = "minecraft:dye_light_blue_carpet",
+  cooked_porkchop_from_campfire_cooking = "minecraft:cooked_porkchop_from_campfire_cooking",
+  cyan_stained_glass_pane_from_glass_pane = "minecraft:cyan_stained_glass_pane_from_glass_pane",
+  crimson_sign = "minecraft:crimson_sign",
+  bamboo_slab = "minecraft:bamboo_slab",
+  dark_oak_chest_boat = "minecraft:dark_oak_chest_boat",
+  waxed_exposed_cut_copper_slab_from_waxed_exposed_copper_stonecutting = "minecraft:waxed_exposed_cut_copper_slab_from_waxed_exposed_copper_stonecutting",
+  dark_oak_trapdoor = "minecraft:dark_oak_trapdoor",
+  black_banner = "minecraft:black_banner",
+  painting = "minecraft:painting",
+  iron_shovel = "minecraft:iron_shovel",
+  stone_brick_slab = "minecraft:stone_brick_slab",
+  dye_red_carpet = "minecraft:dye_red_carpet",
+  cooked_rabbit_from_smoking = "minecraft:cooked_rabbit_from_smoking",
+  polished_blackstone_pressure_plate = "minecraft:polished_blackstone_pressure_plate",
+  quartz_bricks = "minecraft:quartz_bricks",
+  crafting_table = "minecraft:crafting_table",
+  sandstone_wall = "minecraft:sandstone_wall",
+  green_stained_glass_pane_from_glass_pane = "minecraft:green_stained_glass_pane_from_glass_pane",
+  polished_deepslate_slab = "minecraft:polished_deepslate_slab",
+  red_sandstone_wall = "minecraft:red_sandstone_wall",
+  acacia_chest_boat = "minecraft:acacia_chest_boat",
+  cut_copper_slab = "minecraft:cut_copper_slab",
+  dark_oak_wood = "minecraft:dark_oak_wood",
+  birch_hanging_sign = "minecraft:birch_hanging_sign",
+  stone_slab_from_stone_stonecutting = "minecraft:stone_slab_from_stone_stonecutting",
+  orange_glazed_terracotta = "minecraft:orange_glazed_terracotta",
+  pink_carpet = "minecraft:pink_carpet",
+  gray_glazed_terracotta = "minecraft:gray_glazed_terracotta",
+  acacia_stairs = "minecraft:acacia_stairs",
+  cherry_slab = "minecraft:cherry_slab",
+  stone_brick_slab_from_stone_stonecutting = "minecraft:stone_brick_slab_from_stone_stonecutting",
+  deepslate_bricks = "minecraft:deepslate_bricks",
+  raw_gold_block = "minecraft:raw_gold_block",
+  iron_nugget_from_smelting = "minecraft:iron_nugget_from_smelting",
+  birch_door = "minecraft:birch_door",
+  waxed_exposed_copper_from_honeycomb = "minecraft:waxed_exposed_copper_from_honeycomb",
+  anvil = "minecraft:anvil",
+  stripped_acacia_wood = "minecraft:stripped_acacia_wood",
+  waxed_weathered_cut_copper_stairs = "minecraft:waxed_weathered_cut_copper_stairs",
+  gold_ingot_from_nuggets = "minecraft:gold_ingot_from_nuggets",
+  mossy_stone_brick_stairs = "minecraft:mossy_stone_brick_stairs",
+  cooked_chicken = "minecraft:cooked_chicken",
+  smooth_quartz_stairs_from_smooth_quartz_stonecutting = "minecraft:smooth_quartz_stairs_from_smooth_quartz_stonecutting",
+  oak_trapdoor = "minecraft:oak_trapdoor",
+  amethyst_block = "minecraft:amethyst_block",
+  oak_door = "minecraft:oak_door",
+  chiseled_polished_blackstone_from_polished_blackstone_stonecutting = "minecraft:chiseled_polished_blackstone_from_polished_blackstone_stonecutting",
+  netherite_leggings_smithing = "minecraft:netherite_leggings_smithing",
+  waxed_cut_copper_slab_from_honeycomb = "minecraft:waxed_cut_copper_slab_from_honeycomb",
+  orange_bed = "minecraft:orange_bed",
+  birch_button = "minecraft:birch_button",
+  nether_brick = "minecraft:nether_brick",
+  wooden_sword = "minecraft:wooden_sword",
+  birch_fence_gate = "minecraft:birch_fence_gate",
+  bone_meal = "minecraft:bone_meal",
+  stone_brick_stairs_from_stone_stonecutting = "minecraft:stone_brick_stairs_from_stone_stonecutting",
+  gold_ingot_from_blasting_nether_gold_ore = "minecraft:gold_ingot_from_blasting_nether_gold_ore",
+  black_glazed_terracotta = "minecraft:black_glazed_terracotta",
+  polished_diorite_stairs_from_diorite_stonecutting = "minecraft:polished_diorite_stairs_from_diorite_stonecutting",
+  weathered_cut_copper_stairs_from_weathered_copper_stonecutting = "minecraft:weathered_cut_copper_stairs_from_weathered_copper_stonecutting",
+  honey_bottle = "minecraft:honey_bottle",
+  cyan_bed = "minecraft:cyan_bed",
+  spruce_door = "minecraft:spruce_door",
+  smooth_quartz_slab = "minecraft:smooth_quartz_slab",
+  carrot_on_a_stick = "minecraft:carrot_on_a_stick",
+  red_stained_glass_pane = "minecraft:red_stained_glass_pane",
+  brick_wall = "minecraft:brick_wall",
+  lapis_lazuli_from_smelting_lapis_ore = "minecraft:lapis_lazuli_from_smelting_lapis_ore",
+  raw_copper_block = "minecraft:raw_copper_block",
+  polished_diorite_from_diorite_stonecutting = "minecraft:polished_diorite_from_diorite_stonecutting",
+  purple_bed = "minecraft:purple_bed",
+  mud_brick_wall = "minecraft:mud_brick_wall",
+  waxed_exposed_cut_copper_stairs_from_waxed_exposed_cut_copper_stonecutting = "minecraft:waxed_exposed_cut_copper_stairs_from_waxed_exposed_cut_copper_stonecutting",
+  dark_prismarine = "minecraft:dark_prismarine",
+  prismarine_wall_from_prismarine_stonecutting = "minecraft:prismarine_wall_from_prismarine_stonecutting",
+  purple_stained_glass_pane_from_glass_pane = "minecraft:purple_stained_glass_pane_from_glass_pane",
+  leather_horse_armor = "minecraft:leather_horse_armor",
+  cookie = "minecraft:cookie",
+  raw_iron_block = "minecraft:raw_iron_block",
+  dark_oak_planks = "minecraft:dark_oak_planks",
+  lapis_lazuli = "minecraft:lapis_lazuli",
+  candle = "minecraft:candle",
+  lightning_rod = "minecraft:lightning_rod",
+  brown_stained_glass_pane_from_glass_pane = "minecraft:brown_stained_glass_pane_from_glass_pane",
+  oak_button = "minecraft:oak_button",
+  granite_wall = "minecraft:granite_wall",
+  orange_concrete_powder = "minecraft:orange_concrete_powder",
+  dark_oak_hanging_sign = "minecraft:dark_oak_hanging_sign",
+  polished_blackstone_brick_slab_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_brick_slab_from_polished_blackstone_stonecutting",
+  redstone_block = "minecraft:redstone_block",
+  shears = "minecraft:shears",
+  waxed_oxidized_cut_copper_slab_from_waxed_oxidized_cut_copper_stonecutting = "minecraft:waxed_oxidized_cut_copper_slab_from_waxed_oxidized_cut_copper_stonecutting",
+  wheat = "minecraft:wheat",
+  polished_deepslate_wall_from_cobbled_deepslate_stonecutting = "minecraft:polished_deepslate_wall_from_cobbled_deepslate_stonecutting",
+  honeycomb_block = "minecraft:honeycomb_block",
+  orange_stained_glass_pane = "minecraft:orange_stained_glass_pane",
+  quartz_block = "minecraft:quartz_block",
+  yellow_stained_glass_pane_from_glass_pane = "minecraft:yellow_stained_glass_pane_from_glass_pane",
+  brick = "minecraft:brick",
+  deepslate_tile_slab_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_tile_slab_from_cobbled_deepslate_stonecutting",
+  exposed_cut_copper_from_exposed_copper_stonecutting = "minecraft:exposed_cut_copper_from_exposed_copper_stonecutting",
+  music_disc_5 = "minecraft:music_disc_5",
+  mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting = "minecraft:mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting",
+  diamond_helmet = "minecraft:diamond_helmet",
+  warped_fence = "minecraft:warped_fence",
+  bow = "minecraft:bow",
+  andesite_stairs_from_andesite_stonecutting = "minecraft:andesite_stairs_from_andesite_stonecutting",
+  stone_brick_slab_from_stone_bricks_stonecutting = "minecraft:stone_brick_slab_from_stone_bricks_stonecutting",
+  dark_oak_fence_gate = "minecraft:dark_oak_fence_gate",
+  waxed_exposed_cut_copper = "minecraft:waxed_exposed_cut_copper",
+  coal = "minecraft:coal",
+  compass = "minecraft:compass",
+  dye_pink_bed = "minecraft:dye_pink_bed",
+  gold_ingot_from_blasting_deepslate_gold_ore = "minecraft:gold_ingot_from_blasting_deepslate_gold_ore",
+  andesite_stairs = "minecraft:andesite_stairs",
+  item_frame = "minecraft:item_frame",
+  waxed_weathered_cut_copper_slab_from_waxed_weathered_cut_copper_stonecutting = "minecraft:waxed_weathered_cut_copper_slab_from_waxed_weathered_cut_copper_stonecutting",
+  iron_ingot_from_smelting_iron_ore = "minecraft:iron_ingot_from_smelting_iron_ore",
+  loom = "minecraft:loom",
+  jungle_slab = "minecraft:jungle_slab",
+  polished_granite_stairs_from_polished_granite_stonecutting = "minecraft:polished_granite_stairs_from_polished_granite_stonecutting",
+  smoker = "minecraft:smoker",
+  skull_banner_pattern = "minecraft:skull_banner_pattern",
+  dark_oak_boat = "minecraft:dark_oak_boat",
+  coast_armor_trim_smithing_template = "minecraft:coast_armor_trim_smithing_template",
+  pink_dye_from_pink_tulip = "minecraft:pink_dye_from_pink_tulip",
+  dune_armor_trim_smithing_template = "minecraft:dune_armor_trim_smithing_template",
+  arrow = "minecraft:arrow",
+  oak_fence_gate = "minecraft:oak_fence_gate",
+  copper_ingot_from_smelting_deepslate_copper_ore = "minecraft:copper_ingot_from_smelting_deepslate_copper_ore",
+  mossy_stone_brick_wall = "minecraft:mossy_stone_brick_wall",
+  brown_dye = "minecraft:brown_dye",
+  granite = "minecraft:granite",
+  melon_seeds = "minecraft:melon_seeds",
+  waxed_exposed_cut_copper_stairs_from_honeycomb = "minecraft:waxed_exposed_cut_copper_stairs_from_honeycomb",
+  polished_blackstone_stairs_from_blackstone_stonecutting = "minecraft:polished_blackstone_stairs_from_blackstone_stonecutting",
+  dye_cyan_carpet = "minecraft:dye_cyan_carpet",
+  brick_slab = "minecraft:brick_slab",
+  firework_rocket_simple = "minecraft:firework_rocket_simple",
+  black_dye_from_wither_rose = "minecraft:black_dye_from_wither_rose",
+  red_sandstone_stairs = "minecraft:red_sandstone_stairs",
+  coast_armor_trim_smithing_template_smithing_trim = "minecraft:coast_armor_trim_smithing_template_smithing_trim",
+  sandstone_stairs_from_sandstone_stonecutting = "minecraft:sandstone_stairs_from_sandstone_stonecutting",
+  bundle = "minecraft:bundle",
+  bricks = "minecraft:bricks",
+  red_sandstone_slab = "minecraft:red_sandstone_slab",
+  gray_stained_glass_pane = "minecraft:gray_stained_glass_pane",
+  gray_carpet = "minecraft:gray_carpet",
+  oxidized_cut_copper_stairs = "minecraft:oxidized_cut_copper_stairs",
+  yellow_glazed_terracotta = "minecraft:yellow_glazed_terracotta",
+  mangrove_trapdoor = "minecraft:mangrove_trapdoor",
+  diamond_boots = "minecraft:diamond_boots",
+  andesite = "minecraft:andesite",
+  deepslate_tile_wall = "minecraft:deepslate_tile_wall",
+  crimson_hanging_sign = "minecraft:crimson_hanging_sign",
+  polished_deepslate_stairs = "minecraft:polished_deepslate_stairs",
+  exposed_cut_copper = "minecraft:exposed_cut_copper",
+  polished_blackstone = "minecraft:polished_blackstone",
+  mangrove_hanging_sign = "minecraft:mangrove_hanging_sign",
+  waxed_exposed_cut_copper_slab_from_honeycomb = "minecraft:waxed_exposed_cut_copper_slab_from_honeycomb",
+  stick = "minecraft:stick",
+  red_nether_brick_stairs = "minecraft:red_nether_brick_stairs",
+  dark_oak_stairs = "minecraft:dark_oak_stairs",
+  jungle_pressure_plate = "minecraft:jungle_pressure_plate",
+  brewing_stand = "minecraft:brewing_stand",
+  dye_yellow_carpet = "minecraft:dye_yellow_carpet",
+  white_candle = "minecraft:white_candle",
+  polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting = "minecraft:polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting",
+  bamboo_mosaic_slab = "minecraft:bamboo_mosaic_slab",
+  host_armor_trim_smithing_template = "minecraft:host_armor_trim_smithing_template",
+  dye_white_wool = "minecraft:dye_white_wool",
+  emerald_from_blasting_emerald_ore = "minecraft:emerald_from_blasting_emerald_ore",
+  smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting = "minecraft:smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting",
+  cobbled_deepslate_wall_from_cobbled_deepslate_stonecutting = "minecraft:cobbled_deepslate_wall_from_cobbled_deepslate_stonecutting",
+  dye_light_gray_carpet = "minecraft:dye_light_gray_carpet",
+  spire_armor_trim_smithing_template = "minecraft:spire_armor_trim_smithing_template",
+  polished_blackstone_brick_wall = "minecraft:polished_blackstone_brick_wall",
+  stone_axe = "minecraft:stone_axe",
+  jungle_button = "minecraft:jungle_button",
+  packed_ice = "minecraft:packed_ice",
+  golden_carrot = "minecraft:golden_carrot",
+  stone = "minecraft:stone",
+  blackstone_stairs = "minecraft:blackstone_stairs",
+  dried_kelp_from_campfire_cooking = "minecraft:dried_kelp_from_campfire_cooking",
+  blue_banner = "minecraft:blue_banner",
+  dye_purple_carpet = "minecraft:dye_purple_carpet",
+  dye_orange_carpet = "minecraft:dye_orange_carpet",
+  prismarine_wall = "minecraft:prismarine_wall",
+  diamond_block = "minecraft:diamond_block",
+  deepslate_tile_slab_from_deepslate_bricks_stonecutting = "minecraft:deepslate_tile_slab_from_deepslate_bricks_stonecutting",
+  deepslate_tile_stairs_from_deepslate_bricks_stonecutting = "minecraft:deepslate_tile_stairs_from_deepslate_bricks_stonecutting",
+  dye_cyan_bed = "minecraft:dye_cyan_bed",
+  waxed_oxidized_copper_from_honeycomb = "minecraft:waxed_oxidized_copper_from_honeycomb",
+  diorite_slab = "minecraft:diorite_slab",
+  spruce_trapdoor = "minecraft:spruce_trapdoor",
+  yellow_stained_glass = "minecraft:yellow_stained_glass",
+  light_blue_stained_glass = "minecraft:light_blue_stained_glass",
+  waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting = "minecraft:waxed_oxidized_cut_copper_stairs_from_waxed_oxidized_copper_stonecutting",
+  glowstone = "minecraft:glowstone",
+  respawn_anchor = "minecraft:respawn_anchor",
+  pumpkin_seeds = "minecraft:pumpkin_seeds",
+  vex_armor_trim_smithing_template_smithing_trim = "minecraft:vex_armor_trim_smithing_template_smithing_trim",
+  deepslate_brick_slab = "minecraft:deepslate_brick_slab",
+  cobbled_deepslate_wall = "minecraft:cobbled_deepslate_wall",
+  purpur_slab_from_purpur_block_stonecutting = "minecraft:purpur_slab_from_purpur_block_stonecutting",
+  red_nether_brick_wall = "minecraft:red_nether_brick_wall",
+  chiseled_red_sandstone = "minecraft:chiseled_red_sandstone",
+  nether_brick_fence = "minecraft:nether_brick_fence",
+  polished_blackstone_brick_stairs_from_blackstone_stonecutting = "minecraft:polished_blackstone_brick_stairs_from_blackstone_stonecutting",
+  magma_cream = "minecraft:magma_cream",
+  blackstone_wall = "minecraft:blackstone_wall",
+  smooth_stone = "minecraft:smooth_stone",
+  cooked_mutton = "minecraft:cooked_mutton",
+  bookshelf = "minecraft:bookshelf",
+  dark_prismarine_stairs = "minecraft:dark_prismarine_stairs",
+  iron_ingot_from_blasting_raw_iron = "minecraft:iron_ingot_from_blasting_raw_iron",
+  light_gray_candle = "minecraft:light_gray_candle",
+  lapis_block = "minecraft:lapis_block",
+  purple_carpet = "minecraft:purple_carpet",
+  cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting = "minecraft:cobbled_deepslate_stairs_from_cobbled_deepslate_stonecutting",
+  birch_chest_boat = "minecraft:birch_chest_boat",
+  polished_deepslate_stairs_from_cobbled_deepslate_stonecutting = "minecraft:polished_deepslate_stairs_from_cobbled_deepslate_stonecutting",
+  brown_stained_glass_pane = "minecraft:brown_stained_glass_pane",
+  dried_kelp_from_smelting = "minecraft:dried_kelp_from_smelting",
+  black_terracotta = "minecraft:black_terracotta",
+  polished_granite_slab_from_granite_stonecutting = "minecraft:polished_granite_slab_from_granite_stonecutting",
+  snow_block = "minecraft:snow_block",
+  cherry_sign = "minecraft:cherry_sign",
+  iron_axe = "minecraft:iron_axe",
+  dye_lime_carpet = "minecraft:dye_lime_carpet",
+  sandstone_stairs = "minecraft:sandstone_stairs",
+  composter = "minecraft:composter",
+  ender_eye = "minecraft:ender_eye",
+  jukebox = "minecraft:jukebox",
+  polished_deepslate_wall_from_polished_deepslate_stonecutting = "minecraft:polished_deepslate_wall_from_polished_deepslate_stonecutting",
+  light_gray_terracotta = "minecraft:light_gray_terracotta",
+  white_bed = "minecraft:white_bed",
+  birch_slab = "minecraft:birch_slab",
+  spruce_slab = "minecraft:spruce_slab",
+  deepslate_tile_stairs_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_tile_stairs_from_cobbled_deepslate_stonecutting",
+  coarse_dirt = "minecraft:coarse_dirt",
+  acacia_sign = "minecraft:acacia_sign",
+  chest_minecart = "minecraft:chest_minecart",
+  oak_boat = "minecraft:oak_boat",
+  cobblestone_slab_from_cobblestone_stonecutting = "minecraft:cobblestone_slab_from_cobblestone_stonecutting",
+  waxed_cut_copper_stairs = "minecraft:waxed_cut_copper_stairs",
+  mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting = "minecraft:mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting",
+  sea_lantern = "minecraft:sea_lantern",
+  yellow_carpet = "minecraft:yellow_carpet",
+  quartz_bricks_from_quartz_block_stonecutting = "minecraft:quartz_bricks_from_quartz_block_stonecutting",
+  green_candle = "minecraft:green_candle",
+  dye_blue_carpet = "minecraft:dye_blue_carpet",
+  waxed_weathered_cut_copper_stairs_from_honeycomb = "minecraft:waxed_weathered_cut_copper_stairs_from_honeycomb",
+  pink_stained_glass_pane_from_glass_pane = "minecraft:pink_stained_glass_pane_from_glass_pane",
+  prismarine_slab = "minecraft:prismarine_slab",
+  red_dye_from_rose_bush = "minecraft:red_dye_from_rose_bush",
+  exposed_cut_copper_stairs = "minecraft:exposed_cut_copper_stairs",
+  fermented_spider_eye = "minecraft:fermented_spider_eye",
+  light_gray_glazed_terracotta = "minecraft:light_gray_glazed_terracotta",
+  magenta_terracotta = "minecraft:magenta_terracotta",
+  baked_potato_from_campfire_cooking = "minecraft:baked_potato_from_campfire_cooking",
+  stone_hoe = "minecraft:stone_hoe",
+  diamond_hoe = "minecraft:diamond_hoe",
+  jungle_boat = "minecraft:jungle_boat",
+  coal_from_smelting_deepslate_coal_ore = "minecraft:coal_from_smelting_deepslate_coal_ore",
+  dye_cyan_wool = "minecraft:dye_cyan_wool",
+  pumpkin_pie = "minecraft:pumpkin_pie",
+  stripped_mangrove_wood = "minecraft:stripped_mangrove_wood",
+  exposed_cut_copper_stairs_from_exposed_cut_copper_stonecutting = "minecraft:exposed_cut_copper_stairs_from_exposed_cut_copper_stonecutting",
+  deepslate_bricks_from_polished_deepslate_stonecutting = "minecraft:deepslate_bricks_from_polished_deepslate_stonecutting",
+  jungle_fence = "minecraft:jungle_fence",
+  gold_ingot_from_gold_block = "minecraft:gold_ingot_from_gold_block",
+  light_weighted_pressure_plate = "minecraft:light_weighted_pressure_plate",
+  cobbled_deepslate_slab = "minecraft:cobbled_deepslate_slab",
+  cooked_mutton_from_campfire_cooking = "minecraft:cooked_mutton_from_campfire_cooking",
+  tide_armor_trim_smithing_template = "minecraft:tide_armor_trim_smithing_template",
+  glass_bottle = "minecraft:glass_bottle",
+  weathered_cut_copper = "minecraft:weathered_cut_copper",
+  iron_ingot_from_smelting_raw_iron = "minecraft:iron_ingot_from_smelting_raw_iron",
+  dye_black_wool = "minecraft:dye_black_wool",
+  deepslate_brick_slab_from_deepslate_bricks_stonecutting = "minecraft:deepslate_brick_slab_from_deepslate_bricks_stonecutting",
+  dye_green_wool = "minecraft:dye_green_wool",
+  iron_door = "minecraft:iron_door",
+  purple_stained_glass_pane = "minecraft:purple_stained_glass_pane",
+  polished_granite = "minecraft:polished_granite",
+  cooked_beef = "minecraft:cooked_beef",
+  mud_brick_slab = "minecraft:mud_brick_slab",
+  cooked_mutton_from_smoking = "minecraft:cooked_mutton_from_smoking",
+  hopper_minecart = "minecraft:hopper_minecart",
+  blue_stained_glass_pane = "minecraft:blue_stained_glass_pane",
+  pink_banner = "minecraft:pink_banner",
+  oxidized_cut_copper = "minecraft:oxidized_cut_copper",
+  black_stained_glass_pane_from_glass_pane = "minecraft:black_stained_glass_pane_from_glass_pane",
+  chiseled_quartz_block = "minecraft:chiseled_quartz_block",
+  soul_campfire = "minecraft:soul_campfire",
+  cobblestone_stairs_from_cobblestone_stonecutting = "minecraft:cobblestone_stairs_from_cobblestone_stonecutting",
+  stripped_warped_hyphae = "minecraft:stripped_warped_hyphae",
+  bamboo_button = "minecraft:bamboo_button",
+  crimson_door = "minecraft:crimson_door",
+  copper_ingot_from_waxed_copper_block = "minecraft:copper_ingot_from_waxed_copper_block",
+  end_stone_brick_stairs_from_end_stone_brick_stonecutting = "minecraft:end_stone_brick_stairs_from_end_stone_brick_stonecutting",
+  dye_pink_carpet = "minecraft:dye_pink_carpet",
+  gold_ingot_from_smelting_nether_gold_ore = "minecraft:gold_ingot_from_smelting_nether_gold_ore",
+  leather = "minecraft:leather",
+  cherry_trapdoor = "minecraft:cherry_trapdoor",
+  cherry_hanging_sign = "minecraft:cherry_hanging_sign",
+  gold_nugget_from_smelting = "minecraft:gold_nugget_from_smelting",
+  chiseled_quartz_block_from_quartz_block_stonecutting = "minecraft:chiseled_quartz_block_from_quartz_block_stonecutting",
+  end_stone_bricks = "minecraft:end_stone_bricks",
+  waxed_cut_copper_stairs_from_honeycomb = "minecraft:waxed_cut_copper_stairs_from_honeycomb",
+  dye_brown_bed = "minecraft:dye_brown_bed",
+  red_stained_glass_pane_from_glass_pane = "minecraft:red_stained_glass_pane_from_glass_pane",
+  acacia_trapdoor = "minecraft:acacia_trapdoor",
+  stone_brick_wall_from_stone_bricks_stonecutting = "minecraft:stone_brick_wall_from_stone_bricks_stonecutting",
+  waxed_cut_copper_stairs_from_waxed_copper_block_stonecutting = "minecraft:waxed_cut_copper_stairs_from_waxed_copper_block_stonecutting",
+  black_candle = "minecraft:black_candle",
+  cut_copper_slab_from_cut_copper_stonecutting = "minecraft:cut_copper_slab_from_cut_copper_stonecutting",
+  light_gray_concrete_powder = "minecraft:light_gray_concrete_powder",
+  smooth_quartz_stairs = "minecraft:smooth_quartz_stairs",
+  furnace = "minecraft:furnace",
+  diorite_stairs = "minecraft:diorite_stairs",
+  mangrove_pressure_plate = "minecraft:mangrove_pressure_plate",
+  cracked_nether_bricks = "minecraft:cracked_nether_bricks",
+  dark_prismarine_stairs_from_dark_prismarine_stonecutting = "minecraft:dark_prismarine_stairs_from_dark_prismarine_stonecutting",
+  purpur_pillar_from_purpur_block_stonecutting = "minecraft:purpur_pillar_from_purpur_block_stonecutting",
+  crimson_fence_gate = "minecraft:crimson_fence_gate",
+  dye_brown_wool = "minecraft:dye_brown_wool",
+  activator_rail = "minecraft:activator_rail",
+  lime_dye = "minecraft:lime_dye",
+  bamboo_hanging_sign = "minecraft:bamboo_hanging_sign",
+  polished_diorite_stairs_from_polished_diorite_stonecutting = "minecraft:polished_diorite_stairs_from_polished_diorite_stonecutting",
+  crimson_pressure_plate = "minecraft:crimson_pressure_plate",
+  oak_planks = "minecraft:oak_planks",
+  orange_candle = "minecraft:orange_candle",
+  deepslate_brick_wall_from_polished_deepslate_stonecutting = "minecraft:deepslate_brick_wall_from_polished_deepslate_stonecutting",
+  weathered_cut_copper_slab_from_weathered_cut_copper_stonecutting = "minecraft:weathered_cut_copper_slab_from_weathered_cut_copper_stonecutting",
+  waxed_exposed_cut_copper_from_waxed_exposed_copper_stonecutting = "minecraft:waxed_exposed_cut_copper_from_waxed_exposed_copper_stonecutting",
+  end_stone_brick_stairs_from_end_stone_stonecutting = "minecraft:end_stone_brick_stairs_from_end_stone_stonecutting",
+  warped_sign = "minecraft:warped_sign",
+  lapis_lazuli_from_blasting_lapis_ore = "minecraft:lapis_lazuli_from_blasting_lapis_ore",
+  copper_ingot_from_smelting_copper_ore = "minecraft:copper_ingot_from_smelting_copper_ore",
+  rib_armor_trim_smithing_template = "minecraft:rib_armor_trim_smithing_template",
+  mangrove_door = "minecraft:mangrove_door",
+  cherry_stairs = "minecraft:cherry_stairs",
+  cooked_chicken_from_campfire_cooking = "minecraft:cooked_chicken_from_campfire_cooking",
+  purple_dye = "minecraft:purple_dye",
+  deepslate_tile_wall_from_polished_deepslate_stonecutting = "minecraft:deepslate_tile_wall_from_polished_deepslate_stonecutting",
+  red_sandstone = "minecraft:red_sandstone",
+  netherite_scrap = "minecraft:netherite_scrap",
+  stone_brick_wall = "minecraft:stone_brick_wall",
+  iron_pickaxe = "minecraft:iron_pickaxe",
+  quartz_slab = "minecraft:quartz_slab",
+  cut_sandstone = "minecraft:cut_sandstone",
+  bamboo_sign = "minecraft:bamboo_sign",
+  spruce_button = "minecraft:spruce_button",
+  light_blue_dye_from_blue_white_dye = "minecraft:light_blue_dye_from_blue_white_dye",
+  nether_brick_slab = "minecraft:nether_brick_slab",
+  host_armor_trim_smithing_template_smithing_trim = "minecraft:host_armor_trim_smithing_template_smithing_trim",
+  cyan_dye = "minecraft:cyan_dye",
+  quartz_pillar_from_quartz_block_stonecutting = "minecraft:quartz_pillar_from_quartz_block_stonecutting",
+  waxed_cut_copper_stairs_from_waxed_cut_copper_stonecutting = "minecraft:waxed_cut_copper_stairs_from_waxed_cut_copper_stonecutting",
+  orange_terracotta = "minecraft:orange_terracotta",
+  deepslate_tiles = "minecraft:deepslate_tiles",
+  deepslate_tile_stairs_from_polished_deepslate_stonecutting = "minecraft:deepslate_tile_stairs_from_polished_deepslate_stonecutting",
+  bamboo_fence = "minecraft:bamboo_fence",
+  enchanting_table = "minecraft:enchanting_table",
+  red_glazed_terracotta = "minecraft:red_glazed_terracotta",
+  white_glazed_terracotta = "minecraft:white_glazed_terracotta",
+  deepslate_tiles_from_cobbled_deepslate_stonecutting = "minecraft:deepslate_tiles_from_cobbled_deepslate_stonecutting",
+  lead = "minecraft:lead",
+  spruce_boat = "minecraft:spruce_boat",
+  birch_boat = "minecraft:birch_boat",
+  gold_block = "minecraft:gold_block",
+  polished_diorite_stairs = "minecraft:polished_diorite_stairs",
+  mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting = "minecraft:mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting",
+  nether_brick_stairs_from_nether_bricks_stonecutting = "minecraft:nether_brick_stairs_from_nether_bricks_stonecutting",
+  observer = "minecraft:observer",
+  polished_deepslate_wall = "minecraft:polished_deepslate_wall",
+  campfire = "minecraft:campfire",
+  paper = "minecraft:paper",
+  cherry_wood = "minecraft:cherry_wood",
+  dark_oak_slab = "minecraft:dark_oak_slab",
+  lime_glazed_terracotta = "minecraft:lime_glazed_terracotta",
+  cooked_cod_from_campfire_cooking = "minecraft:cooked_cod_from_campfire_cooking",
+  packed_mud = "minecraft:packed_mud",
+  brick_stairs = "minecraft:brick_stairs",
+  lime_stained_glass = "minecraft:lime_stained_glass",
+  dye_purple_bed = "minecraft:dye_purple_bed",
+  cut_sandstone_slab_from_sandstone_stonecutting = "minecraft:cut_sandstone_slab_from_sandstone_stonecutting",
+  stripped_spruce_wood = "minecraft:stripped_spruce_wood",
+  acacia_wood = "minecraft:acacia_wood",
+  netherite_helmet_smithing = "minecraft:netherite_helmet_smithing",
+  cherry_fence_gate = "minecraft:cherry_fence_gate",
+  polished_blackstone_stairs_from_polished_blackstone_stonecutting = "minecraft:polished_blackstone_stairs_from_polished_blackstone_stonecutting",
+  stripped_jungle_wood = "minecraft:stripped_jungle_wood",
+  pink_dye_from_peony = "minecraft:pink_dye_from_peony",
+  stone_brick_walls_from_stone_stonecutting = "minecraft:stone_brick_walls_from_stone_stonecutting",
+  copper_ingot_from_blasting_raw_copper = "minecraft:copper_ingot_from_blasting_raw_copper",
+  bucket = "minecraft:bucket",
+  waxed_cut_copper_from_waxed_copper_block_stonecutting = "minecraft:waxed_cut_copper_from_waxed_copper_block_stonecutting",
+  cut_red_sandstone_slab = "minecraft:cut_red_sandstone_slab",
+  silence_armor_trim_smithing_template_smithing_trim = "minecraft:silence_armor_trim_smithing_template_smithing_trim",
+  coal_from_blasting_deepslate_coal_ore = "minecraft:coal_from_blasting_deepslate_coal_ore",
+  chiseled_red_sandstone_from_red_sandstone_stonecutting = "minecraft:chiseled_red_sandstone_from_red_sandstone_stonecutting",
+  polished_andesite = "minecraft:polished_andesite",
+  black_stained_glass = "minecraft:black_stained_glass",
+  dye_purple_wool = "minecraft:dye_purple_wool"
+}
 
 export interface LevelDat extends CompoundTag {
   Data: {

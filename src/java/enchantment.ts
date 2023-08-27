@@ -1,40 +1,41 @@
-export type Enchantment =
-  | "minecraft:aqua_affinity"
-  | "minecraft:bane_of_arthropods"
-  | "minecraft:binding_curse"
-  | "minecraft:blast_protection"
-  | "minecraft:channeling"
-  | "minecraft:depth_strider"
-  | "minecraft:efficiency"
-  | "minecraft:feather_falling"
-  | "minecraft:fire_aspect"
-  | "minecraft:fire_protection"
-  | "minecraft:flame"
-  | "minecraft:fortune"
-  | "minecraft:frost_walker"
-  | "minecraft:impaling"
-  | "minecraft:infinity"
-  | "minecraft:knockback"
-  | "minecraft:looting"
-  | "minecraft:loyalty"
-  | "minecraft:luck_of_the_sea"
-  | "minecraft:lure"
-  | "minecraft:mending"
-  | "minecraft:multishot"
-  | "minecraft:piercing"
-  | "minecraft:power"
-  | "minecraft:projectile_protection"
-  | "minecraft:protection"
-  | "minecraft:punch"
-  | "minecraft:quick_charge"
-  | "minecraft:respiration"
-  | "minecraft:riptide"
-  | "minecraft:sharpness"
-  | "minecraft:silk_touch"
-  | "minecraft:smite"
-  | "minecraft:soul_speed"
-  | "minecraft:sweeping"
-  | "minecraft:swift_sneak"
-  | "minecraft:thorns"
-  | "minecraft:unbreaking"
-  | "minecraft:vanishing_curse";
+export enum EnchantmentResource {
+  aqua_affinity = "minecraft:aqua_affinity",
+  bane_of_arthropods = "minecraft:bane_of_arthropods",
+  binding_curse = "minecraft:binding_curse",
+  blast_protection = "minecraft:blast_protection",
+  channeling = "minecraft:channeling",
+  depth_strider = "minecraft:depth_strider",
+  efficiency = "minecraft:efficiency",
+  feather_falling = "minecraft:feather_falling",
+  fire_aspect = "minecraft:fire_aspect",
+  fire_protection = "minecraft:fire_protection",
+  flame = "minecraft:flame",
+  fortune = "minecraft:fortune",
+  frost_walker = "minecraft:frost_walker",
+  impaling = "minecraft:impaling",
+  infinity = "minecraft:infinity",
+  knockback = "minecraft:knockback",
+  looting = "minecraft:looting",
+  loyalty = "minecraft:loyalty",
+  luck_of_the_sea = "minecraft:luck_of_the_sea",
+  lure = "minecraft:lure",
+  mending = "minecraft:mending",
+  multishot = "minecraft:multishot",
+  piercing = "minecraft:piercing",
+  power = "minecraft:power",
+  projectile_protection = "minecraft:projectile_protection",
+  protection = "minecraft:protection",
+  punch = "minecraft:punch",
+  quick_charge = "minecraft:quick_charge",
+  respiration = "minecraft:respiration",
+  riptide = "minecraft:riptide",
+  sharpness = "minecraft:sharpness",
+  silk_touch = "minecraft:silk_touch",
+  smite = "minecraft:smite",
+  soul_speed = "minecraft:soul_speed",
+  sweeping = "minecraft:sweeping",
+  swift_sneak = "minecraft:swift_sneak",
+  thorns = "minecraft:thorns",
+  unbreaking = "minecraft:unbreaking",
+  vanishing_curse = "minecraft:vanishing_curse"
+}

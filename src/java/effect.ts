@@ -1,34 +1,35 @@
-export type Effect =
-  | "minecraft:absorption"
-  | "minecraft:bad_omen"
-  | "minecraft:blindness"
-  | "minecraft:conduit_power"
-  | "minecraft:dolphins_grace"
-  | "minecraft:fire_resistance"
-  | "minecraft:glowing"
-  | "minecraft:haste"
-  | "minecraft:health_boost"
-  | "minecraft:hero_of_the_village"
-  | "minecraft:hunger"
-  | "minecraft:instant_health"
-  | "minecraft:instant_damage"
-  | "minecraft:invisibility"
-  | "minecraft:jump_boost"
-  | "minecraft:levitation"
-  | "minecraft:luck"
-  | "minecraft:mining_fatigue"
-  | "minecraft:nausea"
-  | "minecraft:night_vision"
-  | "minecraft:poison"
-  | "minecraft:regeneration"
-  | "minecraft:resistance"
-  | "minecraft:saturation"
-  | "minecraft:slow_falling"
-  | "minecraft:slowness"
-  | "minecraft:speed"
-  | "minecraft:strength"
-  | "minecraft:unluck"
-  | "minecraft:water_breathing"
-  | "minecraft:weakness"
-  | "minecraft:wither"
-  | "minecraft:darkness";
+export enum EffectResource {
+  absorption = "minecraft:absorption",
+  bad_omen = "minecraft:bad_omen",
+  blindness = "minecraft:blindness",
+  conduit_power = "minecraft:conduit_power",
+  dolphins_grace = "minecraft:dolphins_grace",
+  fire_resistance = "minecraft:fire_resistance",
+  glowing = "minecraft:glowing",
+  haste = "minecraft:haste",
+  health_boost = "minecraft:health_boost",
+  hero_of_the_village = "minecraft:hero_of_the_village",
+  hunger = "minecraft:hunger",
+  instant_health = "minecraft:instant_health",
+  instant_damage = "minecraft:instant_damage",
+  invisibility = "minecraft:invisibility",
+  jump_boost = "minecraft:jump_boost",
+  levitation = "minecraft:levitation",
+  luck = "minecraft:luck",
+  mining_fatigue = "minecraft:mining_fatigue",
+  nausea = "minecraft:nausea",
+  night_vision = "minecraft:night_vision",
+  poison = "minecraft:poison",
+  regeneration = "minecraft:regeneration",
+  resistance = "minecraft:resistance",
+  saturation = "minecraft:saturation",
+  slow_falling = "minecraft:slow_falling",
+  slowness = "minecraft:slowness",
+  speed = "minecraft:speed",
+  strength = "minecraft:strength",
+  unluck = "minecraft:unluck",
+  water_breathing = "minecraft:water_breathing",
+  weakness = "minecraft:weakness",
+  wither = "minecraft:wither",
+  darkness = "minecraft:darkness"
+}

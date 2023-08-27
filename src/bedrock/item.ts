@@ -1,265 +1,266 @@
-export type Item =
-  | "minecraft:iron_shovel"
-  | "minecraft:iron_pickaxe"
-  | "minecraft:iron_axe"
-  | "minecraft:flint_and_steel"
-  | "minecraft:apple"
-  | "minecraft:bow"
-  | "minecraft:arrow"
-  | "minecraft:coal"
-  | "minecraft:diamond"
-  | "minecraft:iron_ingot"
-  | "minecraft:gold_ingot"
-  | "minecraft:iron_sword"
-  | "minecraft:wooden_sword"
-  | "minecraft:wooden_shovel"
-  | "minecraft:wooden_pickaxe"
-  | "minecraft:wooden_axe"
-  | "minecraft:stone_sword"
-  | "minecraft:stone_shovel"
-  | "minecraft:stone_pickaxe"
-  | "minecraft:stone_axe"
-  | "minecraft:diamond_sword"
-  | "minecraft:diamond_shovel"
-  | "minecraft:diamond_pickaxe"
-  | "minecraft:diamond_axe"
-  | "minecraft:stick"
-  | "minecraft:bowl"
-  | "minecraft:mushroom_stew"
-  | "minecraft:golden_sword"
-  | "minecraft:golden_shovel"
-  | "minecraft:golden_pickaxe"
-  | "minecraft:golden_axe"
-  | "minecraft:string"
-  | "minecraft:feather"
-  | "minecraft:gunpowder"
-  | "minecraft:wooden_hoe"
-  | "minecraft:stone_hoe"
-  | "minecraft:iron_hoe"
-  | "minecraft:diamond_hoe"
-  | "minecraft:golden_hoe"
-  | "minecraft:wheat_seeds"
-  | "minecraft:wheat"
-  | "minecraft:bread"
-  | "minecraft:leather_helmet"
-  | "minecraft:leather_chestplate"
-  | "minecraft:leather_leggings"
-  | "minecraft:leather_boots"
-  | "minecraft:chainmail_helmet"
-  | "minecraft:chainmail_chestplate"
-  | "minecraft:chainmail_leggings"
-  | "minecraft:chainmail_boots"
-  | "minecraft:iron_helmet"
-  | "minecraft:iron_chestplate"
-  | "minecraft:iron_leggings"
-  | "minecraft:iron_boots"
-  | "minecraft:diamond_helmet"
-  | "minecraft:diamond_chestplate"
-  | "minecraft:diamond_leggings"
-  | "minecraft:diamond_boots"
-  | "minecraft:golden_helmet"
-  | "minecraft:golden_chestplate"
-  | "minecraft:golden_leggings"
-  | "minecraft:golden_boots"
-  | "minecraft:flint"
-  | "minecraft:porkchop"
-  | "minecraft:cooked_porkchop"
-  | "minecraft:painting"
-  | "minecraft:golden_apple"
-  | "minecraft:oak_sign"
-  | "minecraft:wooden_door"
-  | "minecraft:bucket"
-  | "minecraft:minecart"
-  | "minecraft:saddle"
-  | "minecraft:iron_door"
-  | "minecraft:redstone"
-  | "minecraft:snowball"
-  | "minecraft:boat"
-  | "minecraft:leather"
-  | "minecraft:kelp"
-  | "minecraft:brick"
-  | "minecraft:clay_ball"
-  | "minecraft:sugar_cane"
-  | "minecraft:paper"
-  | "minecraft:book"
-  | "minecraft:slime_ball"
-  | "minecraft:chest_minecart"
-  | "minecraft:egg"
-  | "minecraft:compass"
-  | "minecraft:fishing_rod"
-  | "minecraft:clock"
-  | "minecraft:glowstone_dust"
-  | "minecraft:cod"
-  | "minecraft:cooked_cod"
-  | "minecraft:dye"
-  | "minecraft:bone"
-  | "minecraft:sugar"
-  | "minecraft:cake"
-  | "minecraft:bed"
-  | "minecraft:repeater"
-  | "minecraft:cookie"
-  | "minecraft:filled_map"
-  | "minecraft:shears"
-  | "minecraft:melon_slice"
-  | "minecraft:pumpkin_seeds"
-  | "minecraft:melon_seeds"
-  | "minecraft:beef"
-  | "minecraft:cooked_beef"
-  | "minecraft:chicken"
-  | "minecraft:cooked_chicken"
-  | "minecraft:rotten_flesh"
-  | "minecraft:ender_pearl"
-  | "minecraft:blaze_rod"
-  | "minecraft:ghast_tear"
-  | "minecraft:gold_nugget"
-  | "minecraft:nether_wart"
-  | "minecraft:potion"
-  | "minecraft:glass_bottle"
-  | "minecraft:spider_eye"
-  | "minecraft:fermented_spider_eye"
-  | "minecraft:blaze_powder"
-  | "minecraft:magma_cream"
-  | "minecraft:brewing_stand"
-  | "minecraft:cauldron"
-  | "minecraft:ender_eye"
-  | "minecraft:glistering_melon_slice"
-  | "minecraft:spawn_egg"
-  | "minecraft:experience_bottle"
-  | "minecraft:fire_charge"
-  | "minecraft:writable_book"
-  | "minecraft:written_book"
-  | "minecraft:emerald"
-  | "minecraft:frame"
-  | "minecraft:flower_pot"
-  | "minecraft:carrot"
-  | "minecraft:potato"
-  | "minecraft:baked_potato"
-  | "minecraft:poisonous_potato"
-  | "minecraft:empty_map"
-  | "minecraft:golden_carrot"
-  | "minecraft:skull"
-  | "minecraft:carrot_on_a_stick"
-  | "minecraft:nether_star"
-  | "minecraft:pumpkin_pie"
-  | "minecraft:firework_rocket"
-  | "minecraft:firework_star"
-  | "minecraft:enchanted_book"
-  | "minecraft:comparator"
-  | "minecraft:netherbrick"
-  | "minecraft:quartz"
-  | "minecraft:tnt_minecart"
-  | "minecraft:hopper_minecart"
-  | "minecraft:prismarine_shard"
-  | "minecraft:hopper"
-  | "minecraft:rabbit"
-  | "minecraft:cooked_rabbit"
-  | "minecraft:rabbit_stew"
-  | "minecraft:rabbit_foot"
-  | "minecraft:rabbit_hide"
-  | "minecraft:leather_horse_armor"
-  | "minecraft:iron_horse_armor"
-  | "minecraft:golden_horse_armor"
-  | "minecraft:diamond_horse_armor"
-  | "minecraft:lead"
-  | "minecraft:name_tag"
-  | "minecraft:prismarine_crystals"
-  | "minecraft:mutton"
-  | "minecraft:cooked_mutton"
-  | "minecraft:armor_stand"
-  | "minecraft:end_crystal"
-  | "minecraft:spruce_door"
-  | "minecraft:birch_door"
-  | "minecraft:jungle_door"
-  | "minecraft:acacia_door"
-  | "minecraft:dark_oak_door"
-  | "minecraft:chorus_fruit"
-  | "minecraft:popped_chorus_fruit"
-  | "minecraft:banner_pattern"
-  | "minecraft:dragon_breath"
-  | "minecraft:splash_potion"
-  | "minecraft:lingering_potion"
-  | "minecraft:sparkler"
-  | "minecraft:command_block_minecart"
-  | "minecraft:elytra"
-  | "minecraft:shulker_shell"
-  | "minecraft:banner"
-  | "minecraft:medicine"
-  | "minecraft:balloon"
-  | "minecraft:rapid_fertilizer"
-  | "minecraft:totem_of_undying"
-  | "minecraft:bleach"
-  | "minecraft:iron_nugget"
-  | "minecraft:ice_bomb"
-  | "minecraft:chalkboard"
-  | "minecraft:trident"
-  | "minecraft:portfolio"
-  | "minecraft:beetroot"
-  | "minecraft:beetroot_seeds"
-  | "minecraft:beetroot_soup"
-  | "minecraft:salmon"
-  | "minecraft:tropical_fish"
-  | "minecraft:pufferfish"
-  | "minecraft:cooked_salmon"
-  | "minecraft:dried_kelp"
-  | "minecraft:nautilus_shell"
-  | "minecraft:enchanted_golden_apple"
-  | "minecraft:heart_of_the_sea"
-  | "minecraft:scute"
-  | "minecraft:turtle_helmet"
-  | "minecraft:phantom_membrane"
-  | "minecraft:crossbow"
-  | "minecraft:spruce_sign"
-  | "minecraft:birch_sign"
-  | "minecraft:jungle_sign"
-  | "minecraft:acacia_sign"
-  | "minecraft:dark_oak_sign"
-  | "minecraft:sweet_berries"
-  | "minecraft:camera"
-  | "minecraft:compound"
-  | "minecraft:music_disc_13"
-  | "minecraft:music_disc_cat"
-  | "minecraft:music_disc_blocks"
-  | "minecraft:music_disc_chirp"
-  | "minecraft:music_disc_far"
-  | "minecraft:music_disc_mall"
-  | "minecraft:music_disc_mellohi"
-  | "minecraft:music_disc_stal"
-  | "minecraft:music_disc_strad"
-  | "minecraft:music_disc_ward"
-  | "minecraft:music_disc_11"
-  | "minecraft:music_disc_wait"
-  | "minecraft:shield"
-  | "minecraft:glow_ink_sac"
-  | "minecraft:raw_iron"
-  | "minecraft:raw_gold"
-  | "minecraft:raw_copper"
-  | "minecraft:campfire"
-  | "minecraft:suspicious_stew"
-  | "minecraft:honeycomb"
-  | "minecraft:honey_bottle"
-  | "minecraft:lodestone_compass"
-  | "minecraft:netherite_ingot"
-  | "minecraft:netherite_sword"
-  | "minecraft:netherite_shovel"
-  | "minecraft:netherite_pickaxe"
-  | "minecraft:netherite_axe"
-  | "minecraft:netherite_hoe"
-  | "minecraft:netherite_helmet"
-  | "minecraft:netherite_chestplate"
-  | "minecraft:netherite_leggings"
-  | "minecraft:netherite_boots"
-  | "minecraft:netherite_scrap"
-  | "minecraft:crimson_sign"
-  | "minecraft:warped_sign"
-  | "minecraft:crimson_door"
-  | "minecraft:warped_door"
-  | "minecraft:warped_fungus_on_a_stick"
-  | "minecraft:chain"
-  | "minecraft:music_disc_pigstep"
-  | "minecraft:nether_sprouts"
-  | "minecraft:goat_horn"
-  | "minecraft:amethyst_shard"
-  | "minecraft:spyglass"
-  | "minecraft:music_disc_otherside"
-  | "minecraft:soul_campfire"
-  | "minecraft:glow_frame";
+export enum ItemResource {
+  iron_shovel = "minecraft:iron_shovel",
+  iron_pickaxe = "minecraft:iron_pickaxe",
+  iron_axe = "minecraft:iron_axe",
+  flint_and_steel = "minecraft:flint_and_steel",
+  apple = "minecraft:apple",
+  bow = "minecraft:bow",
+  arrow = "minecraft:arrow",
+  coal = "minecraft:coal",
+  diamond = "minecraft:diamond",
+  iron_ingot = "minecraft:iron_ingot",
+  gold_ingot = "minecraft:gold_ingot",
+  iron_sword = "minecraft:iron_sword",
+  wooden_sword = "minecraft:wooden_sword",
+  wooden_shovel = "minecraft:wooden_shovel",
+  wooden_pickaxe = "minecraft:wooden_pickaxe",
+  wooden_axe = "minecraft:wooden_axe",
+  stone_sword = "minecraft:stone_sword",
+  stone_shovel = "minecraft:stone_shovel",
+  stone_pickaxe = "minecraft:stone_pickaxe",
+  stone_axe = "minecraft:stone_axe",
+  diamond_sword = "minecraft:diamond_sword",
+  diamond_shovel = "minecraft:diamond_shovel",
+  diamond_pickaxe = "minecraft:diamond_pickaxe",
+  diamond_axe = "minecraft:diamond_axe",
+  stick = "minecraft:stick",
+  bowl = "minecraft:bowl",
+  mushroom_stew = "minecraft:mushroom_stew",
+  golden_sword = "minecraft:golden_sword",
+  golden_shovel = "minecraft:golden_shovel",
+  golden_pickaxe = "minecraft:golden_pickaxe",
+  golden_axe = "minecraft:golden_axe",
+  string = "minecraft:string",
+  feather = "minecraft:feather",
+  gunpowder = "minecraft:gunpowder",
+  wooden_hoe = "minecraft:wooden_hoe",
+  stone_hoe = "minecraft:stone_hoe",
+  iron_hoe = "minecraft:iron_hoe",
+  diamond_hoe = "minecraft:diamond_hoe",
+  golden_hoe = "minecraft:golden_hoe",
+  wheat_seeds = "minecraft:wheat_seeds",
+  wheat = "minecraft:wheat",
+  bread = "minecraft:bread",
+  leather_helmet = "minecraft:leather_helmet",
+  leather_chestplate = "minecraft:leather_chestplate",
+  leather_leggings = "minecraft:leather_leggings",
+  leather_boots = "minecraft:leather_boots",
+  chainmail_helmet = "minecraft:chainmail_helmet",
+  chainmail_chestplate = "minecraft:chainmail_chestplate",
+  chainmail_leggings = "minecraft:chainmail_leggings",
+  chainmail_boots = "minecraft:chainmail_boots",
+  iron_helmet = "minecraft:iron_helmet",
+  iron_chestplate = "minecraft:iron_chestplate",
+  iron_leggings = "minecraft:iron_leggings",
+  iron_boots = "minecraft:iron_boots",
+  diamond_helmet = "minecraft:diamond_helmet",
+  diamond_chestplate = "minecraft:diamond_chestplate",
+  diamond_leggings = "minecraft:diamond_leggings",
+  diamond_boots = "minecraft:diamond_boots",
+  golden_helmet = "minecraft:golden_helmet",
+  golden_chestplate = "minecraft:golden_chestplate",
+  golden_leggings = "minecraft:golden_leggings",
+  golden_boots = "minecraft:golden_boots",
+  flint = "minecraft:flint",
+  porkchop = "minecraft:porkchop",
+  cooked_porkchop = "minecraft:cooked_porkchop",
+  painting = "minecraft:painting",
+  golden_apple = "minecraft:golden_apple",
+  oak_sign = "minecraft:oak_sign",
+  wooden_door = "minecraft:wooden_door",
+  bucket = "minecraft:bucket",
+  minecart = "minecraft:minecart",
+  saddle = "minecraft:saddle",
+  iron_door = "minecraft:iron_door",
+  redstone = "minecraft:redstone",
+  snowball = "minecraft:snowball",
+  boat = "minecraft:boat",
+  leather = "minecraft:leather",
+  kelp = "minecraft:kelp",
+  brick = "minecraft:brick",
+  clay_ball = "minecraft:clay_ball",
+  sugar_cane = "minecraft:sugar_cane",
+  paper = "minecraft:paper",
+  book = "minecraft:book",
+  slime_ball = "minecraft:slime_ball",
+  chest_minecart = "minecraft:chest_minecart",
+  egg = "minecraft:egg",
+  compass = "minecraft:compass",
+  fishing_rod = "minecraft:fishing_rod",
+  clock = "minecraft:clock",
+  glowstone_dust = "minecraft:glowstone_dust",
+  cod = "minecraft:cod",
+  cooked_cod = "minecraft:cooked_cod",
+  dye = "minecraft:dye",
+  bone = "minecraft:bone",
+  sugar = "minecraft:sugar",
+  cake = "minecraft:cake",
+  bed = "minecraft:bed",
+  repeater = "minecraft:repeater",
+  cookie = "minecraft:cookie",
+  filled_map = "minecraft:filled_map",
+  shears = "minecraft:shears",
+  melon_slice = "minecraft:melon_slice",
+  pumpkin_seeds = "minecraft:pumpkin_seeds",
+  melon_seeds = "minecraft:melon_seeds",
+  beef = "minecraft:beef",
+  cooked_beef = "minecraft:cooked_beef",
+  chicken = "minecraft:chicken",
+  cooked_chicken = "minecraft:cooked_chicken",
+  rotten_flesh = "minecraft:rotten_flesh",
+  ender_pearl = "minecraft:ender_pearl",
+  blaze_rod = "minecraft:blaze_rod",
+  ghast_tear = "minecraft:ghast_tear",
+  gold_nugget = "minecraft:gold_nugget",
+  nether_wart = "minecraft:nether_wart",
+  potion = "minecraft:potion",
+  glass_bottle = "minecraft:glass_bottle",
+  spider_eye = "minecraft:spider_eye",
+  fermented_spider_eye = "minecraft:fermented_spider_eye",
+  blaze_powder = "minecraft:blaze_powder",
+  magma_cream = "minecraft:magma_cream",
+  brewing_stand = "minecraft:brewing_stand",
+  cauldron = "minecraft:cauldron",
+  ender_eye = "minecraft:ender_eye",
+  glistering_melon_slice = "minecraft:glistering_melon_slice",
+  spawn_egg = "minecraft:spawn_egg",
+  experience_bottle = "minecraft:experience_bottle",
+  fire_charge = "minecraft:fire_charge",
+  writable_book = "minecraft:writable_book",
+  written_book = "minecraft:written_book",
+  emerald = "minecraft:emerald",
+  frame = "minecraft:frame",
+  flower_pot = "minecraft:flower_pot",
+  carrot = "minecraft:carrot",
+  potato = "minecraft:potato",
+  baked_potato = "minecraft:baked_potato",
+  poisonous_potato = "minecraft:poisonous_potato",
+  empty_map = "minecraft:empty_map",
+  golden_carrot = "minecraft:golden_carrot",
+  skull = "minecraft:skull",
+  carrot_on_a_stick = "minecraft:carrot_on_a_stick",
+  nether_star = "minecraft:nether_star",
+  pumpkin_pie = "minecraft:pumpkin_pie",
+  firework_rocket = "minecraft:firework_rocket",
+  firework_star = "minecraft:firework_star",
+  enchanted_book = "minecraft:enchanted_book",
+  comparator = "minecraft:comparator",
+  netherbrick = "minecraft:netherbrick",
+  quartz = "minecraft:quartz",
+  tnt_minecart = "minecraft:tnt_minecart",
+  hopper_minecart = "minecraft:hopper_minecart",
+  prismarine_shard = "minecraft:prismarine_shard",
+  hopper = "minecraft:hopper",
+  rabbit = "minecraft:rabbit",
+  cooked_rabbit = "minecraft:cooked_rabbit",
+  rabbit_stew = "minecraft:rabbit_stew",
+  rabbit_foot = "minecraft:rabbit_foot",
+  rabbit_hide = "minecraft:rabbit_hide",
+  leather_horse_armor = "minecraft:leather_horse_armor",
+  iron_horse_armor = "minecraft:iron_horse_armor",
+  golden_horse_armor = "minecraft:golden_horse_armor",
+  diamond_horse_armor = "minecraft:diamond_horse_armor",
+  lead = "minecraft:lead",
+  name_tag = "minecraft:name_tag",
+  prismarine_crystals = "minecraft:prismarine_crystals",
+  mutton = "minecraft:mutton",
+  cooked_mutton = "minecraft:cooked_mutton",
+  armor_stand = "minecraft:armor_stand",
+  end_crystal = "minecraft:end_crystal",
+  spruce_door = "minecraft:spruce_door",
+  birch_door = "minecraft:birch_door",
+  jungle_door = "minecraft:jungle_door",
+  acacia_door = "minecraft:acacia_door",
+  dark_oak_door = "minecraft:dark_oak_door",
+  chorus_fruit = "minecraft:chorus_fruit",
+  popped_chorus_fruit = "minecraft:popped_chorus_fruit",
+  banner_pattern = "minecraft:banner_pattern",
+  dragon_breath = "minecraft:dragon_breath",
+  splash_potion = "minecraft:splash_potion",
+  lingering_potion = "minecraft:lingering_potion",
+  sparkler = "minecraft:sparkler",
+  command_block_minecart = "minecraft:command_block_minecart",
+  elytra = "minecraft:elytra",
+  shulker_shell = "minecraft:shulker_shell",
+  banner = "minecraft:banner",
+  medicine = "minecraft:medicine",
+  balloon = "minecraft:balloon",
+  rapid_fertilizer = "minecraft:rapid_fertilizer",
+  totem_of_undying = "minecraft:totem_of_undying",
+  bleach = "minecraft:bleach",
+  iron_nugget = "minecraft:iron_nugget",
+  ice_bomb = "minecraft:ice_bomb",
+  chalkboard = "minecraft:chalkboard",
+  trident = "minecraft:trident",
+  portfolio = "minecraft:portfolio",
+  beetroot = "minecraft:beetroot",
+  beetroot_seeds = "minecraft:beetroot_seeds",
+  beetroot_soup = "minecraft:beetroot_soup",
+  salmon = "minecraft:salmon",
+  tropical_fish = "minecraft:tropical_fish",
+  pufferfish = "minecraft:pufferfish",
+  cooked_salmon = "minecraft:cooked_salmon",
+  dried_kelp = "minecraft:dried_kelp",
+  nautilus_shell = "minecraft:nautilus_shell",
+  enchanted_golden_apple = "minecraft:enchanted_golden_apple",
+  heart_of_the_sea = "minecraft:heart_of_the_sea",
+  scute = "minecraft:scute",
+  turtle_helmet = "minecraft:turtle_helmet",
+  phantom_membrane = "minecraft:phantom_membrane",
+  crossbow = "minecraft:crossbow",
+  spruce_sign = "minecraft:spruce_sign",
+  birch_sign = "minecraft:birch_sign",
+  jungle_sign = "minecraft:jungle_sign",
+  acacia_sign = "minecraft:acacia_sign",
+  dark_oak_sign = "minecraft:dark_oak_sign",
+  sweet_berries = "minecraft:sweet_berries",
+  camera = "minecraft:camera",
+  compound = "minecraft:compound",
+  music_disc_13 = "minecraft:music_disc_13",
+  music_disc_cat = "minecraft:music_disc_cat",
+  music_disc_blocks = "minecraft:music_disc_blocks",
+  music_disc_chirp = "minecraft:music_disc_chirp",
+  music_disc_far = "minecraft:music_disc_far",
+  music_disc_mall = "minecraft:music_disc_mall",
+  music_disc_mellohi = "minecraft:music_disc_mellohi",
+  music_disc_stal = "minecraft:music_disc_stal",
+  music_disc_strad = "minecraft:music_disc_strad",
+  music_disc_ward = "minecraft:music_disc_ward",
+  music_disc_11 = "minecraft:music_disc_11",
+  music_disc_wait = "minecraft:music_disc_wait",
+  shield = "minecraft:shield",
+  glow_ink_sac = "minecraft:glow_ink_sac",
+  raw_iron = "minecraft:raw_iron",
+  raw_gold = "minecraft:raw_gold",
+  raw_copper = "minecraft:raw_copper",
+  campfire = "minecraft:campfire",
+  suspicious_stew = "minecraft:suspicious_stew",
+  honeycomb = "minecraft:honeycomb",
+  honey_bottle = "minecraft:honey_bottle",
+  lodestone_compass = "minecraft:lodestone_compass",
+  netherite_ingot = "minecraft:netherite_ingot",
+  netherite_sword = "minecraft:netherite_sword",
+  netherite_shovel = "minecraft:netherite_shovel",
+  netherite_pickaxe = "minecraft:netherite_pickaxe",
+  netherite_axe = "minecraft:netherite_axe",
+  netherite_hoe = "minecraft:netherite_hoe",
+  netherite_helmet = "minecraft:netherite_helmet",
+  netherite_chestplate = "minecraft:netherite_chestplate",
+  netherite_leggings = "minecraft:netherite_leggings",
+  netherite_boots = "minecraft:netherite_boots",
+  netherite_scrap = "minecraft:netherite_scrap",
+  crimson_sign = "minecraft:crimson_sign",
+  warped_sign = "minecraft:warped_sign",
+  crimson_door = "minecraft:crimson_door",
+  warped_door = "minecraft:warped_door",
+  warped_fungus_on_a_stick = "minecraft:warped_fungus_on_a_stick",
+  chain = "minecraft:chain",
+  music_disc_pigstep = "minecraft:music_disc_pigstep",
+  nether_sprouts = "minecraft:nether_sprouts",
+  goat_horn = "minecraft:goat_horn",
+  amethyst_shard = "minecraft:amethyst_shard",
+  spyglass = "minecraft:spyglass",
+  music_disc_otherside = "minecraft:music_disc_otherside",
+  soul_campfire = "minecraft:soul_campfire",
+  glow_frame = "minecraft:glow_frame"
+}

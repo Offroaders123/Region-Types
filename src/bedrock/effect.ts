@@ -1,30 +1,31 @@
-export type Effect =
-  | "minecraft:speed"
-  | "minecraft:haste"
-  | "minecraft:mining_fatigue"
-  | "minecraft:strength"
-  | "minecraft:instant_health"
-  | "minecraft:instant_damage"
-  | "minecraft:jump_boost"
-  | "minecraft:nausea"
-  | "minecraft:regeneration"
-  | "minecraft:resistance"
-  | "minecraft:fire_resistance"
-  | "minecraft:water_breathing"
-  | "minecraft:invisibility"
-  | "minecraft:blindness"
-  | "minecraft:night_vision"
-  | "minecraft:hunger"
-  | "minecraft:weakness"
-  | "minecraft:poison"
-  | "minecraft:wither"
-  | "minecraft:health_boost"
-  | "minecraft:absorption"
-  | "minecraft:saturation"
-  | "minecraft:levitation"
-  | "minecraft:fatal_poison"
-  | "minecraft:conduit_power"
-  | "minecraft:slow_falling"
-  | "minecraft:bad_omen"
-  | "minecraft:village_hero"
-  | "minecraft:darkness";
+export enum EffectResource {
+  speed = "minecraft:speed",
+  haste = "minecraft:haste",
+  mining_fatigue = "minecraft:mining_fatigue",
+  strength = "minecraft:strength",
+  instant_health = "minecraft:instant_health",
+  instant_damage = "minecraft:instant_damage",
+  jump_boost = "minecraft:jump_boost",
+  nausea = "minecraft:nausea",
+  regeneration = "minecraft:regeneration",
+  resistance = "minecraft:resistance",
+  fire_resistance = "minecraft:fire_resistance",
+  water_breathing = "minecraft:water_breathing",
+  invisibility = "minecraft:invisibility",
+  blindness = "minecraft:blindness",
+  night_vision = "minecraft:night_vision",
+  hunger = "minecraft:hunger",
+  weakness = "minecraft:weakness",
+  poison = "minecraft:poison",
+  wither = "minecraft:wither",
+  health_boost = "minecraft:health_boost",
+  absorption = "minecraft:absorption",
+  saturation = "minecraft:saturation",
+  levitation = "minecraft:levitation",
+  fatal_poison = "minecraft:fatal_poison",
+  conduit_power = "minecraft:conduit_power",
+  slow_falling = "minecraft:slow_falling",
+  bad_omen = "minecraft:bad_omen",
+  village_hero = "minecraft:village_hero",
+  darkness = "minecraft:darkness"
+}

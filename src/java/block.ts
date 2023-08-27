@@ -1,3 +1,10 @@
+import type { CompoundTag } from "nbtify";
+
+export interface BlockState extends CompoundTag {
+  Name: BlockResource;
+  [property: string]: any;
+}
+
 export enum BlockResource {
   acacia_button = "minecraft:acacia_button",
   acacia_door = "minecraft:acacia_door",

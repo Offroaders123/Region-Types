@@ -1,5 +1,16 @@
 import { BlockResource } from "./block.js";
 
+import type { BooleanTag, IntTag, CompoundTag } from "nbtify";
+
+export interface BlockEntity extends CompoundTag {
+  id: BlockEntityResource;
+  keepPacked: BooleanTag;
+  x: IntTag;
+  y: IntTag;
+  z: IntTag;
+  [property: string]: any;
+}
+
 export enum BlockEntityResource {
   banner = "minecraft:banner",
   barrel = BlockResource.barrel,

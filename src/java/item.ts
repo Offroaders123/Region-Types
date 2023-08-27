@@ -1,4 +1,15 @@
-export enum Item {
+import type { ByteTag, IntTag, StringTag, CompoundTag } from "nbtify";
+
+export interface Item extends CompoundTag {
+  Slot: ByteTag;
+  id: StringTag;
+  tag?: {
+    Damage: IntTag;
+  };
+  Count: ByteTag;
+}
+
+export enum ItemResource {
   acacia_boat = "minecraft:acacia_boat",
   amethyst_shard = "minecraft:amethyst_shard",
   apple = "minecraft:apple",

@@ -1,3 +1,101 @@
+import type { BooleanTag, ByteTag, IntTag, FloatTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
+import type { BiomeResource } from "./biome.js";
+import type { BlockState, BlockResource } from "./block.js";
+
+export interface Structure extends CompoundTag {
+  BB: IntArrayTag;
+  biome: BiomeResource;
+  Children: StructurePiece[];
+  ChunkX: IntTag;
+  ChunkZ: IntTag;
+  id: StringTag;
+  Processed: MonumentProcessed[];
+  Valid: BooleanTag;
+  [property: string]: any;
+}
+
+export interface StructurePiece extends CompoundTag {
+  BB: IntArrayTag;
+  BiomeType: "WARM" | "COLD";
+  C: ByteTag;
+  CA: VillageBlock;
+  CB: VillageBlock;
+  CC: VillageBlock;
+  CD: VillageBlock;
+  Chest: BooleanTag;
+  D: IntTag;
+  Depth: IntTag;
+  Entrances: IntArrayTag[];
+  EntryDoor: StringTag;
+  GD: IntTag;
+  hasPlacedChest0: BooleanTag;
+  hasPlacedChest1: BooleanTag;
+  hasPlacedChest2: BooleanTag;
+  hasPlacedChest3: BooleanTag;
+  Height: IntTag;
+  HPos: IntTag;
+  hps: BooleanTag;
+  hr: BooleanTag;
+  id: StringTag;
+  integrity: FloatTag;
+  isLarge: BooleanTag;
+  junctions: VillageJunction[];
+  Left: BooleanTag;
+  leftHigh: BooleanTag;
+  leftLow: BooleanTag;
+  Length: IntTag;
+  Mob: BooleanTag;
+  Num: IntTag;
+  O: IntTag;
+  placedHiddenCHest: BooleanTag;
+  placedMainChest: BooleanTag;
+  placedTrap1: BooleanTag;
+  placedTrap2: BooleanTag;
+  PosX: IntTag;
+  PosY: IntTag;
+  PosZ: IntTag;
+  Right: BooleanTag;
+  rightHigh: BooleanTag;
+  rightLow: BooleanTag;
+  Rot: "COUNTERCLOCKWISE_90" | "NONE" | "CLOCKWISE_90" | "CLOCKWISE_180";
+  sc: BooleanTag;
+  Seed: IntTag;
+  Source: BooleanTag;
+  Steps: IntTag;
+  T: IntTag;
+  Tall: BooleanTag;
+  Template: StringTag;
+  Terrace: BooleanTag;
+  tf: BooleanTag;
+  TPX: IntTag;
+  TPY: IntTag;
+  TPZ: IntTag;
+  Type: ByteTag<0 | 1 | 2 | 3>;
+  Type__stronghold__: IntTag;
+  VCount: IntTag;
+  Width: IntTag;
+  Witch: BooleanTag;
+  Zombie: BooleanTag;
+}
+
+export interface VillageBlock extends CompoundTag {
+  Name: BlockResource;
+  Properties: BlockState;
+}
+
+export interface VillageJunction extends CompoundTag {
+  source_x: IntTag;
+  source_ground_y: IntTag;
+  source_z: IntTag;
+  delta_y: IntTag;
+  dest_proj: "terrain_matching" | "rigid";
+}
+
+export interface MonumentProcessed extends CompoundTag {
+  X: IntTag;
+  Z: IntTag;
+}
+
 export enum StructureResource {
   ancient_city = "minecraft:ancient_city",
   bastion_remnant = "minecraft:bastion_remnant",

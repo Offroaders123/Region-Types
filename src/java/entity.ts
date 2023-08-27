@@ -1,3 +1,31 @@
+import type { BooleanTag, ShortTag, IntTag, FloatTag, DoubleTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
+
+export interface Entity extends CompoundTag {
+  Air: ShortTag;
+  CustomName: StringTag;
+  CustomNameVisible?: BooleanTag;
+  FallDistance: FloatTag;
+  Fire: ShortTag;
+  Glowing: BooleanTag;
+  HasVisualFire: BooleanTag;
+  id: EntityResource;
+  Invulnerable: BooleanTag;
+  Motion: [DoubleTag,DoubleTag,DoubleTag];
+  NoGravity: BooleanTag;
+  OnGround: BooleanTag;
+  Passengers: Entity[];
+  PortalCooldown: IntTag;
+  Pos: [DoubleTag,DoubleTag,DoubleTag];
+  Rotation: [FloatTag,FloatTag];
+  Silent?: BooleanTag;
+  Tags: Scoreboard[];
+  TicksFrozen?: IntTag;
+  UUID: IntArrayTag;
+  [property: string]: any;
+}
+
+export type Scoreboard = any;
+
 export enum EntityResource {
   axolotl = "minecraft:axolotl",
   bat = "minecraft:bat",

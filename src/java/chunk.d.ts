@@ -1,6 +1,9 @@
 import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, ByteArrayTag, CompoundTag, IntArrayTag, LongArrayTag } from "nbtify";
-
-export type ResourceLocation = `${string}:${string}`;
+import type { Biome } from "./biome.js";
+import type { Block } from "./block.js";
+import type { BlockEntity as BlockEntityLocation } from "./block-entity.js";
+import type { Entity as EntityLocation } from "./entity.js";
+import type { Structure as StructureLocation } from "./structure.js";
 
 export interface Chunk extends CompoundTag {
   DataVersion: IntTag;
@@ -31,10 +34,10 @@ export interface Chunk extends CompoundTag {
   PostProcessing: ToBeTicked[];
   structures: {
     References: {
-      [structureName: ResourceLocation]: LongArrayTag;
+      [K in StructureLocation]?: LongArrayTag;
     };
     starts: {
-      [structureName: ResourceLocation]: Structure;
+      [K in StructureLocation]?: Structure;
     };
   };
 }
@@ -43,23 +46,23 @@ export interface Section extends CompoundTag {
   Y: ByteTag;
   block_states: {
     palette: BlockState[];
-    data: LongArrayTag;
+    data?: LongArrayTag;
   };
   biomes: {
-    palette: ResourceLocation[];
-    data: LongArrayTag;
+    palette: Biome[];
+    data?: LongArrayTag;
   };
   BlockLight: ByteArrayTag;
   SkyLight: ByteArrayTag;
 }
 
 export interface BlockState extends CompoundTag {
-  Name: ResourceLocation;
+  Name: Block;
   [property: string]: any;
 }
 
 export interface BlockEntity extends CompoundTag {
-  id: ResourceLocation;
+  id: BlockEntityLocation;
   keepPacked: BooleanTag;
   x: IntTag;
   y: IntTag;
@@ -75,7 +78,7 @@ export interface Entity extends CompoundTag {
   Fire: ShortTag;
   Glowing: BooleanTag;
   HasVisualFire: BooleanTag;
-  id: ResourceLocation;
+  id: EntityLocation;
   Invulnerable: BooleanTag;
   Motion: [DoubleTag,DoubleTag,DoubleTag];
   NoGravity: BooleanTag;
@@ -93,8 +96,42 @@ export interface Entity extends CompoundTag {
 
 export type Scoreboard = unknown;
 
+export type TileTickResource =
+  | "minecraft:repeater"
+  | "minecraft:redstone_torch"
+  | "minecraft:redstone_wall_torch"
+  | "minecraft:comparator"
+  | "minecraft:observer"
+  | "minecraft:dispenser"
+  | "minecraft:dropper"
+  | "minecraft:chain_command_block"
+  | "minecraft:command_block"
+  | "minecraft:repeating_command_block"
+  | "minecraft:water"
+  | "minecraft:lava"
+  | "minecraft:red_sand"
+  | "minecraft:sand"
+  | "minecraft:suspicious_sand"
+  | "minecraft:acacia_button"
+  | "minecraft:birch_button"
+  | "minecraft:crimson_button"
+  | "minecraft:dark_oak_button"
+  | "minecraft:jungle_button"
+  | "minecraft:oak_button"
+  | "minecraft:polished_blackstone_button"
+  | "minecraft:spruce_button"
+  | "minecraft:stone_button"
+  | "minecraft:warped_button"
+  | "minecraft:mangrove_button"
+  | "minecraft:bamboo_button"
+  | "minecraft:cherry_button"
+  | "minecraft:pressure_plate"
+  | "minecraft:detector_rail"
+  | "minecraft:tripwire_hook"
+  | "minecraft:redstone_lamp";
+
 export interface TileTick extends CompoundTag {
-  i: ResourceLocation;
+  i: TileTickResource;
   p: IntTag;
   t: IntTag;
   x: IntTag;
@@ -106,7 +143,7 @@ export type ToBeTicked = ShortTag[];
 
 export interface Structure extends CompoundTag {
   BB: IntArrayTag;
-  biome: ResourceLocation;
+  biome: Biome;
   Children: StructurePiece[];
   ChunkX: IntTag;
   ChunkZ: IntTag;
@@ -181,7 +218,7 @@ export interface StructurePiece extends CompoundTag {
 }
 
 export interface VillageBlock extends CompoundTag {
-  Name: ResourceLocation;
+  Name: Block;
   Properties: BlockState;
 }
 

@@ -38,7 +38,7 @@ export enum BlockEntityResource {
   jigsaw = BlockResource.jigsaw,
   jukebox = BlockResource.jukebox,
   lectern = BlockResource.lectern,
-  mob_spawner = "minecraft:mob_spawner",
+  spawner = BlockResource.spawner,
   piston = BlockResource.piston,
   shulker_box = BlockResource.shulker_box,
   sign = "minecraft:sign",

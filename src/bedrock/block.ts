@@ -707,5 +707,13 @@ export enum BlockResource {
   frog_spawn = "minecraft:frog_spawn",
   pearlescent_froglight = "minecraft:pearlescent_froglight",
   verdant_froglight = "minecraft:verdant_froglight",
-  ochre_froglight = "minecraft:ochre_froglight"
+  ochre_froglight = "minecraft:ochre_froglight",
+  chiseled_bookshelf = "minecraft:chiseled_bookshelf",
+  suspicious_sand = "minecraft:suspicious_sand",
+  suspicious_gravel = "minecraft:suspicious_gravel",
+  decorated_pot = "minecraft:decorated_pot",
+  compound_creator = "minecraft:compound_creator",
+  element_constructor = "minecraft:element_constructor",
+  lab_table = "minecraft:lab_table",
+  material_reducer = "minecraft:material_reducer"
 }

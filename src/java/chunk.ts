@@ -1,4 +1,4 @@
-import type { ByteTag, ShortTag, IntTag, LongTag, StringTag, ByteArrayTag, CompoundTag, LongArrayTag } from "nbtify";
+import type { ByteTag, ShortTag, IntTag, LongTag, StringTag, ByteArrayTag, LongArrayTag } from "nbtify";
 import type { BiomeResource } from "./biome.js";
 import type { BlockState } from "./block.js";
 import type { BlockEntity } from "./block-entity.js";
@@ -6,7 +6,7 @@ import type { Entity } from "./entity.js";
 import type { Structure, StructureResource } from "./structure.js";
 import type { TileTick } from "./tile-tick.js";
 
-export interface Chunk extends CompoundTag {
+export interface Chunk {
   DataVersion: IntTag;
   xPos: IntTag;
   zPos: IntTag;
@@ -26,7 +26,7 @@ export interface Chunk extends CompoundTag {
   structures: Structures;
 }
 
-export interface Section extends CompoundTag {
+export interface Section {
   Y: ByteTag;
   block_states: {
     palette: BlockState[];
@@ -40,12 +40,12 @@ export interface Section extends CompoundTag {
   SkyLight: ByteArrayTag;
 }
 
-export interface CarvingMasks extends CompoundTag {
+export interface CarvingMasks {
   AIR: ByteArrayTag;
   LIQUID: ByteArrayTag;
 }
 
-export interface Heightmaps extends CompoundTag {
+export interface Heightmaps {
   MOTION_BLOCKING: LongArrayTag;
   MOTION_BLOCKING_NO_LEAVES: LongArrayTag;
   OCEAN_FLOOR: LongArrayTag;
@@ -58,7 +58,7 @@ export type Lights = ShortTag[][];
 
 export type ToBeTicked = ShortTag[];
 
-export interface Structures extends CompoundTag {
+export interface Structures {
   References: {
     [K in StructureResource]?: LongArrayTag;
   };

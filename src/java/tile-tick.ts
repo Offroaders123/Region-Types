@@ -1,8 +1,8 @@
 import { BlockResource } from "./block.js";
 
-import type { IntTag, CompoundTag } from "nbtify";
+import type { IntTag } from "nbtify";
 
-export interface TileTick extends CompoundTag {
+export interface TileTick {
   i: TileTickResource;
   p: IntTag;
   t: IntTag;

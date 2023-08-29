@@ -1,4 +1,4 @@
-import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, StringTag, IntArrayTag, CompoundTag } from "nbtify";
+import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, StringTag, IntArrayTag } from "nbtify";
 import type { EffectID } from "./effect.js";
 import type { Entity } from "./entity.js";
 import type { Item } from "./item.js";
@@ -11,7 +11,7 @@ export interface Banner extends BlockEntityLike {
   Patterns: BannerPattern[];
 }
 
-export interface BannerPattern extends CompoundTag {
+export interface BannerPattern {
   Color: IntTag<BannerPatternColor>;
   Pattern: BannerPatternResource;
 }
@@ -48,13 +48,13 @@ export interface Beehive extends BlockEntityLike {
   FlowerPos: BeehiveFlower;
 }
 
-export interface BeehiveEntity extends CompoundTag {
+export interface BeehiveEntity {
   EntityData: Entity; // Probably should allow only `BeeEntity` once that's implemented? Wiki doesn't specify
   MinOccupationTicks: IntTag;
   TicksInHive: IntTag;
 }
 
-export interface BeehiveFlower extends CompoundTag {
+export interface BeehiveFlower {
   X: IntTag;
   Y: IntTag;
   Z: IntTag;
@@ -71,7 +71,7 @@ export interface BlastFurnace extends BlockEntityLike {
   RecipesUsed: BlastFurnaceRecipesUsed;
 }
 
-export interface BlastFurnaceRecipesUsed extends CompoundTag {
+export interface BlastFurnaceRecipesUsed {
   [id: number]: IntTag; // Use `RecipeID` for the index once that is implemented.
 }
 
@@ -105,7 +105,7 @@ export interface Campfire extends BlockEntityLike {
   Items: Item[]; // Should be `[Item,Item,Item,Item]`, but I want the values to be optional. They're not always present there!
 }
 
-export interface BlockEntityLike extends CompoundTag {
+export interface BlockEntityLike {
   id: BlockEntityResource;
   keepPacked: BooleanTag;
   x: IntTag;

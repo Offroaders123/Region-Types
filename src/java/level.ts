@@ -1,9 +1,9 @@
-import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
+import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
 import type { DimensionResource } from "./dimension.js";
 import type { Item } from "./item.js";
 import type { RecipeResource } from "./recipe.js";
 
-export interface LevelDat extends CompoundTag {
+export interface LevelDat {
   Data: {
     Difficulty: ByteTag<Difficulty>;
     thunderTime: IntTag;
@@ -58,7 +58,7 @@ export type ScheduledEvents = [
   // Needs types!
 ];
 
-export interface WorldGenSettings extends CompoundTag {
+export interface WorldGenSettings {
   bonus_chest: BooleanTag;
   seed: LongTag;
   generate_features: BooleanTag;
@@ -111,12 +111,12 @@ export interface WorldGenSettings extends CompoundTag {
   };
 }
 
-export interface DataPacks extends CompoundTag {
+export interface DataPacks {
   Disabled: StringTag[];
   Enabled: StringTag[];
 }
 
-export interface GameRules extends CompoundTag {
+export interface GameRules {
   forgiveDeadPlayers: `${boolean}`;
   doInsomnia: `${boolean}`;
   fallDamage: `${boolean}`;
@@ -154,7 +154,7 @@ export interface GameRules extends CompoundTag {
   logAdminCommands: `${boolean}`;
 }
 
-export interface DragonFight extends CompoundTag {
+export interface DragonFight {
   PreviouslyKilled: BooleanTag;
   NeedsStateScanning: BooleanTag;
   Gateways: Gateways;
@@ -168,7 +168,7 @@ export type Gateways = [IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, 
  * 
  * @deprecated
 */
-export interface TempPlayer extends CompoundTag {
+export interface TempPlayer {
   seenCredits: BooleanTag;
   DeathTime: ShortTag;
   foodTickTimer: IntTag;
@@ -245,13 +245,13 @@ export interface TempPlayer extends CompoundTag {
   foodExhaustionLevel: FloatTag;
 }
 
-export interface Version extends CompoundTag {
+export interface Version {
   Id: IntTag;
   Name: StringTag;
   Series: StringTag;
   Snapshot: BooleanTag;
 }
 
-export interface CustomBossEvents extends CompoundTag {
+export interface CustomBossEvents {
  // Needs types also
 }

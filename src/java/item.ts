@@ -1,6 +1,6 @@
-import type { ByteTag, IntTag, StringTag, CompoundTag } from "nbtify";
+import type { ByteTag, IntTag, StringTag } from "nbtify";
 
-export interface Item extends CompoundTag {
+export interface Item {
   Slot: ByteTag;
   id: StringTag;
   tag?: {

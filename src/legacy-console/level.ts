@@ -1,6 +1,6 @@
-import type { BooleanTag, ByteTag, IntTag, LongTag, StringTag, CompoundTag } from "nbtify";
+import type { BooleanTag, ByteTag, IntTag, LongTag, StringTag } from "nbtify";
 
-export interface LevelDat extends CompoundTag {
+export interface LevelDat {
   Data: {
     BiomeCentreXChunk: IntTag;
     BiomeScale: IntTag;

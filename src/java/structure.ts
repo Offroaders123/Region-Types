@@ -1,8 +1,8 @@
-import type { BooleanTag, ByteTag, IntTag, FloatTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
+import type { BooleanTag, ByteTag, IntTag, FloatTag, StringTag, IntArrayTag } from "nbtify";
 import type { BiomeResource } from "./biome.js";
 import type { BlockState, BlockResource } from "./block.js";
 
-export interface Structure extends CompoundTag {
+export interface Structure {
   BB: IntArrayTag;
   biome: BiomeResource;
   Children: StructurePiece[];
@@ -14,7 +14,7 @@ export interface Structure extends CompoundTag {
   [property: string]: any;
 }
 
-export interface StructurePiece extends CompoundTag {
+export interface StructurePiece {
   BB: IntArrayTag;
   BiomeType: "WARM" | "COLD";
   C: ByteTag;
@@ -78,12 +78,12 @@ export interface StructurePiece extends CompoundTag {
   Zombie: BooleanTag;
 }
 
-export interface VillageBlock extends CompoundTag {
+export interface VillageBlock {
   Name: BlockResource;
   Properties: BlockState;
 }
 
-export interface VillageJunction extends CompoundTag {
+export interface VillageJunction {
   source_x: IntTag;
   source_ground_y: IntTag;
   source_z: IntTag;
@@ -91,7 +91,7 @@ export interface VillageJunction extends CompoundTag {
   dest_proj: "terrain_matching" | "rigid";
 }
 
-export interface MonumentProcessed extends CompoundTag {
+export interface MonumentProcessed {
   X: IntTag;
   Z: IntTag;
 }

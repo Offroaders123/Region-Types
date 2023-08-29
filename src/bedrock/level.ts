@@ -1,6 +1,6 @@
-import type { BooleanTag, ByteTag, IntTag, LongTag, FloatTag, StringTag, CompoundTag } from "nbtify";
+import type { BooleanTag, ByteTag, IntTag, LongTag, FloatTag, StringTag } from "nbtify";
 
-export interface LevelDat extends CompoundTag {
+export interface LevelDat {
   BiomeOverride: StringTag;
   CenterMapsToOrigin: BooleanTag;
   ConfirmedPlatformLockedContent: BooleanTag;
@@ -113,7 +113,7 @@ export type Generator = 0 | 1 | 2;
 
 export type Version = [IntTag, IntTag, IntTag, IntTag, IntTag];
 
-export interface Abilities extends CompoundTag {
+export interface Abilities {
   attackmobs: BooleanTag;
   attackplayers: BooleanTag;
   build: BooleanTag;
@@ -131,11 +131,11 @@ export interface Abilities extends CompoundTag {
   walkSpeed: FloatTag;
 }
 
-export interface Experiments extends CompoundTag {
+export interface Experiments {
   experiments_ever_used: BooleanTag;
   saved_with_toggled_experiments: BooleanTag;
 }
 
-export interface WorldPolicies extends CompoundTag {
+export interface WorldPolicies {
   // Not sure what values are present here
 }

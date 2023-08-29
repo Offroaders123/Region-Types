@@ -1,6 +1,4 @@
-import type { CompoundTag } from "nbtify";
-
-export interface BlockState extends CompoundTag {
+export interface BlockState {
   Name: BlockResource;
   [property: string]: any;
 }

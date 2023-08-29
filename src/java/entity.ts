@@ -1,8 +1,8 @@
-import type { BooleanTag, ShortTag, IntTag, FloatTag, DoubleTag, StringTag, CompoundTag, IntArrayTag } from "nbtify";
+import type { BooleanTag, ShortTag, IntTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
 
 export type Entity = EntityLike; // Temporary, will be filled with individual Entity interfaces.
 
-export interface EntityLike extends CompoundTag {
+export interface EntityLike {
   Air: ShortTag;
   CustomName: StringTag;
   CustomNameVisible?: BooleanTag;

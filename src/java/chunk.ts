@@ -15,32 +15,15 @@ export interface Chunk extends CompoundTag {
   LastUpdate: LongTag;
   sections: Section[];
   block_entities: BlockEntity[];
-  CarvingMasks: {
-    AIR: ByteArrayTag;
-    LIQUID: ByteArrayTag;
-  };
-  Heightmaps: {
-    MOTION_BLOCKING: LongArrayTag;
-    MOTION_BLOCKING_NO_LEAVES: LongArrayTag;
-    OCEAN_FLOOR: LongArrayTag;
-    OCEAN_FLOOR_WG: LongArrayTag;
-    WORLD_SURFACE: LongArrayTag;
-    WORLD_SURFACE_WG: LongArrayTag;
-  };
-  Lights: ShortTag[][];
+  CarvingMasks: CarvingMasks;
+  Heightmaps: Heightmaps;
+  Lights: Lights;
   Entities: Entity[];
   fluid_ticks: TileTick[];
   block_ticks: TileTick[];
   InhabitedTime: LongTag;
   PostProcessing: ToBeTicked[];
-  structures: {
-    References: {
-      [K in StructureResource]?: LongArrayTag;
-    };
-    starts: {
-      [K in StructureResource]?: Structure;
-    };
-  };
+  structures: Structures;
 }
 
 export interface Section extends CompoundTag {
@@ -57,4 +40,29 @@ export interface Section extends CompoundTag {
   SkyLight: ByteArrayTag;
 }
 
+export interface CarvingMasks extends CompoundTag {
+  AIR: ByteArrayTag;
+  LIQUID: ByteArrayTag;
+}
+
+export interface Heightmaps extends CompoundTag {
+  MOTION_BLOCKING: LongArrayTag;
+  MOTION_BLOCKING_NO_LEAVES: LongArrayTag;
+  OCEAN_FLOOR: LongArrayTag;
+  OCEAN_FLOOR_WG: LongArrayTag;
+  WORLD_SURFACE: LongArrayTag;
+  WORLD_SURFACE_WG: LongArrayTag;
+}
+
+export type Lights = ShortTag[][];
+
 export type ToBeTicked = ShortTag[];
+
+export interface Structures extends CompoundTag {
+  References: {
+    [K in StructureResource]?: LongArrayTag;
+  };
+  starts: {
+    [K in StructureResource]?: Structure;
+  };
+}

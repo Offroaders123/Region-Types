@@ -4,11 +4,11 @@ export interface LevelDat extends CompoundTag {
   BiomeOverride: StringTag;
   CenterMapsToOrigin: BooleanTag;
   ConfirmedPlatformLockedContent: BooleanTag;
-  Difficulty: IntTag<0 | 1 | 2 | 3>;
+  Difficulty: IntTag<Difficulty>;
   FlatWorldLayers: StringTag;
   ForceGameType: BooleanTag;
-  GameType: IntTag<0 | 1 | 2 | 3>;
-  Generator: IntTag<0 | 1 | 2>;
+  GameType: IntTag<GameType>;
+  Generator: IntTag<Generator>;
   InventoryVersion: StringTag;
   LANBroadcast: ByteTag;
   LANBroadcastIntent: ByteTag;
@@ -17,7 +17,7 @@ export interface LevelDat extends CompoundTag {
   LimitedWorldOriginX: IntTag;
   LimitedWorldOriginY: IntTag;
   LimitedWorldOriginZ: IntTag;
-  MinimumCompatibleClientVersion: [IntTag, IntTag, IntTag, IntTag, IntTag];
+  MinimumCompatibleClientVersion: Version;
   MultiplayerGame: ByteTag;
   MultiplayerGameIntent: ByteTag;
   NetherScale: IntTag;
@@ -33,23 +33,7 @@ export interface LevelDat extends CompoundTag {
   Time: LongTag;
   WorldVersion: IntTag;
   XBLBroadcastIntent: IntTag;
-  abilities: {
-    attackmobs: BooleanTag;
-    attackplayers: BooleanTag;
-    build: BooleanTag;
-    doorsandswitches: BooleanTag;
-    flySpeed: FloatTag;
-    flying: BooleanTag;
-    instabuild: BooleanTag;
-    invulnerable: BooleanTag;
-    lightning: BooleanTag;
-    mayfly: BooleanTag;
-    mine: BooleanTag;
-    op: BooleanTag;
-    opencontainers: BooleanTag;
-    teleport: BooleanTag;
-    walkSpeed: FloatTag;
-  };
+  abilities: Abilities;
   baseGameVersion: StringTag;
   bonusChestEnabled: BooleanTag;
   bonusChestSpawned: BooleanTag;
@@ -71,10 +55,7 @@ export interface LevelDat extends CompoundTag {
   drowningdamage: BooleanTag;
   eduOffer: IntTag;
   educationFeaturesEnabled: BooleanTag;
-  experiments: {
-    experiments_ever_used: BooleanTag;
-    saved_with_toggled_experiments: BooleanTag;
-  };
+  experiments: Experiments;
   falldamage: BooleanTag;
   firedamage: BooleanTag;
   freezedamage: BooleanTag;
@@ -91,7 +72,7 @@ export interface LevelDat extends CompoundTag {
   isSingleUseWorld: BooleanTag;
   isWorldTemplateOptionLocked: BooleanTag;
   keepinventory: BooleanTag;
-  lastOpenedWithVersion: [IntTag, IntTag, IntTag, IntTag, IntTag];
+  lastOpenedWithVersion: Version;
   lightningLevel: FloatTag;
   lightningTime: IntTag;
   limitedWorldDepth: IntTag;
@@ -121,5 +102,40 @@ export interface LevelDat extends CompoundTag {
   tntexplodes: BooleanTag;
   useMsaGamertagsOnly: BooleanTag;
   worldStartCount: LongTag;
-  world_policies: {};
+  world_policies: WorldPolicies;
+}
+
+export type Difficulty = 0 | 1 | 2 | 3;
+
+export type GameType = 0 | 1 | 2 | 3;
+
+export type Generator = 0 | 1 | 2;
+
+export type Version = [IntTag, IntTag, IntTag, IntTag, IntTag];
+
+export interface Abilities extends CompoundTag {
+  attackmobs: BooleanTag;
+  attackplayers: BooleanTag;
+  build: BooleanTag;
+  doorsandswitches: BooleanTag;
+  flySpeed: FloatTag;
+  flying: BooleanTag;
+  instabuild: BooleanTag;
+  invulnerable: BooleanTag;
+  lightning: BooleanTag;
+  mayfly: BooleanTag;
+  mine: BooleanTag;
+  op: BooleanTag;
+  opencontainers: BooleanTag;
+  teleport: BooleanTag;
+  walkSpeed: FloatTag;
+}
+
+export interface Experiments extends CompoundTag {
+  experiments_ever_used: BooleanTag;
+  saved_with_toggled_experiments: BooleanTag;
+}
+
+export interface WorldPolicies extends CompoundTag {
+  // Not sure what values are present here
 }

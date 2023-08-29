@@ -13,6 +13,7 @@ export interface TileTick extends CompoundTag {
 
 export type TileTickResource = typeof TileTickResource[keyof typeof TileTickResource];
 
+// Need to check if these actually can be inherited like this; I'm pretty sure they can, because they're just a collection of existing Block values?
 export const TileTickResource = {
   repeater: BlockResource.repeater,
   redstone_torch: BlockResource.redstone_torch,

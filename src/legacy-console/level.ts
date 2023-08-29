@@ -32,7 +32,7 @@ export interface LevelDat extends CompoundTag {
     ModernEnd: BooleanTag;
     generatorVersion: IntTag;
     LevelName: StringTag;
-    Difficulty: ByteTag<0 | 1 | 2 | 3>;
+    Difficulty: ByteTag<Difficulty>;
     DataVersion: IntTag;
     hasStronghold: BooleanTag;
     SpawnX: IntTag;
@@ -54,3 +54,5 @@ export interface LevelDat extends CompoundTag {
     SpawnZ: IntTag;
   }
 }
+
+export type Difficulty = 0 | 1 | 2 | 3;

@@ -3,9 +3,9 @@ import type { EffectID } from "./effect.js";
 import type { Entity } from "./entity.js";
 import type { Item } from "./item.js";
 
-export type BlockEntity = BannerBlockEntity | BarrelBlockEntity | BeaconBlockEntity | BeehiveBlockEntity | BlastFurnaceBlockEntity | BrewingStandBlockEntity | BrushableBlockBlockEntity | CalibratedSculkSensorBlockEntity | CampfireBlockEntity;
+export type BlockEntity = Banner | Barrel | Beacon | Beehive | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire;
 
-export interface BannerBlockEntity extends BlockEntityLike {
+export interface Banner extends BlockEntityLike {
   id: typeof BlockEntityResource.banner;
   CustomName?: StringTag;
   Patterns: BannerPattern[];
@@ -20,7 +20,7 @@ export type BannerPatternColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 
 export type BannerPatternResource = "b" | "bs" | "ts" | "ls" | "rs" | "cs" | "ms" | "drs" | "dls" | "ss" | "cr" | "sc" | "ld" | "rud" | "lud" | "rd" | "vh" | "vhr" | "hh" | "hhb" | "bl" | "br" | "tl" | "tr" | "bt" | "tt" | "bts" | "tts" | "mc" | "mr" | "bo" | "cbo" | "bri" | "gra" | "gru" | "cre" | "sku" | "flo" | "moj" | "glb" | "pig";
 
-export interface BarrelBlockEntity extends BlockEntityLike {
+export interface Barrel extends BlockEntityLike {
   id: typeof BlockEntityResource.barrel;
   CustomName?: StringTag;
   Items: Item[];
@@ -29,7 +29,7 @@ export interface BarrelBlockEntity extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface BeaconBlockEntity extends BlockEntityLike {
+export interface Beacon extends BlockEntityLike {
   id: typeof BlockEntityResource.beacon;
   CustomName?: StringTag;
   Lock?: StringTag;
@@ -42,7 +42,7 @@ export type BeaconLevel = 0 | 1 | 2 | 3 | 4;
 
 export type BeaconEffectID = -1 | EffectID;
 
-export interface BeehiveBlockEntity extends BlockEntityLike {
+export interface Beehive extends BlockEntityLike {
   id: typeof BlockEntityResource.beehive;
   Bees: BeehiveEntity[];
   FlowerPos: BeehiveFlower;
@@ -60,7 +60,7 @@ export interface BeehiveFlower extends CompoundTag {
   Z: IntTag;
 }
 
-export interface BlastFurnaceBlockEntity extends BlockEntityLike {
+export interface BlastFurnace extends BlockEntityLike {
   id: typeof BlockEntityResource.blast_furnace;
   BurnTime: ShortTag;
   CookTime: ShortTag;
@@ -75,7 +75,7 @@ export interface BlastFurnaceRecipesUsed extends CompoundTag {
   [id: number]: IntTag; // Use `RecipeID` for the index once that is implemented.
 }
 
-export interface BrewingStandBlockEntity extends BlockEntityLike {
+export interface BrewingStand extends BlockEntityLike {
   id: typeof BlockEntityResource.brewing_stand;
   BrewTime: ShortTag;
   CustomName?: StringTag;
@@ -86,19 +86,19 @@ export interface BrewingStandBlockEntity extends BlockEntityLike {
 
 export type BrewingStandFuelLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20;
 
-export interface BrushableBlockBlockEntity extends BlockEntityLike {
+export interface BrushableBlock extends BlockEntityLike {
   id: typeof BlockEntityResource.brushable_block;
   LootTable?: StringTag; // `LootTableResource`
   LootTableSeed?: LongTag;
   item?: Item; // Should this be uppercase? The wiki showed lowercase
 }
 
-export interface CalibratedSculkSensorBlockEntity extends BlockEntityLike {
+export interface CalibratedSculkSensor extends BlockEntityLike {
   id: typeof BlockEntityResource.calibrated_sculk_sensor;
   // This one doesn't have documention yet :P
 }
 
-export interface CampfireBlockEntity extends BlockEntityLike {
+export interface Campfire extends BlockEntityLike {
   id: typeof BlockEntityResource.campfire;
   CookingTimes: IntArrayTag;
   CookingTotalTimes: IntArrayTag;

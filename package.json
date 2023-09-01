@@ -9,11 +9,10 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "jszip": "^3.10.1",
-    "nbtify": "^1.68.0"
+    "nbtify": "^1.69.420"
   },
   "devDependencies": {
-    "@types/node": "^18.17.6",
-    "typescript": "^5.1.6"
+    "@types/node": "^18.17.12",
+    "typescript": "^5.2.2"
   }
 }

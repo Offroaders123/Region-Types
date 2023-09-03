@@ -1,7 +1,6 @@
-import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
+import type { BooleanTag, ByteTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag } from "nbtify";
 import type { DimensionResource } from "./dimension.js";
-import type { Item } from "./item.js";
-import type { RecipeResource } from "./recipe.js";
+import type { Player } from "./entity.js";
 
 export interface LevelDat {
   Data: {
@@ -40,7 +39,7 @@ export interface LevelDat {
     DataVersion: IntTag;
     GameRules: GameRules;
     DragonFight: DragonFight;
-    Player: TempPlayer;
+    Player: Player;
     DifficultyLocked: BooleanTag;
     DayTime: LongTag;
     BorderCenterZ: DoubleTag;
@@ -162,88 +161,6 @@ export interface DragonFight {
 }
 
 export type Gateways = [IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag];
-
-/**
- * This should come from the Entity module eventually.
- * 
- * @deprecated
-*/
-export interface TempPlayer {
-  seenCredits: BooleanTag;
-  DeathTime: ShortTag;
-  foodTickTimer: IntTag;
-  recipeBook: {
-    recipes: RecipeResource[];
-    isGuiOpen: BooleanTag;
-    toBeDisplayed: RecipeResource[];
-    isSmokerGuiOpen: BooleanTag;
-    isFurnaceFilteringCraftable: BooleanTag;
-    isFurnaceGuiOpen: BooleanTag;
-    isBlastingFurnaceFilteringCraftable: BooleanTag;
-    isBlastingFurnaceGuiOpen: BooleanTag;
-    isFilteringCraftable: BooleanTag;
-    isSmokerFilteringCraftable: BooleanTag;
-  };
-  XpTotal: IntTag;
-  OnGround: BooleanTag;
-  AbsorptionAmount: FloatTag;
-  playerGameType: IntTag;
-  Attributes: [
-    {
-      Name: StringTag;
-      Base: DoubleTag;
-    }
-  ];
-  Invulnerable: BooleanTag;
-  SelectedItemSlot: IntTag;
-  Brain: {
-    memories: {};
-  };
-  Dimension: StringTag;
-  ActiveEffects: [
-    {
-      ShowIcon: BooleanTag;
-      ShowParticles: BooleanTag;
-      Id: ByteTag;
-      Duration: IntTag;
-      Ambient: BooleanTag;
-      Amplifier?: ByteTag;
-    }
-  ];
-  abilities: {
-    walkSpeed: FloatTag;
-    instabuild: BooleanTag;
-    flying: BooleanTag;
-    flySpeed: FloatTag;
-    mayfly: BooleanTag;
-    invulnerable: BooleanTag;
-    mayBuild: BooleanTag;
-  };
-  Score: IntTag;
-  Rotation: [FloatTag, FloatTag];
-  HurtByTimestamp: IntTag;
-  foodSaturationLevel: FloatTag;
-  Air: ShortTag;
-  EnderItems: [];
-  XpSeed: IntTag;
-  foodLevel: IntTag;
-  UUID: IntArrayTag;
-  XpLevel: IntTag;
-  Inventory: Item[];
-  Motion: [DoubleTag, DoubleTag, DoubleTag];
-  FallDistance: FloatTag;
-  DataVersion: IntTag;
-  SleepTimer: ShortTag;
-  XpP: FloatTag;
-  previousPlayerGameType: IntTag;
-  Pos: [DoubleTag, DoubleTag, DoubleTag];
-  Health: FloatTag;
-  HurtTime: ShortTag;
-  FallFlying: BooleanTag;
-  Fire: ShortTag;
-  PortalCooldown: IntTag;
-  foodExhaustionLevel: FloatTag;
-}
 
 export interface Version {
   Id: IntTag;

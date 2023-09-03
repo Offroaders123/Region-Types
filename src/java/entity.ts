@@ -1,12 +1,44 @@
 import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
+import type { DimensionResource } from "./dimension.js";
 import type { EffectID } from "./effect.js";
 import type { Item } from "./item.js";
+import type { RecipeResource } from "./recipe.js";
 
 export type Entity = Player; // Temporary, will be filled with individual Entity interfaces.
 
 export interface Player extends MobLike {
-  abolities: Abilities;
+  abilities: Abilities;
   DataVersion: IntTag;
+  Dimension: DimensionResource;
+  EnderItems: Item[];
+  enteredNetherPosition?: EnteredNetherPosition;
+  foodExhaustionLevel: FloatTag;
+  foodLevel: IntTag;
+  foodSaturationLevel: FloatTag;
+  foodTickTimer: IntTag;
+  Inventory: Item[];
+  LastDeathLocation?: LastDeathLocation;
+  playerGameType: IntTag<GameMode>;
+  previousPlayerGameType: IntTag<GameMode>;
+  recipeBook: RecipeBook;
+  RootVehicle?: RootVehicle;
+  Score: IntTag;
+  seenCredits: BooleanTag;
+  SelectedItem?: Item;
+  SelectedItemSlot: IntTag;
+  ShoulderEntityLeft?: Entity;
+  ShoulderEntityRight?: Entity;
+  SleepTimer: ShortTag;
+  SpawnDimension?: DimensionResource;
+  SpawnForced?: BooleanTag;
+  SpawnX?: IntTag;
+  SpawnY?: IntTag;
+  SpawnZ?: IntTag;
+  warden_spawn_tracker: WardenSpawnTracker; // Optional? Doesn't specify on the wiki
+  XpLevel: IntTag;
+  XpP: FloatTag;
+  XpSeed: IntTag;
+  XpTotal: IntTag;
 }
 
 export interface Abilities {
@@ -18,6 +50,45 @@ export interface Abilities {
   mayfly: BooleanTag;
   walkSpeed: FloatTag<0.1>; // Same here, this apparently always stays the same
 }
+
+export interface EnteredNetherPosition {
+  x: DoubleTag;
+  y: DoubleTag;
+  z: DoubleTag;
+}
+
+export interface LastDeathLocation {
+  dimension: DimensionResource;
+  pos: IntArrayTag;
+}
+
+export type GameMode = 0 | 1 | 2 | 3;
+
+export interface RecipeBook {
+  recipes: RecipeResource[];
+  toBeDisplayed: RecipeResource[];
+  isFilteringCraftable: BooleanTag;
+  isGuiOpen: BooleanTag;
+  isFurnaceFilteringCraftable: BooleanTag;
+  isFurnaceGuiOpen: BooleanTag;
+  isBlastingFurnaceFilteringCraftable: BooleanTag;
+  isBlastingFurnaceGuiOpen: BooleanTag;
+  isSmokerFilteringCraftable: BooleanTag;
+  isSmokerGuiOpen: BooleanTag;
+}
+
+export interface RootVehicle {
+  Attach: IntArrayTag;
+  Entity: Entity;
+}
+
+export interface WardenSpawnTracker {
+  cooldown_ticks: IntTag;
+  ticks_since_last_warning: IntTag;
+  warning_level: IntTag<WardenWarningLevel>;
+}
+
+export type WardenWarningLevel = 0 | 1 | 2 | 3;
 
 export interface MobLike extends EntityLike {
   AbsorptionAmount: FloatTag;

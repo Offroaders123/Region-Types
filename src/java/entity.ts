@@ -1,31 +1,118 @@
-import type { BooleanTag, ShortTag, IntTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
+import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
+import type { EffectID } from "./effect.js";
+import type { Item } from "./item.js";
 
-export type Entity = EntityLike; // Temporary, will be filled with individual Entity interfaces.
+export type Entity = Player; // Temporary, will be filled with individual Entity interfaces.
+
+export interface Player extends MobLike {
+  abolities: Abilities;
+  DataVersion: IntTag;
+}
+
+export interface Abilities {
+  flying: BooleanTag;
+  flySpeed: FloatTag<0.05>; // It says it's always only ever `0.05`, but I feel like it might change for Spectator Mode?
+  instabuild: BooleanTag;
+  invulnerable: BooleanTag;
+  mayBuild: BooleanTag;
+  mayfly: BooleanTag;
+  walkSpeed: FloatTag<0.1>; // Same here, this apparently always stays the same
+}
+
+export interface MobLike extends EntityLike {
+  AbsorptionAmount: FloatTag;
+  ActiveEffects: Effect[];
+  ArmorDropChances: ArmorDropChances;
+  ArmorItems: ArmorItems;
+  Attributes: Attribute[];
+  Brain: {
+    memories: {}; // `Memories`
+  };
+  CanPickUpLoot: BooleanTag;
+  DeathLootTable?: StringTag; // `LootTableResource`
+  DeathLootTableSeed?: LongTag;
+  DeathTime: ShortTag;
+  FallFlying: ByteTag;
+  Health: FloatTag;
+  HurtByTimestamp: IntTag;
+  HurtTime: ShortTag;
+  HandDropChances: HandDropChances;
+  HandItems: HandItems;
+  Leash?: Leash;
+  LeftHanded: BooleanTag;
+  NoAI: BooleanTag;
+  PersistenceRequired: BooleanTag;
+  SleepingX: IntTag;
+  SleepingY: IntTag;
+  SleepingZ: IntTag;
+  Team?: StringTag; // `ScoreboardTeam` ?
+}
+
+export interface Effect {
+  Ambient: BooleanTag;
+  Amplifier: ByteTag;
+  Duration: IntTag;
+  HiddenEffect: Effect; // Might be optional?
+  Id: EffectID;
+  ShowIcon: BooleanTag;
+  ShowParticles: BooleanTag;
+}
+
+export type ArmorDropChances = [FloatTag,FloatTag,FloatTag,FloatTag];
+
+export type ArmorItems = [Item,Item,Item,Item];
+
+export interface Attribute {
+  Base: DoubleTag;
+  Modifiers: Modifier[];
+  Name: StringTag; // `AttributeResource` ?
+}
+
+export interface Modifier {
+  Amount: DoubleTag;
+  Name: StringTag; // `ModifierResource` ?
+  Operation: IntTag<ModifierOperation>;
+  UUID: IntArrayTag;
+}
+
+export type ModifierOperation = 0 | 1 | 2;
+
+export type HandDropChances = [FloatTag,FloatTag];
+
+export type HandItems = [Item,Item];
+
+export type Leash = IntArrayTag | { X: IntTag; Y: IntTag; Z: IntTag; };
 
 export interface EntityLike {
   Air: ShortTag;
-  CustomName: StringTag;
+  CustomName?: StringTag;
   CustomNameVisible?: BooleanTag;
   FallDistance: FloatTag;
   Fire: ShortTag;
   Glowing: BooleanTag;
   HasVisualFire: BooleanTag;
-  id: EntityResource;
+  id?: EntityResource;
   Invulnerable: BooleanTag;
-  Motion: [DoubleTag,DoubleTag,DoubleTag];
+  Motion: EntityMotion;
   NoGravity: BooleanTag;
   OnGround: BooleanTag;
   Passengers: Entity[];
   PortalCooldown: IntTag;
-  Pos: [DoubleTag,DoubleTag,DoubleTag];
-  Rotation: [FloatTag,FloatTag];
+  Pos: EntityPos;
+  Rotation: EntityRotation;
   Silent?: BooleanTag;
-  Tags: Scoreboard[];
+  Tags: ScoreboardTag[];
   TicksFrozen?: IntTag;
   UUID: IntArrayTag;
 }
 
-export type Scoreboard = any;
+export type EntityMotion = [DoubleTag,DoubleTag,DoubleTag];
+
+export type EntityPos = [DoubleTag,DoubleTag,DoubleTag];
+
+export type EntityRotation = [FloatTag,FloatTag];
+
+export type ScoreboardTag = string;
 
 export type EntityResource = typeof EntityResource[keyof typeof EntityResource];
 

@@ -1,3 +1,11 @@
+import type { IntTag } from "nbtify";
+
+export interface Block {
+  name: BlockResource;
+  states: {}; // `BlockState`?
+  version: IntTag;
+}
+
 export type BlockResource = typeof BlockResource[keyof typeof BlockResource];
 
 export const BlockResource = {

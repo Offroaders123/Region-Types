@@ -1,3 +1,7 @@
+export type Entity = EntityLike; // Temporary placeholder
+
+export interface EntityLike {}
+
 export type EntityResource = typeof EntityResource[keyof typeof EntityResource];
 
 export const EntityResource = {

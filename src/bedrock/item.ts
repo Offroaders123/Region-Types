@@ -1,3 +1,5 @@
+export interface Item {} // Placeholder
+
 export type ItemResource = typeof ItemResource[keyof typeof ItemResource];
 
 export const ItemResource = {

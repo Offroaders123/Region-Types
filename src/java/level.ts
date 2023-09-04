@@ -1,118 +1,105 @@
-import type { BooleanTag, ByteTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag } from "nbtify";
-import type { DimensionResource } from "./dimension.js";
+import type { BooleanTag, ByteTag, IntTag, LongTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
+import type { DimensionID } from "./dimension.js";
 import type { Player } from "./entity.js";
 
 export interface LevelDat {
   Data: {
-    Difficulty: ByteTag<Difficulty>;
-    thunderTime: IntTag;
-    BorderSize: DoubleTag;
-    LastPlayed: LongTag;
     allowCommands: BooleanTag;
     BorderCenterX: DoubleTag;
-    initialized: BooleanTag;
-    BorderWarningBlocks: DoubleTag;
-    hardcore: BooleanTag;
-    version: IntTag;
-    ServerBrands: [StringTag];
-    SpawnX: IntTag;
-    GameType: IntTag<GameType>;
-    BorderSafeZone: DoubleTag;
-    SpawnAngle: FloatTag;
-    LevelName: StringTag;
-    Time: LongTag;
-    ScheduledEvents: ScheduledEvents;
-    clearWeatherTime: IntTag;
+    BorderCenterY: DoubleTag;
     BorderDamagePerBlock: DoubleTag;
-    WanderingTraderSpawnDelay: IntTag;
-    thundering: BooleanTag;
-    WasModded: BooleanTag;
-    BorderWarningTime: DoubleTag;
-    WanderingTraderSpawnChance: IntTag;
-    SpawnY: IntTag;
-    SpawnZ: IntTag;
+    BorderSize: DoubleTag;
+    BorderSafeZone: DoubleTag;
+    BorderSizeLerpTarget: DoubleTag;
     BorderSizeLerpTime: LongTag;
-    raining: BooleanTag;
-    WorldGenSettings: WorldGenSettings;
-    rainTime: IntTag;
+    BorderWarningBlocks: DoubleTag;
+    BorderWarningTime: DoubleTag;
+    clearWeatherTime: IntTag;
+    CustomBossEvents: CustomBossEvents;
     DataPacks: DataPacks;
     DataVersion: IntTag;
-    GameRules: GameRules;
-    DragonFight: DragonFight;
-    Player: Player;
-    DifficultyLocked: BooleanTag;
     DayTime: LongTag;
-    BorderCenterZ: DoubleTag;
-    BorderSizeLerpTarget: DoubleTag;
+    Difficulty: ByteTag<Difficulty>;
+    DifficultyLocked: BooleanTag;
+    DimensionData: DimensionData;
+    GameRules: GameRules;
+    WorldGenSettings: WorldGenSettings;
+    GameType: IntTag<GameType>;
+    generatorName: GeneratorName;
+    generatorOptions: {}; // `GeneratorOptions`
+    generatorVersion: IntTag;
+    hardcore: BooleanTag;
+    initialized: BooleanTag;
+    LastPlayed: LongTag;
+    LevelName: StringTag;
+    MapFeatures: BooleanTag;
+    Player: Player;
+    raining: BooleanTag;
+    rainTime: IntTag;
+    RandomSeed: LongTag;
+    SizeOnDisk: LongTag;
+    SpawnX: IntTag;
+    SpawnY: IntTag;
+    SpawnZ: IntTag;
+    thundering: BooleanTag;
+    thunderTime: IntTag;
+    Time: LongTag;
+    version: IntTag;
     Version: Version;
-    CustomBossEvents: CustomBossEvents;
+    WanderingTraderId: IntArrayTag;
+    WanderingTraderSpawnChance: IntTag;
+    WanderingTraderSpawnDelay: IntTag;
+    WasModded: BooleanTag;
   };
 }
 
-export type Difficulty = 0 | 1 | 2 | 3;
+export type CustomBossEvents = {
+  [CustomBossBarResource in StringTag]: CustomBossEvent;
+};
 
-export type GameType = 0 | 1 | 2 | 3;
-
-export type ScheduledEvents = [
-  // Needs types!
-];
-
-export interface WorldGenSettings {
-  bonus_chest: BooleanTag;
-  seed: LongTag;
-  generate_features: BooleanTag;
-  dimensions: {
-    [DimensionResource.the_nether]: {
-      type: StringTag;
-      generator: {
-        type: StringTag;
-        seed: LongTag;
-        biome_source: {
-          type: StringTag;
-          preset: StringTag;
-        };
-        settings: StringTag;
-      };
-    };
-    [DimensionResource.overworld]: {
-      type: StringTag;
-      generator: {
-        type: StringTag;
-        settings: {
-          features: BooleanTag;
-          lakes: BooleanTag;
-          layers: [
-            {
-              block: StringTag;
-              height: IntTag;
-            },
-            {
-              block: StringTag;
-              height: IntTag;
-            }
-          ];
-          biome: StringTag;
-        };
-      };
-    };
-    [DimensionResource.the_end]: {
-      type: StringTag;
-      generator: {
-        type: StringTag;
-        seed: LongTag;
-        biome_source: {
-          type: StringTag;
-          seed: LongTag;
-        };
-        settings: StringTag;
-      };
-    };
-  };
+export interface CustomBossEvent {
+  Players: IntArrayTag[];
+  Color: BossBarColor;
+  CreateWorldFog: BooleanTag;
+  DarkenScreen: BooleanTag;
+  Max: IntTag;
+  Value: IntTag;
+  Name: StringTag; // JSON text component?
+  Overlay: BossBarOverlay;
+  PlayBossMusic: BooleanTag;
+  Visible: BooleanTag;
 }
+
+export type BossBarColor = "black" | "dark_blue" | "dark_green" | "dark_aqua" | "dark_red" | "dark_purple" | "gold" | "42" | "gray" | "dark_gray" | "blue" | "green" | "aqua" | "red" | "light_purple" | "yellow" | "white" | "minecoin_gold" | "material_quartz" | "material_iron" | "material_netherite" | "material_redstone" | "material_copper" | "material_gold" | "material_emerald" | "material_diamond" | "material_lapis" | "material_amethyst";
+
+export type BossBarOverlay = "progress" | "notched_6" | "notched_10" | "notched_12" | "notched_20";
 
 export interface DataPacks {
   Disabled: StringTag[];
   Enabled: StringTag[];
+}
+
+export type Difficulty = 0 | 1 | 2 | 3;
+
+export interface DimensionData {
+  [DimensionID.the_end]: {
+    DragonFight?: DragonFight;
+  };
+}
+
+export interface DragonFight {
+  ExitPortalLocation: ExitPortalLocation;
+  Gateways: IntTag[]; // 0 - 19
+  DragonKilled: BooleanTag;
+  DragonUUIDLeast: LongTag;
+  DragonUUIDMost: LongTag;
+  PreviouslyKilled: BooleanTag;
+}
+
+export interface ExitPortalLocation {
+  X: ByteTag;
+  Y: ByteTag;
+  Z: ByteTag;
 }
 
 export interface GameRules {
@@ -153,22 +140,20 @@ export interface GameRules {
   logAdminCommands: `${boolean}`;
 }
 
-export interface DragonFight {
-  PreviouslyKilled: BooleanTag;
-  NeedsStateScanning: BooleanTag;
-  Gateways: Gateways;
-  DragonKilled: BooleanTag;
+export interface WorldGenSettings {
+  bonus_chest: BooleanTag;
+  seed: LongTag;
+  generate_features: BooleanTag;
+  dimensions: {}; // `WorldGenDimensions`
 }
 
-export type Gateways = [IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag, IntTag];
+export type GameType = 0 | 1 | 2 | 3;
+
+export type GeneratorName = "default" | "flat" | "largeBiomes" | "amplified" | "buffet" | "debug_all_block_states" | "default_1_1" | "customized";
 
 export interface Version {
   Id: IntTag;
   Name: StringTag;
   Series: StringTag;
   Snapshot: BooleanTag;
-}
-
-export interface CustomBossEvents {
- // Needs types also
 }

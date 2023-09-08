@@ -3,7 +3,7 @@ import type { Block, BlockResource } from "./block.js";
 import type { Entity, EntityResource } from "./entity.js";
 import type { Item, ItemResource } from "./item.js";
 
-export type BlockEntity = Banner | Barrel | Beacon | Bed | Beehive | Bell | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Cauldron | Chalkboard | Chest | ChiseledBookshelf | CommandBlock | Comparator | CompoundCreator | Conduit | DaylightDetector | DecoratedPot | Dispenser | Dropper | ElementConstructor | EnchantTable | EndGateway | FlowerPot | Furnace | HangingSign | Hopper | ItemFrame | JigsawBlock | Jukebox | LabTable | Lectern | Lodestone | MaterialReducer | MobSpawner | MovingBlock | Music | NetherReactor | PistonArm | Poster | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull;
+export type BlockEntity = Banner | Barrel | Beacon | Bed | Beehive | Bell | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Cauldron | Chalkboard | Chest | ChiseledBookshelf | CommandBlock | Comparator | CompoundCreator | Conduit | DaylightDetector | DecoratedPot | Dispenser | Dropper | ElementConstructor | EnchantTable | EndGateway | FlowerPot | Furnace | HangingSign | Hopper | ItemFrame | JigsawBlock | Jukebox | LabTable | Lectern | Lodestone | MaterialReducer | MobSpawner | MovingBlock | Music | NetherReactor | PistonArm | Poster | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull | Slate | Smoker | StructureBlock;
 
 export interface Banner extends BlockEntityLike {
   id: typeof BlockEntityResource.Banner;
@@ -67,7 +67,19 @@ export interface BrewingStand extends BlockEntityLike {
 
 export interface BrushableBlock extends BlockEntityLike {
   id: typeof BlockEntityResource.BrushableBlock;
+  brush_count: IntTag<BrushCount>;
+  brush_direction: ByteTag<BrushDirection>;
+  item?: Item;
+  LootTable?: StringTag; // `LootTableResource`
+  LootTableSeed?: IntTag;
+  type: BrushBlockType;
 }
+
+export type BrushCount = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+export type BrushDirection = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+export type BrushBlockType = typeof BlockResource.suspicious_gravel | typeof BlockResource.suspicious_sand;
 
 export interface CalibratedSculkSensor extends BlockEntityLike {
   id: typeof BlockEntityResource.CalibratedSculkSensor;
@@ -136,7 +148,7 @@ export interface Comparator extends BlockEntityLike {
   OutputSignal: IntTag;
 }
 
-export interface CompoundCreator extends BlockEntityLike {
+export interface CompoundCreator extends ChemistryTableLike {
   id: typeof BlockEntityResource.CompoundCreator;
 }
 
@@ -169,7 +181,7 @@ export interface Dropper extends BlockEntityLike {
   LootTableSeed?: IntTag;
 }
 
-export interface ElementConstructor extends BlockEntityLike {
+export interface ElementConstructor extends ChemistryTableLike {
   id: typeof BlockEntityResource.ElementConstructor;
 }
 
@@ -228,7 +240,7 @@ export interface Jukebox extends BlockEntityLike {
   RecordItem?: Item;
 }
 
-export interface LabTable extends BlockEntityLike {
+export interface LabTable extends ChemistryTableLike {
   id: typeof BlockEntityResource.LabTable;
 }
 
@@ -245,7 +257,7 @@ export interface Lodestone extends BlockEntityLike {
   trackingHandle?: IntTag;
 }
 
-export interface MaterialReducer extends BlockEntityLike {
+export interface MaterialReducer extends ChemistryTableLike {
   id: typeof BlockEntityResource.MaterialReducer;
 }
 
@@ -379,10 +391,30 @@ export interface StructureBlock extends BlockEntityLike {
   data: IntTag<StructureBlockMode>;
   dataField: StringTag;
   ignoreEntities: BooleanTag;
-  integrity: BooleanTag;
+  integrity: FloatTag;
+  isPowered: BooleanTag;
+  mirror: ByteTag; // Union type? boolean?
+  redstoneSaveMode: IntTag; // Union?
+  removeBlocks: ByteTag;
+  rotation: ByteTag; // Union?
+  seed: LongTag;
+  showBoundingBox: ByteTag;
+  structureName: StringTag;
+  xStructureOffset: IntTag;
+  yStructureOffset: IntTag;
+  zStructureOffset: IntTag;
+  xStructureSize: IntTag;
+  yStructureSize: IntTag;
+  zStructureSize: IntTag;
 }
 
 export type StructureBlockMode = 0 | 1 | 2 | 3 | 4 | 5;
+
+export interface ChemistryTableLike extends BlockEntityLike {
+  itemAux: ShortTag; // Wiki doesn't have much info, double check these
+  itemId: IntTag;
+  itemStack: ByteTag;
+}
 
 export interface ChestLike extends BlockEntityLike {
   Findable: ByteTag;

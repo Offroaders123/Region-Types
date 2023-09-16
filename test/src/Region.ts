@@ -1,10 +1,7 @@
 import type { Kind } from "./World.js";
 import type { Chunk, BedrockChunk, JavaChunk, LegacyConsoleChunk } from "./Chunk.js";
 
-export type Region =
-  | BedrockRegion
-  | JavaRegion
-  | LegacyConsoleRegion;
+export type Region = BedrockRegion | JavaRegion | LegacyConsoleRegion;
 
 export interface RegionLike {
   readonly kind: Kind;

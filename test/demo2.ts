@@ -1,5 +1,7 @@
 import { readFile } from "node:fs/promises";
-import { readWorld, type BedrockWorld } from "./src/index.js";
+import { readWorld } from "./src/index.js";
+
+import type { BedrockWorld } from "./src/index.js";
 
 // Reads the world save as a single file from the file system.
 const buffer: Buffer = await readFile("./Survival-World.mcworld");

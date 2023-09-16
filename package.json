@@ -9,10 +9,10 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "nbtify": "^1.69.420"
+    "nbtify": "^1.75.0"
   },
   "devDependencies": {
-    "@types/node": "^18.17.12",
+    "@types/node": "^18.17.16",
     "typescript": "^5.2.2"
   }
 }

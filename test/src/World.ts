@@ -2,10 +2,7 @@ import type { Region, BedrockRegion, JavaRegion, LegacyConsoleRegion } from "./R
 
 export type Kind = "bedrock" | "java" | "legacy-console";
 
-export type World =
-  | BedrockWorld
-  | JavaWorld
-  | LegacyConsoleWorld;
+export type World = BedrockWorld | JavaWorld | LegacyConsoleWorld;
 
 export interface WorldLike {
   readonly kind: Kind;

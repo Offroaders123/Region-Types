@@ -1,27 +1,24 @@
-import { read, write, NBTData } from "nbtify";
+import { read, write } from "nbtify";
 
-import type { FormatOptions, ShortTag, IntTag, CompoundTag } from "nbtify";
+import type { Format, ShortTag, IntTag } from "nbtify";
 
-export interface LegacyConsoleChunk extends CompoundTag {
+export interface LegacyConsoleChunk {
   FormatVersion: ShortTag;
   X: IntTag;
 }
-
-export type LegacyConsoleNBTFormat = typeof LEGACY_CONSOLE_NBT_FORMAT;
 
 export const LEGACY_CONSOLE_NBT_FORMAT = {
   name: "",
   endian: "big",
   compression: "deflate-raw",
   bedrockLevel: null
-} as const satisfies FormatOptions;
+} as const satisfies Format;
 
-export type LegacyConsoleChunkData = NBTData<LegacyConsoleChunk,LegacyConsoleNBTFormat>;
-
-export async function readChunk(data: Uint8Array | ArrayBufferLike): Promise<LegacyConsoleChunkData> {
-  return read(data,LEGACY_CONSOLE_NBT_FORMAT);
+export async function readChunk(data: Uint8Array | ArrayBufferLike): Promise<LegacyConsoleChunk> {
+  const { data: chunk } = await read<LegacyConsoleChunk>(data,LEGACY_CONSOLE_NBT_FORMAT);
+  return chunk;
 }
 
-export async function writeChunk(data: LegacyConsoleChunkData): Promise<Uint8Array> {
-  return write(data);
+export async function writeChunk(data: LegacyConsoleChunk): Promise<Uint8Array> {
+  return write(data,LEGACY_CONSOLE_NBT_FORMAT);
 }

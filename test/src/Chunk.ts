@@ -1,9 +1,6 @@
 import type { Kind } from "./World.js";
 
-export type Chunk =
-  | BedrockChunk
-  | JavaChunk
-  | LegacyConsoleChunk;
+export type Chunk = BedrockChunk | JavaChunk | LegacyConsoleChunk;
 
 export interface ChunkLike {
   readonly kind: Kind;

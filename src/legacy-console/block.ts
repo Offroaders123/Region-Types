@@ -85,7 +85,7 @@ export enum BlockResource {
   reeds,
   jukebox,
   fence,
-  pumpkin,
+  carved_pumpkin,
   netherrack,
   soul_sand,
   glowstone,
@@ -254,7 +254,7 @@ export enum BlockResource {
   concrete_powder,
   // structure_block = 255,
   conduit = 256,
-  // pumpkin, // unknown ID use-case
+  pumpkin,
   kelp_plant = 258,
   tube_coral_block,
   tube_coral = 263,

@@ -24,6 +24,7 @@ export enum BlockEntityResource {
   beacon = "beacon",
   bed = "bed",
   brewing_stand = "brewing_stand",
+  cauldron = "cauldron",
   chest = "chest",
   comparator = "comparator",
   conduit = "conduit",
@@ -44,6 +45,5 @@ export enum BlockEntityResource {
   piston = "piston",
   shulker_box = "shulker_box",
   sign = "sign",
-  skull = "skull",
-  cauldron = "cauldron"
+  skull = "skull"
 }

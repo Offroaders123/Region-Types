@@ -255,7 +255,7 @@ export enum BlockResource {
   // structure_block = 255,
   conduit = 256,
   pumpkin,
-  kelp_plant = 258,
+  kelp_plant,
   tube_coral_block,
   tube_coral = 263,
   tube_coral_fan,

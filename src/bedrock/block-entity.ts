@@ -490,62 +490,60 @@ export interface BlockEntityLike {
   z: IntTag;
 }
 
-export type BlockEntityResource = typeof BlockEntityResource[keyof typeof BlockEntityResource];
-
-export const BlockEntityResource = {
-  Banner: "Banner",
-  Barrel: "Barrel",
-  Beacon: "Beacon",
-  Bed: "Bed",
-  Beehive: "Beehive",
-  Bell: "Bell",
-  BlastFurnace: "BlastFurnace",
-  BrewingStand: "BrewingStand",
-  BrushableBlock: "BrushableBlock", // Sus
-  CalibratedSculkSensor: "CalibratedSculkSensor",
-  Campfire: "Campfire",
-  Cauldron: "Cauldron",
-  Chalkboard: "Chalkboard", // unknown, not on the wiki
-  Chest: "Chest",
-  ChiseledBookshelf: "ChiseledBookshelf",
-  Comparator: "Comparator",
-  CompoundCreator: "CompoundCreator", // ID not on the wiki
-  CommandBlock: "CommandBlock",
-  Conduit: "Conduit",
-  DaylightDetector: "DaylightDetector",
-  DecoratedPot: "DecoratedPot",
-  Dispenser: "Dispenser",
-  Dropper: "Dropper",
-  EnchantTable: "EnchantTable",
-  EnderChest: "EnderChest",
-  EndGateway: "EndGateway",
-  EndPortal: "EndPortal",
-  ElementConstructor: "ElementConstructor", // also guessed
-  FlowerPot: "FlowerPot", // ID not listed on the wiki
-  Furnace: "Furnace",
-  GlowItemFrame: "GlowItemFrame",
-  HangingSign: "HangingSign",
-  Hopper: "Hopper",
-  ItemFrame: "ItemFrame",
-  JigsawBlock: "JigsawBlock",
-  Jukebox: "Jukebox",
-  LabTable: "LabTable", // guessed
-  Lectern: "Lectern",
-  Lodestone: "Lodestone", // ID not on the wiki
-  MaterialReducer: "MaterialReducer", // guessed
-  MobSpawner: "MobSpawner",
-  MovingBlock: "MovingBlock", // Related to Piston block movement
-  Music: "Music", // Note Block
-  NetherReactor: "NetherReactor",
-  PistonArm: "PistonArm",
-  Poster: "Poster", // might be part of Chalkboard?
-  SculkCatalyst: "SculkCatalyst",
-  SculkSensor: "SculkSensor",
-  SculkShrieker: "SculkShrieker",
-  ShulkerBox: "ShulkerBox",
-  Sign: "Sign",
-  Skull: "Skull",
-  Slate: "Slate", // also unknown
-  Smoker: "Smoker",
-  StructureBlock: "StructureBlock"
-} as const;
+export enum BlockEntityResource {
+  Banner = "Banner",
+  Barrel = "Barrel",
+  Beacon = "Beacon",
+  Bed = "Bed",
+  Beehive = "Beehive",
+  Bell = "Bell",
+  BlastFurnace = "BlastFurnace",
+  BrewingStand = "BrewingStand",
+  BrushableBlock = "BrushableBlock", // Sus
+  CalibratedSculkSensor = "CalibratedSculkSensor",
+  Campfire = "Campfire",
+  Cauldron = "Cauldron",
+  Chalkboard = "Chalkboard", // unknown, not on the wiki
+  Chest = "Chest",
+  ChiseledBookshelf = "ChiseledBookshelf",
+  Comparator = "Comparator",
+  CompoundCreator = "CompoundCreator", // ID not on the wiki
+  CommandBlock = "CommandBlock",
+  Conduit = "Conduit",
+  DaylightDetector = "DaylightDetector",
+  DecoratedPot = "DecoratedPot",
+  Dispenser = "Dispenser",
+  Dropper = "Dropper",
+  EnchantTable = "EnchantTable",
+  EnderChest = "EnderChest",
+  EndGateway = "EndGateway",
+  EndPortal = "EndPortal",
+  ElementConstructor = "ElementConstructor", // also guessed
+  FlowerPot = "FlowerPot", // ID not listed on the wiki
+  Furnace = "Furnace",
+  GlowItemFrame = "GlowItemFrame",
+  HangingSign = "HangingSign",
+  Hopper = "Hopper",
+  ItemFrame = "ItemFrame",
+  JigsawBlock = "JigsawBlock",
+  Jukebox = "Jukebox",
+  LabTable = "LabTable", // guessed
+  Lectern = "Lectern",
+  Lodestone = "Lodestone", // ID not on the wiki
+  MaterialReducer = "MaterialReducer", // guessed
+  MobSpawner = "MobSpawner",
+  MovingBlock = "MovingBlock", // Related to Piston block movement
+  Music = "Music", // Note Block
+  NetherReactor = "NetherReactor",
+  PistonArm = "PistonArm",
+  Poster = "Poster", // might be part of Chalkboard?
+  SculkCatalyst = "SculkCatalyst",
+  SculkSensor = "SculkSensor",
+  SculkShrieker = "SculkShrieker",
+  ShulkerBox = "ShulkerBox",
+  Sign = "Sign",
+  Skull = "Skull",
+  Slate = "Slate", // also unknown
+  Smoker = "Smoker",
+  StructureBlock = "StructureBlock"
+}

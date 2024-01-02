@@ -235,9 +235,12 @@ export interface Lectern extends BlockEntityLike {
   Page: IntTag;
 }
 
-// Double check that some of these properties are mandatory; the wiki doesn't quite specify, but it make it sound like they could be optional.
-export interface MobSpawner extends BlockEntityLike {
+export interface MobSpawner extends BlockEntityLike, MobSpawnerLike {
   id: typeof BlockEntityResource.mob_spawner;
+}
+
+// Double check that some of these properties are mandatory; the wiki doesn't quite specify, but it make it sound like they could be optional.
+export interface MobSpawnerLike {
   Delay: ShortTag;
   MaxNearbyEntities: ShortTag;
   MaxSpawnDelay: ShortTag;

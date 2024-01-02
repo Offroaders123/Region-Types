@@ -1,10 +1,12 @@
 import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
+import type { BlockState, BlockResource } from "./block.js";
+import type { MobSpawnerLike } from "./block-entity.js";
 import type { DimensionResource } from "./dimension.js";
 import type { EffectID } from "./effect.js";
 import type { Item } from "./item.js";
 import type { RecipeResource } from "./recipe.js";
 
-export type Entity = Player; // Temporary, will be filled with individual Entity interfaces.
+export type Entity = Player | Boat | ChestBoat | Minecart | ChestMinecart | FurnaceMinecart | TNTMinecart | HopperMinecart | SpawnerMinecart | CommandBlockMinecart | ItemEntity | ExperienceOrb | Arrow | SpectralArrow | Trident;
 
 export interface Player extends MobLike {
   abilities: Abilities;
@@ -89,6 +91,158 @@ export interface WardenSpawnTracker {
 }
 
 export type WardenWarningLevel = 0 | 1 | 2 | 3;
+
+export interface Boat extends BoatLike {
+  id: EntityResource.boat;
+}
+
+export interface ChestBoat extends BoatLike, ContainerEntityLike {
+  id: EntityResource.chest_boat;
+}
+
+export interface BoatLike extends EntityLike {
+  Type: BoatType;
+}
+
+export type BoatType = "oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak" | "mangrove" | "bamboo";
+
+export interface Minecart extends MinecartLike {
+  id: EntityResource.minecart;
+}
+
+export interface ChestMinecart extends MinecartLike, ContainerEntityLike {
+  id: EntityResource.chest_minecart;
+}
+
+export interface FurnaceMinecart extends MinecartLike {
+  Fuel: ShortTag;
+  id: EntityResource.furnace_minecart;
+  PushX: DoubleTag;
+  PushZ: DoubleTag;
+}
+
+export interface TNTMinecart extends MinecartLike {
+  id: EntityResource.tnt_minecart;
+  TNTFuse: IntTag;
+}
+
+export interface HopperMinecart extends MinecartLike, ContainerEntityLike {
+  Enabled: BooleanTag;
+  id: EntityResource.hopper_minecart;
+  TransferCooldown: IntTag<HopperMinecartTransferCooldown>;
+}
+
+export type HopperMinecartTransferCooldown = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
+export interface SpawnerMinecart extends MinecartLike, MobSpawnerLike {
+  id: EntityResource.spawner_minecart;
+}
+
+// Should this inherit from `./block-entity - CommandBlockLike` of some sort? The wiki doesn't do this, and I'm curious if the docs for this don't match the current NBT, since this one is missing some of the Command Block-ish ones.
+export interface CommandBlockMinecart extends MinecartLike {
+  Command: StringTag;
+  id: EntityResource.command_block_minecart;
+  LastOutput: StringTag;
+  SuccessCount: IntTag;
+  TrackOutput: BooleanTag;
+}
+
+export interface MinecartLike extends EntityLike {
+  CustomDisplayTile?: BooleanTag;
+  DisplayOffset?: IntTag;
+  DisplayState?: MinecartDisplayState;
+}
+
+export interface MinecartDisplayState {
+  Name: BlockResource;
+  Properties: BlockState;
+}
+
+export interface ItemEntity extends EntityLike {
+  Age: ShortTag;
+  Health: ShortTag<ItemHealth>;
+  id: EntityResource.item;
+  Item: Item;
+  Owner?: IntArrayTag;
+  PickupDelay: ShortTag;
+  Thrower?: IntArrayTag;
+}
+
+export type ItemHealth = 0 | 1 | 2 | 3 | 4 | 5;
+
+export interface ExperienceOrb extends EntityLike {
+  Age: ShortTag;
+  Count: IntTag;
+  Health: ShortTag;
+  id: EntityResource.experience_orb;
+  Value: ShortTag;
+}
+
+export interface Arrow extends ArrowLike {
+  id: EntityResource.arrow;
+}
+
+export interface SpectralArrow extends ArrowLike {
+  id: EntityResource.spectral_arrow;
+}
+
+// How can the potion effect types be optionally added/defined only for tipped arrows? Just with `extends Partial<PotionEffectLike>`?
+export interface ArrowLike extends EntityLike, ProjectileLike, PotionEffectLike {
+  crit: BooleanTag;
+  damage: DoubleTag;
+  inBlockState?: ArrowBlockState;
+  inGround: BooleanTag;
+  life: ShortTag;
+  pickup: ByteTag<ArrowPickup>;
+  PierceLevel: ByteTag;
+  shake: ByteTag;
+  ShotFromCrossbow: BooleanTag;
+  SoundEvent: StringTag; // I don't think this is a SoundResource actually?
+}
+
+export type ArrowPickup = 0 | 1 | 2;
+
+export interface ArrowBlockState {
+  Name: BlockResource;
+  Properties?: BlockState;
+}
+
+export interface Trident extends EntityLike, ArrowLike, ProjectileLike {
+  DealtDamage: BooleanTag;
+  id: EntityResource.trident;
+  // I think the shape of this looks like this, the formatting on the wiki is a bit weird.
+  Trident: {
+    item: Item; // `minecraft:trident` Item, or `Item<"minecraft:trident">` essentially.
+  };
+}
+
+export interface ContainerEntityLike {
+  Items: Item[]; // `Slot` tag as well, need to add that
+  LootTable?: StringTag; // LootTableResource
+  LootTableSeed?: LongTag;
+}
+
+export interface ProjectileLike {
+  HasBeenShot: BooleanTag;
+  LeftOwner?: BooleanTag; // `?: TrueTag`
+  Owner?: IntArrayTag;
+}
+
+export interface PotionEffectLike {
+  custom_potion_effects: PotionEffectEntry[];
+  Potion: StringTag; // not fully fleshed out <https://minecraft.wiki/w/Arrow#Data_values>, <https://minecraft.wiki/w/Potion#Item_data>
+  CustomPotionColor: IntTag;
+  Color: IntTag; // specific to Arrows..?
+}
+
+export interface PotionEffectEntry {
+  id: IntTag<EffectID>;
+  amplifier?: ByteTag;
+  duration?: IntTag;
+  ambient?: BooleanTag;
+  show_particles?: BooleanTag;
+  show_icon: BooleanTag; // also optional?
+}
 
 export interface MobLike extends EntityLike {
   AbsorptionAmount: FloatTag;

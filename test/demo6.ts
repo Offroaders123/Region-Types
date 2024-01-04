@@ -8,7 +8,7 @@ export interface LegacyConsoleChunk {
 }
 
 export const LEGACY_CONSOLE_NBT_FORMAT = {
-  name: "",
+  rootName: "",
   endian: "big",
   compression: "deflate-raw",
   bedrockLevel: null

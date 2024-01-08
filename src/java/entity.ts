@@ -1,12 +1,12 @@
 import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTag, StringTag, IntArrayTag } from "nbtify";
 import type { BlockState, BlockResource } from "./block.js";
-import type { MobSpawnerLike } from "./block-entity.js";
+import type { BlockEntity, MobSpawnerLike } from "./block-entity.js";
 import type { DimensionResource } from "./dimension.js";
 import type { EffectID } from "./effect.js";
-import type { Item } from "./item.js";
+import type { Item, ItemResource } from "./item.js";
 import type { RecipeResource } from "./recipe.js";
 
-export type Entity = Player | Boat | ChestBoat | Minecart | ChestMinecart | FurnaceMinecart | TNTMinecart | HopperMinecart | SpawnerMinecart | CommandBlockMinecart | ItemEntity | ExperienceOrb | Arrow | SpectralArrow | Trident;
+export type Entity = Player | Boat | ChestBoat | Minecart | ChestMinecart | FurnaceMinecart | TNTMinecart | HopperMinecart | SpawnerMinecart | CommandBlockMinecart | ItemEntity | ExperienceOrb | Arrow | SpectralArrow | Trident | Snowball | Egg | LlamaSpit | EnderPearl | EyeOfEnder | FireworkRocket | TNT | FallingBlock | FishingBobber | LightningBolt | LeashKnot | Painting | ItemFrame | ArmorStand | Fireball | WitherSkull | DragonFireball | ShulkerBullet | EndCrystal | EvokerFangs | Marker | ItemDisplay | BlockDisplay | TextDisplay | Interaction;
 
 export interface Player extends MobLike {
   abilities: Abilities;
@@ -216,6 +216,219 @@ export interface Trident extends EntityLike, ArrowLike, ProjectileLike {
   };
 }
 
+export interface Snowball extends EntityLike, ProjectileLike, ThrownItemLike {
+  id: EntityResource.snowball;
+}
+
+export interface Egg extends EntityLike, ProjectileLike, ThrownItemLike {
+  id: EntityResource.egg;
+}
+
+export interface LlamaSpit extends EntityLike, ProjectileLike {
+  id: EntityResource.llama_spit;
+}
+
+export interface EnderPearl extends EntityLike, ProjectileLike, ThrownItemLike {
+  id: EntityResource.ender_pearl;
+}
+
+export interface EyeOfEnder extends EntityLike, ThrownItemLike {
+  id: EntityResource.eye_of_ender;
+}
+
+export interface FireworkRocket extends EntityLike, ProjectileLike {
+  id: EntityResource.firework_rocket;
+  FireworksItem: FireworksItem;
+  Life: IntTag;
+  LifeTime: IntTag;
+  ShotAtAngle: BooleanTag;
+}
+
+// Is this an extension/generic of what would be `Item<"minecraft:firework_rocket">`, with additional Firework properties?
+export interface FireworksItem {
+  Count: ByteTag; // typically one
+  id: ItemResource.firework_rocket;
+  tag: {
+    Fireworks: { // optional? I don't think so, but the wiki wording is a little off.
+      Explosions: FireworkExplosion[];
+      Flight: ByteTag; // flight duration
+    };
+  };
+}
+
+export interface FireworkExplosion {
+  Colors: IntArrayTag;
+  FadeColors: IntArrayTag;
+  Flicker?: BooleanTag;
+  Trail?: BooleanTag;
+  Type: ByteTag<FireworkShape>;
+}
+
+export type FireworkShape = 0 | 1 | 2 | 3 | 4;
+
+export interface TNT extends EntityLike {
+  id: EntityResource.tnt;
+  // looks like it has changed from one to the other at some point
+  Fuse: ShortTag;
+  fuse: ShortTag;
+  // is this just `BlockState`? This gets confusing where they are nested, seems to be this way multiple other instances as well.
+  block_state: {
+    Name: BlockResource;
+    Properties?: BlockState;
+  };
+}
+
+export interface FallingBlock extends EntityLike {
+  id: EntityResource.falling_block;
+  // This is the same weird thing as `TNT`.
+  BlockState: {
+    Name: BlockResource;
+    Properties?: BlockState;
+  };
+  CancelDrop: BooleanTag;
+  DropItem: BooleanTag;
+  FallHurtAmount: FloatTag;
+  FallHurtMax: IntTag;
+  HurtEntities: BooleanTag;
+  TileEntityData?: BlockEntity; // I'm pretty sure this is `BlockEntity`, but the wiki doesn't specifically mention it.
+  Time: IntTag;
+}
+
+export interface FishingBobber extends EntityLike {
+  id: EntityResource.fishing_bobber;
+}
+
+export interface LightningBolt extends EntityLike {
+  id: EntityResource.lightning_bolt;
+}
+
+export interface LeashKnot extends EntityLike {
+  id: EntityResource.leash_knot;
+}
+
+export interface Painting extends EntityLike, HangableLike {
+  id: EntityResource.painting;
+  variant: StringTag; // `PaintingVariant` union type
+}
+
+export interface ItemFrame extends EntityLike, HangableLike {
+  id: EntityResource.item_frame;
+  Fixed: BooleanTag;
+  Invisible: BooleanTag;
+  Item?: Item;
+  ItemDropChance: FloatTag;
+  ItemRotation: ByteTag;
+}
+
+// Is `MobLike`, except for `LeftHanded`, `DeathLootTable`, `DeathLootTableSeed`, `NoAI`, `Leash`, `CanPickUpLoot` and `PersistenceRequired`.
+export interface ArmorStand extends MobLike {
+  id: EntityResource.armor_stand;
+  DisabledSlots: IntTag;
+  Invisible: BooleanTag;
+  Marker?: BooleanTag;
+  NoBasePlate: BooleanTag;
+  Pose: ArmorStandPose;
+  ShowArms: BooleanTag;
+  Small: BooleanTag;
+}
+
+export interface ArmorStandPose {
+  Body: ArmorStandPoseEntry;
+  Head: ArmorStandPoseEntry;
+  LeftArm: ArmorStandPoseEntry;
+  LeftLeg: ArmorStandPoseEntry;
+  RightArm: ArmorStandPoseEntry;
+  RightLeg: ArmorStandPoseEntry;
+}
+
+export type ArmorStandPoseEntry = [FloatTag, FloatTag, FloatTag];
+
+export interface Fireball extends EntityLike, ProjectileLike, ThrownItemLike, FireballLike {
+  id: EntityResource.fireball;
+  ExplosionPower: ByteTag;
+}
+
+export interface WitherSkull extends EntityLike, ProjectileLike, FireballLike {
+  id: EntityResource.wither_skull;
+  dangerous: BooleanTag; // might want to be optional <https://minecraft.wiki/w/Wither#cite_ref-11>
+}
+
+export interface DragonFireball extends EntityLike, ProjectileLike, FireballLike {
+  id: EntityResource.dragon_fireball;
+}
+
+export interface ShulkerBullet extends EntityLike, ProjectileLike {
+  id: EntityResource.shulker_bullet;
+  Steps: IntTag;
+  Target: IntArrayTag; // `UUIDLike`, `IntArrayTag<[number, number, number, number]>`
+  TXD: DoubleTag;
+  TYD: DoubleTag;
+  TZD: DoubleTag;
+}
+
+export interface EndCrystal extends EntityLike {
+  id: EntityResource.end_crystal;
+  BeamTarget: EndCrystalBeamTarget;
+  ShowBottom: BooleanTag;
+}
+
+export interface EndCrystalBeamTarget {
+  X: IntTag;
+  Y: IntTag;
+  Z: IntTag;
+}
+
+export interface EvokerFangs extends EntityLike {
+  id: EntityResource.evoker_fangs;
+  Owner: IntArrayTag; // `UUIDLike`
+  Warmup: IntTag;
+}
+
+export interface Marker extends EntityLike {
+  id: EntityResource.marker;
+  data: any; // <https://minecraft.wiki/w/Marker#Entity_data>
+}
+
+export interface ItemDisplay extends EntityLike, DisplayLike {
+  id: EntityResource.item_display;
+  item_display: ItemDisplayModel;
+}
+
+export type ItemDisplayModel = "none" | "thirdperson_lefthand" | "thirdperson_righthand" | "firstperson_lefthand" | "firstperson_righthand" | "head" | "gui" | "ground" | "fixed";
+
+export interface BlockDisplay extends EntityLike, DisplayLike {
+  id: EntityResource.block_display;
+  block_state: BlockState;
+}
+
+export interface TextDisplay extends EntityLike, DisplayLike {
+  id: EntityResource.text_display;
+  alignment: TextDisplayAlignment;
+  background: IntTag;
+  default_background: BooleanTag;
+  line_width: IntTag;
+  see_through: BooleanTag;
+  shadow: BooleanTag;
+  text: StringTag; // raw JSON text <https://minecraft.wiki/w/Raw_JSON_text_format>
+  text_opacity: ByteTag;
+}
+
+export type TextDisplayAlignment = "center" | "left" | "right";
+
+export interface Interaction extends EntityLike {
+  id: EntityResource.interaction;
+  width: FloatTag;
+  height: FloatTag;
+  response: BooleanTag;
+  attack: InteractionEvent;
+  interaction: InteractionEvent;
+}
+
+export interface InteractionEvent {
+  player: IntArrayTag; // `UUIDLike`
+  timestamp: LongTag;
+}
+
 export interface ContainerEntityLike {
   Items: Item[]; // `Slot` tag as well, need to add that
   LootTable?: StringTag; // LootTableResource
@@ -225,8 +438,65 @@ export interface ContainerEntityLike {
 export interface ProjectileLike {
   HasBeenShot: BooleanTag;
   LeftOwner?: BooleanTag; // `?: TrueTag`
-  Owner?: IntArrayTag;
+  Owner?: IntArrayTag; // `IntArrayTag<[number, number, number, number]>`
 }
+
+// should this be generic?
+export interface ThrownItemLike {
+  Item?: Item;
+}
+
+export interface HangableLike {
+  Facing: ByteTag<HangableFacing>;
+  TileX: IntTag;
+  TileY: IntTag;
+  TileZ: IntTag;
+}
+
+export type HangableFacing = 0 | 1 | 2 | 3 | 4 | 5;
+
+export interface FireballLike {
+  power: FireballPower;
+}
+
+export type FireballPower = [DoubleTag, DoubleTag, DoubleTag];
+
+export interface DisplayLike {
+  billboard: DisplayBillboard;
+  brightness: DisplayBrightness;
+  glow_color_override: IntTag;
+  height: FloatTag;
+  width: FloatTag;
+  interpolation_duration: IntTag;
+  teleport_duration: IntTag;
+  start_interpolation: IntTag;
+  shadow_radius: FloatTag;
+  shadow_strength: FloatTag;
+  view_range: FloatTag;
+  transformation: DisplayTransformation;
+}
+
+export type DisplayBillboard = "fixed" | "vertical" | "horizontal" | "center";
+
+export interface DisplayBrightness {
+  block: IntTag<DisplayBrightnessLevel>;
+  sky: IntTag<DisplayBrightnessLevel>;
+}
+
+export type DisplayBrightnessLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
+
+export interface DisplayTransformation {
+  left_rotation: DisplayRotation;
+  translation: DisplayTranslation;
+  right_rotation: DisplayRotation;
+  scale: DisplayScale;
+}
+
+export type DisplayRotation = [FloatTag, FloatTag, FloatTag, FloatTag];
+
+export type DisplayTranslation = [FloatTag, FloatTag, FloatTag];
+
+export type DisplayScale = [FloatTag, FloatTag, FloatTag];
 
 export interface PotionEffectLike {
   custom_potion_effects: PotionEffectEntry[];
@@ -430,7 +700,7 @@ export enum EntityResource {
   marker = "minecraft:marker",
   interaction = "minecraft:interaction",
   block_display = "minecraft:block_display",
-  entity_display = "minecraft:entity_display",
+  text_display = "minecraft:text_display",
   item_display = "minecraft:item_display",
   painting = "minecraft:painting",
   arrow = "minecraft:arrow",

@@ -6,9 +6,12 @@ import type { EffectID } from "./effect.js";
 import type { Item, ItemResource } from "./item.js";
 import type { RecipeResource } from "./recipe.js";
 
-export type Entity = Player | Boat | ChestBoat | Minecart | ChestMinecart | FurnaceMinecart | TNTMinecart | HopperMinecart | SpawnerMinecart | CommandBlockMinecart | ItemEntity | ExperienceOrb | Arrow | SpectralArrow | Trident | Snowball | Egg | LlamaSpit | EnderPearl | EyeOfEnder | FireworkRocket | TNT | FallingBlock | FishingBobber | LightningBolt | LeashKnot | Painting | ItemFrame | ArmorStand | Fireball | WitherSkull | DragonFireball | ShulkerBullet | EndCrystal | EvokerFangs | Marker | ItemDisplay | BlockDisplay | TextDisplay | Interaction;
+export type Entity = Player | Allay | Axolotl | Bat | Bee | Blaze | Camel | Cat | CaveSpider | Chicken | Cod | Cow | Creeper | Dolphin | Donkey | Drowned | ElderGuardian | EnderDragon | Enderman | Endermite | Evoker | Fox | Frog | Ghast | Giant | GlowSquid | Goat | Guardian | Horse | Hoglin | Husk | Illusioner | IronGolem | Llama | MagmaCube | Mooshroom | Mule | Ocelot | Panda | Parrot | Phantom | Pig | Piglin | PiglinBrute | Pillager | PolarBear | Pufferfish | Rabbit | Ravager | Salmon | Sheep | Shulker | Silverfish | Skeleton | SkeletonHorse | Slime | SnowGolem | Sniffer | Spider | Squid | Stray | Strider | Tadpole | TraderLlama | TropicalFish | Turtle | Vex | Villager | Vindicator | WanderingTrader | Warden | Witch | Wither | WitherSkeleton | Wolf | Zoglin | Zombie | ZombieHorse | ZombieVillager | ZombifiedPiglin | Boat | ChestBoat | Minecart | ChestMinecart | FurnaceMinecart | TNTMinecart | HopperMinecart | SpawnerMinecart | CommandBlockMinecart | ItemEntity | ExperienceOrb | Arrow | SpectralArrow | Trident | Snowball | Egg | LlamaSpit | EnderPearl | EyeOfEnder | FireworkRocket | TNT | FallingBlock | FishingBobber | LightningBolt | LeashKnot | Painting | ItemFrame | ArmorStand | Fireball | WitherSkull | DragonFireball | ShulkerBullet | EndCrystal | EvokerFangs | Marker | ItemDisplay | BlockDisplay | TextDisplay | Interaction;
 
-export interface Player extends MobLike {
+// Tags for all entities, except the id, CustomName and CustomNameVisible
+// Tags for all mobs, except HandItems, ArmorItems, HandDropChances, ArmorDropChances, CanPickUpLoot, PersistenceRequired and Leash
+export interface Player extends EntityLike, MobLike {
+  id: undefined;
   abilities: Abilities;
   DataVersion: IntTag;
   Dimension: DimensionResource;
@@ -92,41 +95,589 @@ export interface WardenSpawnTracker {
 
 export type WardenWarningLevel = 0 | 1 | 2 | 3;
 
-export interface Boat extends BoatLike {
+export interface Allay extends EntityLike, MobLike {
+  id: EntityResource.allay;
+  CanDuplicate: BooleanTag;
+  DuplicationCooldown: LongTag;
+  Inventory: [Item?];
+  listener: AllayVibrationListener;
+}
+
+export interface AllayVibrationListener {
+  distance: IntTag;
+  event?: AllayVibrationEvent;
+  event_delay: IntTag;
+  event_distance: IntTag;
+  range: IntTag;
+  source: AllayVibrationListenerSource;
+}
+
+export interface AllayVibrationEvent {
+  distance: IntTag;
+  game_event: StringTag; // Resource location of the game event
+  pos: [DoubleTag, DoubleTag, DoubleTag]; // `PositionLike<DoubleTag>` maybe? I want to make a regular type for this pattern.
+  projectile_owner?: IntArrayTag; // `UUIDLike`
+  source?: IntArrayTag; // `UUIDLike`
+}
+
+export type AllayVibrationListenerSource = AllayVibrationListenerSourceBlock | AllayVibrationListenerSourceEntity;
+
+export interface AllayVibrationListenerSourceBlock {
+  type: "block";
+  pos: IntArrayTag; // `IntArrayTag<[number, number, number]>`
+}
+
+export interface AllayVibrationListenerSourceEntity {
+  type: "entity";
+  source_entity: IntArrayTag; // `UUIDLike`
+  y_offset: FloatTag;
+}
+
+export interface Axolotl extends EntityLike, MobLike, BreedableLike, BucketableLike {
+  id: EntityResource.axolotl;
+  Variant: IntTag<AxolotlVariant>;
+}
+
+export type AxolotlVariant = 0 | 1 | 2 | 3 | 4;
+
+export interface Bat extends EntityLike, MobLike {
+  id: EntityResource.bat;
+  BatFlags: BooleanTag;
+}
+
+export interface Bee extends EntityLike, MobLike, BreedableLike, AngeredLike {
+  id: EntityResource.bee;
+  CannotEnterHiveTicks: IntTag;
+  CropsGrownSincePollination: IntTag;
+  FlowerPos: BeePositionLike;
+  HasNectar: BooleanTag;
+  HasStung: BooleanTag;
+  HivePosition: BeePositionLike;
+  TicksSincePollination: IntTag;
+}
+
+export interface BeePositionLike {
+  X: IntTag;
+  Y: IntTag;
+  Z: IntTag;
+}
+
+export interface Blaze extends EntityLike, MobLike {
+  id: EntityResource.blaze;
+}
+
+export interface Camel extends EntityLike, MobLike, BreedableLike, HorseLike {
+  id: EntityResource.camel;
+  LastPoseTick: LongTag;
+}
+
+export interface Cat extends EntityLike, MobLike, BreedableLike, TameableLike, CollaredLike {
+  id: EntityResource.cat;
+  variant: CatVariant;
+}
+
+export type CatVariant = "minecraft:white" | "minecraft:black" | "minecraft:red" | "minecraft:siamese" | "minecraft:british_shorthair" | "minecraft:calico" | "minecraft:persian" | "minecraft:ragdoll" | "minecraft:tabby" | "minecraft:all_black" | "minecraft:jellie";
+
+export interface CaveSpider extends EntityLike, MobLike {
+  id: EntityResource.cave_spider;
+}
+
+export interface Chicken extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.chicken;
+  EggLayTime: IntTag;
+  IsChickenJockey: BooleanTag;
+}
+
+export interface Cod extends EntityLike, MobLike, BucketableLike {
+  id: EntityResource.cod;
+}
+
+export interface Cow extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.cow;
+}
+
+export interface Creeper extends EntityLike, MobLike {
+  id: EntityResource.creeper;
+  ExplosionRadius: ByteTag;
+  Fuse: ShortTag;
+  ignited: BooleanTag;
+  powered?: BooleanTag;
+}
+
+export interface Dolphin extends EntityLike, MobLike {
+  id: EntityResource.dolphin;
+  CanFindTreasure: BooleanTag;
+  GotFish: BooleanTag;
+  TreasurePosX: IntTag;
+  TreasurePosY: IntTag;
+  TreasurePosZ: IntTag;
+}
+
+export interface Donkey extends EntityLike, MobLike, BreedableLike, HorseLike {
+  id: EntityResource.donkey;
+  ChestedHorse: BooleanTag;
+  Items?: Item[]; // only if `!!ChestedHorse`, with slot tag, 2-16
+}
+
+export interface Drowned extends EntityLike, MobLike, ZombieLike {
+  id: EntityResource.drowned;
+}
+
+export interface ElderGuardian extends EntityLike, MobLike {
+  id: EntityResource.elder_guardian;
+}
+
+export interface EnderDragon extends EntityLike, MobLike {
+  id: EntityResource.ender_dragon;
+  DragonPhase: IntTag<EnderDragonPhase>;
+}
+
+export type EnderDragonPhase = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+export interface Enderman extends EntityLike, MobLike, AngeredLike {
+  id: EntityResource.enderman;
+  // Another funky block state shape
+  carriedBlockState?: {
+    Name: BlockResource;
+    Properties?: BlockState;
+  };
+}
+
+export interface Endermite extends EntityLike, MobLike {
+  id: EntityResource.endermite;
+  Lifetime: IntTag;
+}
+
+export interface Evoker extends EntityLike, MobLike, RaidLike {
+  id: EntityResource.evoker;
+  SpellTicks: IntTag;
+}
+
+export interface Fox extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.fox;
+  Crouching: BooleanTag;
+  Sitting: BooleanTag;
+  Sleeping: BooleanTag;
+  Trusted: IntArrayTag[]; // `UUIDLike[]`
+  Type: FoxType;
+}
+
+// Is this `minecraft:`-prefixed like `CatVariant`?
+export type FoxType = "red" | "snow";
+
+export interface Frog extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.frog;
+  variant: FrogVariant;
+}
+
+export type FrogVariant = "minecraft:temperate" | "minecraft:warm" | "minecraft:cold";
+
+export interface Ghast extends EntityLike, MobLike {
+  id: EntityResource.ghast;
+  ExplosionPower: ByteTag;
+}
+
+export interface Giant extends EntityLike, MobLike {
+  id: EntityResource.giant;
+}
+
+export interface GlowSquid extends EntityLike, MobLike {
+  id: EntityResource.glow_squid;
+  DarkTicksRemaining: IntTag;
+}
+
+export interface Goat extends EntityLike, MobLike {
+  id: EntityResource.goat;
+  HasLeftHorn: BooleanTag;
+  HasRightHorn: BooleanTag;
+  IsScreamingGoat: BooleanTag;
+}
+
+export interface Guardian extends EntityLike, MobLike {
+  id: EntityResource.guardian;
+}
+
+export interface Horse extends EntityLike, MobLike, BreedableLike, HorseLike {
+  id: EntityResource.horse;
+  ArmorItem?: Item; // Only one of the Horse Armor types, so should be something like `Item<`minecraft:${string}_horse_armor`>`.
+  Variant: IntTag<HorseVariant>;
+}
+
+export type HorseVariant = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 256 | 257 | 258 | 259 | 260 | 261 | 262 | 512 | 513 | 514 | 515 | 516 | 517 | 518 | 768 | 769 | 770 | 771 | 772 | 773 | 774 | 1024 | 1025 | 1026 | 1027 | 1028 | 1029 | 1030;
+
+export interface Hoglin extends EntityLike, MobLike, BreedableLike, PiglinLike {
+  id: EntityResource.hoglin;
+  CannotBeHunted: BooleanTag;
+}
+
+export interface Husk extends EntityLike, MobLike, ZombieLike {
+  id: EntityResource.husk;
+}
+
+export interface Illusioner extends EntityLike, MobLike, RaidLike {
+  id: EntityResource.illusioner;
+  SpellTicks: IntTag;
+}
+
+export interface IronGolem extends EntityLike, MobLike, AngeredLike {
+  id: EntityResource.iron_golem;
+  PlayerCreated: BooleanTag;
+}
+
+// I think `HorseLike` could be narrowed a little bit so it can better allow for Llama crossover types.
+export interface Llama extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.llama;
+  Bred: BooleanTag;
+  ChestedHorse: BooleanTag;
+  DecorItem?: Item; // Typically a Carpet, without the Slot tag.
+  EatingHaystack: BooleanTag;
+  Items?: Item[]; // Only if `!!ChestedHorse`, with slot tags.
+  Owner?: IntArrayTag; // `UUIDLike`
+  Variant: IntTag<LlamaVariant>;
+  Strength: IntTag<LlamaStrength>;
+  Tame: BooleanTag; // `TameableLike` as well? I think the wiki was kind of goofed for this one.
+  Temper: IntTag;
+}
+
+export type LlamaVariant = 0 | 1 | 2 | 3;
+
+export type LlamaStrength = 1 | 2 | 3 | 4 | 5;
+
+export interface MagmaCube extends EntityLike, MobLike, SlimeLike {
+  id: EntityResource.magma_cube;
+}
+
+export interface Mooshroom extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.mooshroom;
+  EffectDuration?: IntTag;
+  EffectId?: ByteTag<EffectID>;
+  Type: MooshroomType;
+}
+
+export type MooshroomType = "red" | "brown";
+
+export interface Mule extends EntityLike, MobLike, BreedableLike, HorseLike {
+  id: EntityResource.mule;
+  ChestedHorse: BooleanTag;
+  Items?: Item[]; // only if `!!ChestedHorse`, and slot tag numbered 2-16.
+}
+
+export interface Ocelot extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.ocelot;
+  Trusting: BooleanTag;
+}
+
+export interface Panda extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.panda;
+  HiddenGene: PandaGene;
+  MainGene: PandaGene;
+}
+
+// Are these `minecraft:`-prefixed?
+export type PandaGene = "normal" | "lazy" | "worried" | "playful" | "brown" | "weak" | "aggressive";
+
+export interface Parrot extends EntityLike, MobLike, TameableLike {
+  id: EntityResource.parrot;
+  Variant: IntTag<ParrotVariant>;
+}
+
+export type ParrotVariant = 0 | 1 | 2 | 3 | 4;
+
+export interface Phantom extends EntityLike, MobLike {
+  id: EntityResource.phantom;
+  AX: IntTag;
+  AY: IntTag;
+  AZ: IntTag;
+  Size: IntTag;
+}
+
+export interface Pig extends EntityLike, MobLike, BreedableLike, SaddledLike {
+  id: EntityResource.pig;
+}
+
+export interface Piglin extends EntityLike, MobLike, AngeredLike {
+  id: EntityResource.piglin;
+  CannotHunt: BooleanTag;
+  Inventory: Item[]; // 8 items, with slot tag
+  IsBaby?: BooleanTag;
+}
+
+export interface PiglinBrute extends EntityLike, MobLike, AngeredLike, PiglinLike {
+  id: EntityResource.piglin_brute;
+}
+
+export interface Pillager extends EntityLike, MobLike, RaidLike {
+  id: EntityResource.pillager;
+  Inventory: Item[]; // Currently unused, is it optional?
+}
+
+export interface PolarBear extends EntityLike, MobLike, BreedableLike, AngeredLike {
+  id: EntityResource.polar_bear;
+}
+
+export interface Pufferfish extends EntityLike, MobLike, BucketableLike {
+  id: EntityResource.pufferfish;
+  PuffState: IntTag<PufferfishPuffState>;
+}
+
+export type PufferfishPuffState = 0 | 1 | 2;
+
+export interface Rabbit extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.rabbit;
+  MoreCarrotTicks: IntTag;
+  RabbitType: IntTag<RabbitType>;
+}
+
+export type RabbitType = 0 | 1 | 2 | 3 | 4 | 5 | 99; // `99` is The Killer Bunny, and adding a custom name "Toast" will be the Toast variant.
+
+export interface Ravager extends EntityLike, MobLike, RaidLike {
+  id: EntityResource.ravager;
+  AttackTick: IntTag;
+  RoarTick: IntTag;
+  StunTick: IntTag;
+}
+
+export interface Salmon extends EntityLike, MobLike, BucketableLike {
+  id: EntityResource.salmon;
+}
+
+export interface Sheep extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.sheep;
+  Color: ByteTag<SheepColor>;
+  Sheared: BooleanTag;
+}
+
+export type SheepColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
+
+export interface Shulker extends EntityLike, MobLike {
+  id: EntityResource.shulker;
+  APX: IntTag;
+  APY: IntTag;
+  APZ: IntTag;
+  AttachFace: ByteTag<ShulkerDirection>;
+  Color: ByteTag<ShulkerColor>;
+}
+
+export type ShulkerDirection = 0 | 1 | 2 | 3 | 4 | 5;
+
+export type ShulkerColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16; // 16 is the default color
+
+export interface Silverfish extends EntityLike, MobLike {
+  id: EntityResource.silverfish;
+}
+
+export interface Skeleton extends EntityLike, MobLike {
+  id: EntityResource.skeleton;
+  StrayConversionTime: IntTag;
+}
+
+export interface SkeletonHorse extends EntityLike, MobLike, BreedableLike, HorseLike {
+  id: EntityResource.skeleton_horse;
+  SkeletonTrap: BooleanTag;
+  SkeletonTrapTime: IntTag;
+}
+
+export interface Slime extends EntityLike, MobLike, SlimeLike {
+  id: EntityResource.slime;
+}
+
+export interface SnowGolem extends EntityLike, MobLike {
+  id: EntityResource.snow_golem;
+  Pumpkin: BooleanTag;
+}
+
+export interface Sniffer extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.sniffer;
+}
+
+export interface Spider extends EntityLike, MobLike {
+  id: EntityResource.spider;
+}
+
+export interface Squid extends EntityLike, MobLike {
+  id: EntityResource.squid;
+}
+
+export interface Stray extends EntityLike, MobLike {
+  id: EntityResource.stray;
+}
+
+export interface Strider extends EntityLike, MobLike, BreedableLike, SaddledLike {
+  id: EntityResource.strider;
+}
+
+export interface Tadpole extends EntityLike, MobLike, BucketableLike {
+  id: EntityResource.tadpole;
+  Age: IntTag;
+}
+
+// I think `HorseLike` could be narrowed a little bit so it can better allow for Llama crossover types.
+export interface TraderLlama extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.trader_llama;
+  Bred: BooleanTag;
+  ChestedHorse: BooleanTag;
+  DecorItem?: Item; // Typically a Carpet, without the Slot tag.
+  DespawnDelay: IntTag; // Unique to Trader Llamas
+  EatingHaystack: BooleanTag;
+  Items?: Item[]; // Only if `!!ChestedHorse`, with slot tags.
+  Owner?: IntArrayTag; // `UUIDLike`
+  Variant: IntTag<LlamaVariant>;
+  Strength: IntTag<LlamaStrength>;
+  Tame: BooleanTag; // `TameableLike` as well? I think the wiki was kind of goofed for this one.
+  Temper: IntTag;
+}
+
+export interface TropicalFish extends EntityLike, MobLike, BucketableLike {
+  id: EntityResource.tropical_fish;
+  Variant: IntTag<TropicalFishVariant>;
+}
+
+export type TropicalFishVariant = number; // <https://minecraft.wiki/w/Tropical_Fish#Entity_data>
+
+export interface Turtle extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.turtle;
+  HasEgg: BooleanTag;
+  HomePosX: IntTag;
+  HomePosY: IntTag;
+  HomePosZ: IntTag;
+  TravelPosX: IntTag;
+  TravelPosY: IntTag;
+  TravelPosZ: IntTag;
+}
+
+export interface Vex extends EntityLike, MobLike {
+  id: EntityResource.vex;
+  BoundX: IntTag;
+  BoundY: IntTag;
+  BoundZ: IntTag;
+  LifeTicks: IntTag;
+}
+
+export interface Villager extends EntityLike, MobLike, VillagerLike, BreedableLike {
+  id: EntityResource.villager;
+  Inventory: Item[]; // 8 slots, with slot tag.
+  LastRestock: LongTag;
+  LastGossipDecay: LongTag;
+  RestocksToday: IntTag;
+  Willing: BooleanTag;
+}
+
+export interface Vindicator extends EntityLike, MobLike, RaidLike {
+  id: EntityResource.vindicator;
+  Johnny?: BooleanTag;
+}
+
+export interface WanderingTrader extends EntityLike, MobLike, BreedableLike {
+  id: EntityResource.wandering_trader;
+  DespawnDelay: IntTag;
+  Inventory: Item[]; // 8 slots, with slot tag, unused
+  Offers?: WanderingTraderOffers;
+  WanderTarget: WanderTarget;
+}
+
+export interface WanderingTraderOffers {
+  Recipes: TradeOptionLike[];
+}
+
+// Could be generalized to `Position` also.
+export interface WanderTarget {
+  X: IntTag;
+  Y: IntTag;
+  Z: IntTag;
+}
+
+export interface Warden extends EntityLike, MobLike {
+  id: EntityResource.warden;
+  anger: WardenAnger;
+}
+
+export interface WardenAnger {
+  suspects: WardenAngerSuspect[];
+}
+
+export interface WardenAngerSuspect {
+  anger: IntTag;
+  uuid: IntArrayTag; // `UUIDLike`
+}
+
+export interface Witch extends EntityLike, MobLike, RaidLike {
+  id: EntityResource.witch;
+}
+
+export interface Wither extends EntityLike, MobLike {
+  id: EntityResource.wither;
+  Invul: IntTag;
+}
+
+export interface WitherSkeleton extends EntityLike, MobLike {
+  id: EntityResource.wither_skeleton;
+}
+
+export interface Wolf extends EntityLike, MobLike, BreedableLike, TameableLike, AngeredLike, CollaredLike {
+  id: EntityResource.wolf;
+  // v1.20.5
+  // armor: BooleanTag;
+}
+
+export interface Zoglin extends EntityLike, MobLike {
+  id: EntityResource.zoglin;
+  isBaby?: BooleanTag;
+}
+
+export interface Zombie extends EntityLike, MobLike, ZombieLike {
+  id: EntityResource.zombie;
+}
+
+export interface ZombieHorse extends EntityLike, MobLike, BreedableLike, HorseLike {
+  id: EntityResource.zombie_horse;
+}
+
+export interface ZombieVillager extends EntityLike, MobLike, VillagerLike, ZombieLike {
+  id: EntityResource.zombie_villager;
+  ConversionTime: IntTag;
+  ConcersionPlayer: IntArrayTag; // `UUIDLike`
+}
+
+export interface ZombifiedPiglin extends EntityLike, MobLike, AngeredLike, ZombieLike {
+  id: EntityResource.zombified_piglin;
+}
+
+export interface Boat extends EntityLike, BoatLike {
   id: EntityResource.boat;
 }
 
-export interface ChestBoat extends BoatLike, ContainerEntityLike {
+export interface ChestBoat extends EntityLike, BoatLike, ContainerEntityLike {
   id: EntityResource.chest_boat;
 }
 
-export interface BoatLike extends EntityLike {
+export interface BoatLike {
   Type: BoatType;
 }
 
+// Is this `minecraft:`-prefixed like `CatVariant`?
 export type BoatType = "oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak" | "mangrove" | "bamboo";
 
-export interface Minecart extends MinecartLike {
+export interface Minecart extends EntityLike, MinecartLike {
   id: EntityResource.minecart;
 }
 
-export interface ChestMinecart extends MinecartLike, ContainerEntityLike {
+export interface ChestMinecart extends EntityLike, MinecartLike, ContainerEntityLike {
   id: EntityResource.chest_minecart;
 }
 
-export interface FurnaceMinecart extends MinecartLike {
+export interface FurnaceMinecart extends EntityLike, MinecartLike {
   Fuel: ShortTag;
   id: EntityResource.furnace_minecart;
   PushX: DoubleTag;
   PushZ: DoubleTag;
 }
 
-export interface TNTMinecart extends MinecartLike {
+export interface TNTMinecart extends EntityLike, MinecartLike {
   id: EntityResource.tnt_minecart;
   TNTFuse: IntTag;
 }
 
-export interface HopperMinecart extends MinecartLike, ContainerEntityLike {
+export interface HopperMinecart extends EntityLike, MinecartLike, ContainerEntityLike {
   Enabled: BooleanTag;
   id: EntityResource.hopper_minecart;
   TransferCooldown: IntTag<HopperMinecartTransferCooldown>;
@@ -134,12 +685,12 @@ export interface HopperMinecart extends MinecartLike, ContainerEntityLike {
 
 export type HopperMinecartTransferCooldown = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
-export interface SpawnerMinecart extends MinecartLike, MobSpawnerLike {
+export interface SpawnerMinecart extends EntityLike, MinecartLike, MobSpawnerLike {
   id: EntityResource.spawner_minecart;
 }
 
 // Should this inherit from `./block-entity - CommandBlockLike` of some sort? The wiki doesn't do this, and I'm curious if the docs for this don't match the current NBT, since this one is missing some of the Command Block-ish ones.
-export interface CommandBlockMinecart extends MinecartLike {
+export interface CommandBlockMinecart extends EntityLike, MinecartLike {
   Command: StringTag;
   id: EntityResource.command_block_minecart;
   LastOutput: StringTag;
@@ -147,7 +698,7 @@ export interface CommandBlockMinecart extends MinecartLike {
   TrackOutput: BooleanTag;
 }
 
-export interface MinecartLike extends EntityLike {
+export interface MinecartLike {
   CustomDisplayTile?: BooleanTag;
   DisplayOffset?: IntTag;
   DisplayState?: MinecartDisplayState;
@@ -178,16 +729,16 @@ export interface ExperienceOrb extends EntityLike {
   Value: ShortTag;
 }
 
-export interface Arrow extends ArrowLike {
+export interface Arrow extends EntityLike, ArrowLike {
   id: EntityResource.arrow;
 }
 
-export interface SpectralArrow extends ArrowLike {
+export interface SpectralArrow extends EntityLike, ArrowLike {
   id: EntityResource.spectral_arrow;
 }
 
 // How can the potion effect types be optionally added/defined only for tipped arrows? Just with `extends Partial<PotionEffectLike>`?
-export interface ArrowLike extends EntityLike, ProjectileLike, PotionEffectLike {
+export interface ArrowLike extends ProjectileLike, PotionEffectLike {
   crit: BooleanTag;
   damage: DoubleTag;
   inBlockState?: ArrowBlockState;
@@ -321,7 +872,7 @@ export interface ItemFrame extends EntityLike, HangableLike {
 }
 
 // Is `MobLike`, except for `LeftHanded`, `DeathLootTable`, `DeathLootTableSeed`, `NoAI`, `Leash`, `CanPickUpLoot` and `PersistenceRequired`.
-export interface ArmorStand extends MobLike {
+export interface ArmorStand extends EntityLike, MobLike {
   id: EntityResource.armor_stand;
   DisabledSlots: IntTag;
   Invisible: BooleanTag;
@@ -514,7 +1065,7 @@ export interface PotionEffectEntry {
   show_icon: BooleanTag; // also optional?
 }
 
-export interface MobLike extends EntityLike {
+export interface MobLike {
   AbsorptionAmount: FloatTag;
   ActiveEffects: Effect[];
   ArmorDropChances: ArmorDropChances;
@@ -541,6 +1092,127 @@ export interface MobLike extends EntityLike {
   SleepingY: IntTag;
   SleepingZ: IntTag;
   Team?: StringTag; // `ScoreboardTeam` ?
+}
+
+export interface BreedableLike {
+  Age: IntTag;
+  ForcedAge: IntTag;
+  InLove: IntTag;
+  LoveCause: IntArrayTag; // `UUIDLike`
+}
+
+export interface BucketableLike {
+  FromBucket: BooleanTag;
+}
+
+export interface TameableLike {
+  Owner?: IntArrayTag; // `UUIDLike`
+  Sitting: BooleanTag;
+}
+
+export interface CollaredLike {
+  CollarColor: ByteTag<CollarColor>;
+}
+
+export type CollarColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
+
+export interface SaddledLike {
+  Saddle: BooleanTag;
+}
+
+export interface AngeredLike {
+  AngerTime: IntTag;
+  AngryAt: IntArrayTag; // `UUIDLike`
+}
+
+export interface HorseLike {
+  Bred: BooleanTag;
+  EatingHaystack: BooleanTag;
+  Owner?: IntArrayTag; // `UUIDLike`
+  SaddleItem?: Item; // `Item<"minecraft:saddle">`
+  Tame: BooleanTag;
+  Temper: IntTag;
+}
+
+export interface VillagerLike {
+  Gossips: VillagerGossip[];
+  Offers?: VillagerOffers; // "Is generated when the trading menu is opened for the first time.", optional?
+  VillagerData: VillagerData;
+  Xp: IntTag;
+}
+
+export interface VillagerGossip {
+  Value: IntTag;
+  Target: IntArrayTag; // `UUIDLike`
+  Type: VillagerGossipType;
+}
+
+export type VillagerGossipType = "major_negative" | "minor_negative" | "major_positive" | "minor_positive" | "trading";
+
+export interface VillagerOffers {
+  Recipes: VillagerTradeOption[];
+}
+
+export interface TradeOptionLike {
+  buy: Item;
+  buyB?: Item;
+  maxUses: IntTag;
+  rewardExp: BooleanTag;
+  sell: Item;
+  uses: IntTag;
+}
+
+export interface VillagerTradeOption extends TradeOptionLike {
+  demand: IntTag;
+  priceMultiplier: FloatTag;
+  specialPrice: IntTag;
+  xp: IntTag;
+}
+
+export interface VillagerData {
+  level: IntTag<VillagerLevel>;
+  profession: VillagerProfession;
+  type: VillagerType;
+}
+
+export type VillagerLevel = 1 | 2 | 3 | 4 | 5;
+
+export type VillagerProfession = "minecraft:armorer" | "minecraft:butcher" | "minecraft:cartographer" | "minecraft:cleric" | "minecraft:farmer" | "minecraft:fisherman" | "minecraft:fletcher" | "minecraft:leatherworker" | "minecraft:librarian" | "minecraft:nitwit" | "minecraft:none" | "minecraft:mason" | "minecraft:shepherd" | "minecraft:toolsmith" | "minecraft:weaponsmith";
+
+export type VillagerType = "minecraft:desert" | "minecraft:jungle" | "minecraft:plains" | "minecraft:savanna" | "minecraft:snow" | "minecraft:swamp" | "minecraft:taiga";
+
+export interface ZombieLike {
+  CanBreakDoors: BooleanTag;
+  DrownedConversionTime: IntTag;
+  InWaterTime: IntTag;
+  IsBaby?: BooleanTag;
+}
+
+export interface PiglinLike {
+  IsImmuneToZombification: BooleanTag;
+  TimeInOverworld: IntTag;
+}
+
+export interface SlimeLike {
+  Size: IntTag<SlimeSize>;
+  wasOnGround: BooleanTag;
+}
+
+export type SlimeSize = 0 | 1 | 3; // not a mistake, weird I know lol; allows for larger values, these are the natural ones though.
+
+export interface RaidLike {
+  CanJoinRaid: BooleanTag;
+  PatrolLeader: BooleanTag;
+  Patrolling: BooleanTag;
+  PatrolTarget: RaidPatrolTarget; // This can be made generic to a `Position` kind of thing.
+  RaidId: IntTag;
+  Wave: IntTag; // union of values? probably a min/max for each difficulty I'd assume?
+}
+
+export interface RaidPatrolTarget {
+  X: IntTag;
+  Y: IntTag;
+  Z: IntTag;
 }
 
 export interface Effect {
@@ -578,6 +1250,7 @@ export type HandItems = [Item,Item];
 
 export type Leash = IntArrayTag | { X: IntTag; Y: IntTag; Z: IntTag; };
 
+// I should make this generic, for the `id?` property. `ID extends string | undefined`. Then I won't have to define an ID on each entity on it's own, rather `EntityLike` will handle that property. It improves validation for it as well.
 export interface EntityLike {
   Air: ShortTag;
   CustomName?: StringTag;

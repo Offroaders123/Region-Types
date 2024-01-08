@@ -1036,14 +1036,27 @@ export interface DisplayBrightness {
 
 export type DisplayBrightnessLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
 
-export interface DisplayTransformation {
+export type DisplayTransformation = DisplayTransformationMatrix | DisplayTransformationDecomposed;
+
+export type DisplayTransformationMatrix = [FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag, FloatTag];
+
+export interface DisplayTransformationDecomposed {
   left_rotation: DisplayRotation;
   translation: DisplayTranslation;
   right_rotation: DisplayRotation;
   scale: DisplayScale;
 }
 
-export type DisplayRotation = [FloatTag, FloatTag, FloatTag, FloatTag];
+export type DisplayRotation = DisplayRotationQuaternion | DisplayRotationAxisAngle;
+
+export type DisplayRotationQuaternion = [FloatTag, FloatTag, FloatTag, FloatTag];
+
+export interface DisplayRotationAxisAngle {
+  angle: FloatTag;
+  axis: DisplayRotationAxis;
+}
+
+export type DisplayRotationAxis = [FloatTag, FloatTag, FloatTag];
 
 export type DisplayTranslation = [FloatTag, FloatTag, FloatTag];
 

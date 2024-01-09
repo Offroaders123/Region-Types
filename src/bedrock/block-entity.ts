@@ -3,7 +3,62 @@ import type { Block, BlockResource } from "./block.js";
 import type { Entity, EntityResource } from "./entity.js";
 import type { Item, ItemResource } from "./item.js";
 
-export type BlockEntity = Banner | Barrel | Beacon | Bed | Beehive | Bell | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Cauldron | Chalkboard | Chest | ChiseledBookshelf | CommandBlock | Comparator | CompoundCreator | Conduit | DaylightDetector | DecoratedPot | Dispenser | Dropper | ElementConstructor | EnchantTable | EndGateway | FlowerPot | Furnace | HangingSign | Hopper | ItemFrame | JigsawBlock | Jukebox | LabTable | Lectern | Lodestone | MaterialReducer | MobSpawner | MovingBlock | Music | NetherReactor | PistonArm | Poster | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull | Slate | Smoker | StructureBlock;
+export type BlockEntity<K extends keyof BlockEntityNameMap = keyof BlockEntityNameMap> = BlockEntityNameMap[K];
+
+export interface BlockEntityNameMap {
+  Banner: Banner;
+  Barrel: Barrel;
+  Beacon: Beacon;
+  Bed: Bed;
+  Beehive: Beehive;
+  Bell: Bell;
+  BlastFurnace: BlastFurnace;
+  BrewingStand: BrewingStand;
+  BrushableBlock: BrushableBlock;
+  CalibratedSculkSensor: CalibratedSculkSensor;
+  Campfire: Campfire;
+  Cauldron: Cauldron;
+  Chalkboard: Chalkboard;
+  Chest: Chest;
+  ChiseledBookshelf: ChiseledBookshelf;
+  CommandBlock: CommandBlock;
+  Comparator: Comparator;
+  CompoundCreator: CompoundCreator;
+  Conduit: Conduit;
+  DaylightDetector: DaylightDetector;
+  DecoratedPot: DecoratedPot;
+  Dispenser: Dispenser;
+  Dropper: Dropper;
+  ElementConstructor: ElementConstructor;
+  EnchantTable: EnchantTable;
+  EndGateway: EndGateway;
+  FlowerPot: FlowerPot;
+  Furnace: Furnace;
+  HangingSign: HangingSign;
+  Hopper: Hopper;
+  ItemFrame: ItemFrame;
+  JigsawBlock: JigsawBlock;
+  Jukebox: Jukebox;
+  LabTable: LabTable;
+  Lectern: Lectern;
+  Lodestone: Lodestone;
+  MaterialReducer: MaterialReducer;
+  MobSpawner: MobSpawner;
+  MovingBlock: MovingBlock;
+  Music: Music;
+  NetherReactor: NetherReactor;
+  PistonArm: PistonArm;
+  Poster: Poster;
+  SculkCatalyst: SculkCatalyst;
+  SculkSensor: SculkSensor;
+  SculkShrieker: SculkShrieker;
+  ShulkerBox: ShulkerBox;
+  Sign: Sign;
+  Skull: Skull;
+  Slate: Slate;
+  Smoker: Smoker;
+  StructureBlock: StructureBlock;
+}
 
 export interface Banner extends BlockEntityLike<BlockEntityResource.Banner> {
   Base: IntTag; // BannerColor

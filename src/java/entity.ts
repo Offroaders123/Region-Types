@@ -10,7 +10,7 @@ export type Entity = Player | Allay | Axolotl | Bat | Bee | Blaze | Camel | Cat 
 
 // Tags for all entities, except the id, CustomName and CustomNameVisible
 // Tags for all mobs, except HandItems, ArmorItems, HandDropChances, ArmorDropChances, CanPickUpLoot, PersistenceRequired and Leash
-export interface Player extends EntityLike<undefined>, MobLike {
+export interface Player extends Omit<EntityLike<EntityResource.player>, "id">, MobLike {
   abilities: Abilities;
   DataVersion: IntTag;
   Dimension: DimensionResource;
@@ -1103,7 +1103,7 @@ export type HandItems = [Item,Item];
 export type Leash = IntArrayTag | { X: IntTag; Y: IntTag; Z: IntTag; };
 
 // I should make this generic, for the `id?` property. `ID extends string | undefined`. Then I won't have to define an ID on each entity on it's own, rather `EntityLike` will handle that property. It improves validation for it as well.
-export interface EntityLike<EntityID extends string | undefined> {
+export interface EntityLike<EntityID extends string> {
   Air: ShortTag;
   CustomName?: StringTag;
   CustomNameVisible?: BooleanTag;
@@ -1177,6 +1177,7 @@ export enum EntityResource {
   piglin = "minecraft:piglin",
   piglin_brute = "minecraft:piglin_brute",
   pillager = "minecraft:pillager",
+  player = "minecraft:player",
   polar_bear = "minecraft:polar_bear",
   pufferfish = "minecraft:pufferfish",
   rabbit = "minecraft:rabbit",

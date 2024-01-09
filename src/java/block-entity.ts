@@ -50,7 +50,7 @@ export interface Beehive extends BlockEntityLike {
 }
 
 export interface BeehiveEntity {
-  EntityData: Entity; // Probably should allow only `BeeEntity` once that's implemented? Wiki doesn't specify
+  EntityData: Entity<"bee">; // Probably should allow only `BeeEntity` once that's implemented? Wiki doesn't specify
   MinOccupationTicks: IntTag;
   TicksInHive: IntTag;
 }

@@ -6,8 +6,7 @@ import type { Item } from "./item.js";
 
 export type BlockEntity = Banner | Barrel | Beacon | Beehive | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Chest | ChiseledBookshelf | Comparator | CommandBlock | Conduit | Dispenser | Dropper | EnchantingTable | EndGateway | Furnace | HangingSign | Hopper | Jigsaw | Jukebox | Lectern | MobSpawner | Piston | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull | Smoker | SoulCampfire | StructureBlock | TrappedChest;
 
-export interface Banner extends BlockEntityLike {
-  id: typeof BlockEntityResource.banner;
+export interface Banner extends BlockEntityLike<BlockEntityResource.banner> {
   CustomName?: StringTag;
   Patterns: BannerPattern[];
 }
@@ -21,8 +20,7 @@ export type BannerPatternColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 
 export type BannerPatternResource = "b" | "bs" | "ts" | "ls" | "rs" | "cs" | "ms" | "drs" | "dls" | "ss" | "cr" | "sc" | "ld" | "rud" | "lud" | "rd" | "vh" | "vhr" | "hh" | "hhb" | "bl" | "br" | "tl" | "tr" | "bt" | "tt" | "bts" | "tts" | "mc" | "mr" | "bo" | "cbo" | "bri" | "gra" | "gru" | "cre" | "sku" | "flo" | "moj" | "glb" | "pig";
 
-export interface Barrel extends BlockEntityLike {
-  id: typeof BlockEntityResource.barrel;
+export interface Barrel extends BlockEntityLike<BlockEntityResource.barrel> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -30,8 +28,7 @@ export interface Barrel extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface Beacon extends BlockEntityLike {
-  id: typeof BlockEntityResource.beacon;
+export interface Beacon extends BlockEntityLike<BlockEntityResource.beacon> {
   CustomName?: StringTag;
   Lock?: StringTag;
   Levels: IntTag<BeaconLevel>;
@@ -43,8 +40,7 @@ export type BeaconLevel = 0 | 1 | 2 | 3 | 4;
 
 export type BeaconEffectID = -1 | EffectID;
 
-export interface Beehive extends BlockEntityLike {
-  id: typeof BlockEntityResource.beehive;
+export interface Beehive extends BlockEntityLike<BlockEntityResource.beehive> {
   Bees: BeehiveEntity[];
   FlowerPos: BeehiveFlower;
 }
@@ -61,8 +57,7 @@ export interface BeehiveFlower {
   Z: IntTag;
 }
 
-export interface BlastFurnace extends BlockEntityLike {
-  id: typeof BlockEntityResource.blast_furnace;
+export interface BlastFurnace extends BlockEntityLike<BlockEntityResource.blast_furnace> {
   BurnTime: ShortTag;
   CookTime: ShortTag;
   CookTimeTotal: ShortTag;
@@ -76,8 +71,7 @@ export interface BlastFurnaceRecipesUsed {
   [id: number]: IntTag; // Use `BlastFurnaceRecipeID` for the index once that is implemented.
 }
 
-export interface BrewingStand extends BlockEntityLike {
-  id: typeof BlockEntityResource.brewing_stand;
+export interface BrewingStand extends BlockEntityLike<BlockEntityResource.brewing_stand> {
   BrewTime: ShortTag;
   CustomName?: StringTag;
   Fuel: ByteTag<BrewingStandFuelLevel>;
@@ -87,27 +81,23 @@ export interface BrewingStand extends BlockEntityLike {
 
 export type BrewingStandFuelLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20;
 
-export interface BrushableBlock extends BlockEntityLike {
-  id: typeof BlockEntityResource.brushable_block;
+export interface BrushableBlock extends BlockEntityLike<BlockEntityResource.brushable_block> {
   LootTable?: StringTag; // `LootTableResource`
   LootTableSeed?: LongTag;
   item?: Item; // Should this be uppercase? The wiki showed lowercase
 }
 
-export interface CalibratedSculkSensor extends BlockEntityLike {
-  id: typeof BlockEntityResource.calibrated_sculk_sensor;
+export interface CalibratedSculkSensor extends BlockEntityLike<BlockEntityResource.calibrated_sculk_sensor> {
   // This one doesn't have documention yet :P
 }
 
-export interface Campfire extends BlockEntityLike {
-  id: typeof BlockEntityResource.campfire;
+export interface Campfire extends BlockEntityLike<BlockEntityResource.campfire> {
   CookingTimes: IntArrayTag;
   CookingTotalTimes: IntArrayTag;
   Items: Item[]; // Should be `[Item,Item,Item,Item]`, but I want the values to be optional. They're not always present there!
 }
 
-export interface Chest extends BlockEntityLike {
-  id: typeof BlockEntityResource.chest;
+export interface Chest extends BlockEntityLike<BlockEntityResource.chest> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -115,21 +105,18 @@ export interface Chest extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface ChiseledBookshelf extends BlockEntityLike {
-  id: typeof BlockEntityResource.chiseled_bookshelf;
+export interface ChiseledBookshelf extends BlockEntityLike<BlockEntityResource.chiseled_bookshelf> {
   Items: Item[];
   last_interacted_slot: IntTag<ChiseledBookshelfLastInteractedSlot>;
 }
 
 export type ChiseledBookshelfLastInteractedSlot = -1 | 0 | 1 | 2 | 3 | 4 | 5;
 
-export interface Comparator extends BlockEntityLike {
-  id: typeof BlockEntityResource.comparator;
+export interface Comparator extends BlockEntityLike<BlockEntityResource.comparator> {
   OutputSignal: IntTag;
 }
 
-export interface CommandBlock extends BlockEntityLike {
-  id: typeof BlockEntityResource.command_block;
+export interface CommandBlock extends BlockEntityLike<BlockEntityResource.command_block> {
   auto: BooleanTag;
   Command: StringTag;
   conditionMet: BooleanTag;
@@ -142,13 +129,11 @@ export interface CommandBlock extends BlockEntityLike {
   UpdateLastExecution: BooleanTag;
 }
 
-export interface Conduit extends BlockEntityLike {
-  id: typeof BlockEntityResource.conduit;
+export interface Conduit extends BlockEntityLike<BlockEntityResource.conduit> {
   Target?: IntArrayTag;
 }
 
-export interface Dispenser extends BlockEntityLike {
-  id: typeof BlockEntityResource.dispenser;
+export interface Dispenser extends BlockEntityLike<BlockEntityResource.dispenser> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -156,8 +141,7 @@ export interface Dispenser extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface Dropper extends BlockEntityLike {
-  id: typeof BlockEntityResource.dropper;
+export interface Dropper extends BlockEntityLike<BlockEntityResource.dropper> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -165,13 +149,11 @@ export interface Dropper extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface EnchantingTable extends BlockEntityLike {
-  id: typeof BlockEntityResource.enchanting_table;
+export interface EnchantingTable extends BlockEntityLike<BlockEntityResource.enchanting_table> {
   CustomName?: StringTag;
 }
 
-export interface EndGateway extends BlockEntityLike {
-  id: typeof BlockEntityResource.end_gateway;
+export interface EndGateway extends BlockEntityLike<BlockEntityResource.end_gateway> {
   Age: LongTag;
   ExactTeleport: BooleanTag;
   ExitPortal: EndGatewayExitPortal;
@@ -179,8 +161,7 @@ export interface EndGateway extends BlockEntityLike {
 
 export type EndGatewayExitPortal = [IntTag,IntTag,IntTag];
 
-export interface Furnace extends BlockEntityLike {
-  id: typeof BlockEntityResource.furnace;
+export interface Furnace extends BlockEntityLike<BlockEntityResource.furnace> {
   BurnTime: ShortTag;
   CookTime: ShortTag;
   CookTimeTotal: ShortTag;
@@ -194,12 +175,9 @@ export interface FurnaceRecipesUsed {
   [id: number]: IntTag; // Use `FurnaceRecipeID` for the index once that is implemented.
 }
 
-export interface HangingSign extends SignLike {
-  id: typeof BlockEntityResource.hanging_sign;
-}
+export interface HangingSign extends BlockEntityLike<BlockEntityResource.hanging_sign>, SignLike {}
 
-export interface Hopper extends BlockEntityLike {
-  id: typeof BlockEntityResource.hopper;
+export interface Hopper extends BlockEntityLike<BlockEntityResource.hopper> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -210,8 +188,7 @@ export interface Hopper extends BlockEntityLike {
 
 export type HopperTransferCooldown = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
-export interface Jigsaw extends BlockEntityLike {
-  id: typeof BlockEntityResource.jigsaw;
+export interface Jigsaw extends BlockEntityLike<BlockEntityResource.jigsaw> {
   final_state: BlockResource;
   joint: JigsawJoint;
   name: StringTag;
@@ -221,23 +198,19 @@ export interface Jigsaw extends BlockEntityLike {
 
 export type JigsawJoint = "rollable" | "aligned";
 
-export interface Jukebox extends BlockEntityLike {
-  id: typeof BlockEntityResource.jukebox;
+export interface Jukebox extends BlockEntityLike<BlockEntityResource.jukebox> {
   IsPlaying: BooleanTag;
   RecordItem: Item;
   RecordStartTick: LongTag;
   TickCount: LongTag;
 }
 
-export interface Lectern extends BlockEntityLike {
-  id: typeof BlockEntityResource.lectern;
+export interface Lectern extends BlockEntityLike<BlockEntityResource.lectern> {
   Book?: Item;
   Page: IntTag;
 }
 
-export interface MobSpawner extends BlockEntityLike, MobSpawnerLike {
-  id: typeof BlockEntityResource.mob_spawner;
-}
+export interface MobSpawner extends BlockEntityLike<BlockEntityResource.mob_spawner>, MobSpawnerLike {}
 
 // Double check that some of these properties are mandatory; the wiki doesn't quite specify, but it make it sound like they could be optional.
 export interface MobSpawnerLike {
@@ -268,8 +241,7 @@ export type MobSpawnerLightLimit = IntTag | {
   max_inclusive: IntTag;
 };
 
-export interface Piston extends BlockEntityLike {
-  id: typeof BlockEntityResource.piston;
+export interface Piston extends BlockEntityLike<BlockEntityResource.piston> {
   blockState: BlockState; // I think this is just the raw `BlockState` type, not totally sure though? Might be a wrapper? I don't think so though.
   extending: BooleanTag;
   facing: IntTag<PistonFacing>;
@@ -279,8 +251,7 @@ export interface Piston extends BlockEntityLike {
 
 export type PistonFacing = 0 | 1 | 2 | 3 | 4 | 5;
 
-export interface SculkCatalyst extends BlockEntityLike {
-  id: typeof BlockEntityResource.sculk_catalyst;
+export interface SculkCatalyst extends BlockEntityLike<BlockEntityResource.sculk_catalyst> {
   charges: SculkCatalystCharge[];
 }
 
@@ -308,18 +279,15 @@ export type SculkCatalystFacings = [SculkCatalystFacing,SculkCatalystFacing,Scul
 
 export type SculkCatalystFacing = "north" | "south" | "east" | "west" | "up" | "down";
 
-export interface SculkSensor extends BlockEntityLike {
-  id: typeof BlockEntityResource.sculk_sensor;
+export interface SculkSensor extends BlockEntityLike<BlockEntityResource.sculk_sensor> {
   // Can't find documentation about the Block Data here
 }
 
-export interface SculkShrieker extends BlockEntityLike {
-  id: typeof BlockEntityResource.sculk_shrieker;
+export interface SculkShrieker extends BlockEntityLike<BlockEntityResource.sculk_shrieker> {
   // Can't find documentation about the Block Data here
 }
 
-export interface ShulkerBox extends BlockEntityLike {
-  id: typeof BlockEntityResource.shulker_box;
+export interface ShulkerBox extends BlockEntityLike<BlockEntityResource.shulker_box> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -327,12 +295,9 @@ export interface ShulkerBox extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface Sign extends SignLike {
-  id: typeof BlockEntityResource.sign;
-}
+export interface Sign extends BlockEntityLike<BlockEntityResource.sign>, SignLike {}
 
-export interface Skull extends BlockEntityLike {
-  id: typeof BlockEntityResource.skull;
+export interface Skull extends BlockEntityLike<BlockEntityResource.skull> {
   note_block_sound?: StringTag; // "The sound event this skull plays when played with a note block." probably should be typed to a Resource Location :)
   ExtraType: StringTag;
   SkullOwner?: SkullOwner;
@@ -373,8 +338,7 @@ export interface SkullTextureJSON {
   timestamp: number;
 }
 
-export interface Smoker extends BlockEntityLike {
-  id: typeof BlockEntityResource.smoker;
+export interface Smoker extends BlockEntityLike<BlockEntityResource.smoker> {
   BurnTime: ShortTag;
   CookTime: ShortTag;
   CookTimeTotal: ShortTag;
@@ -388,15 +352,13 @@ export interface SmokerRecipesUsed {
   [id: number]: IntTag; // Use `SmokerRecipeID` for the index once that is implemented.
 }
 
-export interface SoulCampfire extends BlockEntityLike {
-  id: typeof BlockEntityResource.soul_campfire;
+export interface SoulCampfire extends BlockEntityLike<BlockEntityResource.soul_campfire> {
   CookingTimes: IntArrayTag;
   CookingTotalTimes: IntArrayTag;
   Items: Item[]; // Like `Campfire`, this should really be `[Item,Item,Item]`.
 }
 
-export interface StructureBlock extends BlockEntityLike {
-  id: typeof BlockEntityResource.structure_block;
+export interface StructureBlock extends BlockEntityLike<BlockEntityResource.structure_block> {
   author: StringTag;
   ignoreEntities: BooleanTag;
   integrity: FloatTag;
@@ -422,8 +384,7 @@ export type StructureBlockMode = "SAVE" | "LOAD" | "CORNER" | "DATA";
 
 export type StructureBlockRotation = "NONE" | "CLOCKWISE_90" | "CLOCKWISE_180" | "COUNTERCLOCKWISE_90";
 
-export interface TrappedChest extends BlockEntityLike {
-  id: typeof BlockEntityResource.trapped_chest;
+export interface TrappedChest extends BlockEntityLike<BlockEntityResource.trapped_chest> {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
@@ -431,7 +392,7 @@ export interface TrappedChest extends BlockEntityLike {
   LootTableSeed?: LongTag;
 }
 
-export interface SignLike extends BlockEntityLike {
+export interface SignLike {
   is_waxed: BooleanTag;
   front_text: SignText;
   back_text: SignText;
@@ -445,8 +406,8 @@ export interface SignText {
 
 export type SignColor = "black" | "white" | "orange" | "magenta" | "light_blue" | "yellow" | "lime" | "pink" | "gray" | "light_gray" | "cyan" | "purple" | "blue" | "brown" | "green" | "red" | "black";
 
-export interface BlockEntityLike {
-  id: BlockEntityResource;
+export interface BlockEntityLike<BlockEntityID extends string> {
+  id: BlockEntityID;
   keepPacked: BooleanTag;
   x: IntTag;
   y: IntTag;

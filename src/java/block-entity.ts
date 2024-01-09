@@ -20,12 +20,10 @@ export type BannerPatternColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 
 export type BannerPatternResource = "b" | "bs" | "ts" | "ls" | "rs" | "cs" | "ms" | "drs" | "dls" | "ss" | "cr" | "sc" | "ld" | "rud" | "lud" | "rd" | "vh" | "vhr" | "hh" | "hhb" | "bl" | "br" | "tl" | "tr" | "bt" | "tt" | "bts" | "tts" | "mc" | "mr" | "bo" | "cbo" | "bri" | "gra" | "gru" | "cre" | "sku" | "flo" | "moj" | "glb" | "pig";
 
-export interface Barrel extends BlockEntityLike<BlockEntityResource.barrel> {
+export interface Barrel extends BlockEntityLike<BlockEntityResource.barrel>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
 }
 
 export interface Beacon extends BlockEntityLike<BlockEntityResource.beacon> {
@@ -81,9 +79,7 @@ export interface BrewingStand extends BlockEntityLike<BlockEntityResource.brewin
 
 export type BrewingStandFuelLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20;
 
-export interface BrushableBlock extends BlockEntityLike<BlockEntityResource.brushable_block> {
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
+export interface BrushableBlock extends BlockEntityLike<BlockEntityResource.brushable_block>, LootTableLike {
   item?: Item; // Should this be uppercase? The wiki showed lowercase
 }
 
@@ -97,12 +93,10 @@ export interface Campfire extends BlockEntityLike<BlockEntityResource.campfire> 
   Items: Item[]; // Should be `[Item,Item,Item,Item]`, but I want the values to be optional. They're not always present there!
 }
 
-export interface Chest extends BlockEntityLike<BlockEntityResource.chest> {
+export interface Chest extends BlockEntityLike<BlockEntityResource.chest>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
 }
 
 export interface ChiseledBookshelf extends BlockEntityLike<BlockEntityResource.chiseled_bookshelf> {
@@ -133,20 +127,16 @@ export interface Conduit extends BlockEntityLike<BlockEntityResource.conduit> {
   Target?: IntArrayTag;
 }
 
-export interface Dispenser extends BlockEntityLike<BlockEntityResource.dispenser> {
+export interface Dispenser extends BlockEntityLike<BlockEntityResource.dispenser>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
 }
 
-export interface Dropper extends BlockEntityLike<BlockEntityResource.dropper> {
+export interface Dropper extends BlockEntityLike<BlockEntityResource.dropper>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
 }
 
 export interface EnchantingTable extends BlockEntityLike<BlockEntityResource.enchanting_table> {
@@ -177,12 +167,10 @@ export interface FurnaceRecipesUsed {
 
 export interface HangingSign extends BlockEntityLike<BlockEntityResource.hanging_sign>, SignLike {}
 
-export interface Hopper extends BlockEntityLike<BlockEntityResource.hopper> {
+export interface Hopper extends BlockEntityLike<BlockEntityResource.hopper>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
   TransferCooldown: IntTag<HopperTransferCooldown>;
 }
 
@@ -287,12 +275,10 @@ export interface SculkShrieker extends BlockEntityLike<BlockEntityResource.sculk
   // Can't find documentation about the Block Data here
 }
 
-export interface ShulkerBox extends BlockEntityLike<BlockEntityResource.shulker_box> {
+export interface ShulkerBox extends BlockEntityLike<BlockEntityResource.shulker_box>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
-  LootTable?: StringTag; // `LootTableResource`
-  LootTableSeed?: LongTag;
 }
 
 export interface Sign extends BlockEntityLike<BlockEntityResource.sign>, SignLike {}
@@ -384,10 +370,13 @@ export type StructureBlockMode = "SAVE" | "LOAD" | "CORNER" | "DATA";
 
 export type StructureBlockRotation = "NONE" | "CLOCKWISE_90" | "CLOCKWISE_180" | "COUNTERCLOCKWISE_90";
 
-export interface TrappedChest extends BlockEntityLike<BlockEntityResource.trapped_chest> {
+export interface TrappedChest extends BlockEntityLike<BlockEntityResource.trapped_chest>, LootTableLike {
   CustomName?: StringTag;
   Items: Item[];
   Lock?: StringTag;
+}
+
+export interface LootTableLike {
   LootTable?: StringTag; // `LootTableResource`
   LootTableSeed?: LongTag;
 }

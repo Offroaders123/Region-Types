@@ -3,7 +3,7 @@ import type { Block, BlockResource } from "./block.js";
 import type { Entity, EntityResource } from "./entity.js";
 import type { Item, ItemResource } from "./item.js";
 
-export type BlockEntity = Banner | Barrel | Beacon | Bed | Beehive | Bell | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Cauldron | Chalkboard | Chest | ChiseledBookshelf | CommandBlock | Comparator | CompoundCreator | Conduit | DaylightDetector | DecoratedPot | Dispenser | Dropper | ElementConstructor | EnchantTable | EndGateway | FlowerPot | Furnace | HangingSign | Hopper | ItemFrame | JigsawBlock | Jukebox | LabTable | Lectern | Lodestone | MaterialReducer | MobSpawner | MovingBlock | Music | NetherReactor | PistonArm | Poster | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull | Slate | Smoker | StructureBlock;
+export type BlockEntity = Banner | Barrel | Beacon | Bed | Beehive | BeeNest | Bell | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Cauldron | Chalkboard | Chest | ChiseledBookshelf | CommandBlock | Comparator | CompoundCreator | Conduit | DaylightDetector | DecoratedPot | Dispenser | Dropper | ElementConstructor | EnchantTable | EndGateway | FlowerPot | Furnace | HangingSign | Hopper | ItemFrame | JigsawBlock | Jukebox | LabTable | Lectern | Lodestone | MaterialReducer | MobSpawner | MovingBlock | Music | NetherReactor | PistonArm | Poster | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull | Slate | Smoker | StructureBlock;
 
 export interface Banner extends BlockEntityLike<BlockEntityResource.Banner> {
   Base: IntTag; // BannerColor
@@ -29,16 +29,9 @@ export interface Bed extends BlockEntityLike<BlockEntityResource.Bed> {
   color: ByteTag; // Bed#Metadata
 }
 
-export interface Beehive extends BlockEntityLike<BlockEntityResource.Beehive> {
-  Occupants?: BeehiveOccupant[];
-  ShouldSpawnBees: BooleanTag;
-}
+export interface Beehive extends BlockEntityLike<BlockEntityResource.Beehive>, BeehiveLike {}
 
-export interface BeehiveOccupant {
-  ActorIdentifier: StringTag; // Always `minecraft:bee<>`, probably should be from a type `ActorResource.bee`
-  SaveData: Entity;
-  TicksLeftToStay: IntTag;
-}
+export interface BeeNest extends BlockEntityLike<BlockEntityResource.BeeNest>, BeehiveLike {}
 
 export interface Bell extends BlockEntityLike<BlockEntityResource.Bell> {
   Direction: IntTag; // May be only two/four values? unknown for sure
@@ -343,6 +336,17 @@ export interface StructureBlock extends BlockEntityLike<BlockEntityResource.Stru
 
 export type StructureBlockMode = 0 | 1 | 2 | 3 | 4 | 5;
 
+export interface BeehiveLike {
+  Occupants?: BeehiveOccupant[];
+  ShouldSpawnBees: BooleanTag;
+}
+
+export interface BeehiveOccupant {
+  ActorIdentifier: EntityResource.bee; // Always `minecraft:bee<>`, probably should be from a type `ActorResource.bee`
+  SaveData: Entity; // `Entity<"bee">`
+  TicksLeftToStay: IntTag;
+}
+
 export interface ChemistryTableLike {
   itemAux: ShortTag; // Wiki doesn't have much info, double check these
   itemId: IntTag;
@@ -429,6 +433,7 @@ export enum BlockEntityResource {
   Beacon = "Beacon",
   Bed = "Bed",
   Beehive = "Beehive",
+  BeeNest = "BeeNest",
   Bell = "Bell",
   BlastFurnace = "BlastFurnace",
   BrewingStand = "BrewingStand",

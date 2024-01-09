@@ -60,7 +60,7 @@ export interface BlastFurnaceRecipesUsed {
 export interface BrewingStand extends BlockEntityLike<BlockEntityResource.brewing_stand>, CustomNameableLike {
   BrewTime: ShortTag;
   Fuel: ByteTag<BrewingStandFuelLevel>;
-  Items: Item[]; // 0-4, with slot tag
+  Items: [Item?, Item?, Item?, Item?, Item?]; // 0-4, with slot tag
   Lock?: StringTag;
 }
 
@@ -79,7 +79,7 @@ export interface Campfire extends BlockEntityLike<BlockEntityResource.campfire>,
 export interface Chest extends BlockEntityLike<BlockEntityResource.chest>, CustomNameableLike, LootTableLike, ChestLike {}
 
 export interface ChiseledBookshelf extends BlockEntityLike<BlockEntityResource.chiseled_bookshelf> {
-  Items: Item[]; // 0-5, with slot tag
+  Items: [Item?, Item?, Item?, Item?, Item?, Item?]; // 0-5, with slot tag
   last_interacted_slot: IntTag<ChiseledBookshelfLastInteractedSlot>;
 }
 
@@ -130,7 +130,7 @@ export interface FurnaceRecipesUsed {
 export interface HangingSign extends BlockEntityLike<BlockEntityResource.hanging_sign>, SignLike {}
 
 export interface Hopper extends BlockEntityLike<BlockEntityResource.hopper>, CustomNameableLike, LootTableLike {
-  Items: Item[]; // 0-4, with slot tag
+  Items: [Item?, Item?, Item?, Item?, Item?]; // 0-4, with slot tag
   Lock?: StringTag;
   TransferCooldown: IntTag<HopperTransferCooldown>;
 }
@@ -323,8 +323,7 @@ export interface CampfireLike {
   // `IntArrayTag<[number, number, number, number]>`
   CookingTimes: IntArrayTag;
   CookingTotalTimes: IntArrayTag;
-  // Should be `[Item,Item,Item,Item]`, but I want the values to be optional. They're not always present there!
-  Items: Item[]; // 0-3, with slot tag
+  Items: [Item?, Item?, Item?, Item?]; // 0-3, with slot tag
 }
 
 export interface ChestLike {
@@ -345,8 +344,7 @@ export interface FurnaceLike {
   BurnTime: ShortTag;
   CookTime: ShortTag;
   CookTimeTotal: ShortTag;
-  // `[Item,Item,Item]`
-  Items: Item[]; // 0-2, with slot tag
+  Items: [Item?, Item?, Item?]; // 0-2, with slot tag
   Lock?: StringTag;
 }
 

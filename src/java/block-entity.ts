@@ -4,7 +4,46 @@ import type { EffectID } from "./effect.js";
 import type { Entity } from "./entity.js";
 import type { Item } from "./item.js";
 
-export type BlockEntity = Banner | Barrel | Beacon | Beehive | BlastFurnace | BrewingStand | BrushableBlock | CalibratedSculkSensor | Campfire | Chest | ChiseledBookshelf | Comparator | CommandBlock | Conduit | Dispenser | Dropper | EnchantingTable | EndGateway | Furnace | HangingSign | Hopper | Jigsaw | Jukebox | Lectern | MobSpawner | Piston | SculkCatalyst | SculkSensor | SculkShrieker | ShulkerBox | Sign | Skull | Smoker | SoulCampfire | StructureBlock | TrappedChest;
+export type BlockEntity<K extends keyof BlockEntityNameMap = keyof BlockEntityNameMap> = BlockEntityNameMap[K];
+
+export interface BlockEntityNameMap {
+  banner: Banner;
+  barrel: Barrel;
+  beacon: Beacon;
+  beehive: Beehive;
+  blast_furnace: BlastFurnace;
+  brewing_stand: BrewingStand;
+  brushable_block: BrushableBlock;
+  calibrated_sculk_sensor: CalibratedSculkSensor;
+  campfire: Campfire;
+  chest: Chest;
+  chiseled_bookshelf: ChiseledBookshelf;
+  comparator: Comparator;
+  command_block: CommandBlock;
+  conduit: Conduit;
+  dispenser: Dispenser;
+  dropper: Dropper;
+  enchanting_table: EnchantingTable;
+  end_gateway: EndGateway;
+  furnace: Furnace;
+  hanging_sign: HangingSign;
+  hopper: Hopper;
+  jigsaw: Jigsaw;
+  jukebox: Jukebox;
+  lectern: Lectern;
+  mob_spawner: MobSpawner;
+  piston: Piston;
+  sculk_catalyst: SculkCatalyst;
+  sculk_sensor: SculkSensor;
+  sculk_shrieker: SculkShrieker;
+  shulker_box: ShulkerBox;
+  sign: Sign;
+  skull: Skull;
+  smoker: Smoker;
+  soul_campfire: SoulCampfire;
+  structure_block: StructureBlock;
+  trapped_chest: TrappedChest;
+}
 
 export interface Banner extends BlockEntityLike<BlockEntityResource.banner>, CustomNameableLike {
   Patterns: BannerPattern[];

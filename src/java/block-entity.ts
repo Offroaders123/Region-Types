@@ -19,10 +19,7 @@ export type BannerPatternColor = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 
 export type BannerPatternResource = "b" | "bs" | "ts" | "ls" | "rs" | "cs" | "ms" | "drs" | "dls" | "ss" | "cr" | "sc" | "ld" | "rud" | "lud" | "rd" | "vh" | "vhr" | "hh" | "hhb" | "bl" | "br" | "tl" | "tr" | "bt" | "tt" | "bts" | "tts" | "mc" | "mr" | "bo" | "cbo" | "bri" | "gra" | "gru" | "cre" | "sku" | "flo" | "moj" | "glb" | "pig";
 
-export interface Barrel extends BlockEntityLike<BlockEntityResource.barrel>, CustomNameableLike, LootTableLike {
-  Items: Item[]; // 0-26, with slot tag
-  Lock?: StringTag;
-}
+export interface Barrel extends BlockEntityLike<BlockEntityResource.barrel>, CustomNameableLike, LootTableLike, ChestLike {}
 
 export interface Beacon extends BlockEntityLike<BlockEntityResource.beacon>, CustomNameableLike {
   Lock?: StringTag;
@@ -52,12 +49,7 @@ export interface BeehiveFlower {
   Z: IntTag;
 }
 
-export interface BlastFurnace extends BlockEntityLike<BlockEntityResource.blast_furnace>, CustomNameableLike {
-  BurnTime: ShortTag;
-  CookTime: ShortTag;
-  CookTimeTotal: ShortTag;
-  Items: Item[]; // 0-2, with slot tag
-  Lock?: StringTag;
+export interface BlastFurnace extends BlockEntityLike<BlockEntityResource.blast_furnace>, CustomNameableLike, FurnaceLike {
   RecipesUsed: BlastFurnaceRecipesUsed;
 }
 
@@ -82,17 +74,9 @@ export interface CalibratedSculkSensor extends BlockEntityLike<BlockEntityResour
   // This one doesn't have documention yet :P
 }
 
-export interface Campfire extends BlockEntityLike<BlockEntityResource.campfire> {
-  CookingTimes: IntArrayTag;
-  CookingTotalTimes: IntArrayTag;
-  // Should be `[Item,Item,Item,Item]`, but I want the values to be optional. They're not always present there!
-  Items: Item[]; // 0-3, with slot tag
-}
+export interface Campfire extends BlockEntityLike<BlockEntityResource.campfire>, CampfireLike {}
 
-export interface Chest extends BlockEntityLike<BlockEntityResource.chest>, CustomNameableLike, LootTableLike {
-  Items: Item[]; // 0-26, with slot tag
-  Lock?: StringTag;
-}
+export interface Chest extends BlockEntityLike<BlockEntityResource.chest>, CustomNameableLike, LootTableLike, ChestLike {}
 
 export interface ChiseledBookshelf extends BlockEntityLike<BlockEntityResource.chiseled_bookshelf> {
   Items: Item[]; // 0-5, with slot tag
@@ -118,18 +102,12 @@ export interface CommandBlock extends BlockEntityLike<BlockEntityResource.comman
 }
 
 export interface Conduit extends BlockEntityLike<BlockEntityResource.conduit> {
-  Target?: IntArrayTag;
+  Target?: IntArrayTag; // `UUIDLike`
 }
 
-export interface Dispenser extends BlockEntityLike<BlockEntityResource.dispenser>, CustomNameableLike, LootTableLike {
-  Items: Item[]; // 0-8, with slot tag
-  Lock?: StringTag;
-}
+export interface Dispenser extends BlockEntityLike<BlockEntityResource.dispenser>, CustomNameableLike, LootTableLike, DispenserLike {}
 
-export interface Dropper extends BlockEntityLike<BlockEntityResource.dropper>, CustomNameableLike, LootTableLike {
-  Items: Item[]; // 0-8, with slot tag
-  Lock?: StringTag;
-}
+export interface Dropper extends BlockEntityLike<BlockEntityResource.dropper>, CustomNameableLike, LootTableLike, DispenserLike {}
 
 export interface EnchantingTable extends BlockEntityLike<BlockEntityResource.enchanting_table>, CustomNameableLike {}
 
@@ -141,13 +119,7 @@ export interface EndGateway extends BlockEntityLike<BlockEntityResource.end_gate
 
 export type EndGatewayExitPortal = [IntTag,IntTag,IntTag];
 
-export interface Furnace extends BlockEntityLike<BlockEntityResource.furnace>, CustomNameableLike {
-  BurnTime: ShortTag;
-  CookTime: ShortTag;
-  CookTimeTotal: ShortTag;
-  // `[Item,Item,Item]`
-  Items: Item[]; // 0-2, with slot tag
-  Lock?: StringTag;
+export interface Furnace extends BlockEntityLike<BlockEntityResource.furnace>, CustomNameableLike, FurnaceLike {
   RecipesUsed: FurnaceRecipesUsed;
 }
 
@@ -264,10 +236,7 @@ export interface SculkShrieker extends BlockEntityLike<BlockEntityResource.sculk
   // Can't find documentation about the Block Data here
 }
 
-export interface ShulkerBox extends BlockEntityLike<BlockEntityResource.shulker_box>, CustomNameableLike, LootTableLike {
-  Items: Item[]; // 0-26, with slot tag
-  Lock?: StringTag;
-}
+export interface ShulkerBox extends BlockEntityLike<BlockEntityResource.shulker_box>, CustomNameableLike, LootTableLike, ChestLike {}
 
 export interface Sign extends BlockEntityLike<BlockEntityResource.sign>, SignLike {}
 
@@ -278,7 +247,7 @@ export interface Skull extends BlockEntityLike<BlockEntityResource.skull> {
 }
 
 export interface SkullOwner {
-  Id?: IntArrayTag;
+  Id?: IntArrayTag; // `UUIDLike`
   Name?: StringTag;
   Properties: [SkullTexture];
 }
@@ -312,13 +281,7 @@ export interface SkullTextureJSON {
   timestamp: number;
 }
 
-export interface Smoker extends BlockEntityLike<BlockEntityResource.smoker>, CustomNameableLike {
-  BurnTime: ShortTag;
-  CookTime: ShortTag;
-  CookTimeTotal: ShortTag;
-  // `[Item,Item,Item]`
-  Items: Item[]; // 0-2, with slot tag
-  Lock?: StringTag;
+export interface Smoker extends BlockEntityLike<BlockEntityResource.smoker>, CustomNameableLike, FurnaceLike {
   RecipesUsed: SmokerRecipesUsed;
 }
 
@@ -326,11 +289,7 @@ export interface SmokerRecipesUsed {
   [id: number]: IntTag; // Use `SmokerRecipeID` for the index once that is implemented.
 }
 
-export interface SoulCampfire extends BlockEntityLike<BlockEntityResource.soul_campfire> {
-  CookingTimes: IntArrayTag;
-  CookingTotalTimes: IntArrayTag;
-  Items: Item[]; // 0-3, with slot tag
-}
+export interface SoulCampfire extends BlockEntityLike<BlockEntityResource.soul_campfire>, CampfireLike {}
 
 export interface StructureBlock extends BlockEntityLike<BlockEntityResource.structure_block> {
   author: StringTag;
@@ -358,13 +317,37 @@ export type StructureBlockMode = "SAVE" | "LOAD" | "CORNER" | "DATA";
 
 export type StructureBlockRotation = "NONE" | "CLOCKWISE_90" | "CLOCKWISE_180" | "COUNTERCLOCKWISE_90";
 
-export interface TrappedChest extends BlockEntityLike<BlockEntityResource.trapped_chest>, CustomNameableLike, LootTableLike {
+export interface TrappedChest extends BlockEntityLike<BlockEntityResource.trapped_chest>, CustomNameableLike, LootTableLike, ChestLike {}
+
+export interface CampfireLike {
+  // `IntArrayTag<[number, number, number, number]>`
+  CookingTimes: IntArrayTag;
+  CookingTotalTimes: IntArrayTag;
+  // Should be `[Item,Item,Item,Item]`, but I want the values to be optional. They're not always present there!
+  Items: Item[]; // 0-3, with slot tag
+}
+
+export interface ChestLike {
   Items: Item[]; // 0-26, with slot tag
   Lock?: StringTag;
 }
 
 export interface CustomNameableLike {
   CustomName?: StringTag; // JSON text component
+}
+
+export interface DispenserLike {
+  Items: Item[]; // 0-8, with slot tag
+  Lock?: StringTag;
+}
+
+export interface FurnaceLike {
+  BurnTime: ShortTag;
+  CookTime: ShortTag;
+  CookTimeTotal: ShortTag;
+  // `[Item,Item,Item]`
+  Items: Item[]; // 0-2, with slot tag
+  Lock?: StringTag;
 }
 
 export interface LootTableLike {

@@ -1,3 +1,32 @@
+import type { ByteTag, BooleanTag, IntTag, FloatTag } from "nbtify";
+
+export interface Effect {
+  Ambient: BooleanTag;
+  Amplifier: ByteTag;
+  DisplayOnScreenTextureAnimation: ByteTag; // probably `BooleanTag`? I feel like this is for Bad Omen & friends.
+  Duration: IntTag;
+  DurationEasy: IntTag;
+  DurationHard: IntTag;
+  DurationNormal: IntTag;
+  FactorCalculationData: EffectFactorCalculationData; // not enough info about this..
+  Id: ByteTag<EffectID>;
+  ShowParticles: BooleanTag;
+}
+
+export interface EffectFactorCalculationData {
+  change_timestamp: IntTag;
+  factor_current: FloatTag;
+  factor_previous: FloatTag;
+  factor_start: FloatTag;
+  factor_target: FloatTag;
+  had_applied: ByteTag; // boolean?
+  had_last_tick: ByteTag; // boolean?
+  padding_duration: IntTag;
+}
+
+// Very much need to make these an enum, as they are different to that of Java :(
+export type EffectID = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30;
+
 export enum EffectResource {
   speed = "minecraft:speed",
   haste = "minecraft:haste",

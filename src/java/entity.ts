@@ -2,7 +2,7 @@ import type { BooleanTag, ByteTag, ShortTag, IntTag, LongTag, FloatTag, DoubleTa
 import type { BlockState, BlockResource } from "./block.js";
 import type { BlockEntity, MobSpawnerLike } from "./block-entity.js";
 import type { DimensionResource } from "./dimension.js";
-import type { EffectID } from "./effect.js";
+import type { Effect, EffectID } from "./effect.js";
 import type { Item, ItemResource } from "./item.js";
 import type { RecipeResource } from "./recipe.js";
 
@@ -1188,16 +1188,6 @@ export interface RaidPatrolTarget {
   X: IntTag;
   Y: IntTag;
   Z: IntTag;
-}
-
-export interface Effect {
-  Ambient: BooleanTag;
-  Amplifier: ByteTag;
-  Duration: IntTag;
-  HiddenEffect: Effect; // Might be optional?
-  Id: EffectID;
-  ShowIcon: BooleanTag;
-  ShowParticles: BooleanTag;
 }
 
 export type ArmorDropChances = [FloatTag,FloatTag,FloatTag,FloatTag];

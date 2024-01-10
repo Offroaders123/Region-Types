@@ -118,17 +118,23 @@ export interface Abilities {
   attackplayers: BooleanTag;
   build: BooleanTag;
   doorsandswitches: BooleanTag;
-  flySpeed: FloatTag;
   flying: BooleanTag;
+  flySpeed: FloatTag<0.05>;
   instabuild: BooleanTag;
   invulnerable: BooleanTag;
   lightning: BooleanTag;
   mayfly: BooleanTag;
   mine: BooleanTag;
+  mute: BooleanTag;
+  noclip: BooleanTag;
   op: BooleanTag;
   opencontainers: BooleanTag;
+  // probably needs to be a union of some kind
+  permissionsLevel: IntTag;
+  playerPermissionsLevel: IntTag;
   teleport: BooleanTag;
   walkSpeed: FloatTag;
+  worldBuilder: BooleanTag;
 }
 
 export interface Experiments {

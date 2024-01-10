@@ -1,3 +1,15 @@
+import type { ByteTag, BooleanTag, IntTag } from "nbtify";
+
+export interface Effect {
+  Ambient: BooleanTag;
+  Amplifier: ByteTag;
+  Duration: IntTag;
+  HiddenEffect: Effect; // Might be optional?
+  Id: EffectID;
+  ShowIcon: BooleanTag;
+  ShowParticles: BooleanTag;
+}
+
 export type EffectID = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33;
 
 export enum EffectResource {

@@ -126,27 +126,18 @@ export interface Minecart extends EntityLike<EntityResource.minecart> {
   DisplayOffset?: IntTag;
 }
 
-export interface ChestMinecart extends EntityLike<EntityResource.chest_minecart> /* InventoryLike */ {
-  ChestItems: Item[]; // 0-26, with slot tag
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface ChestMinecart extends EntityLike<EntityResource.chest_minecart>, InventoryLike<Item[]> {
+  // 0-26 slots
 }
 
-export interface CommandBlockMinecart extends Omit<EntityLike<EntityResource.command_block_minecart>, "CustomName"> /* InventoryLike */, CommandBlockLike {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface CommandBlockMinecart extends Omit<EntityLike<EntityResource.command_block_minecart>, "CustomName">, InventoryLike<Item[]>, CommandBlockLike {
+  // how many slots again?
   CurrentTickCount: IntTag;
   Ticking: ByteTag; // boolean?
 }
 
-export interface HopperMinecart extends EntityLike<EntityResource.hopper_minecart> /* InventoryLike */ {
-  ChestItems: [Item?, Item?, Item?, Item?, Item?]; // 0-4, with slot tag
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface HopperMinecart extends EntityLike<EntityResource.hopper_minecart>, InventoryLike<[Item?, Item?, Item?, Item?, Item?]> {
+  // 0-4 slots
 }
 
 export interface TNTMinecart extends EntityLike<EntityResource.tnt_minecart>, ExplodeLike {}
@@ -154,7 +145,8 @@ export interface TNTMinecart extends EntityLike<EntityResource.tnt_minecart>, Ex
 export interface LegacyVillager extends EntityLike<EntityResource.villager>, MobLike, VillagerLike {}
 
 // The overlap types here for villager trade keys is a bit borked at the moment, maybe they need to be a union type? I feel like one is the old version, and one is the new version. That's just a hunch though. I'll have to dig into some older worlds' data to see what shapes they use there.
-export interface Villager extends EntityLike<EntityResource.villager_v2>, MobLike, VillagerLike, AgeableLike, DwellerLike, EconomyTradeTableLike, /* InventoryLike */ Omit<TradeTableLike, "Willing" | "Offers"> {
+export interface Villager extends EntityLike<EntityResource.villager_v2>, MobLike, VillagerLike, AgeableLike, DwellerLike, EconomyTradeTableLike, InventoryLike<Item[]>, Omit<TradeTableLike, "Willing" | "Offers"> {
+  // how many slots again?
   HasResupplied: BooleanTag;
   IsInRaid: BooleanTag;
   ReactToBell: ByteTag; // boolean?
@@ -220,11 +212,8 @@ export interface MagmaCube extends EntityLike<EntityResource.magma_cube>, MobLik
 
 export interface Phantom extends EntityLike<EntityResource.phantom>, MobLike, MonsterLike {}
 
-export interface Piglin extends EntityLike<EntityResource.piglin>, MobLike, MonsterLike, TimerLike /* InventoryLike */ {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface Piglin extends EntityLike<EntityResource.piglin>, MobLike, MonsterLike, TimerLike, InventoryLike<Item[]> {
+  // how many slots again?
 }
 
 export interface PiglinBrute extends EntityLike<EntityResource.piglin_brute>, MobLike, MonsterLike, HomeLike, TimerLike {}
@@ -340,12 +329,9 @@ export interface Bee extends EntityLike<EntityResource.bee>, MobLike /* AnimalLi
   };
 }
 
-export interface Camel extends EntityLike<EntityResource.camel>, MobLike /* AnimalLike */, AgeableLike, BreedableLike /* InventoryLike */ {
-  // are all of these unused? camels can't have chest inventory items
-  ChestItems: Item[];
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+// like `Horse`, should I make a `HorseLike`?
+export interface Camel extends EntityLike<EntityResource.camel>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+  // is all of `InventoryLike` unused? camels can't have chest inventory items
 }
 
 export interface Cat extends EntityLike<EntityResource.cat>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, BreedableLike, DwellerLike {}
@@ -362,11 +348,8 @@ export interface ChickenEntry {
 export interface Cow extends EntityLike<EntityResource.cow>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Donkey extends EntityLike<EntityResource.donkey>, MobLike /* AnimalLike */, AgeableLike, BreedableLike /* InventoryLike */ {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface Donkey extends EntityLike<EntityResource.donkey>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+  // how many slots again?
   Temper: IntTag;
 }
 
@@ -409,20 +392,14 @@ export interface Hoglin extends EntityLike<EntityResource.hoglin>, MobLike /* An
 
 // ~~horse v2 as well~~, wait, those are just the texture names, not the IDs themselves
 // like `Donkey`, should I make a `HorseLike`?
-export interface Horse extends EntityLike<EntityResource.horse>, MobLike /* AnimalLike */, AgeableLike, BreedableLike /* InventoryLike */ {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface Horse extends EntityLike<EntityResource.horse>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+  // how many slots again?
   Temper: IntTag;
 }
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Llama extends EntityLike<EntityResource.llama>, MobLike /* AnimalLike */, AgeableLike, BreedableLike /* InventoryLike */ {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface Llama extends EntityLike<EntityResource.llama>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+  // how many slots again?
   Temper: IntTag;
 }
 
@@ -431,11 +408,8 @@ export interface LlamaSpit extends EntityLike<EntityResource.llama_spit>, Projec
 export interface Mooshroom extends EntityLike<EntityResource.mooshroom>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Mule extends EntityLike<EntityResource.mule>, MobLike /* AnimalLike */, AgeableLike /* InventoryLike */ {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface Mule extends EntityLike<EntityResource.mule>, MobLike /* AnimalLike */, AgeableLike, InventoryLike<Item[]> {
+  // how many slots again?
   Temper: IntTag;
 }
 
@@ -449,11 +423,8 @@ export interface Painting extends EntityLike<EntityResource.painting> {
 
 export type PaintingDirection = 0 | 1 | 2 | 3;
 
-export interface Panda extends EntityLike<EntityResource.panda>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, GeneticsLike /* InventoryLike */ {
-  ChestItems: Item[]; // with slot tag, how many items again?
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface Panda extends EntityLike<EntityResource.panda>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, GeneticsLike, InventoryLike<Item[]> {
+  // how many slots again?
 }
 
 export interface Parrot extends EntityLike<EntityResource.parrot>, MobLike /* AnimalLike */ {}
@@ -648,11 +619,8 @@ export interface FireworkRocket extends EntityLike<EntityResource.fireworks_rock
 
 export interface FishingBobber extends EntityLike<EntityResource.fishing_hook>, ProjectileLike {}
 
-export interface ChestBoat extends EntityLike<EntityResource.chest_boat> /* InventoryLike */ {
-  ChestItems: Item[]; // 0-26, with slot tag
-  InventoryVersion: StringTag;
-  LootTable?: StringTag; // optional like JE?
-  LootTableSeed?: IntTag; // optional like JE?
+export interface ChestBoat extends EntityLike<EntityResource.chest_boat>, InventoryLike<Item[]> {
+  // 0-26 slots
 }
 
 export interface VillagerLike {
@@ -768,6 +736,13 @@ export interface DryingOutTimerLike {
 export interface HomeLike {
   HomePos: [X: FloatTag, Y: FloatTag, Z: FloatTag];
   HomeDimensionId: IntTag<DimensionID>;
+}
+
+export interface InventoryLike<Items extends (Item | undefined)[]> {
+  ChestItems: Items; // with slot tag
+  InventoryVersion: StringTag;
+  LootTable?: StringTag; // optional like JE?
+  LootTableSeed?: IntTag; // optional like JE?
 }
 
 export interface TimerLike {

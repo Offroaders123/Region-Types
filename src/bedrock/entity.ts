@@ -2,7 +2,7 @@ import type { ByteTag, BooleanTag, ShortTag, IntTag, LongTag, FloatTag, StringTa
 import type { Block } from "./block.js";
 import type { CommandBlockLike } from "./block-entity.js";
 import type { DimensionID } from "./dimension.js";
-import type { Effect, EffectID } from "./effect.js";
+import type { Effect, EffectResource } from "./effect.js";
 import type { Item } from "./item.js";
 import type { Abilities, GameType } from "./level.js";
 
@@ -591,11 +591,11 @@ export interface ExperienceOrb extends EntityLike<EntityResource.xp_bottle>, Thr
 export interface ExperiencePotion extends EntityLike<EntityResource.xp_bottle>, ThrowableLike, ProjectileLike {}
 
 export interface SplashPotion extends EntityLike<EntityResource.splash_potion>, ThrowableLike, ProjectileLike {
-  PotionId: ShortTag<EffectID>;
+  PotionId: ShortTag<EffectResource>;
 }
 // `PotionLike`? ^^vv^^vv this is `Thrown Potion` from the wiki
 export interface LingeringPotion extends EntityLike<EntityResource.lingering_potion>, ThrowableLike, ProjectileLike {
-  PotionId: ShortTag<EffectID>;
+  PotionId: ShortTag<EffectResource>;
 }
 
 export interface EnderPearl extends EntityLike<EntityResource.ender_pearl>, ThrowableLike, ProjectileLike {}

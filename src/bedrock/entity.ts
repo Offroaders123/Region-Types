@@ -496,24 +496,24 @@ export interface NPCPlayerSceneMap {
 }
 
 export interface Player extends EntityLike<EntityResource.player>, MobLike, AbilitiesLike {
-  AgentID: LongTag;
+  AgentID?: LongTag;
   DimensionId: IntTag<DimensionID>;
   EnchantmentSeed: IntTag;
   EnderChestInventory: Item[]; // 0-26, with slot tag
   fogCommandStack: StringTag[]; // `FogResource`? I think the fogs can be player-made though, like scoreboards? Maybe not,..
   format_version: StringTag;
   HasSeenCredits: BooleanTag;
-  Inventory: Item[]; // how many again?
-  LeftShoulderRiderID: LongTag; // optional?
+  Inventory: Item[]; // 0-35, with slot tag
+  LeftShoulderRiderID?: LongTag;
   MapIndex: IntTag;
   PlayerGameMode: IntTag<GameType>;
   PlayerLevel: IntTag;
   PlayerLevelProgress: FloatTag;
   PlayerUIItems: Item[]; // unknown
   recipe_unlocking: PlayerRecipeUnlocking;
-  RideID: LongTag; // optional?
-  RightShoulderRiderID: LongTag; // optional?
-  SelectedContainerId: IntTag; // optional?
+  RideID?: LongTag;
+  RightShoulderRiderID?: LongTag;
+  SelectedContainerId: IntTag; // optional?* I don't think so, but I don't fully know what this is for, so I'm gonna leave it for now
   SelectedInventorySlot: IntTag; // 0-8? I don't remember the hotbar number indices, might be wrong there
   Sleeping: BooleanTag;
   SleepTimer: ShortTag;
@@ -660,10 +660,10 @@ export interface MobLike {
   persistingRiches?: IntTag;
   Surface: BooleanTag;
   TargetCaptainID?: LongTag;
-  TargetID: LongTag; // optional I think? the wiki doesn't say
+  TargetID: LongTag; // optional I think? the wiki doesn't say* Not totally sure but I think not, looks like it's set to -1 otherwise.
   TradeExperience?: IntTag;
   TraderTier?: IntTag; // union? 'trade tier of this trader entity'. Maybe it's just a value though.
-  WantsToBeJocket?: ByteTag; // guessing it's a boolean
+  WantsToBeJockey?: ByteTag; // guessing it's a boolean
 }
 
 export interface Attribute {

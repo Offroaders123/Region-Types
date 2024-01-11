@@ -286,7 +286,7 @@ export interface WitherSkull extends EntityLike<EntityResource.wither_skull>, Ex
 
 export interface Zoglin extends EntityLike<EntityResource.zoglin>, MobLike, MonsterLike {}
 
-export interface Allay extends EntityLike<EntityResource.allay>, MobLike /* AnimalLike */ {
+export interface Allay extends EntityLike<EntityResource.allay>, MobLike {
   AllayDuplicationCooldown: LongTag;
   VibrationListener: AllayVibrationListener;
 }
@@ -323,20 +323,20 @@ export interface AreaEffectCloud extends EntityLike<EntityResource.area_effect_c
   SpawnTick: LongTag;
 }
 
-export interface Bee extends EntityLike<EntityResource.bee>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, HomeLike, TimerLike {
+export interface Bee extends EntityLike<EntityResource.bee>, MobLike, AgeableLike, BreedableLike, HomeLike, TimerLike {
   properties: {
     "minecraft:has_nectar": BooleanTag;
   };
 }
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Camel extends EntityLike<EntityResource.camel>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+export interface Camel extends EntityLike<EntityResource.camel>, MobLike, AgeableLike, BreedableLike, InventoryLike<Item[]> {
   // is all of `InventoryLike` unused? camels can't have chest inventory items
 }
 
-export interface Cat extends EntityLike<EntityResource.cat>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, BreedableLike, DwellerLike {}
+export interface Cat extends EntityLike<EntityResource.cat>, MobLike, AgeableLike, BreedableLike, BreedableLike, DwellerLike {}
 
-export interface Chicken extends EntityLike<EntityResource.chicken>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {
+export interface Chicken extends EntityLike<EntityResource.chicken>, MobLike, AgeableLike, BreedableLike {
   entries: ChickenEntry[];
 }
 
@@ -345,15 +345,15 @@ export interface ChickenEntry {
   StopSpawning: ByteTag; // boolean?
 }
 
-export interface Cow extends EntityLike<EntityResource.cow>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Cow extends EntityLike<EntityResource.cow>, MobLike, AgeableLike, BreedableLike {}
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Donkey extends EntityLike<EntityResource.donkey>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+export interface Donkey extends EntityLike<EntityResource.donkey>, MobLike, AgeableLike, BreedableLike, InventoryLike<Item[]> {
   // how many slots again?
   Temper: IntTag;
 }
 
-export interface Dolphin extends EntityLike<EntityResource.dolphin>, MobLike /* AnimalLike */, AgeableLike, DryingOutTimerLike {
+export interface Dolphin extends EntityLike<EntityResource.dolphin>, MobLike, AgeableLike, DryingOutTimerLike {
   BribeTime: IntTag;
   DamageTime?: ShortTag;
   TicksRemainingUntilDryOut: IntTag;
@@ -374,46 +374,46 @@ export interface EnderCrystal extends EntityLike<EntityResource.ender_crystal>, 
   BlockTargetZ?: IntTag;
 }
 
-export interface Fox extends EntityLike<EntityResource.fox>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {
+export interface Fox extends EntityLike<EntityResource.fox>, MobLike, AgeableLike, BreedableLike {
   TrustedPlayersAmount: IntTag;
   // Not quite sure how to type this
   "TrustedPlayer${number}": LongTag;
 }
 
-export interface Frog extends EntityLike<EntityResource.frog>, MobLike /* AnimalLike */, BreedableLike {}
+export interface Frog extends EntityLike<EntityResource.frog>, MobLike, BreedableLike {}
 
-export interface GlowSquid extends EntityLike<EntityResource.glow_squid>, MobLike /* AnimalLike */ {}
+export interface GlowSquid extends EntityLike<EntityResource.glow_squid>, MobLike {}
 
-export interface Goat extends EntityLike<EntityResource.goat>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, GeneticsLike {
+export interface Goat extends EntityLike<EntityResource.goat>, MobLike, AgeableLike, BreedableLike, GeneticsLike {
   GoatHornCount: IntTag;
 }
 
-export interface Hoglin extends EntityLike<EntityResource.hoglin>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, TimerLike {}
+export interface Hoglin extends EntityLike<EntityResource.hoglin>, MobLike, AgeableLike, BreedableLike, TimerLike {}
 
 // ~~horse v2 as well~~, wait, those are just the texture names, not the IDs themselves
 // like `Donkey`, should I make a `HorseLike`?
-export interface Horse extends EntityLike<EntityResource.horse>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+export interface Horse extends EntityLike<EntityResource.horse>, MobLike, AgeableLike, BreedableLike, InventoryLike<Item[]> {
   // how many slots again?
   Temper: IntTag;
 }
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Llama extends EntityLike<EntityResource.llama>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, InventoryLike<Item[]> {
+export interface Llama extends EntityLike<EntityResource.llama>, MobLike, AgeableLike, BreedableLike, InventoryLike<Item[]> {
   // how many slots again?
   Temper: IntTag;
 }
 
 export interface LlamaSpit extends EntityLike<EntityResource.llama_spit>, ProjectileLike {}
 
-export interface Mooshroom extends EntityLike<EntityResource.mooshroom>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Mooshroom extends EntityLike<EntityResource.mooshroom>, MobLike, AgeableLike, BreedableLike {}
 
 // like `Horse`, should I make a `HorseLike`?
-export interface Mule extends EntityLike<EntityResource.mule>, MobLike /* AnimalLike */, AgeableLike, InventoryLike<Item[]> {
+export interface Mule extends EntityLike<EntityResource.mule>, MobLike, AgeableLike, InventoryLike<Item[]> {
   // how many slots again?
   Temper: IntTag;
 }
 
-export interface Ocelot extends EntityLike<EntityResource.ocelot>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Ocelot extends EntityLike<EntityResource.ocelot>, MobLike, AgeableLike, BreedableLike {}
 
 export interface Painting extends EntityLike<EntityResource.painting> {
   Dir: ByteTag<PaintingDirection>;
@@ -423,40 +423,40 @@ export interface Painting extends EntityLike<EntityResource.painting> {
 
 export type PaintingDirection = 0 | 1 | 2 | 3;
 
-export interface Panda extends EntityLike<EntityResource.panda>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, GeneticsLike, InventoryLike<Item[]> {
+export interface Panda extends EntityLike<EntityResource.panda>, MobLike, AgeableLike, BreedableLike, GeneticsLike, InventoryLike<Item[]> {
   // how many slots again?
 }
 
-export interface Parrot extends EntityLike<EntityResource.parrot>, MobLike /* AnimalLike */ {}
+export interface Parrot extends EntityLike<EntityResource.parrot>, MobLike {}
 
-export interface Pig extends EntityLike<EntityResource.pig>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Pig extends EntityLike<EntityResource.pig>, MobLike, AgeableLike, BreedableLike {}
 
-export interface PolarBear extends EntityLike<EntityResource.polar_bear>, MobLike /* AnimalLike */, AgeableLike {}
+export interface PolarBear extends EntityLike<EntityResource.polar_bear>, MobLike, AgeableLike {}
 
-export interface Rabbit extends EntityLike<EntityResource.rabbit>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {
+export interface Rabbit extends EntityLike<EntityResource.rabbit>, MobLike, AgeableLike, BreedableLike {
   CarrotsEaten: IntTag;
   MoreCarrotTicks: IntTag;
 }
 
-export interface Sheep extends EntityLike<EntityResource.sheep>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Sheep extends EntityLike<EntityResource.sheep>, MobLike, AgeableLike, BreedableLike {}
 
-export interface SkeletonHorse extends EntityLike<EntityResource.skeleton_horse>, MobLike /* AnimalLike */, AgeableLike {}
+export interface SkeletonHorse extends EntityLike<EntityResource.skeleton_horse>, MobLike, AgeableLike {}
 
-export interface Squid extends EntityLike<EntityResource.squid>, MobLike /* AnimalLike */ {}
+export interface Squid extends EntityLike<EntityResource.squid>, MobLike {}
 
-export interface Sniffer extends EntityLike<EntityResource.sniffer>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Sniffer extends EntityLike<EntityResource.sniffer>, MobLike, AgeableLike, BreedableLike {}
 
 export interface Snowball extends EntityLike<EntityResource.snowball>, ProjectileLike {}
 
-export interface Strider extends EntityLike<EntityResource.strider>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {}
+export interface Strider extends EntityLike<EntityResource.strider>, MobLike, AgeableLike, BreedableLike {}
 
-export interface TraderLlama extends EntityLike<EntityResource.trader_llama>, MobLike /* AnimalLike */ {}
+export interface TraderLlama extends EntityLike<EntityResource.trader_llama>, MobLike {}
 
-export interface Turtle extends EntityLike<EntityResource.turtle>, MobLike /* AnimalLike */, AgeableLike, BreedableLike, HomeLike {
+export interface Turtle extends EntityLike<EntityResource.turtle>, MobLike, AgeableLike, BreedableLike, HomeLike {
   IsPregnant: BooleanTag;
 }
 
-export interface Wolf extends EntityLike<EntityResource.wolf>, MobLike /* AnimalLike */, AgeableLike, BreedableLike {
+export interface Wolf extends EntityLike<EntityResource.wolf>, MobLike, AgeableLike, BreedableLike {
   // v1.20.50
   // properties: {
   //   "minecraft:has_armor": BooleanTag;
@@ -464,7 +464,7 @@ export interface Wolf extends EntityLike<EntityResource.wolf>, MobLike /* Animal
   // };
 }
 
-export interface ZombieHorse extends EntityLike<EntityResource.zombie_horse>, MobLike /* AnimalLike */, AgeableLike {}
+export interface ZombieHorse extends EntityLike<EntityResource.zombie_horse>, MobLike, AgeableLike {}
 
 export interface ArmorStand extends EntityLike<EntityResource.armor_stand>, MobLike {
   Pose: ArmorStandPose;

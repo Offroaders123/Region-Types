@@ -9,19 +9,19 @@ export interface RegistryLike<K extends keyof EntryElementNameMap = keyof EntryE
   value: EntryElementNameMap[K][];
 }
 
-export interface RegistryEntry<T extends object, N extends { [id: string | number]: number | string; }> {
-  name: keyof N;
-  id: IntTag;
+export interface RegistryEntry<T extends object, N extends string, I extends number> {
+  name: N;
+  id: IntTag<I>;
   element: T;
 }
 
 export interface EntryElementNameMap {
-  "minecraft:trim_material": RegistryEntry<ArmorTrimMaterial, typeof ArmorTrimMaterialResource>;
-  "minecraft:trim_pattern": RegistryEntry<ArmorTrimPattern, typeof ArmorTrimPatternResource>;
-  "minecraft:worldgen/biome": RegistryEntry<Biome, typeof BiomeResource>;
-  "minecraft:chat_type": RegistryEntry<ChatType, typeof ChatTypeResource>;
-  "minecraft:damage_type": RegistryEntry<DamageType, typeof DamageTypeResource>;
-  "minecraft:dimension_type": RegistryEntry<DimensionType, typeof DimensionTypeResource>;
+  "minecraft:trim_material": RegistryEntry<ArmorTrimMaterial, keyof typeof ArmorTrimMaterialResource, ArmorTrimMaterialResource>;
+  "minecraft:trim_pattern": RegistryEntry<ArmorTrimPattern, keyof typeof ArmorTrimPatternResource, ArmorTrimPatternResource>;
+  "minecraft:worldgen/biome": RegistryEntry<Biome, keyof typeof BiomeResource, BiomeResource>;
+  "minecraft:chat_type": RegistryEntry<ChatType, keyof typeof ChatTypeResource, ChatTypeResource>;
+  "minecraft:damage_type": RegistryEntry<DamageType, keyof typeof DamageTypeResource, DamageTypeResource>;
+  "minecraft:dimension_type": RegistryEntry<DimensionType, keyof typeof DimensionTypeResource, DimensionTypeResource>;
 }
 
 export interface ArmorTrimMaterial {

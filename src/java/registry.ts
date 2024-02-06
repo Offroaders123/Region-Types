@@ -16,12 +16,12 @@ export interface RegistryEntry<T extends object, N extends string, I extends num
 }
 
 export interface EntryElementNameMap {
-  "minecraft:trim_material": RegistryEntry<ArmorTrimMaterial, keyof typeof ArmorTrimMaterialResource, ArmorTrimMaterialResource>;
-  "minecraft:trim_pattern": RegistryEntry<ArmorTrimPattern, keyof typeof ArmorTrimPatternResource, ArmorTrimPatternResource>;
-  "minecraft:worldgen/biome": RegistryEntry<Biome, keyof typeof BiomeResource, BiomeResource>;
-  "minecraft:chat_type": RegistryEntry<ChatType, keyof typeof ChatTypeResource, ChatTypeResource>;
-  "minecraft:damage_type": RegistryEntry<DamageType, keyof typeof DamageTypeResource, DamageTypeResource>;
-  "minecraft:dimension_type": RegistryEntry<DimensionType, keyof typeof DimensionTypeResource, DimensionTypeResource>;
+  "minecraft:trim_material": RegistryEntry<ArmorTrimMaterial, keyof typeof RegistryArmorTrimMaterialResource, RegistryArmorTrimMaterialResource>;
+  "minecraft:trim_pattern": RegistryEntry<ArmorTrimPattern, keyof typeof RegistryArmorTrimPatternResource, RegistryArmorTrimPatternResource>;
+  "minecraft:worldgen/biome": RegistryEntry<Biome, keyof typeof RegistryBiomeResource, RegistryBiomeResource>;
+  "minecraft:chat_type": RegistryEntry<ChatType, keyof typeof RegistryChatTypeResource, RegistryChatTypeResource>;
+  "minecraft:damage_type": RegistryEntry<DamageType, keyof typeof RegistryDamageTypeResource, RegistryDamageTypeResource>;
+  "minecraft:dimension_type": RegistryEntry<DimensionType, keyof typeof RegistryDimensionTypeResource, RegistryDimensionTypeResource>;
 }
 
 export interface ArmorTrimMaterial {
@@ -160,7 +160,7 @@ export type IntegerDistributionType = "minecraft:constant" | "minecraft:uniform"
 
 export type DimensionMonsterSpawnLightLevelRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
 
-export enum ArmorTrimPatternResource {
+export enum RegistryArmorTrimPatternResource {
   "minecraft:coast" = 0,
   "minecraft:dune",
   "minecraft:eye",
@@ -179,7 +179,7 @@ export enum ArmorTrimPatternResource {
   "minecraft:wild"
 }
 
-export enum ArmorTrimMaterialResource {
+export enum RegistryArmorTrimMaterialResource {
   "minecraft:amethyst" = 0,
   "minecraft:copper",
   "minecraft:diamond",
@@ -192,7 +192,7 @@ export enum ArmorTrimMaterialResource {
   "minecraft:redstone"
 }
 
-export enum BiomeResource {
+export enum RegistryBiomeResource {
   "minecraft:badlands" = 0,
   "minecraft:bamboo_jungle",
   "minecraft:basalt_deltas",
@@ -259,7 +259,7 @@ export enum BiomeResource {
   "minecraft:wooded_badlands"
 }
 
-export enum ChatTypeResource {
+export enum RegistryChatTypeResource {
   "minecraft:chat" = 0,
   "minecraft:emote_command",
   "minecraft:msg_command_incoming",
@@ -269,7 +269,7 @@ export enum ChatTypeResource {
   "minecraft:team_msg_command_outgoing"
 }
 
-export enum DamageTypeResource {
+export enum RegistryDamageTypeResource {
   "minecraft:arrow" = 0,
   "minecraft:bad_respawn_point",
   "minecraft:cactus",
@@ -316,7 +316,7 @@ export enum DamageTypeResource {
   "minecraft:wither_skull"
 }
 
-export enum DimensionTypeResource {
+export enum RegistryDimensionTypeResource {
   "minecraft:overworld" = 0,
   "minecraft:overworld_caves",
   "minecraft:the_end",

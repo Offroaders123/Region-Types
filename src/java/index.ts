@@ -9,5 +9,6 @@ export * from "./entity.js";
 export * from "./item.js";
 export * from "./level.js";
 export * from "./recipe.js";
+export * from "./registry.js";
 export * from "./structure.js";
 export * from "./tile-tick.js";

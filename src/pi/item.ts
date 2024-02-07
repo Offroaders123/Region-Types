@@ -1,3 +1,11 @@
+import type { ByteTag, ShortTag } from "nbtify";
+
+export interface Item {
+  id: ItemResource;
+  Damage: ShortTag;
+  Count: ByteTag;
+}
+
 export enum ItemResource {
   iron_shovel = 256,
   iron_pickaxe,

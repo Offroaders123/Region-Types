@@ -1,0 +1,1 @@
+export type TileEntity = unknown; // temp

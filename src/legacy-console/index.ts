@@ -6,3 +6,4 @@ export * from "./enchantment.js";
 export * from "./entity.js";
 export * from "./item.js";
 export * from "./level.js";
+export * from "./tile-tick.js";

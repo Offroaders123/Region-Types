@@ -1,3 +1,14 @@
+export type Entity<K extends keyof EntityNameMap = keyof EntityNameMap> = EntityNameMap[K];
+
+export type EntityNameMap = {
+  // placeholder
+  [K in EntityResource]: EntityLike<K>;
+};
+
+export interface EntityLike<EntityID extends string> {
+  id: EntityID;
+}
+
 export enum EntityResource {
   AreaEffectCloud = "AreaEffectCloud",
   ArmorStand = "ArmorStand",

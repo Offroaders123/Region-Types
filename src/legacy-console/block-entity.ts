@@ -1,3 +1,14 @@
+export type BlockEntity<K extends keyof BlockEntityNameMap = keyof BlockEntityNameMap> = BlockEntityNameMap[K];
+
+export type BlockEntityNameMap = {
+  // temp, also unsure of all of the values here yet
+  [K in BlockEntityResource]: BlockEntityLike<K>;
+};
+
+export interface BlockEntityLike<BlockEntityID extends string> {
+  id: BlockEntityID;
+}
+
 export enum BlockEntityResource {
   Airportal = "Airportal",
   Banner = "Banner",

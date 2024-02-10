@@ -4,7 +4,7 @@ import type { BlockState, BlockResource } from "./block.js";
 
 export interface Structure {
   BB: IntArrayTag;
-  biome: BiomeResource;
+  biome: `${BiomeResource}`;
   Children: StructurePiece[];
   ChunkX: IntTag;
   ChunkZ: IntTag;
@@ -79,7 +79,7 @@ export interface StructurePiece {
 }
 
 export interface VillageBlock {
-  Name: BlockResource;
+  Name: `${BlockResource}`;
   Properties: BlockState;
 }
 

@@ -3,7 +3,7 @@ import { BlockResource } from "./block.js";
 import type { IntTag } from "nbtify";
 
 export interface TileTick {
-  i: TileTickResource;
+  i: `${TileTickResource}`;
   p: IntTag;
   t: IntTag;
   x: IntTag;

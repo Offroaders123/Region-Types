@@ -6,7 +6,7 @@ export type EntityNameMap = {
 };
 
 export interface EntityLike<EntityID extends string> {
-  id: EntityID;
+  id: `${EntityID}`;
 }
 
 export enum EntityResource {

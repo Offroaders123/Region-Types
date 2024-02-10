@@ -1,7 +1,7 @@
 import type { ByteTag, ShortTag } from "nbtify";
 
 export interface Item {
-  id: ItemResource;
+  id: ShortTag<ItemResource>; // how to wrap this enum as a number like you can for a string with template literals?
   Damage: ShortTag;
   Count: ByteTag;
 }

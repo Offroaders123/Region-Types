@@ -132,10 +132,10 @@ export interface EntityNameMap {
 
 // Tags for all entities, except the id, CustomName and CustomNameVisible
 // Tags for all mobs, except HandItems, ArmorItems, HandDropChances, ArmorDropChances, CanPickUpLoot, PersistenceRequired and Leash
-export interface Player extends Omit<EntityLike<EntityResource.player>, "id">, MobLike {
+export interface Player extends EntityLike<undefined>, MobLike {
   abilities: Abilities;
   DataVersion: IntTag;
-  Dimension: DimensionResource;
+  Dimension: `${DimensionResource}`;
   EnderItems: Item[];
   enteredNetherPosition?: EnteredNetherPosition;
   foodExhaustionLevel: FloatTag;
@@ -156,7 +156,7 @@ export interface Player extends Omit<EntityLike<EntityResource.player>, "id">, M
   ShoulderEntityLeft?: Entity<"parrot">;
   ShoulderEntityRight?: Entity<"parrot">;
   SleepTimer: ShortTag;
-  SpawnDimension?: DimensionResource;
+  SpawnDimension?: `${DimensionResource}`;
   SpawnForced?: BooleanTag;
   SpawnX?: IntTag;
   SpawnY?: IntTag;
@@ -185,15 +185,15 @@ export interface EnteredNetherPosition {
 }
 
 export interface LastDeathLocation {
-  dimension: DimensionResource;
+  dimension: `${DimensionResource}`;
   pos: IntArrayTag;
 }
 
 export type GameMode = 0 | 1 | 2 | 3;
 
 export interface RecipeBook {
-  recipes: RecipeResource[];
-  toBeDisplayed: RecipeResource[];
+  recipes: `${RecipeResource}`[];
+  toBeDisplayed: `${RecipeResource}`[];
   isFilteringCraftable: BooleanTag;
   isGuiOpen: BooleanTag;
   isFurnaceFilteringCraftable: BooleanTag;
@@ -336,7 +336,7 @@ export type EnderDragonPhase = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 export interface Enderman extends EntityLike<EntityResource.enderman>, MobLike, AngeredLike {
   // Another funky block state shape
   carriedBlockState?: {
-    Name: BlockResource;
+    Name: `${BlockResource}`;
     Properties?: BlockState;
   };
 }
@@ -751,7 +751,7 @@ export interface ArrowLike extends ProjectileLike, PotionEffectLike {
 export type ArrowPickup = 0 | 1 | 2;
 
 export interface ArrowBlockState {
-  Name: BlockResource;
+  Name: `${BlockResource}`;
   Properties?: BlockState;
 }
 
@@ -783,7 +783,7 @@ export interface FireworkRocket extends EntityLike<EntityResource.firework_rocke
 // Is this an extension/generic of what would be `Item<"minecraft:firework_rocket">`, with additional Firework properties?
 export interface FireworksItem {
   Count: ByteTag; // typically one
-  id: ItemResource.firework_rocket;
+  id: `${ItemResource.firework_rocket}`;
   tag: {
     Fireworks: { // optional? I don't think so, but the wiki wording is a little off.
       Explosions: FireworkExplosion[];
@@ -808,7 +808,7 @@ export interface TNT extends EntityLike<EntityResource.tnt> {
   fuse: ShortTag;
   // is this just `BlockState`? This gets confusing where they are nested, seems to be this way multiple other instances as well.
   block_state: {
-    Name: BlockResource;
+    Name: `${BlockResource}`;
     Properties?: BlockState;
   };
 }
@@ -816,7 +816,7 @@ export interface TNT extends EntityLike<EntityResource.tnt> {
 export interface FallingBlock extends EntityLike<EntityResource.falling_block> {
   // This is the same weird thing as `TNT`.
   BlockState: {
-    Name: BlockResource;
+    Name: `${BlockResource}`;
     Properties?: BlockState;
   };
   CancelDrop: BooleanTag;
@@ -1215,8 +1215,7 @@ export type HandItems = [Item,Item];
 
 export type Leash = IntArrayTag | { X: IntTag; Y: IntTag; Z: IntTag; };
 
-// I should make this generic, for the `id?` property. `ID extends string | undefined`. Then I won't have to define an ID on each entity on it's own, rather `EntityLike` will handle that property. It improves validation for it as well.
-export interface EntityLike<EntityID extends string> {
+export interface EntityLike<EntityID extends string | undefined> {
   Air: ShortTag;
   CustomName?: StringTag;
   CustomNameVisible?: BooleanTag;
@@ -1224,7 +1223,7 @@ export interface EntityLike<EntityID extends string> {
   Fire: ShortTag;
   Glowing: BooleanTag;
   HasVisualFire: BooleanTag;
-  id: EntityID;
+  id: EntityID extends string ? `${EntityID}` : EntityID;
   Invulnerable: BooleanTag;
   Motion: EntityMotion;
   NoGravity: BooleanTag;

@@ -471,7 +471,7 @@ export type SignTextColor = -986896 | -425955 | -3715395 | -12930086 | -75715 | 
 
 export interface BlockEntityLike<BlockEntityID extends string> {
   CustomName?: StringTag;
-  id: BlockEntityID;
+  id: `${BlockEntityID}`;
   isMovable: BooleanTag;
   x: IntTag;
   y: IntTag;

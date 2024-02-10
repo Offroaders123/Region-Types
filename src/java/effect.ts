@@ -5,7 +5,7 @@ export interface Effect {
   Amplifier: ByteTag;
   Duration: IntTag;
   HiddenEffect: Effect; // Might be optional?
-  Id: EffectID;
+  Id: EffectID; // I think this should be an enum instead, and it needs to be wrapped in an NBT tag type
   ShowIcon: BooleanTag;
   ShowParticles: BooleanTag;
 }

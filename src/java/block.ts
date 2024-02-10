@@ -1,6 +1,6 @@
 export interface BlockState {
-  Name: BlockResource;
-  [property: string]: any;
+  Name: `${BlockResource}`;
+  // [property: string]: any;
 }
 
 export enum BlockResource {

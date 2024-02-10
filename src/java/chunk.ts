@@ -33,7 +33,7 @@ export interface Section {
     data?: LongArrayTag;
   };
   biomes: {
-    palette: BiomeResource[];
+    palette: `${BiomeResource}`[];
     data?: LongArrayTag;
   };
   BlockLight: ByteArrayTag;

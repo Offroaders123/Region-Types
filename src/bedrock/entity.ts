@@ -829,7 +829,7 @@ export interface EntityLike<EntityID extends string> {
   definitions: StringTag[]; // needs more type info, I think this is a `DefinitionResource` kind of thing
   FallDistance: FloatTag;
   Fire: ShortTag;
-  identifier: EntityID;
+  identifier: `${EntityID}`;
   internalComponents: EntityInternalComponents;
   Invulnerable: BooleanTag;
   IsAngry: BooleanTag;

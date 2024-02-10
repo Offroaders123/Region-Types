@@ -177,7 +177,7 @@ export interface Hopper extends BlockEntityLike<BlockEntityResource.hopper>, Cus
 export type HopperTransferCooldown = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 export interface Jigsaw extends BlockEntityLike<BlockEntityResource.jigsaw> {
-  final_state: BlockResource;
+  final_state: `${BlockResource}`;
   joint: JigsawJoint;
   name: StringTag;
   pool: StringTag;
@@ -407,7 +407,7 @@ export interface SignText {
 export type SignColor = "black" | "white" | "orange" | "magenta" | "light_blue" | "yellow" | "lime" | "pink" | "gray" | "light_gray" | "cyan" | "purple" | "blue" | "brown" | "green" | "red" | "black";
 
 export interface BlockEntityLike<BlockEntityID extends string> {
-  id: BlockEntityID;
+  id: `${BlockEntityID}`;
   keepPacked: BooleanTag;
   x: IntTag;
   y: IntTag;

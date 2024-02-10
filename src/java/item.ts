@@ -1,8 +1,8 @@
-import type { ByteTag, IntTag, StringTag } from "nbtify";
+import type { ByteTag, IntTag } from "nbtify";
 
 export interface Item {
   Slot: ByteTag;
-  id: StringTag;
+  id: `${ItemResource}`;
   tag?: {
     Damage: IntTag;
   };

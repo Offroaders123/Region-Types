@@ -6,7 +6,7 @@ export type BlockEntityNameMap = {
 };
 
 export interface BlockEntityLike<BlockEntityID extends string> {
-  id: BlockEntityID;
+  id: `${BlockEntityID}`;
 }
 
 export enum BlockEntityResource {

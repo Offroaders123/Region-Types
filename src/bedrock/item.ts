@@ -1,4 +1,28 @@
-export interface Item {} // Placeholder
+import type { BooleanTag, ByteTag, ShortTag, IntTag, StringTag } from "nbtify";
+import type { Block } from "./block.js";
+
+export interface Item {
+  Block?: Block;
+  CanDestroy?: `${ItemResource}`[];
+  CanPlaceOn?: `${ItemResource}`[];
+  Count: ByteTag;
+  Damage: ShortTag;
+  Name: `${ItemResource}`;
+  tag?: ItemTag;
+  WasPickedUp: BooleanTag; // approximated, not documented completely. optional? doesn't appear to be
+}
+
+export interface ItemTag {
+  Damage?: IntTag;
+  display?: ItemDisplayTag;
+  // ... needs to be completed
+  // https://minecraft.wiki/w/Bedrock_Edition_level_format/Item_format
+}
+
+export interface ItemDisplayTag {
+  Lore?: StringTag[];
+  Name?: StringTag;
+}
 
 export enum ItemResource {
   iron_shovel = "minecraft:iron_shovel",

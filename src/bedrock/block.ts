@@ -1,7 +1,7 @@
 import type { IntTag } from "nbtify";
 
 export interface Block {
-  name: BlockResource;
+  name: `${BlockResource}`;
   states: {}; // `BlockState`?
   version: IntTag;
 }

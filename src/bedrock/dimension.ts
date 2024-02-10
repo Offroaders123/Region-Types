@@ -5,7 +5,7 @@ export enum DimensionResource {
 }
 
 export enum DimensionID {
-  nether = -1,
-  overworld,
-  the_end
+  overworld = 0,
+  nether,
+  end
 }

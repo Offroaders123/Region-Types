@@ -17,7 +17,7 @@ export interface LevelDat {
   LimitedWorldOriginX: IntTag;
   LimitedWorldOriginY: IntTag;
   LimitedWorldOriginZ: IntTag;
-  MinimumCompatibleClientVersion: Version;
+  MinimumCompatibleClientVersion: LevelVersion;
   MultiplayerGame: ByteTag;
   MultiplayerGameIntent: ByteTag;
   NetherScale: IntTag;
@@ -72,7 +72,7 @@ export interface LevelDat {
   isSingleUseWorld: BooleanTag;
   isWorldTemplateOptionLocked: BooleanTag;
   keepinventory: BooleanTag;
-  lastOpenedWithVersion: Version;
+  lastOpenedWithVersion: LevelVersion;
   lightningLevel: FloatTag;
   lightningTime: IntTag;
   limitedWorldDepth: IntTag;
@@ -111,7 +111,7 @@ export type GameType = 0 | 1 | 2 | 3;
 
 export type Generator = 0 | 1 | 2;
 
-export type Version = [IntTag, IntTag, IntTag, IntTag, IntTag];
+export type LevelVersion = [IntTag, IntTag, IntTag, IntTag, IntTag];
 
 export interface Abilities {
   attackmobs: BooleanTag;

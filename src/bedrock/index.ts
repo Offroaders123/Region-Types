@@ -1,6 +1,7 @@
 export * from "./biome.js";
 export * from "./block-entity.js";
 export * from "./block.js";
+export * from "./database.js";
 export * from "./dimension.js";
 export * from "./effect.js";
 export * from "./enchantment.js";

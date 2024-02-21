@@ -11,7 +11,7 @@ export const LEGACY_CONSOLE_NBT_FORMAT = {
   rootName: "",
   endian: "big",
   compression: "deflate-raw",
-  bedrockLevel: null
+  bedrockLevel: false
 } as const satisfies Format;
 
 export async function readChunk(data: Uint8Array | ArrayBufferLike): Promise<LegacyConsoleChunk> {

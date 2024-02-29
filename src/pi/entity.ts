@@ -29,7 +29,7 @@ export interface EntityNameKeyMap {
 
 export interface Particle extends EntityLike<EntityResource.Particle> {}
 
-export interface Player extends Omit<EntityLike<EntityResource.Player>, "id">, MobLike {
+export interface Player extends EntityLike<undefined>, MobLike {
   Armor: Item[]; // no slot tag actually, ignore. // with slot tag, right? docs doesn't say here. and are these optional? it's actually `[Item, Item, Item, Item]`
   Dimension: IntTag<DimensionID>;
   Inventory: Item[]; // slot tag for sure
@@ -106,8 +106,8 @@ export interface AnimalLike {
   Age: IntTag;
 }
 
-export interface EntityLike<EntityID extends number> {
-  id: IntTag<EntityID>;
+export interface EntityLike<EntityID extends number | undefined> {
+  id: EntityID extends number ? IntTag<EntityID> : EntityID;
   Pos: [X: FloatTag, Y: FloatTag, Z: FloatTag];
   Motion: [dX: FloatTag, dY: FloatTag, dZ: FloatTag]; // doesn't seem to mention optional
   Rotation: [yaw: FloatTag, pitch: FloatTag];

@@ -26,10 +26,10 @@ export enum EnchantmentResource {
   infinity,
   luck_of_the_sea = 61,
   lure,
-  loyalty = 65,
-  impaling,
-  riptide,
-  channeling,
   mending = 70,
-  vanishing_curse
+  vanishing_curse,
+  impaling = 80,
+  riptide,
+  loyalty,
+  channeling
 }

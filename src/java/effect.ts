@@ -10,7 +10,41 @@ export interface Effect {
   ShowParticles: BooleanTag;
 }
 
-export type EffectID = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33;
+export enum EffectID {
+  speed = 1,
+  slowness,
+  haste,
+  mining_fatigue,
+  strength,
+  instant_health,
+  instant_damage,
+  jump_boost,
+  nausea,
+  regeneration,
+  resistance,
+  fire_resistance,
+  water_breathing,
+  invisibility,
+  blindness,
+  night_vision,
+  hunger,
+  weakness,
+  poison,
+  wither,
+  health_boost,
+  absorption,
+  saturation,
+  glowing,
+  levitation,
+  luck,
+  unluck,
+  slow_falling,
+  conduit_power,
+  dolphins_grace,
+  bad_omen,
+  hero_of_the_village,
+  darkness
+}
 
 export enum EffectResource {
   absorption = "minecraft:absorption",

@@ -28,4 +28,8 @@ export enum EffectResource {
   unluck,
   conduit_power,
   slow_falling
+  // do any of these ones following exist on LCE? Maybe PS4...
+  // dolphins_grace = 30, // probably not this one, since would've been with the Aquatic features
+  // bad_omen = 31,
+  // hero_of_the_village = 32
 }

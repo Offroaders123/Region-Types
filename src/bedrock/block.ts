@@ -13,1433 +13,1433 @@ type DoubleTag<T extends number = number> = T;
 export type BlockState<K extends keyof BlockStateNameMap = keyof BlockStateNameMap> = BlockStateNameMap[K];
 
 export interface BlockStateNameMap {
-  acacia_button: acacia_button;
-  acacia_door: acacia_door;
-  acacia_double_slab: acacia_double_slab;
-  acacia_fence: acacia_fence;
-  acacia_fence_gate: acacia_fence_gate;
-  acacia_hanging_sign: acacia_hanging_sign;
-  acacia_leaves: acacia_leaves;
-  acacia_log: acacia_log;
-  acacia_planks: acacia_planks;
-  acacia_pressure_plate: acacia_pressure_plate;
-  acacia_slab: acacia_slab;
-  acacia_stairs: acacia_stairs;
-  acacia_standing_sign: acacia_standing_sign;
-  acacia_trapdoor: acacia_trapdoor;
-  acacia_wall_sign: acacia_wall_sign;
-  acacia_wood: acacia_wood;
-  activator_rail: activator_rail;
-  air: air;
-  allow: allow;
-  amethyst_block: amethyst_block;
-  amethyst_cluster: amethyst_cluster;
-  ancient_debris: ancient_debris;
-  andesite: andesite;
-  andesite_stairs: andesite_stairs;
-  anvil: anvil;
-  azalea: azalea;
-  azalea_leaves: azalea_leaves;
-  azalea_leaves_flowered: azalea_leaves_flowered;
-  bamboo: bamboo;
-  bamboo_block: bamboo_block;
-  bamboo_button: bamboo_button;
-  bamboo_door: bamboo_door;
-  bamboo_double_slab: bamboo_double_slab;
-  bamboo_fence: bamboo_fence;
-  bamboo_fence_gate: bamboo_fence_gate;
-  bamboo_hanging_sign: bamboo_hanging_sign;
-  bamboo_mosaic: bamboo_mosaic;
-  bamboo_mosaic_double_slab: bamboo_mosaic_double_slab;
-  bamboo_mosaic_slab: bamboo_mosaic_slab;
-  bamboo_mosaic_stairs: bamboo_mosaic_stairs;
-  bamboo_planks: bamboo_planks;
-  bamboo_pressure_plate: bamboo_pressure_plate;
-  bamboo_sapling: bamboo_sapling;
-  bamboo_slab: bamboo_slab;
-  bamboo_stairs: bamboo_stairs;
-  bamboo_standing_sign: bamboo_standing_sign;
-  bamboo_trapdoor: bamboo_trapdoor;
-  bamboo_wall_sign: bamboo_wall_sign;
-  barrel: barrel;
-  barrier: barrier;
-  basalt: basalt;
-  beacon: beacon;
-  bed: bed;
-  bedrock: bedrock;
-  bee_nest: bee_nest;
-  beehive: beehive;
-  beetroot: beetroot;
-  bell: bell;
-  big_dripleaf: big_dripleaf;
-  birch_button: birch_button;
-  birch_door: birch_door;
-  birch_double_slab: birch_double_slab;
-  birch_fence: birch_fence;
-  birch_fence_gate: birch_fence_gate;
-  birch_hanging_sign: birch_hanging_sign;
-  birch_leaves: birch_leaves;
-  birch_log: birch_log;
-  birch_planks: birch_planks;
-  birch_pressure_plate: birch_pressure_plate;
-  birch_slab: birch_slab;
-  birch_stairs: birch_stairs;
-  birch_standing_sign: birch_standing_sign;
-  birch_trapdoor: birch_trapdoor;
-  birch_wall_sign: birch_wall_sign;
-  birch_wood: birch_wood;
-  black_candle: black_candle;
-  black_candle_cake: black_candle_cake;
-  black_carpet: black_carpet;
-  black_concrete: black_concrete;
-  black_concrete_powder: black_concrete_powder;
-  black_glazed_terracotta: black_glazed_terracotta;
-  black_shulker_box: black_shulker_box;
-  black_stained_glass: black_stained_glass;
-  black_stained_glass_pane: black_stained_glass_pane;
-  black_terracotta: black_terracotta;
-  black_wool: black_wool;
-  blackstone: blackstone;
-  blackstone_double_slab: blackstone_double_slab;
-  blackstone_slab: blackstone_slab;
-  blackstone_stairs: blackstone_stairs;
-  blackstone_wall: blackstone_wall;
-  blast_furnace: blast_furnace;
-  blue_candle: blue_candle;
-  blue_candle_cake: blue_candle_cake;
-  blue_carpet: blue_carpet;
-  blue_concrete: blue_concrete;
-  blue_concrete_powder: blue_concrete_powder;
-  blue_glazed_terracotta: blue_glazed_terracotta;
-  blue_ice: blue_ice;
-  blue_shulker_box: blue_shulker_box;
-  blue_stained_glass: blue_stained_glass;
-  blue_stained_glass_pane: blue_stained_glass_pane;
-  blue_terracotta: blue_terracotta;
-  blue_wool: blue_wool;
-  bone_block: bone_block;
-  bookshelf: bookshelf;
-  border_block: border_block;
-  brain_coral: brain_coral;
-  brewing_stand: brewing_stand;
-  brick_block: brick_block;
-  brick_stairs: brick_stairs;
-  brown_candle: brown_candle;
-  brown_candle_cake: brown_candle_cake;
-  brown_carpet: brown_carpet;
-  brown_concrete: brown_concrete;
-  brown_concrete_powder: brown_concrete_powder;
-  brown_glazed_terracotta: brown_glazed_terracotta;
-  brown_mushroom: brown_mushroom;
-  brown_mushroom_block: brown_mushroom_block;
-  brown_shulker_box: brown_shulker_box;
-  brown_stained_glass: brown_stained_glass;
-  brown_stained_glass_pane: brown_stained_glass_pane;
-  brown_terracotta: brown_terracotta;
-  brown_wool: brown_wool;
-  bubble_column: bubble_column;
-  bubble_coral: bubble_coral;
-  budding_amethyst: budding_amethyst;
-  cactus: cactus;
-  cake: cake;
-  calcite: calcite;
-  calibrated_sculk_sensor: calibrated_sculk_sensor;
-  camera: camera;
-  campfire: campfire;
-  candle: candle;
-  candle_cake: candle_cake;
-  carrots: carrots;
-  cartography_table: cartography_table;
-  carved_pumpkin: carved_pumpkin;
-  cauldron: cauldron;
-  cave_vines: cave_vines;
-  cave_vines_body_with_berries: cave_vines_body_with_berries;
-  cave_vines_head_with_berries: cave_vines_head_with_berries;
-  chain: chain;
-  chain_command_block: chain_command_block;
-  chemical_heat: chemical_heat;
-  chemistry_table: chemistry_table;
-  cherry_button: cherry_button;
-  cherry_door: cherry_door;
-  cherry_double_slab: cherry_double_slab;
-  cherry_fence: cherry_fence;
-  cherry_fence_gate: cherry_fence_gate;
-  cherry_hanging_sign: cherry_hanging_sign;
-  cherry_leaves: cherry_leaves;
-  cherry_log: cherry_log;
-  cherry_planks: cherry_planks;
-  cherry_pressure_plate: cherry_pressure_plate;
-  cherry_sapling: cherry_sapling;
-  cherry_slab: cherry_slab;
-  cherry_stairs: cherry_stairs;
-  cherry_standing_sign: cherry_standing_sign;
-  cherry_trapdoor: cherry_trapdoor;
-  cherry_wall_sign: cherry_wall_sign;
-  cherry_wood: cherry_wood;
-  chest: chest;
-  chiseled_bookshelf: chiseled_bookshelf;
-  chiseled_copper: chiseled_copper;
-  chiseled_deepslate: chiseled_deepslate;
-  chiseled_nether_bricks: chiseled_nether_bricks;
-  chiseled_polished_blackstone: chiseled_polished_blackstone;
-  chiseled_tuff: chiseled_tuff;
-  chiseled_tuff_bricks: chiseled_tuff_bricks;
-  chorus_flower: chorus_flower;
-  chorus_plant: chorus_plant;
-  clay: clay;
-  client_request_placeholder_block: client_request_placeholder_block;
-  coal_block: coal_block;
-  coal_ore: coal_ore;
-  cobbled_deepslate: cobbled_deepslate;
-  cobbled_deepslate_double_slab: cobbled_deepslate_double_slab;
-  cobbled_deepslate_slab: cobbled_deepslate_slab;
-  cobbled_deepslate_stairs: cobbled_deepslate_stairs;
-  cobbled_deepslate_wall: cobbled_deepslate_wall;
-  cobblestone: cobblestone;
-  cobblestone_wall: cobblestone_wall;
-  cocoa: cocoa;
-  colored_torch_bp: colored_torch_bp;
-  colored_torch_rg: colored_torch_rg;
-  command_block: command_block;
-  composter: composter;
-  conduit: conduit;
-  copper_block: copper_block;
-  copper_bulb: copper_bulb;
-  copper_door: copper_door;
-  copper_grate: copper_grate;
-  copper_ore: copper_ore;
-  copper_trapdoor: copper_trapdoor;
-  coral_block: coral_block;
-  coral_fan: coral_fan;
-  coral_fan_dead: coral_fan_dead;
-  coral_fan_hang: coral_fan_hang;
-  coral_fan_hang2: coral_fan_hang2;
-  coral_fan_hang3: coral_fan_hang3;
-  cracked_deepslate_bricks: cracked_deepslate_bricks;
-  cracked_deepslate_tiles: cracked_deepslate_tiles;
-  cracked_nether_bricks: cracked_nether_bricks;
-  cracked_polished_blackstone_bricks: cracked_polished_blackstone_bricks;
-  crafter: crafter;
-  crafting_table: crafting_table;
-  crimson_button: crimson_button;
-  crimson_door: crimson_door;
-  crimson_double_slab: crimson_double_slab;
-  crimson_fence: crimson_fence;
-  crimson_fence_gate: crimson_fence_gate;
-  crimson_fungus: crimson_fungus;
-  crimson_hanging_sign: crimson_hanging_sign;
-  crimson_hyphae: crimson_hyphae;
-  crimson_nylium: crimson_nylium;
-  crimson_planks: crimson_planks;
-  crimson_pressure_plate: crimson_pressure_plate;
-  crimson_roots: crimson_roots;
-  crimson_slab: crimson_slab;
-  crimson_stairs: crimson_stairs;
-  crimson_standing_sign: crimson_standing_sign;
-  crimson_stem: crimson_stem;
-  crimson_trapdoor: crimson_trapdoor;
-  crimson_wall_sign: crimson_wall_sign;
-  crying_obsidian: crying_obsidian;
-  cut_copper: cut_copper;
-  cut_copper_slab: cut_copper_slab;
-  cut_copper_stairs: cut_copper_stairs;
-  cyan_candle: cyan_candle;
-  cyan_candle_cake: cyan_candle_cake;
-  cyan_carpet: cyan_carpet;
-  cyan_concrete: cyan_concrete;
-  cyan_concrete_powder: cyan_concrete_powder;
-  cyan_glazed_terracotta: cyan_glazed_terracotta;
-  cyan_shulker_box: cyan_shulker_box;
-  cyan_stained_glass: cyan_stained_glass;
-  cyan_stained_glass_pane: cyan_stained_glass_pane;
-  cyan_terracotta: cyan_terracotta;
-  cyan_wool: cyan_wool;
-  dark_oak_button: dark_oak_button;
-  dark_oak_door: dark_oak_door;
-  dark_oak_double_slab: dark_oak_double_slab;
-  dark_oak_fence: dark_oak_fence;
-  dark_oak_fence_gate: dark_oak_fence_gate;
-  dark_oak_hanging_sign: dark_oak_hanging_sign;
-  dark_oak_leaves: dark_oak_leaves;
-  dark_oak_log: dark_oak_log;
-  dark_oak_planks: dark_oak_planks;
-  dark_oak_pressure_plate: dark_oak_pressure_plate;
-  dark_oak_slab: dark_oak_slab;
-  dark_oak_stairs: dark_oak_stairs;
-  dark_oak_trapdoor: dark_oak_trapdoor;
-  dark_oak_wood: dark_oak_wood;
-  dark_prismarine_stairs: dark_prismarine_stairs;
-  darkoak_standing_sign: darkoak_standing_sign;
-  darkoak_wall_sign: darkoak_wall_sign;
-  daylight_detector: daylight_detector;
-  daylight_detector_inverted: daylight_detector_inverted;
-  dead_brain_coral: dead_brain_coral;
-  dead_bubble_coral: dead_bubble_coral;
-  dead_fire_coral: dead_fire_coral;
-  dead_horn_coral: dead_horn_coral;
-  dead_tube_coral: dead_tube_coral;
-  deadbush: deadbush;
-  decorated_pot: decorated_pot;
-  deepslate: deepslate;
-  deepslate_brick_double_slab: deepslate_brick_double_slab;
-  deepslate_brick_slab: deepslate_brick_slab;
-  deepslate_brick_stairs: deepslate_brick_stairs;
-  deepslate_brick_wall: deepslate_brick_wall;
-  deepslate_bricks: deepslate_bricks;
-  deepslate_coal_ore: deepslate_coal_ore;
-  deepslate_copper_ore: deepslate_copper_ore;
-  deepslate_diamond_ore: deepslate_diamond_ore;
-  deepslate_emerald_ore: deepslate_emerald_ore;
-  deepslate_gold_ore: deepslate_gold_ore;
-  deepslate_iron_ore: deepslate_iron_ore;
-  deepslate_lapis_ore: deepslate_lapis_ore;
-  deepslate_redstone_ore: deepslate_redstone_ore;
-  deepslate_tile_double_slab: deepslate_tile_double_slab;
-  deepslate_tile_slab: deepslate_tile_slab;
-  deepslate_tile_stairs: deepslate_tile_stairs;
-  deepslate_tile_wall: deepslate_tile_wall;
-  deepslate_tiles: deepslate_tiles;
-  deny: deny;
-  detector_rail: detector_rail;
-  diamond_block: diamond_block;
-  diamond_ore: diamond_ore;
-  diorite: diorite;
-  diorite_stairs: diorite_stairs;
-  dirt: dirt;
-  dirt_with_roots: dirt_with_roots;
-  dispenser: dispenser;
-  double_cut_copper_slab: double_cut_copper_slab;
-  double_plant: double_plant;
-  double_stone_block_slab: double_stone_block_slab;
-  double_stone_block_slab2: double_stone_block_slab2;
-  double_stone_block_slab3: double_stone_block_slab3;
-  double_stone_block_slab4: double_stone_block_slab4;
-  dragon_egg: dragon_egg;
-  dried_kelp_block: dried_kelp_block;
-  dripstone_block: dripstone_block;
-  dropper: dropper;
-  element_0: element_0;
-  element_1: element_1;
-  element_10: element_10;
-  element_100: element_100;
-  element_101: element_101;
-  element_102: element_102;
-  element_103: element_103;
-  element_104: element_104;
-  element_105: element_105;
-  element_106: element_106;
-  element_107: element_107;
-  element_108: element_108;
-  element_109: element_109;
-  element_11: element_11;
-  element_110: element_110;
-  element_111: element_111;
-  element_112: element_112;
-  element_113: element_113;
-  element_114: element_114;
-  element_115: element_115;
-  element_116: element_116;
-  element_117: element_117;
-  element_118: element_118;
-  element_12: element_12;
-  element_13: element_13;
-  element_14: element_14;
-  element_15: element_15;
-  element_16: element_16;
-  element_17: element_17;
-  element_18: element_18;
-  element_19: element_19;
-  element_2: element_2;
-  element_20: element_20;
-  element_21: element_21;
-  element_22: element_22;
-  element_23: element_23;
-  element_24: element_24;
-  element_25: element_25;
-  element_26: element_26;
-  element_27: element_27;
-  element_28: element_28;
-  element_29: element_29;
-  element_3: element_3;
-  element_30: element_30;
-  element_31: element_31;
-  element_32: element_32;
-  element_33: element_33;
-  element_34: element_34;
-  element_35: element_35;
-  element_36: element_36;
-  element_37: element_37;
-  element_38: element_38;
-  element_39: element_39;
-  element_4: element_4;
-  element_40: element_40;
-  element_41: element_41;
-  element_42: element_42;
-  element_43: element_43;
-  element_44: element_44;
-  element_45: element_45;
-  element_46: element_46;
-  element_47: element_47;
-  element_48: element_48;
-  element_49: element_49;
-  element_5: element_5;
-  element_50: element_50;
-  element_51: element_51;
-  element_52: element_52;
-  element_53: element_53;
-  element_54: element_54;
-  element_55: element_55;
-  element_56: element_56;
-  element_57: element_57;
-  element_58: element_58;
-  element_59: element_59;
-  element_6: element_6;
-  element_60: element_60;
-  element_61: element_61;
-  element_62: element_62;
-  element_63: element_63;
-  element_64: element_64;
-  element_65: element_65;
-  element_66: element_66;
-  element_67: element_67;
-  element_68: element_68;
-  element_69: element_69;
-  element_7: element_7;
-  element_70: element_70;
-  element_71: element_71;
-  element_72: element_72;
-  element_73: element_73;
-  element_74: element_74;
-  element_75: element_75;
-  element_76: element_76;
-  element_77: element_77;
-  element_78: element_78;
-  element_79: element_79;
-  element_8: element_8;
-  element_80: element_80;
-  element_81: element_81;
-  element_82: element_82;
-  element_83: element_83;
-  element_84: element_84;
-  element_85: element_85;
-  element_86: element_86;
-  element_87: element_87;
-  element_88: element_88;
-  element_89: element_89;
-  element_9: element_9;
-  element_90: element_90;
-  element_91: element_91;
-  element_92: element_92;
-  element_93: element_93;
-  element_94: element_94;
-  element_95: element_95;
-  element_96: element_96;
-  element_97: element_97;
-  element_98: element_98;
-  element_99: element_99;
-  emerald_block: emerald_block;
-  emerald_ore: emerald_ore;
-  enchanting_table: enchanting_table;
-  end_brick_stairs: end_brick_stairs;
-  end_bricks: end_bricks;
-  end_gateway: end_gateway;
-  end_portal: end_portal;
-  end_portal_frame: end_portal_frame;
-  end_rod: end_rod;
-  end_stone: end_stone;
-  ender_chest: ender_chest;
-  exposed_chiseled_copper: exposed_chiseled_copper;
-  exposed_copper: exposed_copper;
-  exposed_copper_bulb: exposed_copper_bulb;
-  exposed_copper_door: exposed_copper_door;
-  exposed_copper_grate: exposed_copper_grate;
-  exposed_copper_trapdoor: exposed_copper_trapdoor;
-  exposed_cut_copper: exposed_cut_copper;
-  exposed_cut_copper_slab: exposed_cut_copper_slab;
-  exposed_cut_copper_stairs: exposed_cut_copper_stairs;
-  exposed_double_cut_copper_slab: exposed_double_cut_copper_slab;
-  farmland: farmland;
-  fence_gate: fence_gate;
-  fire: fire;
-  fire_coral: fire_coral;
-  fletching_table: fletching_table;
-  flower_pot: flower_pot;
-  flowering_azalea: flowering_azalea;
-  flowing_lava: flowing_lava;
-  flowing_water: flowing_water;
-  frame: frame;
-  frog_spawn: frog_spawn;
-  frosted_ice: frosted_ice;
-  furnace: furnace;
-  gilded_blackstone: gilded_blackstone;
-  glass: glass;
-  glass_pane: glass_pane;
-  glow_frame: glow_frame;
-  glow_lichen: glow_lichen;
-  glowingobsidian: glowingobsidian;
-  glowstone: glowstone;
-  gold_block: gold_block;
-  gold_ore: gold_ore;
-  golden_rail: golden_rail;
-  granite: granite;
-  granite_stairs: granite_stairs;
-  grass_block: grass_block;
-  grass_path: grass_path;
-  gravel: gravel;
-  gray_candle: gray_candle;
-  gray_candle_cake: gray_candle_cake;
-  gray_carpet: gray_carpet;
-  gray_concrete: gray_concrete;
-  gray_concrete_powder: gray_concrete_powder;
-  gray_glazed_terracotta: gray_glazed_terracotta;
-  gray_shulker_box: gray_shulker_box;
-  gray_stained_glass: gray_stained_glass;
-  gray_stained_glass_pane: gray_stained_glass_pane;
-  gray_terracotta: gray_terracotta;
-  gray_wool: gray_wool;
-  green_candle: green_candle;
-  green_candle_cake: green_candle_cake;
-  green_carpet: green_carpet;
-  green_concrete: green_concrete;
-  green_concrete_powder: green_concrete_powder;
-  green_glazed_terracotta: green_glazed_terracotta;
-  green_shulker_box: green_shulker_box;
-  green_stained_glass: green_stained_glass;
-  green_stained_glass_pane: green_stained_glass_pane;
-  green_terracotta: green_terracotta;
-  green_wool: green_wool;
-  grindstone: grindstone;
-  hanging_roots: hanging_roots;
-  hard_black_stained_glass: hard_black_stained_glass;
-  hard_black_stained_glass_pane: hard_black_stained_glass_pane;
-  hard_blue_stained_glass: hard_blue_stained_glass;
-  hard_blue_stained_glass_pane: hard_blue_stained_glass_pane;
-  hard_brown_stained_glass: hard_brown_stained_glass;
-  hard_brown_stained_glass_pane: hard_brown_stained_glass_pane;
-  hard_cyan_stained_glass: hard_cyan_stained_glass;
-  hard_cyan_stained_glass_pane: hard_cyan_stained_glass_pane;
-  hard_glass: hard_glass;
-  hard_glass_pane: hard_glass_pane;
-  hard_gray_stained_glass: hard_gray_stained_glass;
-  hard_gray_stained_glass_pane: hard_gray_stained_glass_pane;
-  hard_green_stained_glass: hard_green_stained_glass;
-  hard_green_stained_glass_pane: hard_green_stained_glass_pane;
-  hard_light_blue_stained_glass: hard_light_blue_stained_glass;
-  hard_light_blue_stained_glass_pane: hard_light_blue_stained_glass_pane;
-  hard_light_gray_stained_glass: hard_light_gray_stained_glass;
-  hard_light_gray_stained_glass_pane: hard_light_gray_stained_glass_pane;
-  hard_lime_stained_glass: hard_lime_stained_glass;
-  hard_lime_stained_glass_pane: hard_lime_stained_glass_pane;
-  hard_magenta_stained_glass: hard_magenta_stained_glass;
-  hard_magenta_stained_glass_pane: hard_magenta_stained_glass_pane;
-  hard_orange_stained_glass: hard_orange_stained_glass;
-  hard_orange_stained_glass_pane: hard_orange_stained_glass_pane;
-  hard_pink_stained_glass: hard_pink_stained_glass;
-  hard_pink_stained_glass_pane: hard_pink_stained_glass_pane;
-  hard_purple_stained_glass: hard_purple_stained_glass;
-  hard_purple_stained_glass_pane: hard_purple_stained_glass_pane;
-  hard_red_stained_glass: hard_red_stained_glass;
-  hard_red_stained_glass_pane: hard_red_stained_glass_pane;
-  hard_white_stained_glass: hard_white_stained_glass;
-  hard_white_stained_glass_pane: hard_white_stained_glass_pane;
-  hard_yellow_stained_glass: hard_yellow_stained_glass;
-  hard_yellow_stained_glass_pane: hard_yellow_stained_glass_pane;
-  hardened_clay: hardened_clay;
-  hay_block: hay_block;
-  heavy_weighted_pressure_plate: heavy_weighted_pressure_plate;
-  honey_block: honey_block;
-  honeycomb_block: honeycomb_block;
-  hopper: hopper;
-  horn_coral: horn_coral;
-  ice: ice;
-  infested_deepslate: infested_deepslate;
-  info_update: info_update;
-  info_update2: info_update2;
-  invisible_bedrock: invisible_bedrock;
-  iron_bars: iron_bars;
-  iron_block: iron_block;
-  iron_door: iron_door;
-  iron_ore: iron_ore;
-  iron_trapdoor: iron_trapdoor;
-  jigsaw: jigsaw;
-  jukebox: jukebox;
-  jungle_button: jungle_button;
-  jungle_door: jungle_door;
-  jungle_double_slab: jungle_double_slab;
-  jungle_fence: jungle_fence;
-  jungle_fence_gate: jungle_fence_gate;
-  jungle_hanging_sign: jungle_hanging_sign;
-  jungle_leaves: jungle_leaves;
-  jungle_log: jungle_log;
-  jungle_planks: jungle_planks;
-  jungle_pressure_plate: jungle_pressure_plate;
-  jungle_slab: jungle_slab;
-  jungle_stairs: jungle_stairs;
-  jungle_standing_sign: jungle_standing_sign;
-  jungle_trapdoor: jungle_trapdoor;
-  jungle_wall_sign: jungle_wall_sign;
-  jungle_wood: jungle_wood;
-  kelp: kelp;
-  ladder: ladder;
-  lantern: lantern;
-  lapis_block: lapis_block;
-  lapis_ore: lapis_ore;
-  large_amethyst_bud: large_amethyst_bud;
-  lava: lava;
-  lectern: lectern;
-  lever: lever;
-  light_block: light_block;
-  light_blue_candle: light_blue_candle;
-  light_blue_candle_cake: light_blue_candle_cake;
-  light_blue_carpet: light_blue_carpet;
-  light_blue_concrete: light_blue_concrete;
-  light_blue_concrete_powder: light_blue_concrete_powder;
-  light_blue_glazed_terracotta: light_blue_glazed_terracotta;
-  light_blue_shulker_box: light_blue_shulker_box;
-  light_blue_stained_glass: light_blue_stained_glass;
-  light_blue_stained_glass_pane: light_blue_stained_glass_pane;
-  light_blue_terracotta: light_blue_terracotta;
-  light_blue_wool: light_blue_wool;
-  light_gray_candle: light_gray_candle;
-  light_gray_candle_cake: light_gray_candle_cake;
-  light_gray_carpet: light_gray_carpet;
-  light_gray_concrete: light_gray_concrete;
-  light_gray_concrete_powder: light_gray_concrete_powder;
-  light_gray_shulker_box: light_gray_shulker_box;
-  light_gray_stained_glass: light_gray_stained_glass;
-  light_gray_stained_glass_pane: light_gray_stained_glass_pane;
-  light_gray_terracotta: light_gray_terracotta;
-  light_gray_wool: light_gray_wool;
-  light_weighted_pressure_plate: light_weighted_pressure_plate;
-  lightning_rod: lightning_rod;
-  lime_candle: lime_candle;
-  lime_candle_cake: lime_candle_cake;
-  lime_carpet: lime_carpet;
-  lime_concrete: lime_concrete;
-  lime_concrete_powder: lime_concrete_powder;
-  lime_glazed_terracotta: lime_glazed_terracotta;
-  lime_shulker_box: lime_shulker_box;
-  lime_stained_glass: lime_stained_glass;
-  lime_stained_glass_pane: lime_stained_glass_pane;
-  lime_terracotta: lime_terracotta;
-  lime_wool: lime_wool;
-  lit_blast_furnace: lit_blast_furnace;
-  lit_deepslate_redstone_ore: lit_deepslate_redstone_ore;
-  lit_furnace: lit_furnace;
-  lit_pumpkin: lit_pumpkin;
-  lit_redstone_lamp: lit_redstone_lamp;
-  lit_redstone_ore: lit_redstone_ore;
-  lit_smoker: lit_smoker;
-  lodestone: lodestone;
-  loom: loom;
-  magenta_candle: magenta_candle;
-  magenta_candle_cake: magenta_candle_cake;
-  magenta_carpet: magenta_carpet;
-  magenta_concrete: magenta_concrete;
-  magenta_concrete_powder: magenta_concrete_powder;
-  magenta_glazed_terracotta: magenta_glazed_terracotta;
-  magenta_shulker_box: magenta_shulker_box;
-  magenta_stained_glass: magenta_stained_glass;
-  magenta_stained_glass_pane: magenta_stained_glass_pane;
-  magenta_terracotta: magenta_terracotta;
-  magenta_wool: magenta_wool;
-  magma: magma;
-  mangrove_button: mangrove_button;
-  mangrove_door: mangrove_door;
-  mangrove_double_slab: mangrove_double_slab;
-  mangrove_fence: mangrove_fence;
-  mangrove_fence_gate: mangrove_fence_gate;
-  mangrove_hanging_sign: mangrove_hanging_sign;
-  mangrove_leaves: mangrove_leaves;
-  mangrove_log: mangrove_log;
-  mangrove_planks: mangrove_planks;
-  mangrove_pressure_plate: mangrove_pressure_plate;
-  mangrove_propagule: mangrove_propagule;
-  mangrove_roots: mangrove_roots;
-  mangrove_slab: mangrove_slab;
-  mangrove_stairs: mangrove_stairs;
-  mangrove_standing_sign: mangrove_standing_sign;
-  mangrove_trapdoor: mangrove_trapdoor;
-  mangrove_wall_sign: mangrove_wall_sign;
-  mangrove_wood: mangrove_wood;
-  medium_amethyst_bud: medium_amethyst_bud;
-  melon_block: melon_block;
-  melon_stem: melon_stem;
-  mob_spawner: mob_spawner;
-  monster_egg: monster_egg;
-  moss_block: moss_block;
-  moss_carpet: moss_carpet;
-  mossy_cobblestone: mossy_cobblestone;
-  mossy_cobblestone_stairs: mossy_cobblestone_stairs;
-  mossy_stone_brick_stairs: mossy_stone_brick_stairs;
-  moving_block: moving_block;
-  mud: mud;
-  mud_brick_double_slab: mud_brick_double_slab;
-  mud_brick_slab: mud_brick_slab;
-  mud_brick_stairs: mud_brick_stairs;
-  mud_brick_wall: mud_brick_wall;
-  mud_bricks: mud_bricks;
-  muddy_mangrove_roots: muddy_mangrove_roots;
-  mycelium: mycelium;
-  nether_brick: nether_brick;
-  nether_brick_fence: nether_brick_fence;
-  nether_brick_stairs: nether_brick_stairs;
-  nether_gold_ore: nether_gold_ore;
-  nether_sprouts: nether_sprouts;
-  nether_wart: nether_wart;
-  nether_wart_block: nether_wart_block;
-  netherite_block: netherite_block;
-  netherrack: netherrack;
-  netherreactor: netherreactor;
-  normal_stone_stairs: normal_stone_stairs;
-  noteblock: noteblock;
-  oak_double_slab: oak_double_slab;
-  oak_fence: oak_fence;
-  oak_hanging_sign: oak_hanging_sign;
-  oak_leaves: oak_leaves;
-  oak_log: oak_log;
-  oak_planks: oak_planks;
-  oak_slab: oak_slab;
-  oak_stairs: oak_stairs;
-  oak_wood: oak_wood;
-  observer: observer;
-  obsidian: obsidian;
-  ochre_froglight: ochre_froglight;
-  orange_candle: orange_candle;
-  orange_candle_cake: orange_candle_cake;
-  orange_carpet: orange_carpet;
-  orange_concrete: orange_concrete;
-  orange_concrete_powder: orange_concrete_powder;
-  orange_glazed_terracotta: orange_glazed_terracotta;
-  orange_shulker_box: orange_shulker_box;
-  orange_stained_glass: orange_stained_glass;
-  orange_stained_glass_pane: orange_stained_glass_pane;
-  orange_terracotta: orange_terracotta;
-  orange_wool: orange_wool;
-  oxidized_chiseled_copper: oxidized_chiseled_copper;
-  oxidized_copper: oxidized_copper;
-  oxidized_copper_bulb: oxidized_copper_bulb;
-  oxidized_copper_door: oxidized_copper_door;
-  oxidized_copper_grate: oxidized_copper_grate;
-  oxidized_copper_trapdoor: oxidized_copper_trapdoor;
-  oxidized_cut_copper: oxidized_cut_copper;
-  oxidized_cut_copper_slab: oxidized_cut_copper_slab;
-  oxidized_cut_copper_stairs: oxidized_cut_copper_stairs;
-  oxidized_double_cut_copper_slab: oxidized_double_cut_copper_slab;
-  packed_ice: packed_ice;
-  packed_mud: packed_mud;
-  pearlescent_froglight: pearlescent_froglight;
-  pink_candle: pink_candle;
-  pink_candle_cake: pink_candle_cake;
-  pink_carpet: pink_carpet;
-  pink_concrete: pink_concrete;
-  pink_concrete_powder: pink_concrete_powder;
-  pink_glazed_terracotta: pink_glazed_terracotta;
-  pink_petals: pink_petals;
-  pink_shulker_box: pink_shulker_box;
-  pink_stained_glass: pink_stained_glass;
-  pink_stained_glass_pane: pink_stained_glass_pane;
-  pink_terracotta: pink_terracotta;
-  pink_wool: pink_wool;
-  piston: piston;
-  piston_arm_collision: piston_arm_collision;
-  pitcher_crop: pitcher_crop;
-  pitcher_plant: pitcher_plant;
-  podzol: podzol;
-  pointed_dripstone: pointed_dripstone;
-  polished_andesite: polished_andesite;
-  polished_andesite_stairs: polished_andesite_stairs;
-  polished_basalt: polished_basalt;
-  polished_blackstone: polished_blackstone;
-  polished_blackstone_brick_double_slab: polished_blackstone_brick_double_slab;
-  polished_blackstone_brick_slab: polished_blackstone_brick_slab;
-  polished_blackstone_brick_stairs: polished_blackstone_brick_stairs;
-  polished_blackstone_brick_wall: polished_blackstone_brick_wall;
-  polished_blackstone_bricks: polished_blackstone_bricks;
-  polished_blackstone_button: polished_blackstone_button;
-  polished_blackstone_double_slab: polished_blackstone_double_slab;
-  polished_blackstone_pressure_plate: polished_blackstone_pressure_plate;
-  polished_blackstone_slab: polished_blackstone_slab;
-  polished_blackstone_stairs: polished_blackstone_stairs;
-  polished_blackstone_wall: polished_blackstone_wall;
-  polished_deepslate: polished_deepslate;
-  polished_deepslate_double_slab: polished_deepslate_double_slab;
-  polished_deepslate_slab: polished_deepslate_slab;
-  polished_deepslate_stairs: polished_deepslate_stairs;
-  polished_deepslate_wall: polished_deepslate_wall;
-  polished_diorite: polished_diorite;
-  polished_diorite_stairs: polished_diorite_stairs;
-  polished_granite: polished_granite;
-  polished_granite_stairs: polished_granite_stairs;
-  polished_tuff: polished_tuff;
-  polished_tuff_double_slab: polished_tuff_double_slab;
-  polished_tuff_slab: polished_tuff_slab;
-  polished_tuff_stairs: polished_tuff_stairs;
-  polished_tuff_wall: polished_tuff_wall;
-  portal: portal;
-  potatoes: potatoes;
-  powder_snow: powder_snow;
-  powered_comparator: powered_comparator;
-  powered_repeater: powered_repeater;
-  prismarine: prismarine;
-  prismarine_bricks_stairs: prismarine_bricks_stairs;
-  prismarine_stairs: prismarine_stairs;
-  pumpkin: pumpkin;
-  pumpkin_stem: pumpkin_stem;
-  purple_candle: purple_candle;
-  purple_candle_cake: purple_candle_cake;
-  purple_carpet: purple_carpet;
-  purple_concrete: purple_concrete;
-  purple_concrete_powder: purple_concrete_powder;
-  purple_glazed_terracotta: purple_glazed_terracotta;
-  purple_shulker_box: purple_shulker_box;
-  purple_stained_glass: purple_stained_glass;
-  purple_stained_glass_pane: purple_stained_glass_pane;
-  purple_terracotta: purple_terracotta;
-  purple_wool: purple_wool;
-  purpur_block: purpur_block;
-  purpur_stairs: purpur_stairs;
-  quartz_block: quartz_block;
-  quartz_bricks: quartz_bricks;
-  quartz_ore: quartz_ore;
-  quartz_stairs: quartz_stairs;
-  rail: rail;
-  raw_copper_block: raw_copper_block;
-  raw_gold_block: raw_gold_block;
-  raw_iron_block: raw_iron_block;
-  red_candle: red_candle;
-  red_candle_cake: red_candle_cake;
-  red_carpet: red_carpet;
-  red_concrete: red_concrete;
-  red_concrete_powder: red_concrete_powder;
-  red_flower: red_flower;
-  red_glazed_terracotta: red_glazed_terracotta;
-  red_mushroom: red_mushroom;
-  red_mushroom_block: red_mushroom_block;
-  red_nether_brick: red_nether_brick;
-  red_nether_brick_stairs: red_nether_brick_stairs;
-  red_sandstone: red_sandstone;
-  red_sandstone_stairs: red_sandstone_stairs;
-  red_shulker_box: red_shulker_box;
-  red_stained_glass: red_stained_glass;
-  red_stained_glass_pane: red_stained_glass_pane;
-  red_terracotta: red_terracotta;
-  red_wool: red_wool;
-  redstone_block: redstone_block;
-  redstone_lamp: redstone_lamp;
-  redstone_ore: redstone_ore;
-  redstone_torch: redstone_torch;
-  redstone_wire: redstone_wire;
-  reeds: reeds;
-  reinforced_deepslate: reinforced_deepslate;
-  repeating_command_block: repeating_command_block;
-  reserved6: reserved6;
-  respawn_anchor: respawn_anchor;
-  sand: sand;
-  sandstone: sandstone;
-  sandstone_stairs: sandstone_stairs;
-  sapling: sapling;
-  scaffolding: scaffolding;
-  sculk: sculk;
-  sculk_catalyst: sculk_catalyst;
-  sculk_sensor: sculk_sensor;
-  sculk_shrieker: sculk_shrieker;
-  sculk_vein: sculk_vein;
-  sea_lantern: sea_lantern;
-  sea_pickle: sea_pickle;
-  seagrass: seagrass;
-  shroomlight: shroomlight;
-  silver_glazed_terracotta: silver_glazed_terracotta;
-  skull: skull;
-  slime: slime;
-  small_amethyst_bud: small_amethyst_bud;
-  small_dripleaf_block: small_dripleaf_block;
-  smithing_table: smithing_table;
-  smoker: smoker;
-  smooth_basalt: smooth_basalt;
-  smooth_quartz_stairs: smooth_quartz_stairs;
-  smooth_red_sandstone_stairs: smooth_red_sandstone_stairs;
-  smooth_sandstone_stairs: smooth_sandstone_stairs;
-  smooth_stone: smooth_stone;
-  sniffer_egg: sniffer_egg;
-  snow: snow;
-  snow_layer: snow_layer;
-  soul_campfire: soul_campfire;
-  soul_fire: soul_fire;
-  soul_lantern: soul_lantern;
-  soul_sand: soul_sand;
-  soul_soil: soul_soil;
-  soul_torch: soul_torch;
-  sponge: sponge;
-  spore_blossom: spore_blossom;
-  spruce_button: spruce_button;
-  spruce_door: spruce_door;
-  spruce_double_slab: spruce_double_slab;
-  spruce_fence: spruce_fence;
-  spruce_fence_gate: spruce_fence_gate;
-  spruce_hanging_sign: spruce_hanging_sign;
-  spruce_leaves: spruce_leaves;
-  spruce_log: spruce_log;
-  spruce_planks: spruce_planks;
-  spruce_pressure_plate: spruce_pressure_plate;
-  spruce_slab: spruce_slab;
-  spruce_stairs: spruce_stairs;
-  spruce_standing_sign: spruce_standing_sign;
-  spruce_trapdoor: spruce_trapdoor;
-  spruce_wall_sign: spruce_wall_sign;
-  spruce_wood: spruce_wood;
-  standing_banner: standing_banner;
-  standing_sign: standing_sign;
-  sticky_piston: sticky_piston;
-  sticky_piston_arm_collision: sticky_piston_arm_collision;
-  stone: stone;
-  stone_block_slab: stone_block_slab;
-  stone_block_slab2: stone_block_slab2;
-  stone_block_slab3: stone_block_slab3;
-  stone_block_slab4: stone_block_slab4;
-  stone_brick_stairs: stone_brick_stairs;
-  stone_button: stone_button;
-  stone_pressure_plate: stone_pressure_plate;
-  stone_stairs: stone_stairs;
-  stonebrick: stonebrick;
-  stonecutter: stonecutter;
-  stonecutter_block: stonecutter_block;
-  stripped_acacia_log: stripped_acacia_log;
-  stripped_acacia_wood: stripped_acacia_wood;
-  stripped_bamboo_block: stripped_bamboo_block;
-  stripped_birch_log: stripped_birch_log;
-  stripped_birch_wood: stripped_birch_wood;
-  stripped_cherry_log: stripped_cherry_log;
-  stripped_cherry_wood: stripped_cherry_wood;
-  stripped_crimson_hyphae: stripped_crimson_hyphae;
-  stripped_crimson_stem: stripped_crimson_stem;
-  stripped_dark_oak_log: stripped_dark_oak_log;
-  stripped_dark_oak_wood: stripped_dark_oak_wood;
-  stripped_jungle_log: stripped_jungle_log;
-  stripped_jungle_wood: stripped_jungle_wood;
-  stripped_mangrove_log: stripped_mangrove_log;
-  stripped_mangrove_wood: stripped_mangrove_wood;
-  stripped_oak_log: stripped_oak_log;
-  stripped_oak_wood: stripped_oak_wood;
-  stripped_spruce_log: stripped_spruce_log;
-  stripped_spruce_wood: stripped_spruce_wood;
-  stripped_warped_hyphae: stripped_warped_hyphae;
-  stripped_warped_stem: stripped_warped_stem;
-  structure_block: structure_block;
-  structure_void: structure_void;
-  suspicious_gravel: suspicious_gravel;
-  suspicious_sand: suspicious_sand;
-  sweet_berry_bush: sweet_berry_bush;
-  tallgrass: tallgrass;
-  target: target;
-  tinted_glass: tinted_glass;
-  tnt: tnt;
-  torch: torch;
-  torchflower: torchflower;
-  torchflower_crop: torchflower_crop;
-  trapdoor: trapdoor;
-  trapped_chest: trapped_chest;
-  trial_spawner: trial_spawner;
-  trip_wire: trip_wire;
-  tripwire_hook: tripwire_hook;
-  tube_coral: tube_coral;
-  tuff: tuff;
-  tuff_brick_double_slab: tuff_brick_double_slab;
-  tuff_brick_slab: tuff_brick_slab;
-  tuff_brick_stairs: tuff_brick_stairs;
-  tuff_brick_wall: tuff_brick_wall;
-  tuff_bricks: tuff_bricks;
-  tuff_double_slab: tuff_double_slab;
-  tuff_slab: tuff_slab;
-  tuff_stairs: tuff_stairs;
-  tuff_wall: tuff_wall;
-  turtle_egg: turtle_egg;
-  twisting_vines: twisting_vines;
-  underwater_torch: underwater_torch;
-  undyed_shulker_box: undyed_shulker_box;
+  acacia_button: AcaciaButton;
+  acacia_door: AcaciaDoor;
+  acacia_double_slab: AcaciaDoubleSlab;
+  acacia_fence: AcaciaFence;
+  acacia_fence_gate: AcaciaFenceGate;
+  acacia_hanging_sign: AcaciaHangingSign;
+  acacia_leaves: AcaciaLeaves;
+  acacia_log: AcaciaLog;
+  acacia_planks: AcaciaPlanks;
+  acacia_pressure_plate: AcaciaPressurePlate;
+  acacia_slab: AcaciaSlab;
+  acacia_stairs: AcaciaStairs;
+  acacia_standing_sign: AcaciaStandingSign;
+  acacia_trapdoor: AcaciaTrapdoor;
+  acacia_wall_sign: AcaciaWallSign;
+  acacia_wood: AcaciaWood;
+  activator_rail: ActivatorRail;
+  air: Air;
+  allow: Allow;
+  amethyst_block: AmethystBlock;
+  amethyst_cluster: AmethystCluster;
+  ancient_debris: AncientDebris;
+  andesite: Andesite;
+  andesite_stairs: AndesiteStairs;
+  anvil: Anvil;
+  azalea: Azalea;
+  azalea_leaves: AzaleaLeaves;
+  azalea_leaves_flowered: AzaleaLeavesFlowered;
+  bamboo: Bamboo;
+  bamboo_block: BambooBlock;
+  bamboo_button: BambooButton;
+  bamboo_door: BambooDoor;
+  bamboo_double_slab: BambooDoubleSlab;
+  bamboo_fence: BambooFence;
+  bamboo_fence_gate: BambooFenceGate;
+  bamboo_hanging_sign: BambooHangingSign;
+  bamboo_mosaic: BambooMosaic;
+  bamboo_mosaic_double_slab: BambooMosaicDoubleSlab;
+  bamboo_mosaic_slab: BambooMosaicSlab;
+  bamboo_mosaic_stairs: BambooMosaicStairs;
+  bamboo_planks: BambooPlanks;
+  bamboo_pressure_plate: BambooPressurePlate;
+  bamboo_sapling: BambooSapling;
+  bamboo_slab: BambooSlab;
+  bamboo_stairs: BambooStairs;
+  bamboo_standing_sign: BambooStandingSign;
+  bamboo_trapdoor: BambooTrapdoor;
+  bamboo_wall_sign: BambooWallSign;
+  barrel: Barrel;
+  barrier: Barrier;
+  basalt: Basalt;
+  beacon: Beacon;
+  bed: Bed;
+  bedrock: Bedrock;
+  bee_nest: BeeNest;
+  beehive: Beehive;
+  beetroot: Beetroot;
+  bell: Bell;
+  big_dripleaf: BigDripleaf;
+  birch_button: BirchButton;
+  birch_door: BirchDoor;
+  birch_double_slab: BirchDoubleSlab;
+  birch_fence: BirchFence;
+  birch_fence_gate: BirchFenceGate;
+  birch_hanging_sign: BirchHangingSign;
+  birch_leaves: BirchLeaves;
+  birch_log: BirchLog;
+  birch_planks: BirchPlanks;
+  birch_pressure_plate: BirchPressurePlate;
+  birch_slab: BirchSlab;
+  birch_stairs: BirchStairs;
+  birch_standing_sign: BirchStandingSign;
+  birch_trapdoor: BirchTrapdoor;
+  birch_wall_sign: BirchWallSign;
+  birch_wood: BirchWood;
+  black_candle: BlackCandle;
+  black_candle_cake: BlackCandleCake;
+  black_carpet: BlackCarpet;
+  black_concrete: BlackConcrete;
+  black_concrete_powder: BlackConcretePowder;
+  black_glazed_terracotta: BlackGlazedTerracotta;
+  black_shulker_box: BlackShulkerBox;
+  black_stained_glass: BlackStainedGlass;
+  black_stained_glass_pane: BlackStainedGlassPane;
+  black_terracotta: BlackTerracotta;
+  black_wool: BlackWool;
+  blackstone: Blackstone;
+  blackstone_double_slab: BlackstoneDoubleSlab;
+  blackstone_slab: BlackstoneSlab;
+  blackstone_stairs: BlackstoneStairs;
+  blackstone_wall: BlackstoneWall;
+  blast_furnace: BlastFurnace;
+  blue_candle: BlueCandle;
+  blue_candle_cake: BlueCandleCake;
+  blue_carpet: BlueCarpet;
+  blue_concrete: BlueConcrete;
+  blue_concrete_powder: BlueConcretePowder;
+  blue_glazed_terracotta: BlueGlazedTerracotta;
+  blue_ice: BlueIce;
+  blue_shulker_box: BlueShulkerBox;
+  blue_stained_glass: BlueStainedGlass;
+  blue_stained_glass_pane: BlueStainedGlassPane;
+  blue_terracotta: BlueTerracotta;
+  blue_wool: BlueWool;
+  bone_block: BoneBlock;
+  bookshelf: Bookshelf;
+  border_block: BorderBlock;
+  brain_coral: BrainCoral;
+  brewing_stand: BrewingStand;
+  brick_block: BrickBlock;
+  brick_stairs: BrickStairs;
+  brown_candle: BrownCandle;
+  brown_candle_cake: BrownCandleCake;
+  brown_carpet: BrownCarpet;
+  brown_concrete: BrownConcrete;
+  brown_concrete_powder: BrownConcretePowder;
+  brown_glazed_terracotta: BrownGlazedTerracotta;
+  brown_mushroom: BrownMushroom;
+  brown_mushroom_block: BrownMushroomBlock;
+  brown_shulker_box: BrownShulkerBox;
+  brown_stained_glass: BrownStainedGlass;
+  brown_stained_glass_pane: BrownStainedGlassPane;
+  brown_terracotta: BrownTerracotta;
+  brown_wool: BrownWool;
+  bubble_column: BubbleColumn;
+  bubble_coral: BubbleCoral;
+  budding_amethyst: BuddingAmethyst;
+  cactus: Cactus;
+  cake: Cake;
+  calcite: Calcite;
+  calibrated_sculk_sensor: CalibratedSculkSensor;
+  camera: Camera;
+  campfire: Campfire;
+  candle: Candle;
+  candle_cake: CandleCake;
+  carrots: Carrots;
+  cartography_table: CartographyTable;
+  carved_pumpkin: CarvedPumpkin;
+  cauldron: Cauldron;
+  cave_vines: CaveVines;
+  cave_vines_body_with_berries: CaveVinesBodyWithBerries;
+  cave_vines_head_with_berries: CaveVinesHeadWithBerries;
+  chain: Chain;
+  chain_command_block: ChainCommandBlock;
+  chemical_heat: ChemicalHeat;
+  chemistry_table: ChemistryTable;
+  cherry_button: CherryButton;
+  cherry_door: CherryDoor;
+  cherry_double_slab: CherryDoubleSlab;
+  cherry_fence: CherryFence;
+  cherry_fence_gate: CherryFenceGate;
+  cherry_hanging_sign: CherryHangingSign;
+  cherry_leaves: CherryLeaves;
+  cherry_log: CherryLog;
+  cherry_planks: CherryPlanks;
+  cherry_pressure_plate: CherryPressurePlate;
+  cherry_sapling: CherrySapling;
+  cherry_slab: CherrySlab;
+  cherry_stairs: CherryStairs;
+  cherry_standing_sign: CherryStandingSign;
+  cherry_trapdoor: CherryTrapdoor;
+  cherry_wall_sign: CherryWallSign;
+  cherry_wood: CherryWood;
+  chest: Chest;
+  chiseled_bookshelf: ChiseledBookshelf;
+  chiseled_copper: ChiseledCopper;
+  chiseled_deepslate: ChiseledDeepslate;
+  chiseled_nether_bricks: ChiseledNetherBricks;
+  chiseled_polished_blackstone: ChiseledPolishedBlackstone;
+  chiseled_tuff: ChiseledTuff;
+  chiseled_tuff_bricks: ChiseledTuffBricks;
+  chorus_flower: ChorusFlower;
+  chorus_plant: ChorusPlant;
+  clay: Clay;
+  client_request_placeholder_block: ClientRequestPlaceholderBlock;
+  coal_block: CoalBlock;
+  coal_ore: CoalOre;
+  cobbled_deepslate: CobbledDeepslate;
+  cobbled_deepslate_double_slab: CobbledDeepslateDoubleSlab;
+  cobbled_deepslate_slab: CobbledDeepslateSlab;
+  cobbled_deepslate_stairs: CobbledDeepslateStairs;
+  cobbled_deepslate_wall: CobbledDeepslateWall;
+  cobblestone: Cobblestone;
+  cobblestone_wall: CobblestoneWall;
+  cocoa: Cocoa;
+  colored_torch_bp: ColoredTorchBp;
+  colored_torch_rg: ColoredTorchRg;
+  command_block: CommandBlock;
+  composter: Composter;
+  conduit: Conduit;
+  copper_block: CopperBlock;
+  copper_bulb: CopperBulb;
+  copper_door: CopperDoor;
+  copper_grate: CopperGrate;
+  copper_ore: CopperOre;
+  copper_trapdoor: CopperTrapdoor;
+  coral_block: CoralBlock;
+  coral_fan: CoralFan;
+  coral_fan_dead: CoralFanDead;
+  coral_fan_hang: CoralFanHang;
+  coral_fan_hang2: CoralFanHang2;
+  coral_fan_hang3: CoralFanHang3;
+  cracked_deepslate_bricks: CrackedDeepslateBricks;
+  cracked_deepslate_tiles: CrackedDeepslateTiles;
+  cracked_nether_bricks: CrackedNetherBricks;
+  cracked_polished_blackstone_bricks: CrackedPolishedBlackstoneBricks;
+  crafter: Crafter;
+  crafting_table: CraftingTable;
+  crimson_button: CrimsonButton;
+  crimson_door: CrimsonDoor;
+  crimson_double_slab: CrimsonDoubleSlab;
+  crimson_fence: CrimsonFence;
+  crimson_fence_gate: CrimsonFenceGate;
+  crimson_fungus: CrimsonFungus;
+  crimson_hanging_sign: CrimsonHangingSign;
+  crimson_hyphae: CrimsonHyphae;
+  crimson_nylium: CrimsonNylium;
+  crimson_planks: CrimsonPlanks;
+  crimson_pressure_plate: CrimsonPressurePlate;
+  crimson_roots: CrimsonRoots;
+  crimson_slab: CrimsonSlab;
+  crimson_stairs: CrimsonStairs;
+  crimson_standing_sign: CrimsonStandingSign;
+  crimson_stem: CrimsonStem;
+  crimson_trapdoor: CrimsonTrapdoor;
+  crimson_wall_sign: CrimsonWallSign;
+  crying_obsidian: CryingObsidian;
+  cut_copper: CutCopper;
+  cut_copper_slab: CutCopperSlab;
+  cut_copper_stairs: CutCopperStairs;
+  cyan_candle: CyanCandle;
+  cyan_candle_cake: CyanCandleCake;
+  cyan_carpet: CyanCarpet;
+  cyan_concrete: CyanConcrete;
+  cyan_concrete_powder: CyanConcretePowder;
+  cyan_glazed_terracotta: CyanGlazedTerracotta;
+  cyan_shulker_box: CyanShulkerBox;
+  cyan_stained_glass: CyanStainedGlass;
+  cyan_stained_glass_pane: CyanStainedGlassPane;
+  cyan_terracotta: CyanTerracotta;
+  cyan_wool: CyanWool;
+  dark_oak_button: DarkOakButton;
+  dark_oak_door: DarkOakDoor;
+  dark_oak_double_slab: DarkOakDoubleSlab;
+  dark_oak_fence: DarkOakFence;
+  dark_oak_fence_gate: DarkOakFenceGate;
+  dark_oak_hanging_sign: DarkOakHangingSign;
+  dark_oak_leaves: DarkOakLeaves;
+  dark_oak_log: DarkOakLog;
+  dark_oak_planks: DarkOakPlanks;
+  dark_oak_pressure_plate: DarkOakPressurePlate;
+  dark_oak_slab: DarkOakSlab;
+  dark_oak_stairs: DarkOakStairs;
+  dark_oak_trapdoor: DarkOakTrapdoor;
+  dark_oak_wood: DarkOakWood;
+  dark_prismarine_stairs: DarkPrismarineStairs;
+  darkoak_standing_sign: DarkoakStandingSign;
+  darkoak_wall_sign: DarkoakWallSign;
+  daylight_detector: DaylightDetector;
+  daylight_detector_inverted: DaylightDetectorInverted;
+  dead_brain_coral: DeadBrainCoral;
+  dead_bubble_coral: DeadBubbleCoral;
+  dead_fire_coral: DeadFireCoral;
+  dead_horn_coral: DeadHornCoral;
+  dead_tube_coral: DeadTubeCoral;
+  deadbush: Deadbush;
+  decorated_pot: DecoratedPot;
+  deepslate: Deepslate;
+  deepslate_brick_double_slab: DeepslateBrickDoubleSlab;
+  deepslate_brick_slab: DeepslateBrickSlab;
+  deepslate_brick_stairs: DeepslateBrickStairs;
+  deepslate_brick_wall: DeepslateBrickWall;
+  deepslate_bricks: DeepslateBricks;
+  deepslate_coal_ore: DeepslateCoalOre;
+  deepslate_copper_ore: DeepslateCopperOre;
+  deepslate_diamond_ore: DeepslateDiamondOre;
+  deepslate_emerald_ore: DeepslateEmeraldOre;
+  deepslate_gold_ore: DeepslateGoldOre;
+  deepslate_iron_ore: DeepslateIronOre;
+  deepslate_lapis_ore: DeepslateLapisOre;
+  deepslate_redstone_ore: DeepslateRedstoneOre;
+  deepslate_tile_double_slab: DeepslateTileDoubleSlab;
+  deepslate_tile_slab: DeepslateTileSlab;
+  deepslate_tile_stairs: DeepslateTileStairs;
+  deepslate_tile_wall: DeepslateTileWall;
+  deepslate_tiles: DeepslateTiles;
+  deny: Deny;
+  detector_rail: DetectorRail;
+  diamond_block: DiamondBlock;
+  diamond_ore: DiamondOre;
+  diorite: Diorite;
+  diorite_stairs: DioriteStairs;
+  dirt: Dirt;
+  dirt_with_roots: DirtWithRoots;
+  dispenser: Dispenser;
+  double_cut_copper_slab: DoubleCutCopperSlab;
+  double_plant: DoublePlant;
+  double_stone_block_slab: DoubleStoneBlockSlab;
+  double_stone_block_slab2: DoubleStoneBlockSlab2;
+  double_stone_block_slab3: DoubleStoneBlockSlab3;
+  double_stone_block_slab4: DoubleStoneBlockSlab4;
+  dragon_egg: DragonEgg;
+  dried_kelp_block: DriedKelpBlock;
+  dripstone_block: DripstoneBlock;
+  dropper: Dropper;
+  element_0: Element0;
+  element_1: Element1;
+  element_10: Element10;
+  element_100: Element100;
+  element_101: Element101;
+  element_102: Element102;
+  element_103: Element103;
+  element_104: Element104;
+  element_105: Element105;
+  element_106: Element106;
+  element_107: Element107;
+  element_108: Element108;
+  element_109: Element109;
+  element_11: Element11;
+  element_110: Element110;
+  element_111: Element111;
+  element_112: Element112;
+  element_113: Element113;
+  element_114: Element114;
+  element_115: Element115;
+  element_116: Element116;
+  element_117: Element117;
+  element_118: Element118;
+  element_12: Element12;
+  element_13: Element13;
+  element_14: Element14;
+  element_15: Element15;
+  element_16: Element16;
+  element_17: Element17;
+  element_18: Element18;
+  element_19: Element19;
+  element_2: Element2;
+  element_20: Element20;
+  element_21: Element21;
+  element_22: Element22;
+  element_23: Element23;
+  element_24: Element24;
+  element_25: Element25;
+  element_26: Element26;
+  element_27: Element27;
+  element_28: Element28;
+  element_29: Element29;
+  element_3: Element3;
+  element_30: Element30;
+  element_31: Element31;
+  element_32: Element32;
+  element_33: Element33;
+  element_34: Element34;
+  element_35: Element35;
+  element_36: Element36;
+  element_37: Element37;
+  element_38: Element38;
+  element_39: Element39;
+  element_4: Element4;
+  element_40: Element40;
+  element_41: Element41;
+  element_42: Element42;
+  element_43: Element43;
+  element_44: Element44;
+  element_45: Element45;
+  element_46: Element46;
+  element_47: Element47;
+  element_48: Element48;
+  element_49: Element49;
+  element_5: Element5;
+  element_50: Element50;
+  element_51: Element51;
+  element_52: Element52;
+  element_53: Element53;
+  element_54: Element54;
+  element_55: Element55;
+  element_56: Element56;
+  element_57: Element57;
+  element_58: Element58;
+  element_59: Element59;
+  element_6: Element6;
+  element_60: Element60;
+  element_61: Element61;
+  element_62: Element62;
+  element_63: Element63;
+  element_64: Element64;
+  element_65: Element65;
+  element_66: Element66;
+  element_67: Element67;
+  element_68: Element68;
+  element_69: Element69;
+  element_7: Element7;
+  element_70: Element70;
+  element_71: Element71;
+  element_72: Element72;
+  element_73: Element73;
+  element_74: Element74;
+  element_75: Element75;
+  element_76: Element76;
+  element_77: Element77;
+  element_78: Element78;
+  element_79: Element79;
+  element_8: Element8;
+  element_80: Element80;
+  element_81: Element81;
+  element_82: Element82;
+  element_83: Element83;
+  element_84: Element84;
+  element_85: Element85;
+  element_86: Element86;
+  element_87: Element87;
+  element_88: Element88;
+  element_89: Element89;
+  element_9: Element9;
+  element_90: Element90;
+  element_91: Element91;
+  element_92: Element92;
+  element_93: Element93;
+  element_94: Element94;
+  element_95: Element95;
+  element_96: Element96;
+  element_97: Element97;
+  element_98: Element98;
+  element_99: Element99;
+  emerald_block: EmeraldBlock;
+  emerald_ore: EmeraldOre;
+  enchanting_table: EnchantingTable;
+  end_brick_stairs: EndBrickStairs;
+  end_bricks: EndBricks;
+  end_gateway: EndGateway;
+  end_portal: EndPortal;
+  end_portal_frame: EndPortalFrame;
+  end_rod: EndRod;
+  end_stone: EndStone;
+  ender_chest: EnderChest;
+  exposed_chiseled_copper: ExposedChiseledCopper;
+  exposed_copper: ExposedCopper;
+  exposed_copper_bulb: ExposedCopperBulb;
+  exposed_copper_door: ExposedCopperDoor;
+  exposed_copper_grate: ExposedCopperGrate;
+  exposed_copper_trapdoor: ExposedCopperTrapdoor;
+  exposed_cut_copper: ExposedCutCopper;
+  exposed_cut_copper_slab: ExposedCutCopperSlab;
+  exposed_cut_copper_stairs: ExposedCutCopperStairs;
+  exposed_double_cut_copper_slab: ExposedDoubleCutCopperSlab;
+  farmland: Farmland;
+  fence_gate: FenceGate;
+  fire: Fire;
+  fire_coral: FireCoral;
+  fletching_table: FletchingTable;
+  flower_pot: FlowerPot;
+  flowering_azalea: FloweringAzalea;
+  flowing_lava: FlowingLava;
+  flowing_water: FlowingWater;
+  frame: Frame;
+  frog_spawn: FrogSpawn;
+  frosted_ice: FrostedIce;
+  furnace: Furnace;
+  gilded_blackstone: GildedBlackstone;
+  glass: Glass;
+  glass_pane: GlassPane;
+  glow_frame: GlowFrame;
+  glow_lichen: GlowLichen;
+  glowingobsidian: Glowingobsidian;
+  glowstone: Glowstone;
+  gold_block: GoldBlock;
+  gold_ore: GoldOre;
+  golden_rail: GoldenRail;
+  granite: Granite;
+  granite_stairs: GraniteStairs;
+  grass_block: GrassBlock;
+  grass_path: GrassPath;
+  gravel: Gravel;
+  gray_candle: GrayCandle;
+  gray_candle_cake: GrayCandleCake;
+  gray_carpet: GrayCarpet;
+  gray_concrete: GrayConcrete;
+  gray_concrete_powder: GrayConcretePowder;
+  gray_glazed_terracotta: GrayGlazedTerracotta;
+  gray_shulker_box: GrayShulkerBox;
+  gray_stained_glass: GrayStainedGlass;
+  gray_stained_glass_pane: GrayStainedGlassPane;
+  gray_terracotta: GrayTerracotta;
+  gray_wool: GrayWool;
+  green_candle: GreenCandle;
+  green_candle_cake: GreenCandleCake;
+  green_carpet: GreenCarpet;
+  green_concrete: GreenConcrete;
+  green_concrete_powder: GreenConcretePowder;
+  green_glazed_terracotta: GreenGlazedTerracotta;
+  green_shulker_box: GreenShulkerBox;
+  green_stained_glass: GreenStainedGlass;
+  green_stained_glass_pane: GreenStainedGlassPane;
+  green_terracotta: GreenTerracotta;
+  green_wool: GreenWool;
+  grindstone: Grindstone;
+  hanging_roots: HangingRoots;
+  hard_black_stained_glass: HardBlackStainedGlass;
+  hard_black_stained_glass_pane: HardBlackStainedGlassPane;
+  hard_blue_stained_glass: HardBlueStainedGlass;
+  hard_blue_stained_glass_pane: HardBlueStainedGlassPane;
+  hard_brown_stained_glass: HardBrownStainedGlass;
+  hard_brown_stained_glass_pane: HardBrownStainedGlassPane;
+  hard_cyan_stained_glass: HardCyanStainedGlass;
+  hard_cyan_stained_glass_pane: HardCyanStainedGlassPane;
+  hard_glass: HardGlass;
+  hard_glass_pane: HardGlassPane;
+  hard_gray_stained_glass: HardGrayStainedGlass;
+  hard_gray_stained_glass_pane: HardGrayStainedGlassPane;
+  hard_green_stained_glass: HardGreenStainedGlass;
+  hard_green_stained_glass_pane: HardGreenStainedGlassPane;
+  hard_light_blue_stained_glass: HardLightBlueStainedGlass;
+  hard_light_blue_stained_glass_pane: HardLightBlueStainedGlassPane;
+  hard_light_gray_stained_glass: HardLightGrayStainedGlass;
+  hard_light_gray_stained_glass_pane: HardLightGrayStainedGlassPane;
+  hard_lime_stained_glass: HardLimeStainedGlass;
+  hard_lime_stained_glass_pane: HardLimeStainedGlassPane;
+  hard_magenta_stained_glass: HardMagentaStainedGlass;
+  hard_magenta_stained_glass_pane: HardMagentaStainedGlassPane;
+  hard_orange_stained_glass: HardOrangeStainedGlass;
+  hard_orange_stained_glass_pane: HardOrangeStainedGlassPane;
+  hard_pink_stained_glass: HardPinkStainedGlass;
+  hard_pink_stained_glass_pane: HardPinkStainedGlassPane;
+  hard_purple_stained_glass: HardPurpleStainedGlass;
+  hard_purple_stained_glass_pane: HardPurpleStainedGlassPane;
+  hard_red_stained_glass: HardRedStainedGlass;
+  hard_red_stained_glass_pane: HardRedStainedGlassPane;
+  hard_white_stained_glass: HardWhiteStainedGlass;
+  hard_white_stained_glass_pane: HardWhiteStainedGlassPane;
+  hard_yellow_stained_glass: HardYellowStainedGlass;
+  hard_yellow_stained_glass_pane: HardYellowStainedGlassPane;
+  hardened_clay: HardenedClay;
+  hay_block: HayBlock;
+  heavy_weighted_pressure_plate: HeavyWeightedPressurePlate;
+  honey_block: HoneyBlock;
+  honeycomb_block: HoneycombBlock;
+  hopper: Hopper;
+  horn_coral: HornCoral;
+  ice: Ice;
+  infested_deepslate: InfestedDeepslate;
+  info_update: InfoUpdate;
+  info_update2: InfoUpdate2;
+  invisible_bedrock: InvisibleBedrock;
+  iron_bars: IronBars;
+  iron_block: IronBlock;
+  iron_door: IronDoor;
+  iron_ore: IronOre;
+  iron_trapdoor: IronTrapdoor;
+  jigsaw: Jigsaw;
+  jukebox: Jukebox;
+  jungle_button: JungleButton;
+  jungle_door: JungleDoor;
+  jungle_double_slab: JungleDoubleSlab;
+  jungle_fence: JungleFence;
+  jungle_fence_gate: JungleFenceGate;
+  jungle_hanging_sign: JungleHangingSign;
+  jungle_leaves: JungleLeaves;
+  jungle_log: JungleLog;
+  jungle_planks: JunglePlanks;
+  jungle_pressure_plate: JunglePressurePlate;
+  jungle_slab: JungleSlab;
+  jungle_stairs: JungleStairs;
+  jungle_standing_sign: JungleStandingSign;
+  jungle_trapdoor: JungleTrapdoor;
+  jungle_wall_sign: JungleWallSign;
+  jungle_wood: JungleWood;
+  kelp: Kelp;
+  ladder: Ladder;
+  lantern: Lantern;
+  lapis_block: LapisBlock;
+  lapis_ore: LapisOre;
+  large_amethyst_bud: LargeAmethystBud;
+  lava: Lava;
+  lectern: Lectern;
+  lever: Lever;
+  light_block: LightBlock;
+  light_blue_candle: LightBlueCandle;
+  light_blue_candle_cake: LightBlueCandleCake;
+  light_blue_carpet: LightBlueCarpet;
+  light_blue_concrete: LightBlueConcrete;
+  light_blue_concrete_powder: LightBlueConcretePowder;
+  light_blue_glazed_terracotta: LightBlueGlazedTerracotta;
+  light_blue_shulker_box: LightBlueShulkerBox;
+  light_blue_stained_glass: LightBlueStainedGlass;
+  light_blue_stained_glass_pane: LightBlueStainedGlassPane;
+  light_blue_terracotta: LightBlueTerracotta;
+  light_blue_wool: LightBlueWool;
+  light_gray_candle: LightGrayCandle;
+  light_gray_candle_cake: LightGrayCandleCake;
+  light_gray_carpet: LightGrayCarpet;
+  light_gray_concrete: LightGrayConcrete;
+  light_gray_concrete_powder: LightGrayConcretePowder;
+  light_gray_shulker_box: LightGrayShulkerBox;
+  light_gray_stained_glass: LightGrayStainedGlass;
+  light_gray_stained_glass_pane: LightGrayStainedGlassPane;
+  light_gray_terracotta: LightGrayTerracotta;
+  light_gray_wool: LightGrayWool;
+  light_weighted_pressure_plate: LightWeightedPressurePlate;
+  lightning_rod: LightningRod;
+  lime_candle: LimeCandle;
+  lime_candle_cake: LimeCandleCake;
+  lime_carpet: LimeCarpet;
+  lime_concrete: LimeConcrete;
+  lime_concrete_powder: LimeConcretePowder;
+  lime_glazed_terracotta: LimeGlazedTerracotta;
+  lime_shulker_box: LimeShulkerBox;
+  lime_stained_glass: LimeStainedGlass;
+  lime_stained_glass_pane: LimeStainedGlassPane;
+  lime_terracotta: LimeTerracotta;
+  lime_wool: LimeWool;
+  lit_blast_furnace: LitBlastFurnace;
+  lit_deepslate_redstone_ore: LitDeepslateRedstoneOre;
+  lit_furnace: LitFurnace;
+  lit_pumpkin: LitPumpkin;
+  lit_redstone_lamp: LitRedstoneLamp;
+  lit_redstone_ore: LitRedstoneOre;
+  lit_smoker: LitSmoker;
+  lodestone: Lodestone;
+  loom: Loom;
+  magenta_candle: MagentaCandle;
+  magenta_candle_cake: MagentaCandleCake;
+  magenta_carpet: MagentaCarpet;
+  magenta_concrete: MagentaConcrete;
+  magenta_concrete_powder: MagentaConcretePowder;
+  magenta_glazed_terracotta: MagentaGlazedTerracotta;
+  magenta_shulker_box: MagentaShulkerBox;
+  magenta_stained_glass: MagentaStainedGlass;
+  magenta_stained_glass_pane: MagentaStainedGlassPane;
+  magenta_terracotta: MagentaTerracotta;
+  magenta_wool: MagentaWool;
+  magma: Magma;
+  mangrove_button: MangroveButton;
+  mangrove_door: MangroveDoor;
+  mangrove_double_slab: MangroveDoubleSlab;
+  mangrove_fence: MangroveFence;
+  mangrove_fence_gate: MangroveFenceGate;
+  mangrove_hanging_sign: MangroveHangingSign;
+  mangrove_leaves: MangroveLeaves;
+  mangrove_log: MangroveLog;
+  mangrove_planks: MangrovePlanks;
+  mangrove_pressure_plate: MangrovePressurePlate;
+  mangrove_propagule: MangrovePropagule;
+  mangrove_roots: MangroveRoots;
+  mangrove_slab: MangroveSlab;
+  mangrove_stairs: MangroveStairs;
+  mangrove_standing_sign: MangroveStandingSign;
+  mangrove_trapdoor: MangroveTrapdoor;
+  mangrove_wall_sign: MangroveWallSign;
+  mangrove_wood: MangroveWood;
+  medium_amethyst_bud: MediumAmethystBud;
+  melon_block: MelonBlock;
+  melon_stem: MelonStem;
+  mob_spawner: MobSpawner;
+  monster_egg: MonsterEgg;
+  moss_block: MossBlock;
+  moss_carpet: MossCarpet;
+  mossy_cobblestone: MossyCobblestone;
+  mossy_cobblestone_stairs: MossyCobblestoneStairs;
+  mossy_stone_brick_stairs: MossyStoneBrickStairs;
+  moving_block: MovingBlock;
+  mud: Mud;
+  mud_brick_double_slab: MudBrickDoubleSlab;
+  mud_brick_slab: MudBrickSlab;
+  mud_brick_stairs: MudBrickStairs;
+  mud_brick_wall: MudBrickWall;
+  mud_bricks: MudBricks;
+  muddy_mangrove_roots: MuddyMangroveRoots;
+  mycelium: Mycelium;
+  nether_brick: NetherBrick;
+  nether_brick_fence: NetherBrickFence;
+  nether_brick_stairs: NetherBrickStairs;
+  nether_gold_ore: NetherGoldOre;
+  nether_sprouts: NetherSprouts;
+  nether_wart: NetherWart;
+  nether_wart_block: NetherWartBlock;
+  netherite_block: NetheriteBlock;
+  netherrack: Netherrack;
+  netherreactor: Netherreactor;
+  normal_stone_stairs: NormalStoneStairs;
+  noteblock: Noteblock;
+  oak_double_slab: OakDoubleSlab;
+  oak_fence: OakFence;
+  oak_hanging_sign: OakHangingSign;
+  oak_leaves: OakLeaves;
+  oak_log: OakLog;
+  oak_planks: OakPlanks;
+  oak_slab: OakSlab;
+  oak_stairs: OakStairs;
+  oak_wood: OakWood;
+  observer: Observer;
+  obsidian: Obsidian;
+  ochre_froglight: OchreFroglight;
+  orange_candle: OrangeCandle;
+  orange_candle_cake: OrangeCandleCake;
+  orange_carpet: OrangeCarpet;
+  orange_concrete: OrangeConcrete;
+  orange_concrete_powder: OrangeConcretePowder;
+  orange_glazed_terracotta: OrangeGlazedTerracotta;
+  orange_shulker_box: OrangeShulkerBox;
+  orange_stained_glass: OrangeStainedGlass;
+  orange_stained_glass_pane: OrangeStainedGlassPane;
+  orange_terracotta: OrangeTerracotta;
+  orange_wool: OrangeWool;
+  oxidized_chiseled_copper: OxidizedChiseledCopper;
+  oxidized_copper: OxidizedCopper;
+  oxidized_copper_bulb: OxidizedCopperBulb;
+  oxidized_copper_door: OxidizedCopperDoor;
+  oxidized_copper_grate: OxidizedCopperGrate;
+  oxidized_copper_trapdoor: OxidizedCopperTrapdoor;
+  oxidized_cut_copper: OxidizedCutCopper;
+  oxidized_cut_copper_slab: OxidizedCutCopperSlab;
+  oxidized_cut_copper_stairs: OxidizedCutCopperStairs;
+  oxidized_double_cut_copper_slab: OxidizedDoubleCutCopperSlab;
+  packed_ice: PackedIce;
+  packed_mud: PackedMud;
+  pearlescent_froglight: PearlescentFroglight;
+  pink_candle: PinkCandle;
+  pink_candle_cake: PinkCandleCake;
+  pink_carpet: PinkCarpet;
+  pink_concrete: PinkConcrete;
+  pink_concrete_powder: PinkConcretePowder;
+  pink_glazed_terracotta: PinkGlazedTerracotta;
+  pink_petals: PinkPetals;
+  pink_shulker_box: PinkShulkerBox;
+  pink_stained_glass: PinkStainedGlass;
+  pink_stained_glass_pane: PinkStainedGlassPane;
+  pink_terracotta: PinkTerracotta;
+  pink_wool: PinkWool;
+  piston: Piston;
+  piston_arm_collision: PistonArmCollision;
+  pitcher_crop: PitcherCrop;
+  pitcher_plant: PitcherPlant;
+  podzol: Podzol;
+  pointed_dripstone: PointedDripstone;
+  polished_andesite: PolishedAndesite;
+  polished_andesite_stairs: PolishedAndesiteStairs;
+  polished_basalt: PolishedBasalt;
+  polished_blackstone: PolishedBlackstone;
+  polished_blackstone_brick_double_slab: PolishedBlackstoneBrickDoubleSlab;
+  polished_blackstone_brick_slab: PolishedBlackstoneBrickSlab;
+  polished_blackstone_brick_stairs: PolishedBlackstoneBrickStairs;
+  polished_blackstone_brick_wall: PolishedBlackstoneBrickWall;
+  polished_blackstone_bricks: PolishedBlackstoneBricks;
+  polished_blackstone_button: PolishedBlackstoneButton;
+  polished_blackstone_double_slab: PolishedBlackstoneDoubleSlab;
+  polished_blackstone_pressure_plate: PolishedBlackstonePressurePlate;
+  polished_blackstone_slab: PolishedBlackstoneSlab;
+  polished_blackstone_stairs: PolishedBlackstoneStairs;
+  polished_blackstone_wall: PolishedBlackstoneWall;
+  polished_deepslate: PolishedDeepslate;
+  polished_deepslate_double_slab: PolishedDeepslateDoubleSlab;
+  polished_deepslate_slab: PolishedDeepslateSlab;
+  polished_deepslate_stairs: PolishedDeepslateStairs;
+  polished_deepslate_wall: PolishedDeepslateWall;
+  polished_diorite: PolishedDiorite;
+  polished_diorite_stairs: PolishedDioriteStairs;
+  polished_granite: PolishedGranite;
+  polished_granite_stairs: PolishedGraniteStairs;
+  polished_tuff: PolishedTuff;
+  polished_tuff_double_slab: PolishedTuffDoubleSlab;
+  polished_tuff_slab: PolishedTuffSlab;
+  polished_tuff_stairs: PolishedTuffStairs;
+  polished_tuff_wall: PolishedTuffWall;
+  portal: Portal;
+  potatoes: Potatoes;
+  powder_snow: PowderSnow;
+  powered_comparator: PoweredComparator;
+  powered_repeater: PoweredRepeater;
+  prismarine: Prismarine;
+  prismarine_bricks_stairs: PrismarineBricksStairs;
+  prismarine_stairs: PrismarineStairs;
+  pumpkin: Pumpkin;
+  pumpkin_stem: PumpkinStem;
+  purple_candle: PurpleCandle;
+  purple_candle_cake: PurpleCandleCake;
+  purple_carpet: PurpleCarpet;
+  purple_concrete: PurpleConcrete;
+  purple_concrete_powder: PurpleConcretePowder;
+  purple_glazed_terracotta: PurpleGlazedTerracotta;
+  purple_shulker_box: PurpleShulkerBox;
+  purple_stained_glass: PurpleStainedGlass;
+  purple_stained_glass_pane: PurpleStainedGlassPane;
+  purple_terracotta: PurpleTerracotta;
+  purple_wool: PurpleWool;
+  purpur_block: PurpurBlock;
+  purpur_stairs: PurpurStairs;
+  quartz_block: QuartzBlock;
+  quartz_bricks: QuartzBricks;
+  quartz_ore: QuartzOre;
+  quartz_stairs: QuartzStairs;
+  rail: Rail;
+  raw_copper_block: RawCopperBlock;
+  raw_gold_block: RawGoldBlock;
+  raw_iron_block: RawIronBlock;
+  red_candle: RedCandle;
+  red_candle_cake: RedCandleCake;
+  red_carpet: RedCarpet;
+  red_concrete: RedConcrete;
+  red_concrete_powder: RedConcretePowder;
+  red_flower: RedFlower;
+  red_glazed_terracotta: RedGlazedTerracotta;
+  red_mushroom: RedMushroom;
+  red_mushroom_block: RedMushroomBlock;
+  red_nether_brick: RedNetherBrick;
+  red_nether_brick_stairs: RedNetherBrickStairs;
+  red_sandstone: RedSandstone;
+  red_sandstone_stairs: RedSandstoneStairs;
+  red_shulker_box: RedShulkerBox;
+  red_stained_glass: RedStainedGlass;
+  red_stained_glass_pane: RedStainedGlassPane;
+  red_terracotta: RedTerracotta;
+  red_wool: RedWool;
+  redstone_block: RedstoneBlock;
+  redstone_lamp: RedstoneLamp;
+  redstone_ore: RedstoneOre;
+  redstone_torch: RedstoneTorch;
+  redstone_wire: RedstoneWire;
+  reeds: Reeds;
+  reinforced_deepslate: ReinforcedDeepslate;
+  repeating_command_block: RepeatingCommandBlock;
+  reserved6: Reserved6;
+  respawn_anchor: RespawnAnchor;
+  sand: Sand;
+  sandstone: Sandstone;
+  sandstone_stairs: SandstoneStairs;
+  sapling: Sapling;
+  scaffolding: Scaffolding;
+  sculk: Sculk;
+  sculk_catalyst: SculkCatalyst;
+  sculk_sensor: SculkSensor;
+  sculk_shrieker: SculkShrieker;
+  sculk_vein: SculkVein;
+  sea_lantern: SeaLantern;
+  sea_pickle: SeaPickle;
+  seagrass: Seagrass;
+  shroomlight: Shroomlight;
+  silver_glazed_terracotta: SilverGlazedTerracotta;
+  skull: Skull;
+  slime: Slime;
+  small_amethyst_bud: SmallAmethystBud;
+  small_dripleaf_block: SmallDripleafBlock;
+  smithing_table: SmithingTable;
+  smoker: Smoker;
+  smooth_basalt: SmoothBasalt;
+  smooth_quartz_stairs: SmoothQuartzStairs;
+  smooth_red_sandstone_stairs: SmoothRedSandstoneStairs;
+  smooth_sandstone_stairs: SmoothSandstoneStairs;
+  smooth_stone: SmoothStone;
+  sniffer_egg: SnifferEgg;
+  snow: Snow;
+  snow_layer: SnowLayer;
+  soul_campfire: SoulCampfire;
+  soul_fire: SoulFire;
+  soul_lantern: SoulLantern;
+  soul_sand: SoulSand;
+  soul_soil: SoulSoil;
+  soul_torch: SoulTorch;
+  sponge: Sponge;
+  spore_blossom: SporeBlossom;
+  spruce_button: SpruceButton;
+  spruce_door: SpruceDoor;
+  spruce_double_slab: SpruceDoubleSlab;
+  spruce_fence: SpruceFence;
+  spruce_fence_gate: SpruceFenceGate;
+  spruce_hanging_sign: SpruceHangingSign;
+  spruce_leaves: SpruceLeaves;
+  spruce_log: SpruceLog;
+  spruce_planks: SprucePlanks;
+  spruce_pressure_plate: SprucePressurePlate;
+  spruce_slab: SpruceSlab;
+  spruce_stairs: SpruceStairs;
+  spruce_standing_sign: SpruceStandingSign;
+  spruce_trapdoor: SpruceTrapdoor;
+  spruce_wall_sign: SpruceWallSign;
+  spruce_wood: SpruceWood;
+  standing_banner: StandingBanner;
+  standing_sign: StandingSign;
+  sticky_piston: StickyPiston;
+  sticky_piston_arm_collision: StickyPistonArmCollision;
+  stone: Stone;
+  stone_block_slab: StoneBlockSlab;
+  stone_block_slab2: StoneBlockSlab2;
+  stone_block_slab3: StoneBlockSlab3;
+  stone_block_slab4: StoneBlockSlab4;
+  stone_brick_stairs: StoneBrickStairs;
+  stone_button: StoneButton;
+  stone_pressure_plate: StonePressurePlate;
+  stone_stairs: StoneStairs;
+  stonebrick: Stonebrick;
+  stonecutter: Stonecutter;
+  stonecutter_block: StonecutterBlock;
+  stripped_acacia_log: StrippedAcaciaLog;
+  stripped_acacia_wood: StrippedAcaciaWood;
+  stripped_bamboo_block: StrippedBambooBlock;
+  stripped_birch_log: StrippedBirchLog;
+  stripped_birch_wood: StrippedBirchWood;
+  stripped_cherry_log: StrippedCherryLog;
+  stripped_cherry_wood: StrippedCherryWood;
+  stripped_crimson_hyphae: StrippedCrimsonHyphae;
+  stripped_crimson_stem: StrippedCrimsonStem;
+  stripped_dark_oak_log: StrippedDarkOakLog;
+  stripped_dark_oak_wood: StrippedDarkOakWood;
+  stripped_jungle_log: StrippedJungleLog;
+  stripped_jungle_wood: StrippedJungleWood;
+  stripped_mangrove_log: StrippedMangroveLog;
+  stripped_mangrove_wood: StrippedMangroveWood;
+  stripped_oak_log: StrippedOakLog;
+  stripped_oak_wood: StrippedOakWood;
+  stripped_spruce_log: StrippedSpruceLog;
+  stripped_spruce_wood: StrippedSpruceWood;
+  stripped_warped_hyphae: StrippedWarpedHyphae;
+  stripped_warped_stem: StrippedWarpedStem;
+  structure_block: StructureBlock;
+  structure_void: StructureVoid;
+  suspicious_gravel: SuspiciousGravel;
+  suspicious_sand: SuspiciousSand;
+  sweet_berry_bush: SweetBerryBush;
+  tallgrass: Tallgrass;
+  target: Target;
+  tinted_glass: TintedGlass;
+  tnt: Tnt;
+  torch: Torch;
+  torchflower: Torchflower;
+  torchflower_crop: TorchflowerCrop;
+  trapdoor: Trapdoor;
+  trapped_chest: TrappedChest;
+  trial_spawner: TrialSpawner;
+  trip_wire: TripWire;
+  tripwire_hook: TripwireHook;
+  tube_coral: TubeCoral;
+  tuff: Tuff;
+  tuff_brick_double_slab: TuffBrickDoubleSlab;
+  tuff_brick_slab: TuffBrickSlab;
+  tuff_brick_stairs: TuffBrickStairs;
+  tuff_brick_wall: TuffBrickWall;
+  tuff_bricks: TuffBricks;
+  tuff_double_slab: TuffDoubleSlab;
+  tuff_slab: TuffSlab;
+  tuff_stairs: TuffStairs;
+  tuff_wall: TuffWall;
+  turtle_egg: TurtleEgg;
+  twisting_vines: TwistingVines;
+  underwater_torch: UnderwaterTorch;
+  undyed_shulker_box: UndyedShulkerBox;
   unknown: Unknown;
-  unlit_redstone_torch: unlit_redstone_torch;
-  unpowered_comparator: unpowered_comparator;
-  unpowered_repeater: unpowered_repeater;
-  vault: vault;
-  verdant_froglight: verdant_froglight;
-  vine: vine;
-  wall_banner: wall_banner;
-  wall_sign: wall_sign;
-  warped_button: warped_button;
-  warped_door: warped_door;
-  warped_double_slab: warped_double_slab;
-  warped_fence: warped_fence;
-  warped_fence_gate: warped_fence_gate;
-  warped_fungus: warped_fungus;
-  warped_hanging_sign: warped_hanging_sign;
-  warped_hyphae: warped_hyphae;
-  warped_nylium: warped_nylium;
-  warped_planks: warped_planks;
-  warped_pressure_plate: warped_pressure_plate;
-  warped_roots: warped_roots;
-  warped_slab: warped_slab;
-  warped_stairs: warped_stairs;
-  warped_standing_sign: warped_standing_sign;
-  warped_stem: warped_stem;
-  warped_trapdoor: warped_trapdoor;
-  warped_wall_sign: warped_wall_sign;
-  warped_wart_block: warped_wart_block;
-  water: water;
-  waterlily: waterlily;
-  waxed_chiseled_copper: waxed_chiseled_copper;
-  waxed_copper: waxed_copper;
-  waxed_copper_bulb: waxed_copper_bulb;
-  waxed_copper_door: waxed_copper_door;
-  waxed_copper_grate: waxed_copper_grate;
-  waxed_copper_trapdoor: waxed_copper_trapdoor;
-  waxed_cut_copper: waxed_cut_copper;
-  waxed_cut_copper_slab: waxed_cut_copper_slab;
-  waxed_cut_copper_stairs: waxed_cut_copper_stairs;
-  waxed_double_cut_copper_slab: waxed_double_cut_copper_slab;
-  waxed_exposed_chiseled_copper: waxed_exposed_chiseled_copper;
-  waxed_exposed_copper: waxed_exposed_copper;
-  waxed_exposed_copper_bulb: waxed_exposed_copper_bulb;
-  waxed_exposed_copper_door: waxed_exposed_copper_door;
-  waxed_exposed_copper_grate: waxed_exposed_copper_grate;
-  waxed_exposed_copper_trapdoor: waxed_exposed_copper_trapdoor;
-  waxed_exposed_cut_copper: waxed_exposed_cut_copper;
-  waxed_exposed_cut_copper_slab: waxed_exposed_cut_copper_slab;
-  waxed_exposed_cut_copper_stairs: waxed_exposed_cut_copper_stairs;
-  waxed_exposed_double_cut_copper_slab: waxed_exposed_double_cut_copper_slab;
-  waxed_oxidized_chiseled_copper: waxed_oxidized_chiseled_copper;
-  waxed_oxidized_copper: waxed_oxidized_copper;
-  waxed_oxidized_copper_bulb: waxed_oxidized_copper_bulb;
-  waxed_oxidized_copper_door: waxed_oxidized_copper_door;
-  waxed_oxidized_copper_grate: waxed_oxidized_copper_grate;
-  waxed_oxidized_copper_trapdoor: waxed_oxidized_copper_trapdoor;
-  waxed_oxidized_cut_copper: waxed_oxidized_cut_copper;
-  waxed_oxidized_cut_copper_slab: waxed_oxidized_cut_copper_slab;
-  waxed_oxidized_cut_copper_stairs: waxed_oxidized_cut_copper_stairs;
-  waxed_oxidized_double_cut_copper_slab: waxed_oxidized_double_cut_copper_slab;
-  waxed_weathered_chiseled_copper: waxed_weathered_chiseled_copper;
-  waxed_weathered_copper: waxed_weathered_copper;
-  waxed_weathered_copper_bulb: waxed_weathered_copper_bulb;
-  waxed_weathered_copper_door: waxed_weathered_copper_door;
-  waxed_weathered_copper_grate: waxed_weathered_copper_grate;
-  waxed_weathered_copper_trapdoor: waxed_weathered_copper_trapdoor;
-  waxed_weathered_cut_copper: waxed_weathered_cut_copper;
-  waxed_weathered_cut_copper_slab: waxed_weathered_cut_copper_slab;
-  waxed_weathered_cut_copper_stairs: waxed_weathered_cut_copper_stairs;
-  waxed_weathered_double_cut_copper_slab: waxed_weathered_double_cut_copper_slab;
-  weathered_chiseled_copper: weathered_chiseled_copper;
-  weathered_copper: weathered_copper;
-  weathered_copper_bulb: weathered_copper_bulb;
-  weathered_copper_door: weathered_copper_door;
-  weathered_copper_grate: weathered_copper_grate;
-  weathered_copper_trapdoor: weathered_copper_trapdoor;
-  weathered_cut_copper: weathered_cut_copper;
-  weathered_cut_copper_slab: weathered_cut_copper_slab;
-  weathered_cut_copper_stairs: weathered_cut_copper_stairs;
-  weathered_double_cut_copper_slab: weathered_double_cut_copper_slab;
-  web: web;
-  weeping_vines: weeping_vines;
-  wheat: wheat;
-  white_candle: white_candle;
-  white_candle_cake: white_candle_cake;
-  white_carpet: white_carpet;
-  white_concrete: white_concrete;
-  white_concrete_powder: white_concrete_powder;
-  white_glazed_terracotta: white_glazed_terracotta;
-  white_shulker_box: white_shulker_box;
-  white_stained_glass: white_stained_glass;
-  white_stained_glass_pane: white_stained_glass_pane;
-  white_terracotta: white_terracotta;
-  white_wool: white_wool;
-  wither_rose: wither_rose;
-  wooden_button: wooden_button;
-  wooden_door: wooden_door;
-  wooden_pressure_plate: wooden_pressure_plate;
-  yellow_candle: yellow_candle;
-  yellow_candle_cake: yellow_candle_cake;
-  yellow_carpet: yellow_carpet;
-  yellow_concrete: yellow_concrete;
-  yellow_concrete_powder: yellow_concrete_powder;
-  yellow_flower: yellow_flower;
-  yellow_glazed_terracotta: yellow_glazed_terracotta;
-  yellow_shulker_box: yellow_shulker_box;
-  yellow_stained_glass: yellow_stained_glass;
-  yellow_stained_glass_pane: yellow_stained_glass_pane;
-  yellow_terracotta: yellow_terracotta;
-  yellow_wool: yellow_wool;
+  unlit_redstone_torch: UnlitRedstoneTorch;
+  unpowered_comparator: UnpoweredComparator;
+  unpowered_repeater: UnpoweredRepeater;
+  vault: Vault;
+  verdant_froglight: VerdantFroglight;
+  vine: Vine;
+  wall_banner: WallBanner;
+  wall_sign: WallSign;
+  warped_button: WarpedButton;
+  warped_door: WarpedDoor;
+  warped_double_slab: WarpedDoubleSlab;
+  warped_fence: WarpedFence;
+  warped_fence_gate: WarpedFenceGate;
+  warped_fungus: WarpedFungus;
+  warped_hanging_sign: WarpedHangingSign;
+  warped_hyphae: WarpedHyphae;
+  warped_nylium: WarpedNylium;
+  warped_planks: WarpedPlanks;
+  warped_pressure_plate: WarpedPressurePlate;
+  warped_roots: WarpedRoots;
+  warped_slab: WarpedSlab;
+  warped_stairs: WarpedStairs;
+  warped_standing_sign: WarpedStandingSign;
+  warped_stem: WarpedStem;
+  warped_trapdoor: WarpedTrapdoor;
+  warped_wall_sign: WarpedWallSign;
+  warped_wart_block: WarpedWartBlock;
+  water: Water;
+  waterlily: Waterlily;
+  waxed_chiseled_copper: WaxedChiseledCopper;
+  waxed_copper: WaxedCopper;
+  waxed_copper_bulb: WaxedCopperBulb;
+  waxed_copper_door: WaxedCopperDoor;
+  waxed_copper_grate: WaxedCopperGrate;
+  waxed_copper_trapdoor: WaxedCopperTrapdoor;
+  waxed_cut_copper: WaxedCutCopper;
+  waxed_cut_copper_slab: WaxedCutCopperSlab;
+  waxed_cut_copper_stairs: WaxedCutCopperStairs;
+  waxed_double_cut_copper_slab: WaxedDoubleCutCopperSlab;
+  waxed_exposed_chiseled_copper: WaxedExposedChiseledCopper;
+  waxed_exposed_copper: WaxedExposedCopper;
+  waxed_exposed_copper_bulb: WaxedExposedCopperBulb;
+  waxed_exposed_copper_door: WaxedExposedCopperDoor;
+  waxed_exposed_copper_grate: WaxedExposedCopperGrate;
+  waxed_exposed_copper_trapdoor: WaxedExposedCopperTrapdoor;
+  waxed_exposed_cut_copper: WaxedExposedCutCopper;
+  waxed_exposed_cut_copper_slab: WaxedExposedCutCopperSlab;
+  waxed_exposed_cut_copper_stairs: WaxedExposedCutCopperStairs;
+  waxed_exposed_double_cut_copper_slab: WaxedExposedDoubleCutCopperSlab;
+  waxed_oxidized_chiseled_copper: WaxedOxidizedChiseledCopper;
+  waxed_oxidized_copper: WaxedOxidizedCopper;
+  waxed_oxidized_copper_bulb: WaxedOxidizedCopperBulb;
+  waxed_oxidized_copper_door: WaxedOxidizedCopperDoor;
+  waxed_oxidized_copper_grate: WaxedOxidizedCopperGrate;
+  waxed_oxidized_copper_trapdoor: WaxedOxidizedCopperTrapdoor;
+  waxed_oxidized_cut_copper: WaxedOxidizedCutCopper;
+  waxed_oxidized_cut_copper_slab: WaxedOxidizedCutCopperSlab;
+  waxed_oxidized_cut_copper_stairs: WaxedOxidizedCutCopperStairs;
+  waxed_oxidized_double_cut_copper_slab: WaxedOxidizedDoubleCutCopperSlab;
+  waxed_weathered_chiseled_copper: WaxedWeatheredChiseledCopper;
+  waxed_weathered_copper: WaxedWeatheredCopper;
+  waxed_weathered_copper_bulb: WaxedWeatheredCopperBulb;
+  waxed_weathered_copper_door: WaxedWeatheredCopperDoor;
+  waxed_weathered_copper_grate: WaxedWeatheredCopperGrate;
+  waxed_weathered_copper_trapdoor: WaxedWeatheredCopperTrapdoor;
+  waxed_weathered_cut_copper: WaxedWeatheredCutCopper;
+  waxed_weathered_cut_copper_slab: WaxedWeatheredCutCopperSlab;
+  waxed_weathered_cut_copper_stairs: WaxedWeatheredCutCopperStairs;
+  waxed_weathered_double_cut_copper_slab: WaxedWeatheredDoubleCutCopperSlab;
+  weathered_chiseled_copper: WeatheredChiseledCopper;
+  weathered_copper: WeatheredCopper;
+  weathered_copper_bulb: WeatheredCopperBulb;
+  weathered_copper_door: WeatheredCopperDoor;
+  weathered_copper_grate: WeatheredCopperGrate;
+  weathered_copper_trapdoor: WeatheredCopperTrapdoor;
+  weathered_cut_copper: WeatheredCutCopper;
+  weathered_cut_copper_slab: WeatheredCutCopperSlab;
+  weathered_cut_copper_stairs: WeatheredCutCopperStairs;
+  weathered_double_cut_copper_slab: WeatheredDoubleCutCopperSlab;
+  web: Web;
+  weeping_vines: WeepingVines;
+  wheat: Wheat;
+  white_candle: WhiteCandle;
+  white_candle_cake: WhiteCandleCake;
+  white_carpet: WhiteCarpet;
+  white_concrete: WhiteConcrete;
+  white_concrete_powder: WhiteConcretePowder;
+  white_glazed_terracotta: WhiteGlazedTerracotta;
+  white_shulker_box: WhiteShulkerBox;
+  white_stained_glass: WhiteStainedGlass;
+  white_stained_glass_pane: WhiteStainedGlassPane;
+  white_terracotta: WhiteTerracotta;
+  white_wool: WhiteWool;
+  wither_rose: WitherRose;
+  wooden_button: WoodenButton;
+  wooden_door: WoodenDoor;
+  wooden_pressure_plate: WoodenPressurePlate;
+  yellow_candle: YellowCandle;
+  yellow_candle_cake: YellowCandleCake;
+  yellow_carpet: YellowCarpet;
+  yellow_concrete: YellowConcrete;
+  yellow_concrete_powder: YellowConcretePowder;
+  yellow_flower: YellowFlower;
+  yellow_glazed_terracotta: YellowGlazedTerracotta;
+  yellow_shulker_box: YellowShulkerBox;
+  yellow_stained_glass: YellowStainedGlass;
+  yellow_stained_glass_pane: YellowStainedGlassPane;
+  yellow_terracotta: YellowTerracotta;
+  yellow_wool: YellowWool;
 }
 
-export interface acacia_button {
+export interface AcaciaButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface acacia_door {
+export interface AcaciaDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface acacia_double_slab {
+export interface AcaciaDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface acacia_fence {}
+export interface AcaciaFence {}
 
-export interface acacia_fence_gate {
+export interface AcaciaFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface acacia_hanging_sign {
+export interface AcaciaHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface acacia_leaves {
+export interface AcaciaLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface acacia_log {
+export interface AcaciaLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface acacia_planks {}
+export interface AcaciaPlanks {}
 
-export interface acacia_pressure_plate {
+export interface AcaciaPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface acacia_slab {
+export interface AcaciaSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface acacia_stairs {
+export interface AcaciaStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface acacia_standing_sign {
+export interface AcaciaStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface acacia_trapdoor {
+export interface AcaciaTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface acacia_wall_sign {
+export interface AcaciaWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface acacia_wood {
+export interface AcaciaWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface activator_rail {
+export interface ActivatorRail {
   rail_data_bit: IntTag<0 | 1>;
   rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface air {}
+export interface Air {}
 
-export interface allow {}
+export interface Allow {}
 
-export interface amethyst_block {}
+export interface AmethystBlock {}
 
-export interface amethyst_cluster {
+export interface AmethystCluster {
   "minecraft:block_face": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
 }
 
-export interface ancient_debris {}
+export interface AncientDebris {}
 
-export interface andesite {}
+export interface Andesite {}
 
-export interface andesite_stairs {
+export interface AndesiteStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface anvil {
+export interface Anvil {
   damage: StringTag<"undamaged" | "slightly_damaged" | "very_damaged" | "broken">;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface azalea {}
+export interface Azalea {}
 
-export interface azalea_leaves {
+export interface AzaleaLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface azalea_leaves_flowered {
+export interface AzaleaLeavesFlowered {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface bamboo {
+export interface Bamboo {
   age_bit: DoubleTag<0 | 1>;
   bamboo_leaf_size: StringTag<"no_leaves" | "small_leaves" | "large_leaves">;
   bamboo_stalk_thickness: StringTag<"thin" | "thick">;
 }
 
-export interface bamboo_block {
+export interface BambooBlock {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface bamboo_button {
+export interface BambooButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface bamboo_door {
+export interface BambooDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface bamboo_double_slab {
+export interface BambooDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface bamboo_fence {}
+export interface BambooFence {}
 
-export interface bamboo_fence_gate {
+export interface BambooFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface bamboo_hanging_sign {
+export interface BambooHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface bamboo_mosaic {}
+export interface BambooMosaic {}
 
-export interface bamboo_mosaic_double_slab {
+export interface BambooMosaicDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface bamboo_mosaic_slab {
+export interface BambooMosaicSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface bamboo_mosaic_stairs {
+export interface BambooMosaicStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface bamboo_planks {}
+export interface BambooPlanks {}
 
-export interface bamboo_pressure_plate {
+export interface BambooPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface bamboo_sapling {
+export interface BambooSapling {
   age_bit: DoubleTag<0 | 1>;
   sapling_type: StringTag<"oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak">;
 }
 
-export interface bamboo_slab {
+export interface BambooSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface bamboo_stairs {
+export interface BambooStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface bamboo_standing_sign {
+export interface BambooStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface bamboo_trapdoor {
+export interface BambooTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface bamboo_wall_sign {
+export interface BambooWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface barrel {
+export interface Barrel {
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface barrier {}
+export interface Barrier {}
 
-export interface basalt {
+export interface Basalt {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface beacon {}
+export interface Beacon {}
 
-export interface bed {
+export interface Bed {
   direction: ByteTag<0 | 1 | 2 | 3>;
   head_piece_bit: ByteTag<0 | 1>;
   occupied_bit: ByteTag<0 | 1>;
 }
 
-export interface bedrock {
+export interface Bedrock {
   infiniburn_bit: ByteTag<0 | 1>;
 }
 
-export interface bee_nest {
+export interface BeeNest {
   direction: IntTag<0 | 1 | 2 | 3>;
   honey_level: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface beehive {
+export interface Beehive {
   direction: IntTag<0 | 1 | 2 | 3>;
   honey_level: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface beetroot {
+export interface Beetroot {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface bell {
+export interface Bell {
   attachment: ByteTag<0 | 0 | 0 | 0>;
   direction: ByteTag<0 | 1 | 2 | 3>;
   toggle_bit: ByteTag<0 | 1>;
 }
 
-export interface big_dripleaf {
+export interface BigDripleaf {
   big_dripleaf_head: DoubleTag<0 | 1>;
   big_dripleaf_tilt: StringTag<"none" | "unstable" | "partial_tilt" | "full_tilt">;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface birch_button {
+export interface BirchButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface birch_door {
+export interface BirchDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface birch_double_slab {
+export interface BirchDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface birch_fence {}
+export interface BirchFence {}
 
-export interface birch_fence_gate {
+export interface BirchFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface birch_hanging_sign {
+export interface BirchHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface birch_leaves {
+export interface BirchLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface birch_log {
+export interface BirchLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface birch_planks {}
+export interface BirchPlanks {}
 
-export interface birch_pressure_plate {
+export interface BirchPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface birch_slab {
+export interface BirchSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface birch_stairs {
+export interface BirchStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface birch_standing_sign {
+export interface BirchStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface birch_trapdoor {
+export interface BirchTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface birch_wall_sign {
+export interface BirchWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface birch_wood {
+export interface BirchWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface black_candle {
+export interface BlackCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface black_candle_cake {
+export interface BlackCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface black_carpet {}
+export interface BlackCarpet {}
 
-export interface black_concrete {}
+export interface BlackConcrete {}
 
-export interface black_concrete_powder {}
+export interface BlackConcretePowder {}
 
-export interface black_glazed_terracotta {
+export interface BlackGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface black_shulker_box {}
+export interface BlackShulkerBox {}
 
-export interface black_stained_glass {}
+export interface BlackStainedGlass {}
 
-export interface black_stained_glass_pane {}
+export interface BlackStainedGlassPane {}
 
-export interface black_terracotta {}
+export interface BlackTerracotta {}
 
-export interface black_wool {}
+export interface BlackWool {}
 
-export interface blackstone {}
+export interface Blackstone {}
 
-export interface blackstone_double_slab {
+export interface BlackstoneDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface blackstone_slab {
+export interface BlackstoneSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface blackstone_stairs {
+export interface BlackstoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface blackstone_wall {
+export interface BlackstoneWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -1447,49 +1447,49 @@ export interface blackstone_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface blast_furnace {
+export interface BlastFurnace {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface blue_candle {
+export interface BlueCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface blue_candle_cake {
+export interface BlueCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface blue_carpet {}
+export interface BlueCarpet {}
 
-export interface blue_concrete {}
+export interface BlueConcrete {}
 
-export interface blue_concrete_powder {}
+export interface BlueConcretePowder {}
 
-export interface blue_glazed_terracotta {
+export interface BlueGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface blue_ice {}
+export interface BlueIce {}
 
-export interface blue_shulker_box {}
+export interface BlueShulkerBox {}
 
-export interface blue_stained_glass {}
+export interface BlueStainedGlass {}
 
-export interface blue_stained_glass_pane {}
+export interface BlueStainedGlassPane {}
 
-export interface blue_terracotta {}
+export interface BlueTerracotta {}
 
-export interface blue_wool {}
+export interface BlueWool {}
 
-export interface bone_block {
+export interface BoneBlock {
   deprecated: DoubleTag<0 | 1 | 2 | 3>;
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface bookshelf {}
+export interface Bookshelf {}
 
-export interface border_block {
+export interface BorderBlock {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -1497,267 +1497,267 @@ export interface border_block {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface brain_coral {}
+export interface BrainCoral {}
 
-export interface brewing_stand {
+export interface BrewingStand {
   brewing_stand_slot_a_bit: ByteTag<0 | 1>;
   brewing_stand_slot_b_bit: ByteTag<0 | 1>;
   brewing_stand_slot_c_bit: ByteTag<0 | 1>;
 }
 
-export interface brick_block {}
+export interface BrickBlock {}
 
-export interface brick_stairs {
+export interface BrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface brown_candle {
+export interface BrownCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface brown_candle_cake {
+export interface BrownCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface brown_carpet {}
+export interface BrownCarpet {}
 
-export interface brown_concrete {}
+export interface BrownConcrete {}
 
-export interface brown_concrete_powder {}
+export interface BrownConcretePowder {}
 
-export interface brown_glazed_terracotta {
+export interface BrownGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface brown_mushroom {}
+export interface BrownMushroom {}
 
-export interface brown_mushroom_block {
+export interface BrownMushroomBlock {
   huge_mushroom_bits: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface brown_shulker_box {}
+export interface BrownShulkerBox {}
 
-export interface brown_stained_glass {}
+export interface BrownStainedGlass {}
 
-export interface brown_stained_glass_pane {}
+export interface BrownStainedGlassPane {}
 
-export interface brown_terracotta {}
+export interface BrownTerracotta {}
 
-export interface brown_wool {}
+export interface BrownWool {}
 
-export interface bubble_column {
+export interface BubbleColumn {
   drag_down: ByteTag<0 | 1>;
 }
 
-export interface bubble_coral {}
+export interface BubbleCoral {}
 
-export interface budding_amethyst {}
+export interface BuddingAmethyst {}
 
-export interface cactus {
+export interface Cactus {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface cake {
+export interface Cake {
   bite_counter: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6>;
 }
 
-export interface calcite {}
+export interface Calcite {}
 
-export interface calibrated_sculk_sensor {
+export interface CalibratedSculkSensor {
   "minecraft:cardinal_direction": IntTag<0 | 0 | 0 | 0>;
   sculk_sensor_phase: IntTag<0 | 1 | 2>;
 }
 
-export interface camera {}
+export interface Camera {}
 
-export interface campfire {
+export interface Campfire {
   extinguished: DoubleTag<0 | 1>;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface candle {
+export interface Candle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface candle_cake {
+export interface CandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface carrots {
+export interface Carrots {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface cartography_table {}
+export interface CartographyTable {}
 
-export interface carved_pumpkin {
+export interface CarvedPumpkin {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface cauldron {
+export interface Cauldron {
   cauldron_liquid: IntTag<0 | 0 | 0>;
   fill_level: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6>;
 }
 
-export interface cave_vines {
+export interface CaveVines {
   growing_plant_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface cave_vines_body_with_berries {
+export interface CaveVinesBodyWithBerries {
   growing_plant_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface cave_vines_head_with_berries {
+export interface CaveVinesHeadWithBerries {
   growing_plant_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface chain {
+export interface Chain {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface chain_command_block {
+export interface ChainCommandBlock {
   conditional_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface chemical_heat {}
+export interface ChemicalHeat {}
 
-export interface chemistry_table {
+export interface ChemistryTable {
   chemistry_table_type: IntTag<0 | 0 | 0 | 0>;
   direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface cherry_button {
+export interface CherryButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface cherry_door {
+export interface CherryDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface cherry_double_slab {
+export interface CherryDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface cherry_fence {}
+export interface CherryFence {}
 
-export interface cherry_fence_gate {
+export interface CherryFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface cherry_hanging_sign {
+export interface CherryHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface cherry_leaves {
+export interface CherryLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface cherry_log {
+export interface CherryLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface cherry_planks {}
+export interface CherryPlanks {}
 
-export interface cherry_pressure_plate {
+export interface CherryPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface cherry_sapling {
+export interface CherrySapling {
   age_bit: ByteTag<0 | 1>;
 }
 
-export interface cherry_slab {
+export interface CherrySlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface cherry_stairs {
+export interface CherryStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface cherry_standing_sign {
+export interface CherryStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface cherry_trapdoor {
+export interface CherryTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface cherry_wall_sign {
+export interface CherryWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface cherry_wood {
+export interface CherryWood {
   pillar_axis: ByteTag<0 | 0 | 0>;
   stripped_bit: ByteTag<0 | 1>;
 }
 
-export interface chest {
+export interface Chest {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface chiseled_bookshelf {
+export interface ChiseledBookshelf {
   books_stored: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63>;
   direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface chiseled_copper {}
+export interface ChiseledCopper {}
 
-export interface chiseled_deepslate {}
+export interface ChiseledDeepslate {}
 
-export interface chiseled_nether_bricks {}
+export interface ChiseledNetherBricks {}
 
-export interface chiseled_polished_blackstone {}
+export interface ChiseledPolishedBlackstone {}
 
-export interface chiseled_tuff {}
+export interface ChiseledTuff {}
 
-export interface chiseled_tuff_bricks {}
+export interface ChiseledTuffBricks {}
 
-export interface chorus_flower {
+export interface ChorusFlower {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface chorus_plant {}
+export interface ChorusPlant {}
 
-export interface clay {}
+export interface Clay {}
 
-export interface client_request_placeholder_block {}
+export interface ClientRequestPlaceholderBlock {}
 
-export interface coal_block {}
+export interface CoalBlock {}
 
-export interface coal_ore {}
+export interface CoalOre {}
 
-export interface cobbled_deepslate {}
+export interface CobbledDeepslate {}
 
-export interface cobbled_deepslate_double_slab {
+export interface CobbledDeepslateDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface cobbled_deepslate_slab {
+export interface CobbledDeepslateSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface cobbled_deepslate_stairs {
+export interface CobbledDeepslateStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface cobbled_deepslate_wall {
+export interface CobbledDeepslateWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -1765,9 +1765,9 @@ export interface cobbled_deepslate_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface cobblestone {}
+export interface Cobblestone {}
 
-export interface cobblestone_wall {
+export interface CobblestoneWall {
   wall_block_type: ByteTag<0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0>;
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
@@ -1776,341 +1776,341 @@ export interface cobblestone_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface cocoa {
+export interface Cocoa {
   age: IntTag<0 | 1 | 2>;
   direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface colored_torch_bp {
+export interface ColoredTorchBp {
   color_bit: DoubleTag<0 | 1>;
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface colored_torch_rg {
+export interface ColoredTorchRg {
   color_bit: DoubleTag<0 | 1>;
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface command_block {
+export interface CommandBlock {
   conditional_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface composter {
+export interface Composter {
   composter_fill_level: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
 }
 
-export interface conduit {}
+export interface Conduit {}
 
-export interface copper_block {}
+export interface CopperBlock {}
 
-export interface copper_bulb {
+export interface CopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface copper_door {
+export interface CopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface copper_grate {}
+export interface CopperGrate {}
 
-export interface copper_ore {}
+export interface CopperOre {}
 
-export interface copper_trapdoor {
+export interface CopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface coral_block {
+export interface CoralBlock {
   coral_color: ByteTag<0 | 0 | 0 | 0 | 0>;
   dead_bit: ByteTag<0 | 1>;
 }
 
-export interface coral_fan {
+export interface CoralFan {
   coral_color: IntTag<0 | 0 | 0 | 0 | 0>;
   coral_fan_direction: IntTag<0 | 1>;
 }
 
-export interface coral_fan_dead {
+export interface CoralFanDead {
   coral_color: IntTag<0 | 0 | 0 | 0 | 0>;
   coral_fan_direction: IntTag<0 | 1>;
 }
 
-export interface coral_fan_hang {
+export interface CoralFanHang {
   coral_direction: ByteTag<0 | 1 | 2 | 3>;
   coral_hang_type_bit: ByteTag<0 | 1>;
   dead_bit: ByteTag<0 | 1>;
 }
 
-export interface coral_fan_hang2 {
+export interface CoralFanHang2 {
   coral_direction: ByteTag<0 | 1 | 2 | 3>;
   coral_hang_type_bit: ByteTag<0 | 1>;
   dead_bit: ByteTag<0 | 1>;
 }
 
-export interface coral_fan_hang3 {
+export interface CoralFanHang3 {
   coral_direction: ByteTag<0 | 1 | 2 | 3>;
   coral_hang_type_bit: ByteTag<0 | 1>;
   dead_bit: ByteTag<0 | 1>;
 }
 
-export interface cracked_deepslate_bricks {}
+export interface CrackedDeepslateBricks {}
 
-export interface cracked_deepslate_tiles {}
+export interface CrackedDeepslateTiles {}
 
-export interface cracked_nether_bricks {}
+export interface CrackedNetherBricks {}
 
-export interface cracked_polished_blackstone_bricks {}
+export interface CrackedPolishedBlackstoneBricks {}
 
-export interface crafter {
+export interface Crafter {
   crafting: ByteTag<0 | 1>;
   orientation: ByteTag<0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0>;
   triggered_bit: ByteTag<0 | 1>;
 }
 
-export interface crafting_table {}
+export interface CraftingTable {}
 
-export interface crimson_button {
+export interface CrimsonButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface crimson_door {
+export interface CrimsonDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface crimson_double_slab {
+export interface CrimsonDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface crimson_fence {}
+export interface CrimsonFence {}
 
-export interface crimson_fence_gate {
+export interface CrimsonFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface crimson_fungus {}
+export interface CrimsonFungus {}
 
-export interface crimson_hanging_sign {
+export interface CrimsonHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface crimson_hyphae {
+export interface CrimsonHyphae {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface crimson_nylium {}
+export interface CrimsonNylium {}
 
-export interface crimson_planks {}
+export interface CrimsonPlanks {}
 
-export interface crimson_pressure_plate {
+export interface CrimsonPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface crimson_roots {}
+export interface CrimsonRoots {}
 
-export interface crimson_slab {
+export interface CrimsonSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface crimson_stairs {
+export interface CrimsonStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface crimson_standing_sign {
+export interface CrimsonStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface crimson_stem {
+export interface CrimsonStem {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface crimson_trapdoor {
+export interface CrimsonTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface crimson_wall_sign {
+export interface CrimsonWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface crying_obsidian {}
+export interface CryingObsidian {}
 
-export interface cut_copper {}
+export interface CutCopper {}
 
-export interface cut_copper_slab {
+export interface CutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface cut_copper_stairs {
+export interface CutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface cyan_candle {
+export interface CyanCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface cyan_candle_cake {
+export interface CyanCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface cyan_carpet {}
+export interface CyanCarpet {}
 
-export interface cyan_concrete {}
+export interface CyanConcrete {}
 
-export interface cyan_concrete_powder {}
+export interface CyanConcretePowder {}
 
-export interface cyan_glazed_terracotta {
+export interface CyanGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface cyan_shulker_box {}
+export interface CyanShulkerBox {}
 
-export interface cyan_stained_glass {}
+export interface CyanStainedGlass {}
 
-export interface cyan_stained_glass_pane {}
+export interface CyanStainedGlassPane {}
 
-export interface cyan_terracotta {}
+export interface CyanTerracotta {}
 
-export interface cyan_wool {}
+export interface CyanWool {}
 
-export interface dark_oak_button {
+export interface DarkOakButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface dark_oak_door {
+export interface DarkOakDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface dark_oak_double_slab {
+export interface DarkOakDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface dark_oak_fence {}
+export interface DarkOakFence {}
 
-export interface dark_oak_fence_gate {
+export interface DarkOakFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface dark_oak_hanging_sign {
+export interface DarkOakHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface dark_oak_leaves {
+export interface DarkOakLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface dark_oak_log {
+export interface DarkOakLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface dark_oak_planks {}
+export interface DarkOakPlanks {}
 
-export interface dark_oak_pressure_plate {
+export interface DarkOakPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface dark_oak_slab {
+export interface DarkOakSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface dark_oak_stairs {
+export interface DarkOakStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface dark_oak_trapdoor {
+export interface DarkOakTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface dark_oak_wood {
+export interface DarkOakWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface dark_prismarine_stairs {
+export interface DarkPrismarineStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface darkoak_standing_sign {
+export interface DarkoakStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface darkoak_wall_sign {
+export interface DarkoakWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface daylight_detector {
+export interface DaylightDetector {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface daylight_detector_inverted {
+export interface DaylightDetectorInverted {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface dead_brain_coral {}
+export interface DeadBrainCoral {}
 
-export interface dead_bubble_coral {}
+export interface DeadBubbleCoral {}
 
-export interface dead_fire_coral {}
+export interface DeadFireCoral {}
 
-export interface dead_horn_coral {}
+export interface DeadHornCoral {}
 
-export interface dead_tube_coral {}
+export interface DeadTubeCoral {}
 
-export interface deadbush {}
+export interface Deadbush {}
 
-export interface decorated_pot {
+export interface DecoratedPot {
   direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface deepslate {
+export interface Deepslate {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface deepslate_brick_double_slab {
+export interface DeepslateBrickDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface deepslate_brick_slab {
+export interface DeepslateBrickSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface deepslate_brick_stairs {
+export interface DeepslateBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface deepslate_brick_wall {
+export interface DeepslateBrickWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -2118,38 +2118,38 @@ export interface deepslate_brick_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface deepslate_bricks {}
+export interface DeepslateBricks {}
 
-export interface deepslate_coal_ore {}
+export interface DeepslateCoalOre {}
 
-export interface deepslate_copper_ore {}
+export interface DeepslateCopperOre {}
 
-export interface deepslate_diamond_ore {}
+export interface DeepslateDiamondOre {}
 
-export interface deepslate_emerald_ore {}
+export interface DeepslateEmeraldOre {}
 
-export interface deepslate_gold_ore {}
+export interface DeepslateGoldOre {}
 
-export interface deepslate_iron_ore {}
+export interface DeepslateIronOre {}
 
-export interface deepslate_lapis_ore {}
+export interface DeepslateLapisOre {}
 
-export interface deepslate_redstone_ore {}
+export interface DeepslateRedstoneOre {}
 
-export interface deepslate_tile_double_slab {
+export interface DeepslateTileDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface deepslate_tile_slab {
+export interface DeepslateTileSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface deepslate_tile_stairs {
+export interface DeepslateTileStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface deepslate_tile_wall {
+export interface DeepslateTileWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -2157,1062 +2157,1062 @@ export interface deepslate_tile_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface deepslate_tiles {}
+export interface DeepslateTiles {}
 
-export interface deny {}
+export interface Deny {}
 
-export interface detector_rail {
+export interface DetectorRail {
   rail_data_bit: IntTag<0 | 1>;
   rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface diamond_block {}
+export interface DiamondBlock {}
 
-export interface diamond_ore {}
+export interface DiamondOre {}
 
-export interface diorite {}
+export interface Diorite {}
 
-export interface diorite_stairs {
+export interface DioriteStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface dirt {
+export interface Dirt {
   dirt_type: StringTag<"normal" | "coarse">;
 }
 
-export interface dirt_with_roots {}
+export interface DirtWithRoots {}
 
-export interface dispenser {
+export interface Dispenser {
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   triggered_bit: ByteTag<0 | 1>;
 }
 
-export interface double_cut_copper_slab {
+export interface DoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface double_plant {
+export interface DoublePlant {
   double_plant_type: ByteTag<0 | 0 | 0 | 0 | 0 | 0>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface double_stone_block_slab {
+export interface DoubleStoneBlockSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type: StringTag<"smooth_stone" | "sandstone" | "wood" | "cobblestone" | "brick" | "stone_brick" | "quartz" | "nether_brick">;
 }
 
-export interface double_stone_block_slab2 {
+export interface DoubleStoneBlockSlab2 {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type_2: StringTag<"red_sandstone" | "purpur" | "prismarine_rough" | "prismarine_dark" | "prismarine_brick" | "mossy_cobblestone" | "smooth_sandstone" | "red_nether_brick">;
 }
 
-export interface double_stone_block_slab3 {
+export interface DoubleStoneBlockSlab3 {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type_3: StringTag<"end_stone_brick" | "smooth_red_sandstone" | "polished_andesite" | "andesite" | "diorite" | "polished_diorite" | "granite" | "polished_granite">;
 }
 
-export interface double_stone_block_slab4 {
+export interface DoubleStoneBlockSlab4 {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type_4: StringTag<"mossy_stone_brick" | "smooth_quartz" | "stone" | "cut_sandstone" | "cut_red_sandstone">;
 }
 
-export interface dragon_egg {}
+export interface DragonEgg {}
 
-export interface dried_kelp_block {}
+export interface DriedKelpBlock {}
 
-export interface dripstone_block {}
+export interface DripstoneBlock {}
 
-export interface dropper {
+export interface Dropper {
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   triggered_bit: ByteTag<0 | 1>;
 }
 
-export interface element_0 {}
+export interface Element0 {}
 
-export interface element_1 {}
+export interface Element1 {}
 
-export interface element_10 {}
+export interface Element10 {}
 
-export interface element_100 {}
+export interface Element100 {}
 
-export interface element_101 {}
+export interface Element101 {}
 
-export interface element_102 {}
+export interface Element102 {}
 
-export interface element_103 {}
+export interface Element103 {}
 
-export interface element_104 {}
+export interface Element104 {}
 
-export interface element_105 {}
+export interface Element105 {}
 
-export interface element_106 {}
+export interface Element106 {}
 
-export interface element_107 {}
+export interface Element107 {}
 
-export interface element_108 {}
+export interface Element108 {}
 
-export interface element_109 {}
+export interface Element109 {}
 
-export interface element_11 {}
+export interface Element11 {}
 
-export interface element_110 {}
+export interface Element110 {}
 
-export interface element_111 {}
+export interface Element111 {}
 
-export interface element_112 {}
+export interface Element112 {}
 
-export interface element_113 {}
+export interface Element113 {}
 
-export interface element_114 {}
+export interface Element114 {}
 
-export interface element_115 {}
+export interface Element115 {}
 
-export interface element_116 {}
+export interface Element116 {}
 
-export interface element_117 {}
+export interface Element117 {}
 
-export interface element_118 {}
+export interface Element118 {}
 
-export interface element_12 {}
+export interface Element12 {}
 
-export interface element_13 {}
+export interface Element13 {}
 
-export interface element_14 {}
+export interface Element14 {}
 
-export interface element_15 {}
+export interface Element15 {}
 
-export interface element_16 {}
+export interface Element16 {}
 
-export interface element_17 {}
+export interface Element17 {}
 
-export interface element_18 {}
+export interface Element18 {}
 
-export interface element_19 {}
+export interface Element19 {}
 
-export interface element_2 {}
+export interface Element2 {}
 
-export interface element_20 {}
+export interface Element20 {}
 
-export interface element_21 {}
+export interface Element21 {}
 
-export interface element_22 {}
+export interface Element22 {}
 
-export interface element_23 {}
+export interface Element23 {}
 
-export interface element_24 {}
+export interface Element24 {}
 
-export interface element_25 {}
+export interface Element25 {}
 
-export interface element_26 {}
+export interface Element26 {}
 
-export interface element_27 {}
+export interface Element27 {}
 
-export interface element_28 {}
+export interface Element28 {}
 
-export interface element_29 {}
+export interface Element29 {}
 
-export interface element_3 {}
+export interface Element3 {}
 
-export interface element_30 {}
+export interface Element30 {}
 
-export interface element_31 {}
+export interface Element31 {}
 
-export interface element_32 {}
+export interface Element32 {}
 
-export interface element_33 {}
+export interface Element33 {}
 
-export interface element_34 {}
+export interface Element34 {}
 
-export interface element_35 {}
+export interface Element35 {}
 
-export interface element_36 {}
+export interface Element36 {}
 
-export interface element_37 {}
+export interface Element37 {}
 
-export interface element_38 {}
+export interface Element38 {}
 
-export interface element_39 {}
+export interface Element39 {}
 
-export interface element_4 {}
+export interface Element4 {}
 
-export interface element_40 {}
+export interface Element40 {}
 
-export interface element_41 {}
+export interface Element41 {}
 
-export interface element_42 {}
+export interface Element42 {}
 
-export interface element_43 {}
+export interface Element43 {}
 
-export interface element_44 {}
+export interface Element44 {}
 
-export interface element_45 {}
+export interface Element45 {}
 
-export interface element_46 {}
+export interface Element46 {}
 
-export interface element_47 {}
+export interface Element47 {}
 
-export interface element_48 {}
+export interface Element48 {}
 
-export interface element_49 {}
+export interface Element49 {}
 
-export interface element_5 {}
+export interface Element5 {}
 
-export interface element_50 {}
+export interface Element50 {}
 
-export interface element_51 {}
+export interface Element51 {}
 
-export interface element_52 {}
+export interface Element52 {}
 
-export interface element_53 {}
+export interface Element53 {}
 
-export interface element_54 {}
+export interface Element54 {}
 
-export interface element_55 {}
+export interface Element55 {}
 
-export interface element_56 {}
+export interface Element56 {}
 
-export interface element_57 {}
+export interface Element57 {}
 
-export interface element_58 {}
+export interface Element58 {}
 
-export interface element_59 {}
+export interface Element59 {}
 
-export interface element_6 {}
+export interface Element6 {}
 
-export interface element_60 {}
+export interface Element60 {}
 
-export interface element_61 {}
+export interface Element61 {}
 
-export interface element_62 {}
+export interface Element62 {}
 
-export interface element_63 {}
+export interface Element63 {}
 
-export interface element_64 {}
+export interface Element64 {}
 
-export interface element_65 {}
+export interface Element65 {}
 
-export interface element_66 {}
+export interface Element66 {}
 
-export interface element_67 {}
+export interface Element67 {}
 
-export interface element_68 {}
+export interface Element68 {}
 
-export interface element_69 {}
+export interface Element69 {}
 
-export interface element_7 {}
+export interface Element7 {}
 
-export interface element_70 {}
+export interface Element70 {}
 
-export interface element_71 {}
+export interface Element71 {}
 
-export interface element_72 {}
+export interface Element72 {}
 
-export interface element_73 {}
+export interface Element73 {}
 
-export interface element_74 {}
+export interface Element74 {}
 
-export interface element_75 {}
+export interface Element75 {}
 
-export interface element_76 {}
+export interface Element76 {}
 
-export interface element_77 {}
+export interface Element77 {}
 
-export interface element_78 {}
+export interface Element78 {}
 
-export interface element_79 {}
+export interface Element79 {}
 
-export interface element_8 {}
+export interface Element8 {}
 
-export interface element_80 {}
+export interface Element80 {}
 
-export interface element_81 {}
+export interface Element81 {}
 
-export interface element_82 {}
+export interface Element82 {}
 
-export interface element_83 {}
+export interface Element83 {}
 
-export interface element_84 {}
+export interface Element84 {}
 
-export interface element_85 {}
+export interface Element85 {}
 
-export interface element_86 {}
+export interface Element86 {}
 
-export interface element_87 {}
+export interface Element87 {}
 
-export interface element_88 {}
+export interface Element88 {}
 
-export interface element_89 {}
+export interface Element89 {}
 
-export interface element_9 {}
+export interface Element9 {}
 
-export interface element_90 {}
+export interface Element90 {}
 
-export interface element_91 {}
+export interface Element91 {}
 
-export interface element_92 {}
+export interface Element92 {}
 
-export interface element_93 {}
+export interface Element93 {}
 
-export interface element_94 {}
+export interface Element94 {}
 
-export interface element_95 {}
+export interface Element95 {}
 
-export interface element_96 {}
+export interface Element96 {}
 
-export interface element_97 {}
+export interface Element97 {}
 
-export interface element_98 {}
+export interface Element98 {}
 
-export interface element_99 {}
+export interface Element99 {}
 
-export interface emerald_block {}
+export interface EmeraldBlock {}
 
-export interface emerald_ore {}
+export interface EmeraldOre {}
 
-export interface enchanting_table {}
+export interface EnchantingTable {}
 
-export interface end_brick_stairs {
+export interface EndBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface end_bricks {}
+export interface EndBricks {}
 
-export interface end_gateway {}
+export interface EndGateway {}
 
-export interface end_portal {}
+export interface EndPortal {}
 
-export interface end_portal_frame {
+export interface EndPortalFrame {
   end_portal_eye_bit: DoubleTag<0 | 1>;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface end_rod {
+export interface EndRod {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface end_stone {}
+export interface EndStone {}
 
-export interface ender_chest {
+export interface EnderChest {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface exposed_chiseled_copper {}
+export interface ExposedChiseledCopper {}
 
-export interface exposed_copper {}
+export interface ExposedCopper {}
 
-export interface exposed_copper_bulb {
+export interface ExposedCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface exposed_copper_door {
+export interface ExposedCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface exposed_copper_grate {}
+export interface ExposedCopperGrate {}
 
-export interface exposed_copper_trapdoor {
+export interface ExposedCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface exposed_cut_copper {}
+export interface ExposedCutCopper {}
 
-export interface exposed_cut_copper_slab {
+export interface ExposedCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface exposed_cut_copper_stairs {
+export interface ExposedCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface exposed_double_cut_copper_slab {
+export interface ExposedDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface farmland {
+export interface Farmland {
   moisturized_amount: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface fence_gate {
+export interface FenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface fire {
+export interface Fire {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface fire_coral {}
+export interface FireCoral {}
 
-export interface fletching_table {}
+export interface FletchingTable {}
 
-export interface flower_pot {
+export interface FlowerPot {
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface flowering_azalea {}
+export interface FloweringAzalea {}
 
-export interface flowing_lava {
+export interface FlowingLava {
   liquid_depth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface flowing_water {
+export interface FlowingWater {
   liquid_depth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface frame {
+export interface Frame {
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   item_frame_map_bit: ByteTag<0 | 1>;
   item_frame_photo_bit: ByteTag<0 | 1>;
 }
 
-export interface frog_spawn {}
+export interface FrogSpawn {}
 
-export interface frosted_ice {
+export interface FrostedIce {
   age: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface furnace {
+export interface Furnace {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface gilded_blackstone {}
+export interface GildedBlackstone {}
 
-export interface glass {}
+export interface Glass {}
 
-export interface glass_pane {}
+export interface GlassPane {}
 
-export interface glow_frame {
+export interface GlowFrame {
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   item_frame_map_bit: ByteTag<0 | 1>;
   item_frame_photo_bit: ByteTag<0 | 1>;
 }
 
-export interface glow_lichen {
+export interface GlowLichen {
   multi_face_direction_bits: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63>;
 }
 
-export interface glowingobsidian {}
+export interface Glowingobsidian {}
 
-export interface glowstone {}
+export interface Glowstone {}
 
-export interface gold_block {}
+export interface GoldBlock {}
 
-export interface gold_ore {}
+export interface GoldOre {}
 
-export interface golden_rail {
+export interface GoldenRail {
   rail_data_bit: IntTag<0 | 1>;
   rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface granite {}
+export interface Granite {}
 
-export interface granite_stairs {
+export interface GraniteStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface grass_block {}
+export interface GrassBlock {}
 
-export interface grass_path {}
+export interface GrassPath {}
 
-export interface gravel {}
+export interface Gravel {}
 
-export interface gray_candle {
+export interface GrayCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface gray_candle_cake {
+export interface GrayCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface gray_carpet {}
+export interface GrayCarpet {}
 
-export interface gray_concrete {}
+export interface GrayConcrete {}
 
-export interface gray_concrete_powder {}
+export interface GrayConcretePowder {}
 
-export interface gray_glazed_terracotta {
+export interface GrayGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface gray_shulker_box {}
+export interface GrayShulkerBox {}
 
-export interface gray_stained_glass {}
+export interface GrayStainedGlass {}
 
-export interface gray_stained_glass_pane {}
+export interface GrayStainedGlassPane {}
 
-export interface gray_terracotta {}
+export interface GrayTerracotta {}
 
-export interface gray_wool {}
+export interface GrayWool {}
 
-export interface green_candle {
+export interface GreenCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface green_candle_cake {
+export interface GreenCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface green_carpet {}
+export interface GreenCarpet {}
 
-export interface green_concrete {}
+export interface GreenConcrete {}
 
-export interface green_concrete_powder {}
+export interface GreenConcretePowder {}
 
-export interface green_glazed_terracotta {
+export interface GreenGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface green_shulker_box {}
+export interface GreenShulkerBox {}
 
-export interface green_stained_glass {}
+export interface GreenStainedGlass {}
 
-export interface green_stained_glass_pane {}
+export interface GreenStainedGlassPane {}
 
-export interface green_terracotta {}
+export interface GreenTerracotta {}
 
-export interface green_wool {}
+export interface GreenWool {}
 
-export interface grindstone {
+export interface Grindstone {
   attachment: IntTag<0 | 0 | 0 | 0>;
   direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface hanging_roots {}
+export interface HangingRoots {}
 
-export interface hard_black_stained_glass {}
+export interface HardBlackStainedGlass {}
 
-export interface hard_black_stained_glass_pane {}
+export interface HardBlackStainedGlassPane {}
 
-export interface hard_blue_stained_glass {}
+export interface HardBlueStainedGlass {}
 
-export interface hard_blue_stained_glass_pane {}
+export interface HardBlueStainedGlassPane {}
 
-export interface hard_brown_stained_glass {}
+export interface HardBrownStainedGlass {}
 
-export interface hard_brown_stained_glass_pane {}
+export interface HardBrownStainedGlassPane {}
 
-export interface hard_cyan_stained_glass {}
+export interface HardCyanStainedGlass {}
 
-export interface hard_cyan_stained_glass_pane {}
+export interface HardCyanStainedGlassPane {}
 
-export interface hard_glass {}
+export interface HardGlass {}
 
-export interface hard_glass_pane {}
+export interface HardGlassPane {}
 
-export interface hard_gray_stained_glass {}
+export interface HardGrayStainedGlass {}
 
-export interface hard_gray_stained_glass_pane {}
+export interface HardGrayStainedGlassPane {}
 
-export interface hard_green_stained_glass {}
+export interface HardGreenStainedGlass {}
 
-export interface hard_green_stained_glass_pane {}
+export interface HardGreenStainedGlassPane {}
 
-export interface hard_light_blue_stained_glass {}
+export interface HardLightBlueStainedGlass {}
 
-export interface hard_light_blue_stained_glass_pane {}
+export interface HardLightBlueStainedGlassPane {}
 
-export interface hard_light_gray_stained_glass {}
+export interface HardLightGrayStainedGlass {}
 
-export interface hard_light_gray_stained_glass_pane {}
+export interface HardLightGrayStainedGlassPane {}
 
-export interface hard_lime_stained_glass {}
+export interface HardLimeStainedGlass {}
 
-export interface hard_lime_stained_glass_pane {}
+export interface HardLimeStainedGlassPane {}
 
-export interface hard_magenta_stained_glass {}
+export interface HardMagentaStainedGlass {}
 
-export interface hard_magenta_stained_glass_pane {}
+export interface HardMagentaStainedGlassPane {}
 
-export interface hard_orange_stained_glass {}
+export interface HardOrangeStainedGlass {}
 
-export interface hard_orange_stained_glass_pane {}
+export interface HardOrangeStainedGlassPane {}
 
-export interface hard_pink_stained_glass {}
+export interface HardPinkStainedGlass {}
 
-export interface hard_pink_stained_glass_pane {}
+export interface HardPinkStainedGlassPane {}
 
-export interface hard_purple_stained_glass {}
+export interface HardPurpleStainedGlass {}
 
-export interface hard_purple_stained_glass_pane {}
+export interface HardPurpleStainedGlassPane {}
 
-export interface hard_red_stained_glass {}
+export interface HardRedStainedGlass {}
 
-export interface hard_red_stained_glass_pane {}
+export interface HardRedStainedGlassPane {}
 
-export interface hard_white_stained_glass {}
+export interface HardWhiteStainedGlass {}
 
-export interface hard_white_stained_glass_pane {}
+export interface HardWhiteStainedGlassPane {}
 
-export interface hard_yellow_stained_glass {}
+export interface HardYellowStainedGlass {}
 
-export interface hard_yellow_stained_glass_pane {}
+export interface HardYellowStainedGlassPane {}
 
-export interface hardened_clay {}
+export interface HardenedClay {}
 
-export interface hay_block {
+export interface HayBlock {
   deprecated: DoubleTag<0 | 1 | 2 | 3>;
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface heavy_weighted_pressure_plate {
+export interface HeavyWeightedPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface honey_block {}
+export interface HoneyBlock {}
 
-export interface honeycomb_block {}
+export interface HoneycombBlock {}
 
-export interface hopper {
+export interface Hopper {
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   toggle_bit: ByteTag<0 | 1>;
 }
 
-export interface horn_coral {}
+export interface HornCoral {}
 
-export interface ice {}
+export interface Ice {}
 
-export interface infested_deepslate {
+export interface InfestedDeepslate {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface info_update {}
+export interface InfoUpdate {}
 
-export interface info_update2 {}
+export interface InfoUpdate2 {}
 
-export interface invisible_bedrock {}
+export interface InvisibleBedrock {}
 
-export interface iron_bars {}
+export interface IronBars {}
 
-export interface iron_block {}
+export interface IronBlock {}
 
-export interface iron_door {
+export interface IronDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface iron_ore {}
+export interface IronOre {}
 
-export interface iron_trapdoor {
+export interface IronTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface jigsaw {
+export interface Jigsaw {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
   rotation: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface jukebox {}
+export interface Jukebox {}
 
-export interface jungle_button {
+export interface JungleButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface jungle_door {
+export interface JungleDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface jungle_double_slab {
+export interface JungleDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface jungle_fence {}
+export interface JungleFence {}
 
-export interface jungle_fence_gate {
+export interface JungleFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface jungle_hanging_sign {
+export interface JungleHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface jungle_leaves {
+export interface JungleLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface jungle_log {
+export interface JungleLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface jungle_planks {}
+export interface JunglePlanks {}
 
-export interface jungle_pressure_plate {
+export interface JunglePressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface jungle_slab {
+export interface JungleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface jungle_stairs {
+export interface JungleStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface jungle_standing_sign {
+export interface JungleStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface jungle_trapdoor {
+export interface JungleTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface jungle_wall_sign {
+export interface JungleWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface jungle_wood {
+export interface JungleWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface kelp {
+export interface Kelp {
   kelp_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface ladder {
+export interface Ladder {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface lantern {
+export interface Lantern {
   hanging: ByteTag<0 | 1>;
 }
 
-export interface lapis_block {}
+export interface LapisBlock {}
 
-export interface lapis_ore {}
+export interface LapisOre {}
 
-export interface large_amethyst_bud {
+export interface LargeAmethystBud {
   "minecraft:block_face": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
 }
 
-export interface lava {
+export interface Lava {
   liquid_depth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface lectern {
+export interface Lectern {
   "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface lever {
+export interface Lever {
   lever_direction: ByteTag<0 | 0 | 0 | 0 | 0 | 0 | 0 | 0>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface light_block {
+export interface LightBlock {
   block_light_level: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface light_blue_candle {
+export interface LightBlueCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface light_blue_candle_cake {
+export interface LightBlueCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface light_blue_carpet {}
+export interface LightBlueCarpet {}
 
-export interface light_blue_concrete {}
+export interface LightBlueConcrete {}
 
-export interface light_blue_concrete_powder {}
+export interface LightBlueConcretePowder {}
 
-export interface light_blue_glazed_terracotta {
+export interface LightBlueGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface light_blue_shulker_box {}
+export interface LightBlueShulkerBox {}
 
-export interface light_blue_stained_glass {}
+export interface LightBlueStainedGlass {}
 
-export interface light_blue_stained_glass_pane {}
+export interface LightBlueStainedGlassPane {}
 
-export interface light_blue_terracotta {}
+export interface LightBlueTerracotta {}
 
-export interface light_blue_wool {}
+export interface LightBlueWool {}
 
-export interface light_gray_candle {
+export interface LightGrayCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface light_gray_candle_cake {
+export interface LightGrayCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface light_gray_carpet {}
+export interface LightGrayCarpet {}
 
-export interface light_gray_concrete {}
+export interface LightGrayConcrete {}
 
-export interface light_gray_concrete_powder {}
+export interface LightGrayConcretePowder {}
 
-export interface light_gray_shulker_box {}
+export interface LightGrayShulkerBox {}
 
-export interface light_gray_stained_glass {}
+export interface LightGrayStainedGlass {}
 
-export interface light_gray_stained_glass_pane {}
+export interface LightGrayStainedGlassPane {}
 
-export interface light_gray_terracotta {}
+export interface LightGrayTerracotta {}
 
-export interface light_gray_wool {}
+export interface LightGrayWool {}
 
-export interface light_weighted_pressure_plate {
+export interface LightWeightedPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface lightning_rod {
+export interface LightningRod {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface lime_candle {
+export interface LimeCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface lime_candle_cake {
+export interface LimeCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface lime_carpet {}
+export interface LimeCarpet {}
 
-export interface lime_concrete {}
+export interface LimeConcrete {}
 
-export interface lime_concrete_powder {}
+export interface LimeConcretePowder {}
 
-export interface lime_glazed_terracotta {
+export interface LimeGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface lime_shulker_box {}
+export interface LimeShulkerBox {}
 
-export interface lime_stained_glass {}
+export interface LimeStainedGlass {}
 
-export interface lime_stained_glass_pane {}
+export interface LimeStainedGlassPane {}
 
-export interface lime_terracotta {}
+export interface LimeTerracotta {}
 
-export interface lime_wool {}
+export interface LimeWool {}
 
-export interface lit_blast_furnace {
+export interface LitBlastFurnace {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface lit_deepslate_redstone_ore {}
+export interface LitDeepslateRedstoneOre {}
 
-export interface lit_furnace {
+export interface LitFurnace {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface lit_pumpkin {
+export interface LitPumpkin {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface lit_redstone_lamp {}
+export interface LitRedstoneLamp {}
 
-export interface lit_redstone_ore {}
+export interface LitRedstoneOre {}
 
-export interface lit_smoker {
+export interface LitSmoker {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface lodestone {}
+export interface Lodestone {}
 
-export interface loom {
+export interface Loom {
   direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface magenta_candle {
+export interface MagentaCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface magenta_candle_cake {
+export interface MagentaCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface magenta_carpet {}
+export interface MagentaCarpet {}
 
-export interface magenta_concrete {}
+export interface MagentaConcrete {}
 
-export interface magenta_concrete_powder {}
+export interface MagentaConcretePowder {}
 
-export interface magenta_glazed_terracotta {
+export interface MagentaGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface magenta_shulker_box {}
+export interface MagentaShulkerBox {}
 
-export interface magenta_stained_glass {}
+export interface MagentaStainedGlass {}
 
-export interface magenta_stained_glass_pane {}
+export interface MagentaStainedGlassPane {}
 
-export interface magenta_terracotta {}
+export interface MagentaTerracotta {}
 
-export interface magenta_wool {}
+export interface MagentaWool {}
 
-export interface magma {}
+export interface Magma {}
 
-export interface mangrove_button {
+export interface MangroveButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface mangrove_door {
+export interface MangroveDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface mangrove_double_slab {
+export interface MangroveDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface mangrove_fence {}
+export interface MangroveFence {}
 
-export interface mangrove_fence_gate {
+export interface MangroveFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface mangrove_hanging_sign {
+export interface MangroveHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface mangrove_leaves {
+export interface MangroveLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface mangrove_log {
+export interface MangroveLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface mangrove_planks {}
+export interface MangrovePlanks {}
 
-export interface mangrove_pressure_plate {
+export interface MangrovePressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface mangrove_propagule {
+export interface MangrovePropagule {
   hanging: IntTag<0 | 1>;
   propagule_stage: IntTag<0 | 1 | 2 | 3 | 4>;
 }
 
-export interface mangrove_roots {}
+export interface MangroveRoots {}
 
-export interface mangrove_slab {
+export interface MangroveSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface mangrove_stairs {
+export interface MangroveStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface mangrove_standing_sign {
+export interface MangroveStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface mangrove_trapdoor {
+export interface MangroveTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface mangrove_wall_sign {
+export interface MangroveWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface mangrove_wood {
+export interface MangroveWood {
   pillar_axis: ByteTag<0 | 0 | 0>;
   stripped_bit: ByteTag<0 | 1>;
 }
 
-export interface medium_amethyst_bud {
+export interface MediumAmethystBud {
   "minecraft:block_face": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
 }
 
-export interface melon_block {}
+export interface MelonBlock {}
 
-export interface melon_stem {
+export interface MelonStem {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface mob_spawner {}
+export interface MobSpawner {}
 
-export interface monster_egg {
+export interface MonsterEgg {
   monster_egg_stone_type: StringTag<"stone" | "cobblestone" | "stone_brick" | "mossy_stone_brick" | "cracked_stone_brick" | "chiseled_stone_brick">;
 }
 
-export interface moss_block {}
+export interface MossBlock {}
 
-export interface moss_carpet {}
+export interface MossCarpet {}
 
-export interface mossy_cobblestone {}
+export interface MossyCobblestone {}
 
-export interface mossy_cobblestone_stairs {
+export interface MossyCobblestoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface mossy_stone_brick_stairs {
+export interface MossyStoneBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface moving_block {}
+export interface MovingBlock {}
 
-export interface mud {}
+export interface Mud {}
 
-export interface mud_brick_double_slab {
+export interface MudBrickDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface mud_brick_slab {
+export interface MudBrickSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface mud_brick_stairs {
+export interface MudBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface mud_brick_wall {
+export interface MudBrickWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -3220,255 +3220,255 @@ export interface mud_brick_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface mud_bricks {}
+export interface MudBricks {}
 
-export interface muddy_mangrove_roots {
+export interface MuddyMangroveRoots {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface mycelium {}
+export interface Mycelium {}
 
-export interface nether_brick {}
+export interface NetherBrick {}
 
-export interface nether_brick_fence {}
+export interface NetherBrickFence {}
 
-export interface nether_brick_stairs {
+export interface NetherBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface nether_gold_ore {}
+export interface NetherGoldOre {}
 
-export interface nether_sprouts {}
+export interface NetherSprouts {}
 
-export interface nether_wart {
+export interface NetherWart {
   age: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface nether_wart_block {}
+export interface NetherWartBlock {}
 
-export interface netherite_block {}
+export interface NetheriteBlock {}
 
-export interface netherrack {}
+export interface Netherrack {}
 
-export interface netherreactor {}
+export interface Netherreactor {}
 
-export interface normal_stone_stairs {
+export interface NormalStoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface noteblock {}
+export interface Noteblock {}
 
-export interface oak_double_slab {
+export interface OakDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface oak_fence {}
+export interface OakFence {}
 
-export interface oak_hanging_sign {
+export interface OakHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface oak_leaves {
+export interface OakLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface oak_log {
+export interface OakLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface oak_planks {}
+export interface OakPlanks {}
 
-export interface oak_slab {
+export interface OakSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface oak_stairs {
+export interface OakStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface oak_wood {
+export interface OakWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface observer {
+export interface Observer {
   "minecraft:facing_direction": ByteTag<0 | 0 | 0 | 0 | 0 | 0>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface obsidian {}
+export interface Obsidian {}
 
-export interface ochre_froglight {
+export interface OchreFroglight {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface orange_candle {
+export interface OrangeCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface orange_candle_cake {
+export interface OrangeCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface orange_carpet {}
+export interface OrangeCarpet {}
 
-export interface orange_concrete {}
+export interface OrangeConcrete {}
 
-export interface orange_concrete_powder {}
+export interface OrangeConcretePowder {}
 
-export interface orange_glazed_terracotta {
+export interface OrangeGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface orange_shulker_box {}
+export interface OrangeShulkerBox {}
 
-export interface orange_stained_glass {}
+export interface OrangeStainedGlass {}
 
-export interface orange_stained_glass_pane {}
+export interface OrangeStainedGlassPane {}
 
-export interface orange_terracotta {}
+export interface OrangeTerracotta {}
 
-export interface orange_wool {}
+export interface OrangeWool {}
 
-export interface oxidized_chiseled_copper {}
+export interface OxidizedChiseledCopper {}
 
-export interface oxidized_copper {}
+export interface OxidizedCopper {}
 
-export interface oxidized_copper_bulb {
+export interface OxidizedCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface oxidized_copper_door {
+export interface OxidizedCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface oxidized_copper_grate {}
+export interface OxidizedCopperGrate {}
 
-export interface oxidized_copper_trapdoor {
+export interface OxidizedCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface oxidized_cut_copper {}
+export interface OxidizedCutCopper {}
 
-export interface oxidized_cut_copper_slab {
+export interface OxidizedCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface oxidized_cut_copper_stairs {
+export interface OxidizedCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface oxidized_double_cut_copper_slab {
+export interface OxidizedDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface packed_ice {}
+export interface PackedIce {}
 
-export interface packed_mud {}
+export interface PackedMud {}
 
-export interface pearlescent_froglight {
+export interface PearlescentFroglight {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface pink_candle {
+export interface PinkCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface pink_candle_cake {
+export interface PinkCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface pink_carpet {}
+export interface PinkCarpet {}
 
-export interface pink_concrete {}
+export interface PinkConcrete {}
 
-export interface pink_concrete_powder {}
+export interface PinkConcretePowder {}
 
-export interface pink_glazed_terracotta {
+export interface PinkGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface pink_petals {
+export interface PinkPetals {
   growth: DoubleTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface pink_shulker_box {}
+export interface PinkShulkerBox {}
 
-export interface pink_stained_glass {}
+export interface PinkStainedGlass {}
 
-export interface pink_stained_glass_pane {}
+export interface PinkStainedGlassPane {}
 
-export interface pink_terracotta {}
+export interface PinkTerracotta {}
 
-export interface pink_wool {}
+export interface PinkWool {}
 
-export interface piston {
+export interface Piston {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface piston_arm_collision {
+export interface PistonArmCollision {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface pitcher_crop {
+export interface PitcherCrop {
   growth: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface pitcher_plant {
+export interface PitcherPlant {
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface podzol {}
+export interface Podzol {}
 
-export interface pointed_dripstone {
+export interface PointedDripstone {
   dripstone_thickness: ByteTag<0 | 0 | 0 | 0 | 0>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface polished_andesite {}
+export interface PolishedAndesite {}
 
-export interface polished_andesite_stairs {
+export interface PolishedAndesiteStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_basalt {
+export interface PolishedBasalt {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface polished_blackstone {}
+export interface PolishedBlackstone {}
 
-export interface polished_blackstone_brick_double_slab {
+export interface PolishedBlackstoneBrickDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_blackstone_brick_slab {
+export interface PolishedBlackstoneBrickSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_blackstone_brick_stairs {
+export interface PolishedBlackstoneBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_blackstone_brick_wall {
+export interface PolishedBlackstoneBrickWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -3476,31 +3476,31 @@ export interface polished_blackstone_brick_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface polished_blackstone_bricks {}
+export interface PolishedBlackstoneBricks {}
 
-export interface polished_blackstone_button {
+export interface PolishedBlackstoneButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface polished_blackstone_double_slab {
+export interface PolishedBlackstoneDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_blackstone_pressure_plate {
+export interface PolishedBlackstonePressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface polished_blackstone_slab {
+export interface PolishedBlackstoneSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_blackstone_stairs {
+export interface PolishedBlackstoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_blackstone_wall {
+export interface PolishedBlackstoneWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -3508,22 +3508,22 @@ export interface polished_blackstone_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface polished_deepslate {}
+export interface PolishedDeepslate {}
 
-export interface polished_deepslate_double_slab {
+export interface PolishedDeepslateDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_deepslate_slab {
+export interface PolishedDeepslateSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_deepslate_stairs {
+export interface PolishedDeepslateStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_deepslate_wall {
+export interface PolishedDeepslateWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -3531,36 +3531,36 @@ export interface polished_deepslate_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface polished_diorite {}
+export interface PolishedDiorite {}
 
-export interface polished_diorite_stairs {
+export interface PolishedDioriteStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_granite {}
+export interface PolishedGranite {}
 
-export interface polished_granite_stairs {
+export interface PolishedGraniteStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_tuff {}
+export interface PolishedTuff {}
 
-export interface polished_tuff_double_slab {
+export interface PolishedTuffDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_tuff_slab {
+export interface PolishedTuffSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface polished_tuff_stairs {
+export interface PolishedTuffStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface polished_tuff_wall {
+export interface PolishedTuffWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -3568,650 +3568,650 @@ export interface polished_tuff_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface portal {
+export interface Portal {
   portal_axis: StringTag<"unknown" | "x" | "z">;
 }
 
-export interface potatoes {
+export interface Potatoes {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface powder_snow {}
+export interface PowderSnow {}
 
-export interface powered_comparator {
+export interface PoweredComparator {
   "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
   output_lit_bit: ByteTag<0 | 1>;
   output_subtract_bit: ByteTag<0 | 1>;
 }
 
-export interface powered_repeater {
+export interface PoweredRepeater {
   "minecraft:cardinal_direction": IntTag<0 | 0 | 0 | 0>;
   repeater_delay: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface prismarine {
+export interface Prismarine {
   prismarine_block_type: StringTag<"default" | "dark" | "bricks">;
 }
 
-export interface prismarine_bricks_stairs {
+export interface PrismarineBricksStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface prismarine_stairs {
+export interface PrismarineStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface pumpkin {
+export interface Pumpkin {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface pumpkin_stem {
+export interface PumpkinStem {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface purple_candle {
+export interface PurpleCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface purple_candle_cake {
+export interface PurpleCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface purple_carpet {}
+export interface PurpleCarpet {}
 
-export interface purple_concrete {}
+export interface PurpleConcrete {}
 
-export interface purple_concrete_powder {}
+export interface PurpleConcretePowder {}
 
-export interface purple_glazed_terracotta {
+export interface PurpleGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface purple_shulker_box {}
+export interface PurpleShulkerBox {}
 
-export interface purple_stained_glass {}
+export interface PurpleStainedGlass {}
 
-export interface purple_stained_glass_pane {}
+export interface PurpleStainedGlassPane {}
 
-export interface purple_terracotta {}
+export interface PurpleTerracotta {}
 
-export interface purple_wool {}
+export interface PurpleWool {}
 
-export interface purpur_block {
+export interface PurpurBlock {
   chisel_type: StringTag<"default" | "chiseled" | "lines" | "smooth">;
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface purpur_stairs {
+export interface PurpurStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface quartz_block {
+export interface QuartzBlock {
   chisel_type: StringTag<"default" | "chiseled" | "lines" | "smooth">;
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface quartz_bricks {}
+export interface QuartzBricks {}
 
-export interface quartz_ore {}
+export interface QuartzOre {}
 
-export interface quartz_stairs {
+export interface QuartzStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface rail {
+export interface Rail {
   rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9>;
 }
 
-export interface raw_copper_block {}
+export interface RawCopperBlock {}
 
-export interface raw_gold_block {}
+export interface RawGoldBlock {}
 
-export interface raw_iron_block {}
+export interface RawIronBlock {}
 
-export interface red_candle {
+export interface RedCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface red_candle_cake {
+export interface RedCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface red_carpet {}
+export interface RedCarpet {}
 
-export interface red_concrete {}
+export interface RedConcrete {}
 
-export interface red_concrete_powder {}
+export interface RedConcretePowder {}
 
-export interface red_flower {
+export interface RedFlower {
   flower_type: StringTag<"poppy" | "orchid" | "allium" | "houstonia" | "tulip_red" | "tulip_orange" | "tulip_white" | "tulip_pink" | "oxeye" | "cornflower" | "lily_of_the_valley">;
 }
 
-export interface red_glazed_terracotta {
+export interface RedGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface red_mushroom {}
+export interface RedMushroom {}
 
-export interface red_mushroom_block {
+export interface RedMushroomBlock {
   huge_mushroom_bits: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface red_nether_brick {}
+export interface RedNetherBrick {}
 
-export interface red_nether_brick_stairs {
+export interface RedNetherBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface red_sandstone {
+export interface RedSandstone {
   sand_stone_type: StringTag<"default" | "heiroglyphs" | "cut" | "smooth">;
 }
 
-export interface red_sandstone_stairs {
+export interface RedSandstoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface red_shulker_box {}
+export interface RedShulkerBox {}
 
-export interface red_stained_glass {}
+export interface RedStainedGlass {}
 
-export interface red_stained_glass_pane {}
+export interface RedStainedGlassPane {}
 
-export interface red_terracotta {}
+export interface RedTerracotta {}
 
-export interface red_wool {}
+export interface RedWool {}
 
-export interface redstone_block {}
+export interface RedstoneBlock {}
 
-export interface redstone_lamp {}
+export interface RedstoneLamp {}
 
-export interface redstone_ore {}
+export interface RedstoneOre {}
 
-export interface redstone_torch {
+export interface RedstoneTorch {
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface redstone_wire {
+export interface RedstoneWire {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface reeds {
+export interface Reeds {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface reinforced_deepslate {}
+export interface ReinforcedDeepslate {}
 
-export interface repeating_command_block {
+export interface RepeatingCommandBlock {
   conditional_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface reserved6 {}
+export interface Reserved6 {}
 
-export interface respawn_anchor {
+export interface RespawnAnchor {
   respawn_anchor_charge: IntTag<0 | 1 | 2 | 3 | 4>;
 }
 
-export interface sand {
+export interface Sand {
   sand_type: StringTag<"normal" | "red">;
 }
 
-export interface sandstone {
+export interface Sandstone {
   sand_stone_type: StringTag<"default" | "heiroglyphs" | "cut" | "smooth">;
 }
 
-export interface sandstone_stairs {
+export interface SandstoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface sapling {
+export interface Sapling {
   age_bit: DoubleTag<0 | 1>;
   sapling_type: StringTag<"oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak">;
 }
 
-export interface scaffolding {
+export interface Scaffolding {
   stability: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
   stability_check: ByteTag<0 | 1>;
 }
 
-export interface sculk {}
+export interface Sculk {}
 
-export interface sculk_catalyst {
+export interface SculkCatalyst {
   bloom: ByteTag<0 | 1>;
 }
 
-export interface sculk_sensor {
+export interface SculkSensor {
   sculk_sensor_phase: IntTag<0 | 1 | 2>;
 }
 
-export interface sculk_shrieker {
+export interface SculkShrieker {
   active: ByteTag<0 | 1>;
   can_summon: ByteTag<0 | 1>;
 }
 
-export interface sculk_vein {
+export interface SculkVein {
   multi_face_direction_bits: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63>;
 }
 
-export interface sea_lantern {}
+export interface SeaLantern {}
 
-export interface sea_pickle {
+export interface SeaPickle {
   cluster_count: ByteTag<0 | 1 | 2 | 3>;
   dead_bit: ByteTag<0 | 1>;
 }
 
-export interface seagrass {
+export interface Seagrass {
   sea_grass_type: StringTag<"default" | "double_top" | "double_bot">;
 }
 
-export interface shroomlight {}
+export interface Shroomlight {}
 
-export interface silver_glazed_terracotta {
+export interface SilverGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface skull {
+export interface Skull {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface slime {}
+export interface Slime {}
 
-export interface small_amethyst_bud {
+export interface SmallAmethystBud {
   "minecraft:block_face": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
 }
 
-export interface small_dripleaf_block {
+export interface SmallDripleafBlock {
   "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface smithing_table {}
+export interface SmithingTable {}
 
-export interface smoker {
+export interface Smoker {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface smooth_basalt {}
+export interface SmoothBasalt {}
 
-export interface smooth_quartz_stairs {
+export interface SmoothQuartzStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface smooth_red_sandstone_stairs {
+export interface SmoothRedSandstoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface smooth_sandstone_stairs {
+export interface SmoothSandstoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface smooth_stone {}
+export interface SmoothStone {}
 
-export interface sniffer_egg {
+export interface SnifferEgg {
   cracked_state: StringTag<"no_cracks" | "cracked" | "max_cracked">;
 }
 
-export interface snow {}
+export interface Snow {}
 
-export interface snow_layer {
+export interface SnowLayer {
   covered_bit: IntTag<0 | 1>;
   height: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface soul_campfire {
+export interface SoulCampfire {
   extinguished: DoubleTag<0 | 1>;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface soul_fire {
+export interface SoulFire {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface soul_lantern {
+export interface SoulLantern {
   hanging: ByteTag<0 | 1>;
 }
 
-export interface soul_sand {}
+export interface SoulSand {}
 
-export interface soul_soil {}
+export interface SoulSoil {}
 
-export interface soul_torch {
+export interface SoulTorch {
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface sponge {
+export interface Sponge {
   sponge_type: StringTag<"dry" | "wet">;
 }
 
-export interface spore_blossom {}
+export interface SporeBlossom {}
 
-export interface spruce_button {
+export interface SpruceButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface spruce_door {
+export interface SpruceDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface spruce_double_slab {
+export interface SpruceDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface spruce_fence {}
+export interface SpruceFence {}
 
-export interface spruce_fence_gate {
+export interface SpruceFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface spruce_hanging_sign {
+export interface SpruceHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface spruce_leaves {
+export interface SpruceLeaves {
   persistent_bit: ByteTag<0 | 1>;
   update_bit: ByteTag<0 | 1>;
 }
 
-export interface spruce_log {
+export interface SpruceLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface spruce_planks {}
+export interface SprucePlanks {}
 
-export interface spruce_pressure_plate {
+export interface SprucePressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface spruce_slab {
+export interface SpruceSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface spruce_stairs {
+export interface SpruceStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface spruce_standing_sign {
+export interface SpruceStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface spruce_trapdoor {
+export interface SpruceTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface spruce_wall_sign {
+export interface SpruceWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface spruce_wood {
+export interface SpruceWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface standing_banner {
+export interface StandingBanner {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface standing_sign {
+export interface StandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface sticky_piston {
+export interface StickyPiston {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface sticky_piston_arm_collision {
+export interface StickyPistonArmCollision {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface stone {}
+export interface Stone {}
 
-export interface stone_block_slab {
+export interface StoneBlockSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type: StringTag<"smooth_stone" | "sandstone" | "wood" | "cobblestone" | "brick" | "stone_brick" | "quartz" | "nether_brick">;
 }
 
-export interface stone_block_slab2 {
+export interface StoneBlockSlab2 {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type_2: StringTag<"red_sandstone" | "purpur" | "prismarine_rough" | "prismarine_dark" | "prismarine_brick" | "mossy_cobblestone" | "smooth_sandstone" | "red_nether_brick">;
 }
 
-export interface stone_block_slab3 {
+export interface StoneBlockSlab3 {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type_3: StringTag<"end_stone_brick" | "smooth_red_sandstone" | "polished_andesite" | "andesite" | "diorite" | "polished_diorite" | "granite" | "polished_granite">;
 }
 
-export interface stone_block_slab4 {
+export interface StoneBlockSlab4 {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
   stone_slab_type_4: StringTag<"mossy_stone_brick" | "smooth_quartz" | "stone" | "cut_sandstone" | "cut_red_sandstone">;
 }
 
-export interface stone_brick_stairs {
+export interface StoneBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface stone_button {
+export interface StoneButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface stone_pressure_plate {
+export interface StonePressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface stone_stairs {
+export interface StoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface stonebrick {
+export interface Stonebrick {
   stone_brick_type: StringTag<"default" | "mossy" | "cracked" | "chiseled" | "smooth">;
 }
 
-export interface stonecutter {}
+export interface Stonecutter {}
 
-export interface stonecutter_block {
+export interface StonecutterBlock {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface stripped_acacia_log {
+export interface StrippedAcaciaLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_acacia_wood {
+export interface StrippedAcaciaWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_bamboo_block {
+export interface StrippedBambooBlock {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_birch_log {
+export interface StrippedBirchLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_birch_wood {
+export interface StrippedBirchWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_cherry_log {
+export interface StrippedCherryLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_cherry_wood {
+export interface StrippedCherryWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_crimson_hyphae {
+export interface StrippedCrimsonHyphae {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_crimson_stem {
+export interface StrippedCrimsonStem {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_dark_oak_log {
+export interface StrippedDarkOakLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_dark_oak_wood {
+export interface StrippedDarkOakWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_jungle_log {
+export interface StrippedJungleLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_jungle_wood {
+export interface StrippedJungleWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_mangrove_log {
+export interface StrippedMangroveLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_mangrove_wood {
+export interface StrippedMangroveWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_oak_log {
+export interface StrippedOakLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_oak_wood {
+export interface StrippedOakWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_spruce_log {
+export interface StrippedSpruceLog {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_spruce_wood {
+export interface StrippedSpruceWood {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_warped_hyphae {
+export interface StrippedWarpedHyphae {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface stripped_warped_stem {
+export interface StrippedWarpedStem {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface structure_block {
+export interface StructureBlock {
   structure_block_type: StringTag<"data" | "save" | "load" | "corner" | "invalid" | "export">;
 }
 
-export interface structure_void {
+export interface StructureVoid {
   structure_void_type: StringTag<"void" | "air">;
 }
 
-export interface suspicious_gravel {
+export interface SuspiciousGravel {
   brushed_progress: ByteTag<0 | 1 | 2 | 3>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface suspicious_sand {
+export interface SuspiciousSand {
   brushed_progress: ByteTag<0 | 1 | 2 | 3>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface sweet_berry_bush {
+export interface SweetBerryBush {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface tallgrass {
+export interface Tallgrass {
   tall_grass_type: StringTag<"default" | "tall" | "fern" | "snow">;
 }
 
-export interface target {}
+export interface Target {}
 
-export interface tinted_glass {}
+export interface TintedGlass {}
 
-export interface tnt {
+export interface Tnt {
   allow_underwater_bit: ByteTag<0 | 1>;
   explode_bit: ByteTag<0 | 1>;
 }
 
-export interface torch {
+export interface Torch {
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface torchflower {}
+export interface Torchflower {}
 
-export interface torchflower_crop {
+export interface TorchflowerCrop {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface trapdoor {
+export interface Trapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface trapped_chest {
+export interface TrappedChest {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface trial_spawner {
+export interface TrialSpawner {
   trial_spawner_state: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface trip_wire {
+export interface TripWire {
   attached_bit: ByteTag<0 | 1>;
   disarmed_bit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
   suspended_bit: ByteTag<0 | 1>;
 }
 
-export interface tripwire_hook {
+export interface TripwireHook {
   attached_bit: ByteTag<0 | 1>;
   direction: ByteTag<0 | 1 | 2 | 3>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface tube_coral {}
+export interface TubeCoral {}
 
-export interface tuff {}
+export interface Tuff {}
 
-export interface tuff_brick_double_slab {
+export interface TuffBrickDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface tuff_brick_slab {
+export interface TuffBrickSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface tuff_brick_stairs {
+export interface TuffBrickStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface tuff_brick_wall {
+export interface TuffBrickWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -4219,22 +4219,22 @@ export interface tuff_brick_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface tuff_bricks {}
+export interface TuffBricks {}
 
-export interface tuff_double_slab {
+export interface TuffDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface tuff_slab {
+export interface TuffSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface tuff_stairs {
+export interface TuffStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface tuff_wall {
+export interface TuffWall {
   wall_connection_type_east: ByteTag<0 | 0 | 0>;
   wall_connection_type_north: ByteTag<0 | 0 | 0>;
   wall_connection_type_south: ByteTag<0 | 0 | 0>;
@@ -4242,423 +4242,423 @@ export interface tuff_wall {
   wall_post_bit: ByteTag<0 | 1>;
 }
 
-export interface turtle_egg {
+export interface TurtleEgg {
   cracked_state: StringTag<"no_cracks" | "cracked" | "max_cracked">;
   turtle_egg_count: StringTag<"one_egg" | "two_egg" | "three_egg" | "four_egg">;
 }
 
-export interface twisting_vines {
+export interface TwistingVines {
   twisting_vines_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface underwater_torch {
+export interface UnderwaterTorch {
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface undyed_shulker_box {}
+export interface UndyedShulkerBox {}
 
 export interface Unknown {}
 
-export interface unlit_redstone_torch {
+export interface UnlitRedstoneTorch {
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface unpowered_comparator {
+export interface UnpoweredComparator {
   "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
   output_lit_bit: ByteTag<0 | 1>;
   output_subtract_bit: ByteTag<0 | 1>;
 }
 
-export interface unpowered_repeater {
+export interface UnpoweredRepeater {
   "minecraft:cardinal_direction": IntTag<0 | 0 | 0 | 0>;
   repeater_delay: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface vault {
+export interface Vault {
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   vault_state: StringTag<"inactive" | "active" | "unlocking" | "ejecting">;
 }
 
-export interface verdant_froglight {
+export interface VerdantFroglight {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface vine {
+export interface Vine {
   vine_direction_bits: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface wall_banner {
+export interface WallBanner {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface wall_sign {
+export interface WallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface warped_button {
+export interface WarpedButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface warped_door {
+export interface WarpedDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface warped_double_slab {
+export interface WarpedDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface warped_fence {}
+export interface WarpedFence {}
 
-export interface warped_fence_gate {
+export interface WarpedFenceGate {
   direction: ByteTag<0 | 1 | 2 | 3>;
   in_wall_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
 }
 
-export interface warped_fungus {}
+export interface WarpedFungus {}
 
-export interface warped_hanging_sign {
+export interface WarpedHangingSign {
   attached_bit: ByteTag<0 | 1>;
   facing_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5>;
   ground_sign_direction: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
   hanging: ByteTag<0 | 1>;
 }
 
-export interface warped_hyphae {
+export interface WarpedHyphae {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface warped_nylium {}
+export interface WarpedNylium {}
 
-export interface warped_planks {}
+export interface WarpedPlanks {}
 
-export interface warped_pressure_plate {
+export interface WarpedPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface warped_roots {}
+export interface WarpedRoots {}
 
-export interface warped_slab {
+export interface WarpedSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface warped_stairs {
+export interface WarpedStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface warped_standing_sign {
+export interface WarpedStandingSign {
   ground_sign_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface warped_stem {
+export interface WarpedStem {
   pillar_axis: StringTag<"y" | "x" | "z">;
 }
 
-export interface warped_trapdoor {
+export interface WarpedTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface warped_wall_sign {
+export interface WarpedWallSign {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface warped_wart_block {}
+export interface WarpedWartBlock {}
 
-export interface water {
+export interface Water {
   liquid_depth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface waterlily {}
+export interface Waterlily {}
 
-export interface waxed_chiseled_copper {}
+export interface WaxedChiseledCopper {}
 
-export interface waxed_copper {}
+export interface WaxedCopper {}
 
-export interface waxed_copper_bulb {
+export interface WaxedCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_copper_door {
+export interface WaxedCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_copper_grate {}
+export interface WaxedCopperGrate {}
 
-export interface waxed_copper_trapdoor {
+export interface WaxedCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_cut_copper {}
+export interface WaxedCutCopper {}
 
-export interface waxed_cut_copper_slab {
+export interface WaxedCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_cut_copper_stairs {
+export interface WaxedCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface waxed_double_cut_copper_slab {
+export interface WaxedDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_exposed_chiseled_copper {}
+export interface WaxedExposedChiseledCopper {}
 
-export interface waxed_exposed_copper {}
+export interface WaxedExposedCopper {}
 
-export interface waxed_exposed_copper_bulb {
+export interface WaxedExposedCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_exposed_copper_door {
+export interface WaxedExposedCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_exposed_copper_grate {}
+export interface WaxedExposedCopperGrate {}
 
-export interface waxed_exposed_copper_trapdoor {
+export interface WaxedExposedCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_exposed_cut_copper {}
+export interface WaxedExposedCutCopper {}
 
-export interface waxed_exposed_cut_copper_slab {
+export interface WaxedExposedCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_exposed_cut_copper_stairs {
+export interface WaxedExposedCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface waxed_exposed_double_cut_copper_slab {
+export interface WaxedExposedDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_oxidized_chiseled_copper {}
+export interface WaxedOxidizedChiseledCopper {}
 
-export interface waxed_oxidized_copper {}
+export interface WaxedOxidizedCopper {}
 
-export interface waxed_oxidized_copper_bulb {
+export interface WaxedOxidizedCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_oxidized_copper_door {
+export interface WaxedOxidizedCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_oxidized_copper_grate {}
+export interface WaxedOxidizedCopperGrate {}
 
-export interface waxed_oxidized_copper_trapdoor {
+export interface WaxedOxidizedCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_oxidized_cut_copper {}
+export interface WaxedOxidizedCutCopper {}
 
-export interface waxed_oxidized_cut_copper_slab {
+export interface WaxedOxidizedCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_oxidized_cut_copper_stairs {
+export interface WaxedOxidizedCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface waxed_oxidized_double_cut_copper_slab {
+export interface WaxedOxidizedDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_weathered_chiseled_copper {}
+export interface WaxedWeatheredChiseledCopper {}
 
-export interface waxed_weathered_copper {}
+export interface WaxedWeatheredCopper {}
 
-export interface waxed_weathered_copper_bulb {
+export interface WaxedWeatheredCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_weathered_copper_door {
+export interface WaxedWeatheredCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_weathered_copper_grate {}
+export interface WaxedWeatheredCopperGrate {}
 
-export interface waxed_weathered_copper_trapdoor {
+export interface WaxedWeatheredCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface waxed_weathered_cut_copper {}
+export interface WaxedWeatheredCutCopper {}
 
-export interface waxed_weathered_cut_copper_slab {
+export interface WaxedWeatheredCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface waxed_weathered_cut_copper_stairs {
+export interface WaxedWeatheredCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface waxed_weathered_double_cut_copper_slab {
+export interface WaxedWeatheredDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface weathered_chiseled_copper {}
+export interface WeatheredChiseledCopper {}
 
-export interface weathered_copper {}
+export interface WeatheredCopper {}
 
-export interface weathered_copper_bulb {
+export interface WeatheredCopperBulb {
   lit: ByteTag<0 | 1>;
   powered_bit: ByteTag<0 | 1>;
 }
 
-export interface weathered_copper_door {
+export interface WeatheredCopperDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface weathered_copper_grate {}
+export interface WeatheredCopperGrate {}
 
-export interface weathered_copper_trapdoor {
+export interface WeatheredCopperTrapdoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   open_bit: ByteTag<0 | 1>;
   upside_down_bit: ByteTag<0 | 1>;
 }
 
-export interface weathered_cut_copper {}
+export interface WeatheredCutCopper {}
 
-export interface weathered_cut_copper_slab {
+export interface WeatheredCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface weathered_cut_copper_stairs {
+export interface WeatheredCutCopperStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface weathered_double_cut_copper_slab {
+export interface WeatheredDoubleCutCopperSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
 }
 
-export interface web {}
+export interface Web {}
 
-export interface weeping_vines {
+export interface WeepingVines {
   weeping_vines_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface wheat {
+export interface Wheat {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface white_candle {
+export interface WhiteCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface white_candle_cake {
+export interface WhiteCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface white_carpet {}
+export interface WhiteCarpet {}
 
-export interface white_concrete {}
+export interface WhiteConcrete {}
 
-export interface white_concrete_powder {}
+export interface WhiteConcretePowder {}
 
-export interface white_glazed_terracotta {
+export interface WhiteGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface white_shulker_box {}
+export interface WhiteShulkerBox {}
 
-export interface white_stained_glass {}
+export interface WhiteStainedGlass {}
 
-export interface white_stained_glass_pane {}
+export interface WhiteStainedGlassPane {}
 
-export interface white_terracotta {}
+export interface WhiteTerracotta {}
 
-export interface white_wool {}
+export interface WhiteWool {}
 
-export interface wither_rose {}
+export interface WitherRose {}
 
-export interface wooden_button {
+export interface WoodenButton {
   button_pressed_bit: IntTag<0 | 1>;
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface wooden_door {
+export interface WoodenDoor {
   direction: ByteTag<0 | 1 | 2 | 3>;
   door_hinge_bit: ByteTag<0 | 1>;
   open_bit: ByteTag<0 | 1>;
   upper_block_bit: ByteTag<0 | 1>;
 }
 
-export interface wooden_pressure_plate {
+export interface WoodenPressurePlate {
   redstone_signal: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface yellow_candle {
+export interface YellowCandle {
   candles: ByteTag<0 | 1 | 2 | 3>;
   lit: ByteTag<0 | 1>;
 }
 
-export interface yellow_candle_cake {
+export interface YellowCandleCake {
   lit: ByteTag<0 | 1>;
 }
 
-export interface yellow_carpet {}
+export interface YellowCarpet {}
 
-export interface yellow_concrete {}
+export interface YellowConcrete {}
 
-export interface yellow_concrete_powder {}
+export interface YellowConcretePowder {}
 
-export interface yellow_flower {}
+export interface YellowFlower {}
 
-export interface yellow_glazed_terracotta {
+export interface YellowGlazedTerracotta {
   facing_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
-export interface yellow_shulker_box {}
+export interface YellowShulkerBox {}
 
-export interface yellow_stained_glass {}
+export interface YellowStainedGlass {}
 
-export interface yellow_stained_glass_pane {}
+export interface YellowStainedGlassPane {}
 
-export interface yellow_terracotta {}
+export interface YellowTerracotta {}
 
-export interface yellow_wool {}
+export interface YellowWool {}
 
 export enum BlockResource {
   air = "minecraft:air",

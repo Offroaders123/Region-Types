@@ -269,8 +269,8 @@ export interface BlockStateNameMap {
   dark_oak_trapdoor: DarkOakTrapdoor;
   dark_oak_wood: DarkOakWood;
   dark_prismarine_stairs: DarkPrismarineStairs;
-  darkoak_standing_sign: DarkoakStandingSign;
-  darkoak_wall_sign: DarkoakWallSign;
+  darkoak_standing_sign: DarkOakStandingSign;
+  darkoak_wall_sign: DarkOakWallSign;
   daylight_detector: DaylightDetector;
   daylight_detector_inverted: DaylightDetectorInverted;
   dead_brain_coral: DeadBrainCoral;
@@ -278,7 +278,7 @@ export interface BlockStateNameMap {
   dead_fire_coral: DeadFireCoral;
   dead_horn_coral: DeadHornCoral;
   dead_tube_coral: DeadTubeCoral;
-  deadbush: Deadbush;
+  deadbush: DeadBush;
   decorated_pot: DecoratedPot;
   deepslate: Deepslate;
   deepslate_brick_double_slab: DeepslateBrickDoubleSlab;
@@ -690,9 +690,9 @@ export interface BlockStateNameMap {
   nether_wart_block: NetherWartBlock;
   netherite_block: NetheriteBlock;
   netherrack: Netherrack;
-  netherreactor: Netherreactor;
+  netherreactor: NetherReactorCore;
   normal_stone_stairs: NormalStoneStairs;
-  noteblock: Noteblock;
+  noteblock: NoteBlock;
   oak_double_slab: OakDoubleSlab;
   oak_fence: OakFence;
   oak_hanging_sign: OakHangingSign;
@@ -901,7 +901,7 @@ export interface BlockStateNameMap {
   stone_button: StoneButton;
   stone_pressure_plate: StonePressurePlate;
   stone_stairs: StoneStairs;
-  stonebrick: Stonebrick;
+  stonebrick: StoneBrick;
   stonecutter: Stonecutter;
   stonecutter_block: StonecutterBlock;
   stripped_acacia_log: StrippedAcaciaLog;
@@ -933,7 +933,7 @@ export interface BlockStateNameMap {
   tallgrass: Tallgrass;
   target: Target;
   tinted_glass: TintedGlass;
-  tnt: Tnt;
+  tnt: TNT;
   torch: Torch;
   torchflower: Torchflower;
   torchflower_crop: TorchflowerCrop;
@@ -2061,11 +2061,11 @@ export interface DarkPrismarineStairs {
   weirdo_direction: IntTag<Direction>;
 }
 
-export interface DarkoakStandingSign {
+export interface DarkOakStandingSign {
   ground_sign_direction: IntTag<SignDirection>;
 }
 
-export interface DarkoakWallSign {
+export interface DarkOakWallSign {
   facing_direction: IntTag<FacingDirection>;
 }
 
@@ -2087,7 +2087,7 @@ export interface DeadHornCoral {}
 
 export interface DeadTubeCoral {}
 
-export interface Deadbush {}
+export interface DeadBush {}
 
 export interface DecoratedPot {
   direction: IntTag<Direction>;
@@ -3251,14 +3251,14 @@ export interface NetheriteBlock {}
 
 export interface Netherrack {}
 
-export interface Netherreactor {}
+export interface NetherReactorCore {}
 
 export interface NormalStoneStairs {
   upside_down_bit: IntTag<0 | 1>;
   weirdo_direction: IntTag<Direction>;
 }
 
-export interface Noteblock {}
+export interface NoteBlock {}
 
 export interface OakDoubleSlab {
   "minecraft:vertical_half": StringTag<"bottom" | "top">;
@@ -4028,7 +4028,7 @@ export interface StoneStairs {
   weirdo_direction: IntTag<Direction>;
 }
 
-export interface Stonebrick {
+export interface StoneBrick {
   stone_brick_type: StringTag<"default" | "mossy" | "cracked" | "chiseled" | "smooth">;
 }
 
@@ -4152,7 +4152,7 @@ export interface Target {}
 
 export interface TintedGlass {}
 
-export interface Tnt {
+export interface TNT {
   allow_underwater_bit: BooleanTag;
   explode_bit: BooleanTag;
 }

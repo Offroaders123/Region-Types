@@ -1,4 +1,4 @@
-import type { ByteTag, BooleanTag, IntTag } from "nbtify";
+import type { BooleanTag, IntTag } from "nbtify";
 
 export interface Block {
   name: `${BlockResource}`;
@@ -8,7 +8,6 @@ export interface Block {
 
 // These should eventually come from NBTify itself, once they're generic there
 type StringTag<T extends string = string> = `${T}`;
-type DoubleTag<T extends number = number> = T;
 
 export type BlockState<K extends keyof BlockStateNameMap = keyof BlockStateNameMap> = BlockStateNameMap[K];
 
@@ -1070,12 +1069,12 @@ export interface BlockStateNameMap {
 }
 
 export interface AcaciaButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface AcaciaDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -1088,15 +1087,15 @@ export interface AcaciaDoubleSlab {
 export interface AcaciaFence {}
 
 export interface AcaciaFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface AcaciaHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -1120,7 +1119,7 @@ export interface AcaciaSlab {
 }
 
 export interface AcaciaStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1129,7 +1128,7 @@ export interface AcaciaStandingSign {
 }
 
 export interface AcaciaTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -1143,8 +1142,8 @@ export interface AcaciaWood {
 }
 
 export interface ActivatorRail {
-  rail_data_bit: IntTag<0 | 1>;
-  rail_direction: IntTag<FacingDirection>;
+  rail_data_bit: BooleanTag;
+  rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
 export interface Air {}
@@ -1162,7 +1161,7 @@ export interface AncientDebris {}
 export interface Andesite {}
 
 export interface AndesiteStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1184,7 +1183,7 @@ export interface AzaleaLeavesFlowered {
 }
 
 export interface Bamboo {
-  age_bit: DoubleTag<0 | 1>;
+  age_bit: BooleanTag;
   bamboo_leaf_size: StringTag<"no_leaves" | "small_leaves" | "large_leaves">;
   bamboo_stalk_thickness: StringTag<"thin" | "thick">;
 }
@@ -1194,12 +1193,12 @@ export interface BambooBlock {
 }
 
 export interface BambooButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface BambooDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -1212,15 +1211,15 @@ export interface BambooDoubleSlab {
 export interface BambooFence {}
 
 export interface BambooFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface BambooHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -1235,7 +1234,7 @@ export interface BambooMosaicSlab {
 }
 
 export interface BambooMosaicStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1246,7 +1245,7 @@ export interface BambooPressurePlate {
 }
 
 export interface BambooSapling {
-  age_bit: DoubleTag<0 | 1>;
+  age_bit: BooleanTag;
   sapling_type: StringTag<"oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak">;
 }
 
@@ -1255,7 +1254,7 @@ export interface BambooSlab {
 }
 
 export interface BambooStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1264,7 +1263,7 @@ export interface BambooStandingSign {
 }
 
 export interface BambooTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -1274,7 +1273,7 @@ export interface BambooWallSign {
 }
 
 export interface Barrel {
-  facing_direction: ByteTag<FacingDirection>;
+  facing_direction: IntTag<FacingDirection>;
   open_bit: BooleanTag;
 }
 
@@ -1287,7 +1286,7 @@ export interface Basalt {
 export interface Beacon {}
 
 export interface Bed {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   head_piece_bit: BooleanTag;
   occupied_bit: BooleanTag;
 }
@@ -1311,24 +1310,24 @@ export interface Beetroot {
 }
 
 export interface Bell {
-  attachment: ByteTag<0 | 0 | 0 | 0>;
-  direction: ByteTag<Direction>;
+  attachment: StringTag<"standing" | "hanging" | "side" | "multiple">;
+  direction: IntTag<Direction>;
   toggle_bit: BooleanTag;
 }
 
 export interface BigDripleaf {
-  big_dripleaf_head: DoubleTag<0 | 1>;
+  big_dripleaf_head: BooleanTag;
   big_dripleaf_tilt: StringTag<"none" | "unstable" | "partial_tilt" | "full_tilt">;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
 export interface BirchButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface BirchDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -1341,15 +1340,15 @@ export interface BirchDoubleSlab {
 export interface BirchFence {}
 
 export interface BirchFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface BirchHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -1373,7 +1372,7 @@ export interface BirchSlab {
 }
 
 export interface BirchStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1382,7 +1381,7 @@ export interface BirchStandingSign {
 }
 
 export interface BirchTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -1396,7 +1395,7 @@ export interface BirchWood {
 }
 
 export interface BlackCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -1435,15 +1434,15 @@ export interface BlackstoneSlab {
 }
 
 export interface BlackstoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface BlackstoneWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -1452,7 +1451,7 @@ export interface BlastFurnace {
 }
 
 export interface BlueCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -1483,17 +1482,17 @@ export interface BlueTerracotta {}
 export interface BlueWool {}
 
 export interface BoneBlock {
-  deprecated: DoubleTag<0 | 1 | 2 | 3>;
+  deprecated: IntTag<0 | 1 | 2 | 3>;
   pillar_axis: StringTag<PillarAxis>;
 }
 
 export interface Bookshelf {}
 
 export interface BorderBlock {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -1508,12 +1507,12 @@ export interface BrewingStand {
 export interface BrickBlock {}
 
 export interface BrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface BrownCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -1566,19 +1565,19 @@ export interface Cake {
 export interface Calcite {}
 
 export interface CalibratedSculkSensor {
-  "minecraft:cardinal_direction": IntTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   sculk_sensor_phase: IntTag<0 | 1 | 2>;
 }
 
 export interface Camera {}
 
 export interface Campfire {
-  extinguished: DoubleTag<0 | 1>;
+  extinguished: BooleanTag;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
 export interface Candle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -1597,7 +1596,7 @@ export interface CarvedPumpkin {
 }
 
 export interface Cauldron {
-  cauldron_liquid: IntTag<0 | 0 | 0>;
+  cauldron_liquid: StringTag<"water" | "lava" | "powder_snow">;
   fill_level: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6>;
 }
 
@@ -1618,24 +1617,24 @@ export interface Chain {
 }
 
 export interface ChainCommandBlock {
-  conditional_bit: IntTag<0 | 1>;
+  conditional_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface ChemicalHeat {}
 
 export interface ChemistryTable {
-  chemistry_table_type: IntTag<0 | 0 | 0 | 0>;
+  chemistry_table_type: StringTag<"compound_creator" | "material_reducer" | "element_constructor" | "lab_table">;
   direction: IntTag<Direction>;
 }
 
 export interface CherryButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface CherryDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -1648,15 +1647,15 @@ export interface CherryDoubleSlab {
 export interface CherryFence {}
 
 export interface CherryFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface CherryHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -1684,7 +1683,7 @@ export interface CherrySlab {
 }
 
 export interface CherryStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1693,7 +1692,7 @@ export interface CherryStandingSign {
 }
 
 export interface CherryTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -1703,7 +1702,7 @@ export interface CherryWallSign {
 }
 
 export interface CherryWood {
-  pillar_axis: ByteTag<0 | 0 | 0>;
+  pillar_axis: StringTag<PillarAxis>;
   stripped_bit: BooleanTag;
 }
 
@@ -1753,26 +1752,26 @@ export interface CobbledDeepslateSlab {
 }
 
 export interface CobbledDeepslateStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface CobbledDeepslateWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
 export interface Cobblestone {}
 
 export interface CobblestoneWall {
-  wall_block_type: ByteTag<0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0>;
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_block_type: StringTag<"cobblestone" | "mossy_cobblestone" | "granite" | "diorite" | "andesite" | "sandstone" | "brick" | "stone_brick" | "mossy_stone_brick" | "nether_brick" | "end_brick" | "prismarine" | "red_sandstone" | "red_nether_brick">;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -1782,17 +1781,17 @@ export interface Cocoa {
 }
 
 export interface ColoredTorchBp {
-  color_bit: DoubleTag<0 | 1>;
+  color_bit: BooleanTag;
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
 export interface ColoredTorchRg {
-  color_bit: DoubleTag<0 | 1>;
+  color_bit: BooleanTag;
   torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
 export interface CommandBlock {
-  conditional_bit: IntTag<0 | 1>;
+  conditional_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
@@ -1810,7 +1809,7 @@ export interface CopperBulb {
 }
 
 export interface CopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -1821,40 +1820,40 @@ export interface CopperGrate {}
 export interface CopperOre {}
 
 export interface CopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
 
 export interface CoralBlock {
-  coral_color: ByteTag<0 | 0 | 0 | 0 | 0>;
+  coral_color: StringTag<"blue" | "pink" | "purple" | "red" | "yellow">;
   dead_bit: BooleanTag;
 }
 
 export interface CoralFan {
-  coral_color: IntTag<0 | 0 | 0 | 0 | 0>;
+  coral_color: StringTag<"blue" | "pink" | "purple" | "red" | "yellow">;
   coral_fan_direction: IntTag<0 | 1>;
 }
 
 export interface CoralFanDead {
-  coral_color: IntTag<0 | 0 | 0 | 0 | 0>;
+  coral_color: StringTag<"blue" | "pink" | "purple" | "red" | "yellow">;
   coral_fan_direction: IntTag<0 | 1>;
 }
 
 export interface CoralFanHang {
-  coral_direction: ByteTag<Direction>;
+  coral_direction: IntTag<Direction>;
   coral_hang_type_bit: BooleanTag;
   dead_bit: BooleanTag;
 }
 
 export interface CoralFanHang2 {
-  coral_direction: ByteTag<Direction>;
+  coral_direction: IntTag<Direction>;
   coral_hang_type_bit: BooleanTag;
   dead_bit: BooleanTag;
 }
 
 export interface CoralFanHang3 {
-  coral_direction: ByteTag<Direction>;
+  coral_direction: IntTag<Direction>;
   coral_hang_type_bit: BooleanTag;
   dead_bit: BooleanTag;
 }
@@ -1869,19 +1868,19 @@ export interface CrackedPolishedBlackstoneBricks {}
 
 export interface Crafter {
   crafting: BooleanTag;
-  orientation: ByteTag<0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0>;
+  orientation: StringTag<"down_east" | "down_north" | "down_south" | "down_west" | "up_east" | "up_north" | "up_south" | "up_west" | "west_up" | "east_up" | "north_up" | "south_up">;
   triggered_bit: BooleanTag;
 }
 
 export interface CraftingTable {}
 
 export interface CrimsonButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface CrimsonDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -1894,7 +1893,7 @@ export interface CrimsonDoubleSlab {
 export interface CrimsonFence {}
 
 export interface CrimsonFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
@@ -1903,8 +1902,8 @@ export interface CrimsonFungus {}
 
 export interface CrimsonHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -1927,7 +1926,7 @@ export interface CrimsonSlab {
 }
 
 export interface CrimsonStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -1940,7 +1939,7 @@ export interface CrimsonStem {
 }
 
 export interface CrimsonTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -1958,12 +1957,12 @@ export interface CutCopperSlab {
 }
 
 export interface CutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface CyanCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -1992,12 +1991,12 @@ export interface CyanTerracotta {}
 export interface CyanWool {}
 
 export interface DarkOakButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface DarkOakDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -2010,15 +2009,15 @@ export interface DarkOakDoubleSlab {
 export interface DarkOakFence {}
 
 export interface DarkOakFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface DarkOakHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -2042,12 +2041,12 @@ export interface DarkOakSlab {
 }
 
 export interface DarkOakStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface DarkOakTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -2057,7 +2056,7 @@ export interface DarkOakWood {
 }
 
 export interface DarkPrismarineStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -2106,15 +2105,15 @@ export interface DeepslateBrickSlab {
 }
 
 export interface DeepslateBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface DeepslateBrickWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -2145,15 +2144,15 @@ export interface DeepslateTileSlab {
 }
 
 export interface DeepslateTileStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface DeepslateTileWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -2162,8 +2161,8 @@ export interface DeepslateTiles {}
 export interface Deny {}
 
 export interface DetectorRail {
-  rail_data_bit: IntTag<0 | 1>;
-  rail_direction: IntTag<FacingDirection>;
+  rail_data_bit: BooleanTag;
+  rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
 export interface DiamondBlock {}
@@ -2173,7 +2172,7 @@ export interface DiamondOre {}
 export interface Diorite {}
 
 export interface DioriteStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -2184,7 +2183,7 @@ export interface Dirt {
 export interface DirtWithRoots {}
 
 export interface Dispenser {
-  facing_direction: ByteTag<FacingDirection>;
+  facing_direction: IntTag<FacingDirection>;
   triggered_bit: BooleanTag;
 }
 
@@ -2193,7 +2192,7 @@ export interface DoubleCutCopperSlab {
 }
 
 export interface DoublePlant {
-  double_plant_type: ByteTag<0 | 0 | 0 | 0 | 0 | 0>;
+  double_plant_type: StringTag<"sunflower" | "syringa" | "grass" | "fern" | "rose" | "paeonia">;
   upper_block_bit: BooleanTag;
 }
 
@@ -2224,7 +2223,7 @@ export interface DriedKelpBlock {}
 export interface DripstoneBlock {}
 
 export interface Dropper {
-  facing_direction: ByteTag<FacingDirection>;
+  facing_direction: IntTag<FacingDirection>;
   triggered_bit: BooleanTag;
 }
 
@@ -2473,7 +2472,7 @@ export interface EmeraldOre {}
 export interface EnchantingTable {}
 
 export interface EndBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -2484,7 +2483,7 @@ export interface EndGateway {}
 export interface EndPortal {}
 
 export interface EndPortalFrame {
-  end_portal_eye_bit: DoubleTag<0 | 1>;
+  end_portal_eye_bit: BooleanTag;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
@@ -2508,7 +2507,7 @@ export interface ExposedCopperBulb {
 }
 
 export interface ExposedCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -2517,7 +2516,7 @@ export interface ExposedCopperDoor {
 export interface ExposedCopperGrate {}
 
 export interface ExposedCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -2529,7 +2528,7 @@ export interface ExposedCutCopperSlab {
 }
 
 export interface ExposedCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -2542,7 +2541,7 @@ export interface Farmland {
 }
 
 export interface FenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
@@ -2570,7 +2569,7 @@ export interface FlowingWater {
 }
 
 export interface Frame {
-  facing_direction: ByteTag<FacingDirection>;
+  facing_direction: IntTag<FacingDirection>;
   item_frame_map_bit: BooleanTag;
   item_frame_photo_bit: BooleanTag;
 }
@@ -2592,7 +2591,7 @@ export interface Glass {}
 export interface GlassPane {}
 
 export interface GlowFrame {
-  facing_direction: ByteTag<FacingDirection>;
+  facing_direction: IntTag<FacingDirection>;
   item_frame_map_bit: BooleanTag;
   item_frame_photo_bit: BooleanTag;
 }
@@ -2610,14 +2609,14 @@ export interface GoldBlock {}
 export interface GoldOre {}
 
 export interface GoldenRail {
-  rail_data_bit: IntTag<0 | 1>;
-  rail_direction: IntTag<FacingDirection>;
+  rail_data_bit: BooleanTag;
+  rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
 export interface Granite {}
 
 export interface GraniteStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -2628,7 +2627,7 @@ export interface GrassPath {}
 export interface Gravel {}
 
 export interface GrayCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -2657,7 +2656,7 @@ export interface GrayTerracotta {}
 export interface GrayWool {}
 
 export interface GreenCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -2686,7 +2685,7 @@ export interface GreenTerracotta {}
 export interface GreenWool {}
 
 export interface Grindstone {
-  attachment: IntTag<0 | 0 | 0 | 0>;
+  attachment: StringTag<"standing" | "hanging" | "side" | "multiple">;
   direction: IntTag<Direction>;
 }
 
@@ -2763,7 +2762,7 @@ export interface HardYellowStainedGlassPane {}
 export interface HardenedClay {}
 
 export interface HayBlock {
-  deprecated: DoubleTag<0 | 1 | 2 | 3>;
+  deprecated: IntTag<0 | 1 | 2 | 3>;
   pillar_axis: StringTag<PillarAxis>;
 }
 
@@ -2776,7 +2775,7 @@ export interface HoneyBlock {}
 export interface HoneycombBlock {}
 
 export interface Hopper {
-  facing_direction: ByteTag<FacingDirection>;
+  facing_direction: IntTag<FacingDirection>;
   toggle_bit: BooleanTag;
 }
 
@@ -2799,7 +2798,7 @@ export interface IronBars {}
 export interface IronBlock {}
 
 export interface IronDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -2808,7 +2807,7 @@ export interface IronDoor {
 export interface IronOre {}
 
 export interface IronTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -2821,12 +2820,12 @@ export interface Jigsaw {
 export interface Jukebox {}
 
 export interface JungleButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface JungleDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -2839,15 +2838,15 @@ export interface JungleDoubleSlab {
 export interface JungleFence {}
 
 export interface JungleFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface JungleHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -2871,7 +2870,7 @@ export interface JungleSlab {
 }
 
 export interface JungleStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -2880,7 +2879,7 @@ export interface JungleStandingSign {
 }
 
 export interface JungleTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -2918,12 +2917,12 @@ export interface Lava {
 }
 
 export interface Lectern {
-  "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   powered_bit: BooleanTag;
 }
 
 export interface Lever {
-  lever_direction: ByteTag<0 | 0 | 0 | 0 | 0 | 0 | 0 | 0>;
+  lever_direction: StringTag<"down_east_west" | "east" | "west" | "south" | "north" | "up_north_south" | "up_east_west" | "down_north_south">;
   open_bit: BooleanTag;
 }
 
@@ -2932,7 +2931,7 @@ export interface LightBlock {
 }
 
 export interface LightBlueCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -2961,7 +2960,7 @@ export interface LightBlueTerracotta {}
 export interface LightBlueWool {}
 
 export interface LightGrayCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -2994,7 +2993,7 @@ export interface LightningRod {
 }
 
 export interface LimeCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -3051,7 +3050,7 @@ export interface Loom {
 }
 
 export interface MagentaCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -3082,12 +3081,12 @@ export interface MagentaWool {}
 export interface Magma {}
 
 export interface MangroveButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface MangroveDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -3100,15 +3099,15 @@ export interface MangroveDoubleSlab {
 export interface MangroveFence {}
 
 export interface MangroveFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface MangroveHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -3128,7 +3127,7 @@ export interface MangrovePressurePlate {
 }
 
 export interface MangrovePropagule {
-  hanging: IntTag<0 | 1>;
+  hanging: BooleanTag;
   propagule_stage: IntTag<0 | 1 | 2 | 3 | 4>;
 }
 
@@ -3139,7 +3138,7 @@ export interface MangroveSlab {
 }
 
 export interface MangroveStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3148,7 +3147,7 @@ export interface MangroveStandingSign {
 }
 
 export interface MangroveTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -3158,7 +3157,7 @@ export interface MangroveWallSign {
 }
 
 export interface MangroveWood {
-  pillar_axis: ByteTag<0 | 0 | 0>;
+  pillar_axis: StringTag<PillarAxis>;
   stripped_bit: BooleanTag;
 }
 
@@ -3186,12 +3185,12 @@ export interface MossCarpet {}
 export interface MossyCobblestone {}
 
 export interface MossyCobblestoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface MossyStoneBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3208,15 +3207,15 @@ export interface MudBrickSlab {
 }
 
 export interface MudBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface MudBrickWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -3233,7 +3232,7 @@ export interface NetherBrick {}
 export interface NetherBrickFence {}
 
 export interface NetherBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3254,7 +3253,7 @@ export interface Netherrack {}
 export interface NetherReactorCore {}
 
 export interface NormalStoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3268,8 +3267,8 @@ export interface OakFence {}
 
 export interface OakHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -3289,7 +3288,7 @@ export interface OakSlab {
 }
 
 export interface OakStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3298,7 +3297,7 @@ export interface OakWood {
 }
 
 export interface Observer {
-  "minecraft:facing_direction": ByteTag<0 | 0 | 0 | 0 | 0 | 0>;
+  "minecraft:facing_direction": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
   powered_bit: BooleanTag;
 }
 
@@ -3309,7 +3308,7 @@ export interface OchreFroglight {
 }
 
 export interface OrangeCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -3347,7 +3346,7 @@ export interface OxidizedCopperBulb {
 }
 
 export interface OxidizedCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -3356,7 +3355,7 @@ export interface OxidizedCopperDoor {
 export interface OxidizedCopperGrate {}
 
 export interface OxidizedCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -3368,7 +3367,7 @@ export interface OxidizedCutCopperSlab {
 }
 
 export interface OxidizedCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3385,7 +3384,7 @@ export interface PearlescentFroglight {
 }
 
 export interface PinkCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -3404,7 +3403,7 @@ export interface PinkGlazedTerracotta {
 }
 
 export interface PinkPetals {
-  growth: DoubleTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
+  growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
@@ -3427,7 +3426,7 @@ export interface PistonArmCollision {
 }
 
 export interface PitcherCrop {
-  growth: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
+  growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
   upper_block_bit: BooleanTag;
 }
 
@@ -3438,14 +3437,14 @@ export interface PitcherPlant {
 export interface Podzol {}
 
 export interface PointedDripstone {
-  dripstone_thickness: ByteTag<0 | 0 | 0 | 0 | 0>;
+  dripstone_thickness: StringTag<"tip" | "frustum" | "middle" | "base" | "merge">;
   hanging: BooleanTag;
 }
 
 export interface PolishedAndesite {}
 
 export interface PolishedAndesiteStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3464,22 +3463,22 @@ export interface PolishedBlackstoneBrickSlab {
 }
 
 export interface PolishedBlackstoneBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface PolishedBlackstoneBrickWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
 export interface PolishedBlackstoneBricks {}
 
 export interface PolishedBlackstoneButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
@@ -3496,15 +3495,15 @@ export interface PolishedBlackstoneSlab {
 }
 
 export interface PolishedBlackstoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface PolishedBlackstoneWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -3519,29 +3518,29 @@ export interface PolishedDeepslateSlab {
 }
 
 export interface PolishedDeepslateStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface PolishedDeepslateWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
 export interface PolishedDiorite {}
 
 export interface PolishedDioriteStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface PolishedGranite {}
 
 export interface PolishedGraniteStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3556,15 +3555,15 @@ export interface PolishedTuffSlab {
 }
 
 export interface PolishedTuffStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface PolishedTuffWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -3579,13 +3578,13 @@ export interface Potatoes {
 export interface PowderSnow {}
 
 export interface PoweredComparator {
-  "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   output_lit_bit: BooleanTag;
   output_subtract_bit: BooleanTag;
 }
 
 export interface PoweredRepeater {
-  "minecraft:cardinal_direction": IntTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   repeater_delay: IntTag<0 | 1 | 2 | 3>;
 }
 
@@ -3594,12 +3593,12 @@ export interface Prismarine {
 }
 
 export interface PrismarineBricksStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface PrismarineStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3613,7 +3612,7 @@ export interface PumpkinStem {
 }
 
 export interface PurpleCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -3647,7 +3646,7 @@ export interface PurpurBlock {
 }
 
 export interface PurpurStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3661,7 +3660,7 @@ export interface QuartzBricks {}
 export interface QuartzOre {}
 
 export interface QuartzStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3676,7 +3675,7 @@ export interface RawGoldBlock {}
 export interface RawIronBlock {}
 
 export interface RedCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -3707,7 +3706,7 @@ export interface RedMushroomBlock {
 export interface RedNetherBrick {}
 
 export interface RedNetherBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3716,7 +3715,7 @@ export interface RedSandstone {
 }
 
 export interface RedSandstoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3751,7 +3750,7 @@ export interface Reeds {
 export interface ReinforcedDeepslate {}
 
 export interface RepeatingCommandBlock {
-  conditional_bit: IntTag<0 | 1>;
+  conditional_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
@@ -3770,17 +3769,17 @@ export interface Sandstone {
 }
 
 export interface SandstoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface Sapling {
-  age_bit: DoubleTag<0 | 1>;
+  age_bit: BooleanTag;
   sapling_type: StringTag<"oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak">;
 }
 
 export interface Scaffolding {
-  stability: ByteTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
+  stability: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
   stability_check: BooleanTag;
 }
 
@@ -3806,7 +3805,7 @@ export interface SculkVein {
 export interface SeaLantern {}
 
 export interface SeaPickle {
-  cluster_count: ByteTag<0 | 1 | 2 | 3>;
+  cluster_count: IntTag<0 | 1 | 2 | 3>;
   dead_bit: BooleanTag;
 }
 
@@ -3831,7 +3830,7 @@ export interface SmallAmethystBud {
 }
 
 export interface SmallDripleafBlock {
-  "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   upper_block_bit: BooleanTag;
 }
 
@@ -3844,17 +3843,17 @@ export interface Smoker {
 export interface SmoothBasalt {}
 
 export interface SmoothQuartzStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface SmoothRedSandstoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface SmoothSandstoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3867,12 +3866,12 @@ export interface SnifferEgg {
 export interface Snow {}
 
 export interface SnowLayer {
-  covered_bit: IntTag<0 | 1>;
+  covered_bit: BooleanTag;
   height: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
 export interface SoulCampfire {
-  extinguished: DoubleTag<0 | 1>;
+  extinguished: BooleanTag;
   "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
@@ -3899,12 +3898,12 @@ export interface Sponge {
 export interface SporeBlossom {}
 
 export interface SpruceButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface SpruceDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -3917,15 +3916,15 @@ export interface SpruceDoubleSlab {
 export interface SpruceFence {}
 
 export interface SpruceFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
 
 export interface SpruceHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -3949,7 +3948,7 @@ export interface SpruceSlab {
 }
 
 export interface SpruceStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -3958,7 +3957,7 @@ export interface SpruceStandingSign {
 }
 
 export interface SpruceTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4010,12 +4009,12 @@ export interface StoneBlockSlab4 {
 }
 
 export interface StoneBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface StoneButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
@@ -4024,7 +4023,7 @@ export interface StonePressurePlate {
 }
 
 export interface StoneStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4131,12 +4130,12 @@ export interface StructureVoid {
 }
 
 export interface SuspiciousGravel {
-  brushed_progress: ByteTag<0 | 1 | 2 | 3>;
+  brushed_progress: IntTag<0 | 1 | 2 | 3>;
   hanging: BooleanTag;
 }
 
 export interface SuspiciousSand {
-  brushed_progress: ByteTag<0 | 1 | 2 | 3>;
+  brushed_progress: IntTag<0 | 1 | 2 | 3>;
   hanging: BooleanTag;
 }
 
@@ -4168,7 +4167,7 @@ export interface TorchflowerCrop {
 }
 
 export interface Trapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4190,7 +4189,7 @@ export interface TripWire {
 
 export interface TripwireHook {
   attached_bit: BooleanTag;
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   powered_bit: BooleanTag;
 }
 
@@ -4207,15 +4206,15 @@ export interface TuffBrickSlab {
 }
 
 export interface TuffBrickStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface TuffBrickWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -4230,15 +4229,15 @@ export interface TuffSlab {
 }
 
 export interface TuffStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
 export interface TuffWall {
-  wall_connection_type_east: ByteTag<0 | 0 | 0>;
-  wall_connection_type_north: ByteTag<0 | 0 | 0>;
-  wall_connection_type_south: ByteTag<0 | 0 | 0>;
-  wall_connection_type_west: ByteTag<0 | 0 | 0>;
+  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
+  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
   wall_post_bit: BooleanTag;
 }
 
@@ -4264,13 +4263,13 @@ export interface UnlitRedstoneTorch {
 }
 
 export interface UnpoweredComparator {
-  "minecraft:cardinal_direction": ByteTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   output_lit_bit: BooleanTag;
   output_subtract_bit: BooleanTag;
 }
 
 export interface UnpoweredRepeater {
-  "minecraft:cardinal_direction": IntTag<0 | 0 | 0 | 0>;
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
   repeater_delay: IntTag<0 | 1 | 2 | 3>;
 }
 
@@ -4296,12 +4295,12 @@ export interface WallSign {
 }
 
 export interface WarpedButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface WarpedDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4314,7 +4313,7 @@ export interface WarpedDoubleSlab {
 export interface WarpedFence {}
 
 export interface WarpedFenceGate {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   in_wall_bit: BooleanTag;
   open_bit: BooleanTag;
 }
@@ -4323,8 +4322,8 @@ export interface WarpedFungus {}
 
 export interface WarpedHangingSign {
   attached_bit: BooleanTag;
-  facing_direction: ByteTag<FacingDirection>;
-  ground_sign_direction: ByteTag<SignDirection>;
+  facing_direction: IntTag<FacingDirection>;
+  ground_sign_direction: IntTag<SignDirection>;
   hanging: BooleanTag;
 }
 
@@ -4347,7 +4346,7 @@ export interface WarpedSlab {
 }
 
 export interface WarpedStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4360,7 +4359,7 @@ export interface WarpedStem {
 }
 
 export interface WarpedTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4387,7 +4386,7 @@ export interface WaxedCopperBulb {
 }
 
 export interface WaxedCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4396,7 +4395,7 @@ export interface WaxedCopperDoor {
 export interface WaxedCopperGrate {}
 
 export interface WaxedCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4408,7 +4407,7 @@ export interface WaxedCutCopperSlab {
 }
 
 export interface WaxedCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4426,7 +4425,7 @@ export interface WaxedExposedCopperBulb {
 }
 
 export interface WaxedExposedCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4435,7 +4434,7 @@ export interface WaxedExposedCopperDoor {
 export interface WaxedExposedCopperGrate {}
 
 export interface WaxedExposedCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4447,7 +4446,7 @@ export interface WaxedExposedCutCopperSlab {
 }
 
 export interface WaxedExposedCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4465,7 +4464,7 @@ export interface WaxedOxidizedCopperBulb {
 }
 
 export interface WaxedOxidizedCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4474,7 +4473,7 @@ export interface WaxedOxidizedCopperDoor {
 export interface WaxedOxidizedCopperGrate {}
 
 export interface WaxedOxidizedCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4486,7 +4485,7 @@ export interface WaxedOxidizedCutCopperSlab {
 }
 
 export interface WaxedOxidizedCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4504,7 +4503,7 @@ export interface WaxedWeatheredCopperBulb {
 }
 
 export interface WaxedWeatheredCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4513,7 +4512,7 @@ export interface WaxedWeatheredCopperDoor {
 export interface WaxedWeatheredCopperGrate {}
 
 export interface WaxedWeatheredCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4525,7 +4524,7 @@ export interface WaxedWeatheredCutCopperSlab {
 }
 
 export interface WaxedWeatheredCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4543,7 +4542,7 @@ export interface WeatheredCopperBulb {
 }
 
 export interface WeatheredCopperDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4552,7 +4551,7 @@ export interface WeatheredCopperDoor {
 export interface WeatheredCopperGrate {}
 
 export interface WeatheredCopperTrapdoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   open_bit: BooleanTag;
   upside_down_bit: BooleanTag;
 }
@@ -4564,7 +4563,7 @@ export interface WeatheredCutCopperSlab {
 }
 
 export interface WeatheredCutCopperStairs {
-  upside_down_bit: IntTag<0 | 1>;
+  upside_down_bit: BooleanTag;
   weirdo_direction: IntTag<Direction>;
 }
 
@@ -4583,7 +4582,7 @@ export interface Wheat {
 }
 
 export interface WhiteCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 
@@ -4614,12 +4613,12 @@ export interface WhiteWool {}
 export interface WitherRose {}
 
 export interface WoodenButton {
-  button_pressed_bit: IntTag<0 | 1>;
+  button_pressed_bit: BooleanTag;
   facing_direction: IntTag<FacingDirection>;
 }
 
 export interface WoodenDoor {
-  direction: ByteTag<Direction>;
+  direction: IntTag<Direction>;
   door_hinge_bit: BooleanTag;
   open_bit: BooleanTag;
   upper_block_bit: BooleanTag;
@@ -4630,7 +4629,7 @@ export interface WoodenPressurePlate {
 }
 
 export interface YellowCandle {
-  candles: ByteTag<0 | 1 | 2 | 3>;
+  candles: IntTag<0 | 1 | 2 | 3>;
   lit: BooleanTag;
 }
 

@@ -1068,78 +1068,37 @@ export interface BlockStateNameMap {
   yellow_wool: YellowWool;
 }
 
-export interface AcaciaButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface AcaciaButton extends ButtonLike {}
 
-export interface AcaciaDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface AcaciaDoor extends DoorLike {}
 
-export interface AcaciaDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface AcaciaDoubleSlab extends DoubleSlabLike {}
 
 export interface AcaciaFence {}
 
-export interface AcaciaFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface AcaciaFenceGate extends FenceGateLike {}
 
-export interface AcaciaHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface AcaciaHangingSign extends HangingSignLike {}
 
-export interface AcaciaLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface AcaciaLeaves extends LeavesLike {}
 
-export interface AcaciaLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface AcaciaLog extends PillarLike {}
 
 export interface AcaciaPlanks {}
 
-export interface AcaciaPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface AcaciaPressurePlate extends Powerable {}
 
-export interface AcaciaSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface AcaciaSlab extends DoubleSlabLike {}
 
-export interface AcaciaStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface AcaciaStairs extends StairsLike {}
 
-export interface AcaciaStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface AcaciaStandingSign extends SignLike {}
 
-export interface AcaciaTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface AcaciaTrapdoor extends TrapdoorLike {}
 
-export interface AcaciaWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface AcaciaWallSign extends WallSignLike {}
 
-export interface AcaciaWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface AcaciaWood extends PillarLike {}
 
 export interface ActivatorRail {
   rail_data_bit: BooleanTag;
@@ -1160,27 +1119,17 @@ export interface AncientDebris {}
 
 export interface Andesite {}
 
-export interface AndesiteStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface AndesiteStairs extends StairsLike {}
 
-export interface Anvil {
+export interface Anvil extends CardinalDirectionLike {
   damage: StringTag<"undamaged" | "slightly_damaged" | "very_damaged" | "broken">;
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
 export interface Azalea {}
 
-export interface AzaleaLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface AzaleaLeaves extends LeavesLike {}
 
-export interface AzaleaLeavesFlowered {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface AzaleaLeavesFlowered extends LeavesLike {}
 
 export interface Bamboo {
   age_bit: BooleanTag;
@@ -1188,105 +1137,58 @@ export interface Bamboo {
   bamboo_stalk_thickness: StringTag<"thin" | "thick">;
 }
 
-export interface BambooBlock {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface BambooBlock extends PillarLike {}
 
-export interface BambooButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BambooButton extends ButtonLike {}
 
-export interface BambooDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface BambooDoor extends DoorLike {}
 
-export interface BambooDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BambooDoubleSlab extends DoubleSlabLike {}
 
 export interface BambooFence {}
 
-export interface BambooFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface BambooFenceGate extends FenceGateLike {}
 
-export interface BambooHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface BambooHangingSign extends HangingSignLike {}
 
 export interface BambooMosaic {}
 
-export interface BambooMosaicDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BambooMosaicDoubleSlab extends DoubleSlabLike {}
 
-export interface BambooMosaicSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BambooMosaicSlab extends DoubleSlabLike {}
 
-export interface BambooMosaicStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface BambooMosaicStairs extends StairsLike {}
 
 export interface BambooPlanks {}
 
-export interface BambooPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface BambooPressurePlate extends Powerable {}
 
 export interface BambooSapling {
   age_bit: BooleanTag;
   sapling_type: StringTag<"oak" | "spruce" | "birch" | "jungle" | "acacia" | "dark_oak">;
 }
 
-export interface BambooSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BambooSlab extends DoubleSlabLike {}
 
-export interface BambooStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface BambooStairs extends StairsLike {}
 
-export interface BambooStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface BambooStandingSign extends SignLike {}
 
-export interface BambooTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface BambooTrapdoor extends TrapdoorLike {}
 
-export interface BambooWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BambooWallSign extends WallSignLike {}
 
-export interface Barrel {
-  facing_direction: IntTag<FacingDirection>;
+export interface Barrel extends FacingDirectionLike {
   open_bit: BooleanTag;
 }
 
 export interface Barrier {}
 
-export interface Basalt {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface Basalt extends PillarLike {}
 
 export interface Beacon {}
 
-export interface Bed {
-  direction: IntTag<Direction>;
+export interface Bed extends DirectionLike {
   head_piece_bit: BooleanTag;
   occupied_bit: BooleanTag;
 }
@@ -1295,13 +1197,11 @@ export interface Bedrock {
   infiniburn_bit: BooleanTag;
 }
 
-export interface BeeNest {
-  direction: IntTag<Direction>;
-  honey_level: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
-}
+export interface BeeNest extends BeehiveLike {}
 
-export interface Beehive {
-  direction: IntTag<Direction>;
+export interface Beehive extends BeehiveLike {}
+
+export interface BeehiveLike extends DirectionLike {
   honey_level: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
 }
 
@@ -1309,99 +1209,51 @@ export interface Beetroot {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface Bell {
+export interface Bell extends DirectionLike {
   attachment: StringTag<"standing" | "hanging" | "side" | "multiple">;
-  direction: IntTag<Direction>;
   toggle_bit: BooleanTag;
 }
 
-export interface BigDripleaf {
+export interface BigDripleaf extends CardinalDirectionLike {
   big_dripleaf_head: BooleanTag;
   big_dripleaf_tilt: StringTag<"none" | "unstable" | "partial_tilt" | "full_tilt">;
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface BirchButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BirchButton extends ButtonLike {}
 
-export interface BirchDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface BirchDoor extends DoorLike {}
 
-export interface BirchDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BirchDoubleSlab extends DoubleSlabLike {}
 
 export interface BirchFence {}
 
-export interface BirchFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface BirchFenceGate extends FenceGateLike {}
 
-export interface BirchHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface BirchHangingSign extends HangingSignLike {}
 
-export interface BirchLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface BirchLeaves extends LeavesLike {}
 
-export interface BirchLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface BirchLog extends PillarLike {}
 
 export interface BirchPlanks {}
 
-export interface BirchPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface BirchPressurePlate extends Powerable {}
 
-export interface BirchSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BirchSlab extends DoubleSlabLike {}
 
-export interface BirchStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface BirchStairs extends StairsLike {}
 
-export interface BirchStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface BirchStandingSign extends SignLike {}
 
-export interface BirchTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface BirchTrapdoor extends TrapdoorLike {}
 
-export interface BirchWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BirchWallSign extends WallSignLike {}
 
-export interface BirchWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface BirchWood extends PillarLike {}
 
-export interface BlackCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface BlackCandle extends CandleLike {}
 
-export interface BlackCandleCake {
-  lit: BooleanTag;
-}
+export interface BlackCandleCake extends LightLike {}
 
 export interface BlackCarpet {}
 
@@ -1409,9 +1261,7 @@ export interface BlackConcrete {}
 
 export interface BlackConcretePowder {}
 
-export interface BlackGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BlackGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface BlackShulkerBox {}
 
@@ -1425,39 +1275,19 @@ export interface BlackWool {}
 
 export interface Blackstone {}
 
-export interface BlackstoneDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BlackstoneDoubleSlab extends DoubleSlabLike {}
 
-export interface BlackstoneSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface BlackstoneSlab extends DoubleSlabLike {}
 
-export interface BlackstoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface BlackstoneStairs extends StairsLike {}
 
-export interface BlackstoneWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface BlackstoneWall extends WallLike {}
 
-export interface BlastFurnace {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface BlastFurnace extends CardinalDirectionLike {}
 
-export interface BlueCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface BlueCandle extends CandleLike {}
 
-export interface BlueCandleCake {
-  lit: BooleanTag;
-}
+export interface BlueCandleCake extends LightLike {}
 
 export interface BlueCarpet {}
 
@@ -1465,9 +1295,7 @@ export interface BlueConcrete {}
 
 export interface BlueConcretePowder {}
 
-export interface BlueGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BlueGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface BlueIce {}
 
@@ -1481,20 +1309,13 @@ export interface BlueTerracotta {}
 
 export interface BlueWool {}
 
-export interface BoneBlock {
+export interface BoneBlock extends PillarLike {
   deprecated: IntTag<0 | 1 | 2 | 3>;
-  pillar_axis: StringTag<PillarAxis>;
 }
 
 export interface Bookshelf {}
 
-export interface BorderBlock {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface BorderBlock extends WallLike {}
 
 export interface BrainCoral {}
 
@@ -1506,19 +1327,11 @@ export interface BrewingStand {
 
 export interface BrickBlock {}
 
-export interface BrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface BrickStairs extends StairsLike {}
 
-export interface BrownCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface BrownCandle extends CandleLike {}
 
-export interface BrownCandleCake {
-  lit: BooleanTag;
-}
+export interface BrownCandleCake extends LightLike {}
 
 export interface BrownCarpet {}
 
@@ -1526,9 +1339,7 @@ export interface BrownConcrete {}
 
 export interface BrownConcretePowder {}
 
-export interface BrownGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface BrownGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface BrownMushroom {}
 
@@ -1564,26 +1375,19 @@ export interface Cake {
 
 export interface Calcite {}
 
-export interface CalibratedSculkSensor {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface CalibratedSculkSensor extends CardinalDirectionLike {
   sculk_sensor_phase: IntTag<0 | 1 | 2>;
 }
 
 export interface Camera {}
 
-export interface Campfire {
+export interface Campfire extends CardinalDirectionLike {
   extinguished: BooleanTag;
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface Candle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface Candle extends CandleLike {}
 
-export interface CandleCake {
-  lit: BooleanTag;
-}
+export interface CandleCake extends LightLike {}
 
 export interface Carrots {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
@@ -1591,9 +1395,7 @@ export interface Carrots {
 
 export interface CartographyTable {}
 
-export interface CarvedPumpkin {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface CarvedPumpkin extends CardinalDirectionLike {}
 
 export interface Cauldron {
   cauldron_liquid: StringTag<"water" | "lava" | "powder_snow">;
@@ -1612,107 +1414,60 @@ export interface CaveVinesHeadWithBerries {
   growing_plant_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface Chain {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface Chain extends PillarLike {}
 
-export interface ChainCommandBlock {
+export interface ChainCommandBlock extends FacingDirectionLike {
   conditional_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
 }
 
 export interface ChemicalHeat {}
 
-export interface ChemistryTable {
+export interface ChemistryTable extends DirectionLike {
   chemistry_table_type: StringTag<"compound_creator" | "material_reducer" | "element_constructor" | "lab_table">;
-  direction: IntTag<Direction>;
 }
 
-export interface CherryButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface CherryButton extends ButtonLike {}
 
-export interface CherryDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface CherryDoor extends DoorLike {}
 
-export interface CherryDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CherryDoubleSlab extends DoubleSlabLike {}
 
 export interface CherryFence {}
 
-export interface CherryFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface CherryFenceGate extends FenceGateLike {}
 
-export interface CherryHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface CherryHangingSign extends HangingSignLike {}
 
-export interface CherryLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface CherryLeaves extends LeavesLike {}
 
-export interface CherryLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface CherryLog extends PillarLike {}
 
 export interface CherryPlanks {}
 
-export interface CherryPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface CherryPressurePlate extends Powerable {}
 
 export interface CherrySapling {
   age_bit: BooleanTag;
 }
 
-export interface CherrySlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CherrySlab extends DoubleSlabLike {}
 
-export interface CherryStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface CherryStairs extends StairsLike {}
 
-export interface CherryStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface CherryStandingSign extends SignLike {}
 
-export interface CherryTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface CherryTrapdoor extends TrapdoorLike {}
 
-export interface CherryWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface CherryWallSign extends WallSignLike {}
 
-export interface CherryWood {
-  pillar_axis: StringTag<PillarAxis>;
+export interface CherryWood extends PillarLike {
   stripped_bit: BooleanTag;
 }
 
-export interface Chest {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface Chest extends CardinalDirectionLike {}
 
-export interface ChiseledBookshelf {
+export interface ChiseledBookshelf extends DirectionLike {
   books_stored: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63>;
-  direction: IntTag<Direction>;
 }
 
 export interface ChiseledCopper {}
@@ -1743,56 +1498,34 @@ export interface CoalOre {}
 
 export interface CobbledDeepslate {}
 
-export interface CobbledDeepslateDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CobbledDeepslateDoubleSlab extends DoubleSlabLike {}
 
-export interface CobbledDeepslateSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CobbledDeepslateSlab extends DoubleSlabLike {}
 
-export interface CobbledDeepslateStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface CobbledDeepslateStairs extends StairsLike {}
 
-export interface CobbledDeepslateWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface CobbledDeepslateWall extends WallLike {}
 
 export interface Cobblestone {}
 
-export interface CobblestoneWall {
+export interface CobblestoneWall extends WallLike {
   wall_block_type: StringTag<"cobblestone" | "mossy_cobblestone" | "granite" | "diorite" | "andesite" | "sandstone" | "brick" | "stone_brick" | "mossy_stone_brick" | "nether_brick" | "end_brick" | "prismarine" | "red_sandstone" | "red_nether_brick">;
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
 }
 
-export interface Cocoa {
+export interface Cocoa extends DirectionLike {
   age: IntTag<0 | 1 | 2>;
-  direction: IntTag<Direction>;
 }
 
-export interface ColoredTorchBp {
+export interface ColoredTorchBp extends TorchLike {
   color_bit: BooleanTag;
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface ColoredTorchRg {
+export interface ColoredTorchRg extends TorchLike {
   color_bit: BooleanTag;
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
 }
 
-export interface CommandBlock {
+export interface CommandBlock extends FacingDirectionLike {
   conditional_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
 }
 
 export interface Composter {
@@ -1803,27 +1536,17 @@ export interface Conduit {}
 
 export interface CopperBlock {}
 
-export interface CopperBulb {
-  lit: BooleanTag;
+export interface CopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface CopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface CopperDoor extends DoorLike {}
 
 export interface CopperGrate {}
 
 export interface CopperOre {}
 
-export interface CopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface CopperTrapdoor extends TrapdoorLike {}
 
 export interface CoralBlock {
   coral_color: StringTag<"blue" | "pink" | "purple" | "red" | "yellow">;
@@ -1874,101 +1597,53 @@ export interface Crafter {
 
 export interface CraftingTable {}
 
-export interface CrimsonButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface CrimsonButton extends ButtonLike {}
 
-export interface CrimsonDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface CrimsonDoor extends DoorLike {}
 
-export interface CrimsonDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CrimsonDoubleSlab extends DoubleSlabLike {}
 
 export interface CrimsonFence {}
 
-export interface CrimsonFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface CrimsonFenceGate extends FenceGateLike {}
 
 export interface CrimsonFungus {}
 
-export interface CrimsonHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface CrimsonHangingSign extends HangingSignLike {}
 
-export interface CrimsonHyphae {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface CrimsonHyphae extends PillarLike {}
 
 export interface CrimsonNylium {}
 
 export interface CrimsonPlanks {}
 
-export interface CrimsonPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface CrimsonPressurePlate extends Powerable {}
 
 export interface CrimsonRoots {}
 
-export interface CrimsonSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CrimsonSlab extends DoubleSlabLike {}
 
-export interface CrimsonStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface CrimsonStairs extends StairsLike {}
 
-export interface CrimsonStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface CrimsonStandingSign extends SignLike {}
 
-export interface CrimsonStem {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface CrimsonStem extends PillarLike {}
 
-export interface CrimsonTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface CrimsonTrapdoor extends TrapdoorLike {}
 
-export interface CrimsonWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface CrimsonWallSign extends WallSignLike {}
 
 export interface CryingObsidian {}
 
 export interface CutCopper {}
 
-export interface CutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface CutCopperSlab extends DoubleSlabLike {}
 
-export interface CutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface CutCopperStairs extends StairsLike {}
 
-export interface CyanCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface CyanCandle extends CandleLike {}
 
-export interface CyanCandleCake {
-  lit: BooleanTag;
-}
+export interface CyanCandleCake extends LightLike {}
 
 export interface CyanCarpet {}
 
@@ -1976,9 +1651,7 @@ export interface CyanConcrete {}
 
 export interface CyanConcretePowder {}
 
-export interface CyanGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface CyanGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface CyanShulkerBox {}
 
@@ -1990,91 +1663,43 @@ export interface CyanTerracotta {}
 
 export interface CyanWool {}
 
-export interface DarkOakButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface DarkOakButton extends ButtonLike {}
 
-export interface DarkOakDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface DarkOakDoor extends DoorLike {}
 
-export interface DarkOakDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DarkOakDoubleSlab extends DoubleSlabLike {}
 
 export interface DarkOakFence {}
 
-export interface DarkOakFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface DarkOakFenceGate extends FenceGateLike {}
 
-export interface DarkOakHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface DarkOakHangingSign extends HangingSignLike {}
 
-export interface DarkOakLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface DarkOakLeaves extends LeavesLike {}
 
-export interface DarkOakLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface DarkOakLog extends PillarLike {}
 
 export interface DarkOakPlanks {}
 
-export interface DarkOakPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface DarkOakPressurePlate extends Powerable {}
 
-export interface DarkOakSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DarkOakSlab extends DoubleSlabLike {}
 
-export interface DarkOakStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface DarkOakStairs extends StairsLike {}
 
-export interface DarkOakTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface DarkOakTrapdoor extends TrapdoorLike {}
 
-export interface DarkOakWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface DarkOakWood extends PillarLike {}
 
-export interface DarkPrismarineStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface DarkPrismarineStairs extends StairsLike {}
 
-export interface DarkOakStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface DarkOakStandingSign extends SignLike {}
 
-export interface DarkOakWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface DarkOakWallSign extends WallSignLike {}
 
-export interface DaylightDetector {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface DaylightDetector extends Powerable {}
 
-export interface DaylightDetectorInverted {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface DaylightDetectorInverted extends Powerable {}
 
 export interface DeadBrainCoral {}
 
@@ -2088,34 +1713,17 @@ export interface DeadTubeCoral {}
 
 export interface DeadBush {}
 
-export interface DecoratedPot {
-  direction: IntTag<Direction>;
-}
+export interface DecoratedPot extends DirectionLike {}
 
-export interface Deepslate {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface Deepslate extends PillarLike {}
 
-export interface DeepslateBrickDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DeepslateBrickDoubleSlab extends DoubleSlabLike {}
 
-export interface DeepslateBrickSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DeepslateBrickSlab extends DoubleSlabLike {}
 
-export interface DeepslateBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface DeepslateBrickStairs extends StairsLike {}
 
-export interface DeepslateBrickWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface DeepslateBrickWall extends WallLike {}
 
 export interface DeepslateBricks {}
 
@@ -2135,26 +1743,13 @@ export interface DeepslateLapisOre {}
 
 export interface DeepslateRedstoneOre {}
 
-export interface DeepslateTileDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DeepslateTileDoubleSlab extends DoubleSlabLike {}
 
-export interface DeepslateTileSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DeepslateTileSlab extends DoubleSlabLike {}
 
-export interface DeepslateTileStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface DeepslateTileStairs extends StairsLike {}
 
-export interface DeepslateTileWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface DeepslateTileWall extends WallLike {}
 
 export interface DeepslateTiles {}
 
@@ -2171,10 +1766,7 @@ export interface DiamondOre {}
 
 export interface Diorite {}
 
-export interface DioriteStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface DioriteStairs extends StairsLike {}
 
 export interface Dirt {
   dirt_type: StringTag<"normal" | "coarse">;
@@ -2182,37 +1774,30 @@ export interface Dirt {
 
 export interface DirtWithRoots {}
 
-export interface Dispenser {
-  facing_direction: IntTag<FacingDirection>;
+export interface Dispenser extends FacingDirectionLike {
   triggered_bit: BooleanTag;
 }
 
-export interface DoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface DoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface DoublePlant {
   double_plant_type: StringTag<"sunflower" | "syringa" | "grass" | "fern" | "rose" | "paeonia">;
   upper_block_bit: BooleanTag;
 }
 
-export interface DoubleStoneBlockSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface DoubleStoneBlockSlab extends DoubleSlabLike {
   stone_slab_type: StringTag<"smooth_stone" | "sandstone" | "wood" | "cobblestone" | "brick" | "stone_brick" | "quartz" | "nether_brick">;
 }
 
-export interface DoubleStoneBlockSlab2 {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface DoubleStoneBlockSlab2 extends DoubleSlabLike {
   stone_slab_type_2: StringTag<"red_sandstone" | "purpur" | "prismarine_rough" | "prismarine_dark" | "prismarine_brick" | "mossy_cobblestone" | "smooth_sandstone" | "red_nether_brick">;
 }
 
-export interface DoubleStoneBlockSlab3 {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface DoubleStoneBlockSlab3 extends DoubleSlabLike {
   stone_slab_type_3: StringTag<"end_stone_brick" | "smooth_red_sandstone" | "polished_andesite" | "andesite" | "diorite" | "polished_diorite" | "granite" | "polished_granite">;
 }
 
-export interface DoubleStoneBlockSlab4 {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface DoubleStoneBlockSlab4 extends DoubleSlabLike {
   stone_slab_type_4: StringTag<"mossy_stone_brick" | "smooth_quartz" | "stone" | "cut_sandstone" | "cut_red_sandstone">;
 }
 
@@ -2222,8 +1807,7 @@ export interface DriedKelpBlock {}
 
 export interface DripstoneBlock {}
 
-export interface Dropper {
-  facing_direction: IntTag<FacingDirection>;
+export interface Dropper extends FacingDirectionLike {
   triggered_bit: BooleanTag;
 }
 
@@ -2471,10 +2055,7 @@ export interface EmeraldOre {}
 
 export interface EnchantingTable {}
 
-export interface EndBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface EndBrickStairs extends StairsLike {}
 
 export interface EndBricks {}
 
@@ -2482,69 +2063,43 @@ export interface EndGateway {}
 
 export interface EndPortal {}
 
-export interface EndPortalFrame {
+export interface EndPortalFrame extends CardinalDirectionLike {
   end_portal_eye_bit: BooleanTag;
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
-export interface EndRod {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface EndRod extends FacingDirectionLike {}
 
 export interface EndStone {}
 
-export interface EnderChest {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface EnderChest extends CardinalDirectionLike {}
 
 export interface ExposedChiseledCopper {}
 
 export interface ExposedCopper {}
 
-export interface ExposedCopperBulb {
-  lit: BooleanTag;
+export interface ExposedCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface ExposedCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface ExposedCopperDoor extends DoorLike {}
 
 export interface ExposedCopperGrate {}
 
-export interface ExposedCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface ExposedCopperTrapdoor extends TrapdoorLike {}
 
 export interface ExposedCutCopper {}
 
-export interface ExposedCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface ExposedCutCopperSlab extends DoubleSlabLike {}
 
-export interface ExposedCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface ExposedCutCopperStairs extends StairsLike {}
 
-export interface ExposedDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface ExposedDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface Farmland {
   moisturized_amount: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface FenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface FenceGate extends FenceGateLike {}
 
 export interface Fire {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
@@ -2568,8 +2123,7 @@ export interface FlowingWater {
   liquid_depth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface Frame {
-  facing_direction: IntTag<FacingDirection>;
+export interface Frame extends FacingDirectionLike {
   item_frame_map_bit: BooleanTag;
   item_frame_photo_bit: BooleanTag;
 }
@@ -2580,9 +2134,7 @@ export interface FrostedIce {
   age: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface Furnace {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface Furnace extends CardinalDirectionLike {}
 
 export interface GildedBlackstone {}
 
@@ -2590,8 +2142,7 @@ export interface Glass {}
 
 export interface GlassPane {}
 
-export interface GlowFrame {
-  facing_direction: IntTag<FacingDirection>;
+export interface GlowFrame extends FacingDirectionLike {
   item_frame_map_bit: BooleanTag;
   item_frame_photo_bit: BooleanTag;
 }
@@ -2615,10 +2166,7 @@ export interface GoldenRail {
 
 export interface Granite {}
 
-export interface GraniteStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface GraniteStairs extends StairsLike {}
 
 export interface GrassBlock {}
 
@@ -2626,14 +2174,9 @@ export interface GrassPath {}
 
 export interface Gravel {}
 
-export interface GrayCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface GrayCandle extends CandleLike {}
 
-export interface GrayCandleCake {
-  lit: BooleanTag;
-}
+export interface GrayCandleCake extends LightLike {}
 
 export interface GrayCarpet {}
 
@@ -2641,9 +2184,7 @@ export interface GrayConcrete {}
 
 export interface GrayConcretePowder {}
 
-export interface GrayGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface GrayGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface GrayShulkerBox {}
 
@@ -2655,14 +2196,9 @@ export interface GrayTerracotta {}
 
 export interface GrayWool {}
 
-export interface GreenCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface GreenCandle extends CandleLike {}
 
-export interface GreenCandleCake {
-  lit: BooleanTag;
-}
+export interface GreenCandleCake extends LightLike {}
 
 export interface GreenCarpet {}
 
@@ -2670,9 +2206,7 @@ export interface GreenConcrete {}
 
 export interface GreenConcretePowder {}
 
-export interface GreenGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface GreenGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface GreenShulkerBox {}
 
@@ -2684,9 +2218,8 @@ export interface GreenTerracotta {}
 
 export interface GreenWool {}
 
-export interface Grindstone {
+export interface Grindstone extends DirectionLike {
   attachment: StringTag<"standing" | "hanging" | "side" | "multiple">;
-  direction: IntTag<Direction>;
 }
 
 export interface HangingRoots {}
@@ -2761,21 +2294,17 @@ export interface HardYellowStainedGlassPane {}
 
 export interface HardenedClay {}
 
-export interface HayBlock {
+export interface HayBlock extends PillarLike {
   deprecated: IntTag<0 | 1 | 2 | 3>;
-  pillar_axis: StringTag<PillarAxis>;
 }
 
-export interface HeavyWeightedPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface HeavyWeightedPressurePlate extends Powerable {}
 
 export interface HoneyBlock {}
 
 export interface HoneycombBlock {}
 
-export interface Hopper {
-  facing_direction: IntTag<FacingDirection>;
+export interface Hopper extends FacingDirectionLike {
   toggle_bit: BooleanTag;
 }
 
@@ -2783,9 +2312,7 @@ export interface HornCoral {}
 
 export interface Ice {}
 
-export interface InfestedDeepslate {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface InfestedDeepslate extends PillarLike {}
 
 export interface InfoUpdate {}
 
@@ -2797,108 +2324,55 @@ export interface IronBars {}
 
 export interface IronBlock {}
 
-export interface IronDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface IronDoor extends DoorLike {}
 
 export interface IronOre {}
 
-export interface IronTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface IronTrapdoor extends TrapdoorLike {}
 
-export interface Jigsaw {
-  facing_direction: IntTag<FacingDirection>;
+export interface Jigsaw extends FacingDirectionLike {
   rotation: IntTag<0 | 1 | 2 | 3>;
 }
 
 export interface Jukebox {}
 
-export interface JungleButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface JungleButton extends ButtonLike {}
 
-export interface JungleDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface JungleDoor extends DoorLike {}
 
-export interface JungleDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface JungleDoubleSlab extends DoubleSlabLike {}
 
 export interface JungleFence {}
 
-export interface JungleFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface JungleFenceGate extends FenceGateLike {}
 
-export interface JungleHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface JungleHangingSign extends HangingSignLike {}
 
-export interface JungleLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface JungleLeaves extends LeavesLike {}
 
-export interface JungleLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface JungleLog extends PillarLike {}
 
 export interface JunglePlanks {}
 
-export interface JunglePressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface JunglePressurePlate extends Powerable {}
 
-export interface JungleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface JungleSlab extends DoubleSlabLike {}
 
-export interface JungleStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface JungleStairs extends StairsLike {}
 
-export interface JungleStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface JungleStandingSign extends SignLike {}
 
-export interface JungleTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface JungleTrapdoor extends TrapdoorLike {}
 
-export interface JungleWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface JungleWallSign extends WallSignLike {}
 
-export interface JungleWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface JungleWood extends PillarLike {}
 
 export interface Kelp {
   kelp_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface Ladder {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface Ladder extends FacingDirectionLike {}
 
 export interface Lantern {
   hanging: BooleanTag;
@@ -2916,8 +2390,7 @@ export interface Lava {
   liquid_depth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface Lectern {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface Lectern extends CardinalDirectionLike {
   powered_bit: BooleanTag;
 }
 
@@ -2930,14 +2403,9 @@ export interface LightBlock {
   block_light_level: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface LightBlueCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface LightBlueCandle extends CandleLike {}
 
-export interface LightBlueCandleCake {
-  lit: BooleanTag;
-}
+export interface LightBlueCandleCake extends LightLike {}
 
 export interface LightBlueCarpet {}
 
@@ -2945,9 +2413,7 @@ export interface LightBlueConcrete {}
 
 export interface LightBlueConcretePowder {}
 
-export interface LightBlueGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface LightBlueGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface LightBlueShulkerBox {}
 
@@ -2959,14 +2425,9 @@ export interface LightBlueTerracotta {}
 
 export interface LightBlueWool {}
 
-export interface LightGrayCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface LightGrayCandle extends CandleLike {}
 
-export interface LightGrayCandleCake {
-  lit: BooleanTag;
-}
+export interface LightGrayCandleCake extends LightLike {}
 
 export interface LightGrayCarpet {}
 
@@ -2984,22 +2445,13 @@ export interface LightGrayTerracotta {}
 
 export interface LightGrayWool {}
 
-export interface LightWeightedPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface LightWeightedPressurePlate extends Powerable {}
 
-export interface LightningRod {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface LightningRod extends FacingDirectionLike {}
 
-export interface LimeCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface LimeCandle extends CandleLike {}
 
-export interface LimeCandleCake {
-  lit: BooleanTag;
-}
+export interface LimeCandleCake extends LightLike {}
 
 export interface LimeCarpet {}
 
@@ -3007,9 +2459,7 @@ export interface LimeConcrete {}
 
 export interface LimeConcretePowder {}
 
-export interface LimeGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface LimeGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface LimeShulkerBox {}
 
@@ -3021,42 +2471,27 @@ export interface LimeTerracotta {}
 
 export interface LimeWool {}
 
-export interface LitBlastFurnace {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface LitBlastFurnace extends CardinalDirectionLike {}
 
 export interface LitDeepslateRedstoneOre {}
 
-export interface LitFurnace {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface LitFurnace extends CardinalDirectionLike {}
 
-export interface LitPumpkin {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface LitPumpkin extends CardinalDirectionLike {}
 
 export interface LitRedstoneLamp {}
 
 export interface LitRedstoneOre {}
 
-export interface LitSmoker {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface LitSmoker extends CardinalDirectionLike {}
 
 export interface Lodestone {}
 
-export interface Loom {
-  direction: IntTag<Direction>;
-}
+export interface Loom extends DirectionLike {}
 
-export interface MagentaCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface MagentaCandle extends CandleLike {}
 
-export interface MagentaCandleCake {
-  lit: BooleanTag;
-}
+export interface MagentaCandleCake extends LightLike {}
 
 export interface MagentaCarpet {}
 
@@ -3064,9 +2499,7 @@ export interface MagentaConcrete {}
 
 export interface MagentaConcretePowder {}
 
-export interface MagentaGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface MagentaGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface MagentaShulkerBox {}
 
@@ -3080,51 +2513,25 @@ export interface MagentaWool {}
 
 export interface Magma {}
 
-export interface MangroveButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface MangroveButton extends ButtonLike {}
 
-export interface MangroveDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface MangroveDoor extends DoorLike {}
 
-export interface MangroveDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface MangroveDoubleSlab extends DoubleSlabLike {}
 
 export interface MangroveFence {}
 
-export interface MangroveFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface MangroveFenceGate extends FenceGateLike {}
 
-export interface MangroveHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface MangroveHangingSign extends HangingSignLike {}
 
-export interface MangroveLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface MangroveLeaves extends LeavesLike {}
 
-export interface MangroveLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface MangroveLog extends PillarLike {}
 
 export interface MangrovePlanks {}
 
-export interface MangrovePressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface MangrovePressurePlate extends Powerable {}
 
 export interface MangrovePropagule {
   hanging: BooleanTag;
@@ -3133,31 +2540,17 @@ export interface MangrovePropagule {
 
 export interface MangroveRoots {}
 
-export interface MangroveSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface MangroveSlab extends DoubleSlabLike {}
 
-export interface MangroveStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface MangroveStairs extends StairsLike {}
 
-export interface MangroveStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface MangroveStandingSign extends SignLike {}
 
-export interface MangroveTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface MangroveTrapdoor extends TrapdoorLike {}
 
-export interface MangroveWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface MangroveWallSign extends WallSignLike {}
 
-export interface MangroveWood {
-  pillar_axis: StringTag<PillarAxis>;
+export interface MangroveWood extends PillarLike {
   stripped_bit: BooleanTag;
 }
 
@@ -3167,8 +2560,7 @@ export interface MediumAmethystBud {
 
 export interface MelonBlock {}
 
-export interface MelonStem {
-  facing_direction: IntTag<FacingDirection>;
+export interface MelonStem extends FacingDirectionLike {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
@@ -3184,46 +2576,25 @@ export interface MossCarpet {}
 
 export interface MossyCobblestone {}
 
-export interface MossyCobblestoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface MossyCobblestoneStairs extends StairsLike {}
 
-export interface MossyStoneBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface MossyStoneBrickStairs extends StairsLike {}
 
 export interface MovingBlock {}
 
 export interface Mud {}
 
-export interface MudBrickDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface MudBrickDoubleSlab extends DoubleSlabLike {}
 
-export interface MudBrickSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface MudBrickSlab extends DoubleSlabLike {}
 
-export interface MudBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface MudBrickStairs extends StairsLike {}
 
-export interface MudBrickWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface MudBrickWall extends WallLike {}
 
 export interface MudBricks {}
 
-export interface MuddyMangroveRoots {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface MuddyMangroveRoots extends PillarLike {}
 
 export interface Mycelium {}
 
@@ -3231,10 +2602,7 @@ export interface NetherBrick {}
 
 export interface NetherBrickFence {}
 
-export interface NetherBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface NetherBrickStairs extends StairsLike {}
 
 export interface NetherGoldOre {}
 
@@ -3252,49 +2620,27 @@ export interface Netherrack {}
 
 export interface NetherReactorCore {}
 
-export interface NormalStoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface NormalStoneStairs extends StairsLike {}
 
 export interface NoteBlock {}
 
-export interface OakDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface OakDoubleSlab extends DoubleSlabLike {}
 
 export interface OakFence {}
 
-export interface OakHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface OakHangingSign extends HangingSignLike {}
 
-export interface OakLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface OakLeaves extends LeavesLike {}
 
-export interface OakLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface OakLog extends PillarLike {}
 
 export interface OakPlanks {}
 
-export interface OakSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface OakSlab extends DoubleSlabLike {}
 
-export interface OakStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface OakStairs extends StairsLike {}
 
-export interface OakWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface OakWood extends PillarLike {}
 
 export interface Observer {
   "minecraft:facing_direction": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
@@ -3303,18 +2649,11 @@ export interface Observer {
 
 export interface Obsidian {}
 
-export interface OchreFroglight {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface OchreFroglight extends PillarLike {}
 
-export interface OrangeCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface OrangeCandle extends CandleLike {}
 
-export interface OrangeCandleCake {
-  lit: BooleanTag;
-}
+export interface OrangeCandleCake extends LightLike {}
 
 export interface OrangeCarpet {}
 
@@ -3322,9 +2661,7 @@ export interface OrangeConcrete {}
 
 export interface OrangeConcretePowder {}
 
-export interface OrangeGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface OrangeGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface OrangeShulkerBox {}
 
@@ -3340,57 +2677,33 @@ export interface OxidizedChiseledCopper {}
 
 export interface OxidizedCopper {}
 
-export interface OxidizedCopperBulb {
-  lit: BooleanTag;
+export interface OxidizedCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface OxidizedCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface OxidizedCopperDoor extends DoorLike {}
 
 export interface OxidizedCopperGrate {}
 
-export interface OxidizedCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface OxidizedCopperTrapdoor extends TrapdoorLike {}
 
 export interface OxidizedCutCopper {}
 
-export interface OxidizedCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface OxidizedCutCopperSlab extends DoubleSlabLike {}
 
-export interface OxidizedCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface OxidizedCutCopperStairs extends StairsLike {}
 
-export interface OxidizedDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface OxidizedDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface PackedIce {}
 
 export interface PackedMud {}
 
-export interface PearlescentFroglight {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface PearlescentFroglight extends PillarLike {}
 
-export interface PinkCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface PinkCandle extends CandleLike {}
 
-export interface PinkCandleCake {
-  lit: BooleanTag;
-}
+export interface PinkCandleCake extends LightLike {}
 
 export interface PinkCarpet {}
 
@@ -3398,13 +2711,10 @@ export interface PinkConcrete {}
 
 export interface PinkConcretePowder {}
 
-export interface PinkGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface PinkGlazedTerracotta extends GlazedTerracottaLike {}
 
-export interface PinkPetals {
+export interface PinkPetals extends CardinalDirectionLike {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
 export interface PinkShulkerBox {}
@@ -3417,13 +2727,9 @@ export interface PinkTerracotta {}
 
 export interface PinkWool {}
 
-export interface Piston {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface Piston extends FacingDirectionLike {}
 
-export interface PistonArmCollision {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface PistonArmCollision extends FacingDirectionLike {}
 
 export interface PitcherCrop {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
@@ -3443,129 +2749,61 @@ export interface PointedDripstone {
 
 export interface PolishedAndesite {}
 
-export interface PolishedAndesiteStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedAndesiteStairs extends StairsLike {}
 
-export interface PolishedBasalt {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface PolishedBasalt extends PillarLike {}
 
 export interface PolishedBlackstone {}
 
-export interface PolishedBlackstoneBrickDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedBlackstoneBrickDoubleSlab extends DoubleSlabLike {}
 
-export interface PolishedBlackstoneBrickSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedBlackstoneBrickSlab extends DoubleSlabLike {}
 
-export interface PolishedBlackstoneBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedBlackstoneBrickStairs extends StairsLike {}
 
-export interface PolishedBlackstoneBrickWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface PolishedBlackstoneBrickWall extends WallLike {}
 
 export interface PolishedBlackstoneBricks {}
 
-export interface PolishedBlackstoneButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface PolishedBlackstoneButton extends ButtonLike {}
 
-export interface PolishedBlackstoneDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedBlackstoneDoubleSlab extends DoubleSlabLike {}
 
-export interface PolishedBlackstonePressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface PolishedBlackstonePressurePlate extends Powerable {}
 
-export interface PolishedBlackstoneSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedBlackstoneSlab extends DoubleSlabLike {}
 
-export interface PolishedBlackstoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedBlackstoneStairs extends StairsLike {}
 
-export interface PolishedBlackstoneWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface PolishedBlackstoneWall extends WallLike {}
 
 export interface PolishedDeepslate {}
 
-export interface PolishedDeepslateDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedDeepslateDoubleSlab extends DoubleSlabLike {}
 
-export interface PolishedDeepslateSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedDeepslateSlab extends DoubleSlabLike {}
 
-export interface PolishedDeepslateStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedDeepslateStairs extends StairsLike {}
 
-export interface PolishedDeepslateWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface PolishedDeepslateWall extends WallLike {}
 
 export interface PolishedDiorite {}
 
-export interface PolishedDioriteStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedDioriteStairs extends StairsLike {}
 
 export interface PolishedGranite {}
 
-export interface PolishedGraniteStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedGraniteStairs extends StairsLike {}
 
 export interface PolishedTuff {}
 
-export interface PolishedTuffDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedTuffDoubleSlab extends DoubleSlabLike {}
 
-export interface PolishedTuffSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface PolishedTuffSlab extends DoubleSlabLike {}
 
-export interface PolishedTuffStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PolishedTuffStairs extends StairsLike {}
 
-export interface PolishedTuffWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface PolishedTuffWall extends WallLike {}
 
 export interface Portal {
   portal_axis: StringTag<"unknown" | "x" | "z">;
@@ -3577,14 +2815,12 @@ export interface Potatoes {
 
 export interface PowderSnow {}
 
-export interface PoweredComparator {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface PoweredComparator extends CardinalDirectionLike {
   output_lit_bit: BooleanTag;
   output_subtract_bit: BooleanTag;
 }
 
-export interface PoweredRepeater {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface PoweredRepeater extends CardinalDirectionLike {
   repeater_delay: IntTag<0 | 1 | 2 | 3>;
 }
 
@@ -3592,33 +2828,19 @@ export interface Prismarine {
   prismarine_block_type: StringTag<"default" | "dark" | "bricks">;
 }
 
-export interface PrismarineBricksStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PrismarineBricksStairs extends StairsLike {}
 
-export interface PrismarineStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PrismarineStairs extends StairsLike {}
 
-export interface Pumpkin {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface Pumpkin extends CardinalDirectionLike {}
 
-export interface PumpkinStem {
-  facing_direction: IntTag<FacingDirection>;
+export interface PumpkinStem extends FacingDirectionLike {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface PurpleCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface PurpleCandle extends CandleLike {}
 
-export interface PurpleCandleCake {
-  lit: BooleanTag;
-}
+export interface PurpleCandleCake extends LightLike {}
 
 export interface PurpleCarpet {}
 
@@ -3626,9 +2848,7 @@ export interface PurpleConcrete {}
 
 export interface PurpleConcretePowder {}
 
-export interface PurpleGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface PurpleGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface PurpleShulkerBox {}
 
@@ -3640,29 +2860,21 @@ export interface PurpleTerracotta {}
 
 export interface PurpleWool {}
 
-export interface PurpurBlock {
+export interface PurpurBlock extends PillarLike {
   chisel_type: StringTag<"default" | "chiseled" | "lines" | "smooth">;
-  pillar_axis: StringTag<PillarAxis>;
 }
 
-export interface PurpurStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface PurpurStairs extends StairsLike {}
 
-export interface QuartzBlock {
+export interface QuartzBlock extends PillarLike {
   chisel_type: StringTag<"default" | "chiseled" | "lines" | "smooth">;
-  pillar_axis: StringTag<PillarAxis>;
 }
 
 export interface QuartzBricks {}
 
 export interface QuartzOre {}
 
-export interface QuartzStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface QuartzStairs extends StairsLike {}
 
 export interface Rail {
   rail_direction: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9>;
@@ -3674,14 +2886,9 @@ export interface RawGoldBlock {}
 
 export interface RawIronBlock {}
 
-export interface RedCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface RedCandle extends CandleLike {}
 
-export interface RedCandleCake {
-  lit: BooleanTag;
-}
+export interface RedCandleCake extends LightLike {}
 
 export interface RedCarpet {}
 
@@ -3693,9 +2900,7 @@ export interface RedFlower {
   flower_type: StringTag<"poppy" | "orchid" | "allium" | "houstonia" | "tulip_red" | "tulip_orange" | "tulip_white" | "tulip_pink" | "oxeye" | "cornflower" | "lily_of_the_valley">;
 }
 
-export interface RedGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface RedGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface RedMushroom {}
 
@@ -3705,19 +2910,13 @@ export interface RedMushroomBlock {
 
 export interface RedNetherBrick {}
 
-export interface RedNetherBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface RedNetherBrickStairs extends StairsLike {}
 
 export interface RedSandstone {
   sand_stone_type: StringTag<"default" | "heiroglyphs" | "cut" | "smooth">;
 }
 
-export interface RedSandstoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface RedSandstoneStairs extends StairsLike {}
 
 export interface RedShulkerBox {}
 
@@ -3735,13 +2934,9 @@ export interface RedstoneLamp {}
 
 export interface RedstoneOre {}
 
-export interface RedstoneTorch {
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
-}
+export interface RedstoneTorch extends TorchLike {}
 
-export interface RedstoneWire {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface RedstoneWire extends Powerable {}
 
 export interface Reeds {
   age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
@@ -3749,9 +2944,8 @@ export interface Reeds {
 
 export interface ReinforcedDeepslate {}
 
-export interface RepeatingCommandBlock {
+export interface RepeatingCommandBlock extends FacingDirectionLike {
   conditional_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
 }
 
 export interface Reserved6 {}
@@ -3768,10 +2962,7 @@ export interface Sandstone {
   sand_stone_type: StringTag<"default" | "heiroglyphs" | "cut" | "smooth">;
 }
 
-export interface SandstoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface SandstoneStairs extends StairsLike {}
 
 export interface Sapling {
   age_bit: BooleanTag;
@@ -3815,13 +3006,9 @@ export interface Seagrass {
 
 export interface Shroomlight {}
 
-export interface SilverGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface SilverGlazedTerracotta extends GlazedTerracottaLike {}
 
-export interface Skull {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface Skull extends FacingDirectionLike {}
 
 export interface Slime {}
 
@@ -3829,33 +3016,21 @@ export interface SmallAmethystBud {
   "minecraft:block_face": StringTag<"down" | "up" | "north" | "south" | "west" | "east">;
 }
 
-export interface SmallDripleafBlock {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface SmallDripleafBlock extends CardinalDirectionLike {
   upper_block_bit: BooleanTag;
 }
 
 export interface SmithingTable {}
 
-export interface Smoker {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface Smoker extends CardinalDirectionLike {}
 
 export interface SmoothBasalt {}
 
-export interface SmoothQuartzStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface SmoothQuartzStairs extends StairsLike {}
 
-export interface SmoothRedSandstoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface SmoothRedSandstoneStairs extends StairsLike {}
 
-export interface SmoothSandstoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface SmoothSandstoneStairs extends StairsLike {}
 
 export interface SmoothStone {}
 
@@ -3870,9 +3045,8 @@ export interface SnowLayer {
   height: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface SoulCampfire {
+export interface SoulCampfire extends CardinalDirectionLike {
   extinguished: BooleanTag;
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
 }
 
 export interface SoulFire {
@@ -3887,9 +3061,7 @@ export interface SoulSand {}
 
 export interface SoulSoil {}
 
-export interface SoulTorch {
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
-}
+export interface SoulTorch extends TorchLike {}
 
 export interface Sponge {
   sponge_type: StringTag<"dry" | "wet">;
@@ -3897,135 +3069,71 @@ export interface Sponge {
 
 export interface SporeBlossom {}
 
-export interface SpruceButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface SpruceButton extends ButtonLike {}
 
-export interface SpruceDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface SpruceDoor extends DoorLike {}
 
-export interface SpruceDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface SpruceDoubleSlab extends DoubleSlabLike {}
 
 export interface SpruceFence {}
 
-export interface SpruceFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface SpruceFenceGate extends FenceGateLike {}
 
-export interface SpruceHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface SpruceHangingSign extends HangingSignLike {}
 
-export interface SpruceLeaves {
-  persistent_bit: BooleanTag;
-  update_bit: BooleanTag;
-}
+export interface SpruceLeaves extends LeavesLike {}
 
-export interface SpruceLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface SpruceLog extends PillarLike {}
 
 export interface SprucePlanks {}
 
-export interface SprucePressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface SprucePressurePlate extends Powerable {}
 
-export interface SpruceSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface SpruceSlab extends DoubleSlabLike {}
 
-export interface SpruceStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface SpruceStairs extends StairsLike {}
 
-export interface SpruceStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface SpruceStandingSign extends SignLike {}
 
-export interface SpruceTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface SpruceTrapdoor extends TrapdoorLike {}
 
-export interface SpruceWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface SpruceWallSign extends WallSignLike {}
 
-export interface SpruceWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface SpruceWood extends PillarLike {}
 
-export interface StandingBanner {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface StandingBanner extends SignLike {}
 
-export interface StandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface StandingSign extends SignLike {}
 
-export interface StickyPiston {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface StickyPiston extends FacingDirectionLike {}
 
-export interface StickyPistonArmCollision {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface StickyPistonArmCollision extends FacingDirectionLike {}
 
 export interface Stone {}
 
-export interface StoneBlockSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface StoneBlockSlab extends DoubleSlabLike {
   stone_slab_type: StringTag<"smooth_stone" | "sandstone" | "wood" | "cobblestone" | "brick" | "stone_brick" | "quartz" | "nether_brick">;
 }
 
-export interface StoneBlockSlab2 {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface StoneBlockSlab2 extends DoubleSlabLike {
   stone_slab_type_2: StringTag<"red_sandstone" | "purpur" | "prismarine_rough" | "prismarine_dark" | "prismarine_brick" | "mossy_cobblestone" | "smooth_sandstone" | "red_nether_brick">;
 }
 
-export interface StoneBlockSlab3 {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface StoneBlockSlab3 extends DoubleSlabLike {
   stone_slab_type_3: StringTag<"end_stone_brick" | "smooth_red_sandstone" | "polished_andesite" | "andesite" | "diorite" | "polished_diorite" | "granite" | "polished_granite">;
 }
 
-export interface StoneBlockSlab4 {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
+export interface StoneBlockSlab4 extends DoubleSlabLike {
   stone_slab_type_4: StringTag<"mossy_stone_brick" | "smooth_quartz" | "stone" | "cut_sandstone" | "cut_red_sandstone">;
 }
 
-export interface StoneBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface StoneBrickStairs extends StairsLike {}
 
-export interface StoneButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface StoneButton extends ButtonLike {}
 
-export interface StonePressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface StonePressurePlate extends Powerable {}
 
-export interface StoneStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface StoneStairs extends StairsLike {}
 
 export interface StoneBrick {
   stone_brick_type: StringTag<"default" | "mossy" | "cracked" | "chiseled" | "smooth">;
@@ -4033,93 +3141,49 @@ export interface StoneBrick {
 
 export interface Stonecutter {}
 
-export interface StonecutterBlock {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface StonecutterBlock extends CardinalDirectionLike {}
 
-export interface StrippedAcaciaLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedAcaciaLog extends PillarLike {}
 
-export interface StrippedAcaciaWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedAcaciaWood extends PillarLike {}
 
-export interface StrippedBambooBlock {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedBambooBlock extends PillarLike {}
 
-export interface StrippedBirchLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedBirchLog extends PillarLike {}
 
-export interface StrippedBirchWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedBirchWood extends PillarLike {}
 
-export interface StrippedCherryLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedCherryLog extends PillarLike {}
 
-export interface StrippedCherryWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedCherryWood extends PillarLike {}
 
-export interface StrippedCrimsonHyphae {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedCrimsonHyphae extends PillarLike {}
 
-export interface StrippedCrimsonStem {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedCrimsonStem extends PillarLike {}
 
-export interface StrippedDarkOakLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedDarkOakLog extends PillarLike {}
 
-export interface StrippedDarkOakWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedDarkOakWood extends PillarLike {}
 
-export interface StrippedJungleLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedJungleLog extends PillarLike {}
 
-export interface StrippedJungleWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedJungleWood extends PillarLike {}
 
-export interface StrippedMangroveLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedMangroveLog extends PillarLike {}
 
-export interface StrippedMangroveWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedMangroveWood extends PillarLike {}
 
-export interface StrippedOakLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedOakLog extends PillarLike {}
 
-export interface StrippedOakWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedOakWood extends PillarLike {}
 
-export interface StrippedSpruceLog {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedSpruceLog extends PillarLike {}
 
-export interface StrippedSpruceWood {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedSpruceWood extends PillarLike {}
 
-export interface StrippedWarpedHyphae {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedWarpedHyphae extends PillarLike {}
 
-export interface StrippedWarpedStem {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface StrippedWarpedStem extends PillarLike {}
 
 export interface StructureBlock {
   structure_block_type: StringTag<"data" | "save" | "load" | "corner" | "invalid" | "export">;
@@ -4156,9 +3220,7 @@ export interface TNT {
   explode_bit: BooleanTag;
 }
 
-export interface Torch {
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
-}
+export interface Torch extends TorchLike {}
 
 export interface Torchflower {}
 
@@ -4166,15 +3228,9 @@ export interface TorchflowerCrop {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface Trapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface Trapdoor extends TrapdoorLike {}
 
-export interface TrappedChest {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
-}
+export interface TrappedChest extends CardinalDirectionLike {}
 
 export interface TrialSpawner {
   trial_spawner_state: IntTag<0 | 1 | 2 | 3 | 4 | 5>;
@@ -4187,9 +3243,8 @@ export interface TripWire {
   suspended_bit: BooleanTag;
 }
 
-export interface TripwireHook {
+export interface TripwireHook extends DirectionLike {
   attached_bit: BooleanTag;
-  direction: IntTag<Direction>;
   powered_bit: BooleanTag;
 }
 
@@ -4197,49 +3252,23 @@ export interface TubeCoral {}
 
 export interface Tuff {}
 
-export interface TuffBrickDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface TuffBrickDoubleSlab extends DoubleSlabLike {}
 
-export interface TuffBrickSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface TuffBrickSlab extends DoubleSlabLike {}
 
-export interface TuffBrickStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface TuffBrickStairs extends StairsLike {}
 
-export interface TuffBrickWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface TuffBrickWall extends WallLike {}
 
 export interface TuffBricks {}
 
-export interface TuffDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface TuffDoubleSlab extends DoubleSlabLike {}
 
-export interface TuffSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface TuffSlab extends DoubleSlabLike {}
 
-export interface TuffStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface TuffStairs extends StairsLike {}
 
-export interface TuffWall {
-  wall_connection_type_east: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_north: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_south: StringTag<"none" | "short" | "tall">;
-  wall_connection_type_west: StringTag<"none" | "short" | "tall">;
-  wall_post_bit: BooleanTag;
-}
+export interface TuffWall extends WallLike {}
 
 export interface TurtleEgg {
   cracked_state: StringTag<"no_cracks" | "cracked" | "max_cracked">;
@@ -4250,123 +3279,72 @@ export interface TwistingVines {
   twisting_vines_age: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25>;
 }
 
-export interface UnderwaterTorch {
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
-}
+export interface UnderwaterTorch extends TorchLike {}
 
 export interface UndyedShulkerBox {}
 
 export interface Unknown {}
 
-export interface UnlitRedstoneTorch {
-  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
-}
+export interface UnlitRedstoneTorch extends TorchLike {}
 
-export interface UnpoweredComparator {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface UnpoweredComparator extends CardinalDirectionLike {
   output_lit_bit: BooleanTag;
   output_subtract_bit: BooleanTag;
 }
 
-export interface UnpoweredRepeater {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface UnpoweredRepeater extends CardinalDirectionLike {
   repeater_delay: IntTag<0 | 1 | 2 | 3>;
 }
 
-export interface Vault {
-  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+export interface Vault extends CardinalDirectionLike {
   vault_state: StringTag<"inactive" | "active" | "unlocking" | "ejecting">;
 }
 
-export interface VerdantFroglight {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface VerdantFroglight extends PillarLike {}
 
 export interface Vine {
   vine_direction_bits: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15>;
 }
 
-export interface WallBanner {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface WallBanner extends FacingDirectionLike {}
 
-export interface WallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface WallSign extends WallSignLike {}
 
-export interface WarpedButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface WarpedButton extends ButtonLike {}
 
-export interface WarpedDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WarpedDoor extends DoorLike {}
 
-export interface WarpedDoubleSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WarpedDoubleSlab extends DoubleSlabLike {}
 
 export interface WarpedFence {}
 
-export interface WarpedFenceGate {
-  direction: IntTag<Direction>;
-  in_wall_bit: BooleanTag;
-  open_bit: BooleanTag;
-}
+export interface WarpedFenceGate extends FenceGateLike {}
 
 export interface WarpedFungus {}
 
-export interface WarpedHangingSign {
-  attached_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-  ground_sign_direction: IntTag<SignDirection>;
-  hanging: BooleanTag;
-}
+export interface WarpedHangingSign extends HangingSignLike {}
 
-export interface WarpedHyphae {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface WarpedHyphae extends PillarLike {}
 
 export interface WarpedNylium {}
 
 export interface WarpedPlanks {}
 
-export interface WarpedPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface WarpedPressurePlate extends Powerable {}
 
 export interface WarpedRoots {}
 
-export interface WarpedSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WarpedSlab extends DoubleSlabLike {}
 
-export interface WarpedStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface WarpedStairs extends StairsLike {}
 
-export interface WarpedStandingSign {
-  ground_sign_direction: IntTag<SignDirection>;
-}
+export interface WarpedStandingSign extends SignLike {}
 
-export interface WarpedStem {
-  pillar_axis: StringTag<PillarAxis>;
-}
+export interface WarpedStem extends PillarLike {}
 
-export interface WarpedTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface WarpedTrapdoor extends TrapdoorLike {}
 
-export interface WarpedWallSign {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface WarpedWallSign extends WallSignLike {}
 
 export interface WarpedWartBlock {}
 
@@ -4380,196 +3358,111 @@ export interface WaxedChiseledCopper {}
 
 export interface WaxedCopper {}
 
-export interface WaxedCopperBulb {
-  lit: BooleanTag;
+export interface WaxedCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface WaxedCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WaxedCopperDoor extends DoorLike {}
 
 export interface WaxedCopperGrate {}
 
-export interface WaxedCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface WaxedCopperTrapdoor extends TrapdoorLike {}
 
 export interface WaxedCutCopper {}
 
-export interface WaxedCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedCutCopperSlab extends DoubleSlabLike {}
 
-export interface WaxedCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface WaxedCutCopperStairs extends StairsLike {}
 
-export interface WaxedDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface WaxedExposedChiseledCopper {}
 
 export interface WaxedExposedCopper {}
 
-export interface WaxedExposedCopperBulb {
-  lit: BooleanTag;
+export interface WaxedExposedCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface WaxedExposedCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WaxedExposedCopperDoor extends DoorLike {}
 
 export interface WaxedExposedCopperGrate {}
 
-export interface WaxedExposedCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface WaxedExposedCopperTrapdoor extends TrapdoorLike {}
 
 export interface WaxedExposedCutCopper {}
 
-export interface WaxedExposedCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedExposedCutCopperSlab extends DoubleSlabLike {}
 
-export interface WaxedExposedCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface WaxedExposedCutCopperStairs extends StairsLike {}
 
-export interface WaxedExposedDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedExposedDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface WaxedOxidizedChiseledCopper {}
 
 export interface WaxedOxidizedCopper {}
 
-export interface WaxedOxidizedCopperBulb {
-  lit: BooleanTag;
+export interface WaxedOxidizedCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface WaxedOxidizedCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WaxedOxidizedCopperDoor extends DoorLike {}
 
 export interface WaxedOxidizedCopperGrate {}
 
-export interface WaxedOxidizedCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface WaxedOxidizedCopperTrapdoor extends TrapdoorLike {}
 
 export interface WaxedOxidizedCutCopper {}
 
-export interface WaxedOxidizedCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedOxidizedCutCopperSlab extends DoubleSlabLike {}
 
-export interface WaxedOxidizedCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface WaxedOxidizedCutCopperStairs extends StairsLike {}
 
-export interface WaxedOxidizedDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedOxidizedDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface WaxedWeatheredChiseledCopper {}
 
 export interface WaxedWeatheredCopper {}
 
-export interface WaxedWeatheredCopperBulb {
-  lit: BooleanTag;
+export interface WaxedWeatheredCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface WaxedWeatheredCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WaxedWeatheredCopperDoor extends DoorLike {}
 
 export interface WaxedWeatheredCopperGrate {}
 
-export interface WaxedWeatheredCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface WaxedWeatheredCopperTrapdoor extends TrapdoorLike {}
 
 export interface WaxedWeatheredCutCopper {}
 
-export interface WaxedWeatheredCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedWeatheredCutCopperSlab extends DoubleSlabLike {}
 
-export interface WaxedWeatheredCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface WaxedWeatheredCutCopperStairs extends StairsLike {}
 
-export interface WaxedWeatheredDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WaxedWeatheredDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface WeatheredChiseledCopper {}
 
 export interface WeatheredCopper {}
 
-export interface WeatheredCopperBulb {
-  lit: BooleanTag;
+export interface WeatheredCopperBulb extends LightLike {
   powered_bit: BooleanTag;
 }
 
-export interface WeatheredCopperDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WeatheredCopperDoor extends DoorLike {}
 
 export interface WeatheredCopperGrate {}
 
-export interface WeatheredCopperTrapdoor {
-  direction: IntTag<Direction>;
-  open_bit: BooleanTag;
-  upside_down_bit: BooleanTag;
-}
+export interface WeatheredCopperTrapdoor extends TrapdoorLike {}
 
 export interface WeatheredCutCopper {}
 
-export interface WeatheredCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WeatheredCutCopperSlab extends DoubleSlabLike {}
 
-export interface WeatheredCutCopperStairs {
-  upside_down_bit: BooleanTag;
-  weirdo_direction: IntTag<Direction>;
-}
+export interface WeatheredCutCopperStairs extends StairsLike {}
 
-export interface WeatheredDoubleCutCopperSlab {
-  "minecraft:vertical_half": StringTag<"bottom" | "top">;
-}
+export interface WeatheredDoubleCutCopperSlab extends DoubleSlabLike {}
 
 export interface Web {}
 
@@ -4581,14 +3474,9 @@ export interface Wheat {
   growth: IntTag<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7>;
 }
 
-export interface WhiteCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface WhiteCandle extends CandleLike {}
 
-export interface WhiteCandleCake {
-  lit: BooleanTag;
-}
+export interface WhiteCandleCake extends LightLike {}
 
 export interface WhiteCarpet {}
 
@@ -4596,9 +3484,7 @@ export interface WhiteConcrete {}
 
 export interface WhiteConcretePowder {}
 
-export interface WhiteGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface WhiteGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface WhiteShulkerBox {}
 
@@ -4612,30 +3498,15 @@ export interface WhiteWool {}
 
 export interface WitherRose {}
 
-export interface WoodenButton {
-  button_pressed_bit: BooleanTag;
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface WoodenButton extends ButtonLike {}
 
-export interface WoodenDoor {
-  direction: IntTag<Direction>;
-  door_hinge_bit: BooleanTag;
-  open_bit: BooleanTag;
-  upper_block_bit: BooleanTag;
-}
+export interface WoodenDoor extends DoorLike {}
 
-export interface WoodenPressurePlate {
-  redstone_signal: IntTag<RedstoneSignal>;
-}
+export interface WoodenPressurePlate extends Powerable {}
 
-export interface YellowCandle {
-  candles: IntTag<0 | 1 | 2 | 3>;
-  lit: BooleanTag;
-}
+export interface YellowCandle extends CandleLike {}
 
-export interface YellowCandleCake {
-  lit: BooleanTag;
-}
+export interface YellowCandleCake extends LightLike {}
 
 export interface YellowCarpet {}
 
@@ -4645,9 +3516,7 @@ export interface YellowConcretePowder {}
 
 export interface YellowFlower {}
 
-export interface YellowGlazedTerracotta {
-  facing_direction: IntTag<FacingDirection>;
-}
+export interface YellowGlazedTerracotta extends GlazedTerracottaLike {}
 
 export interface YellowShulkerBox {}
 
@@ -4658,6 +3527,98 @@ export interface YellowStainedGlassPane {}
 export interface YellowTerracotta {}
 
 export interface YellowWool {}
+
+export interface ButtonLike extends FacingDirectionLike {
+  button_pressed_bit: BooleanTag;
+}
+
+export interface DoubleSlabLike {
+  "minecraft:vertical_half": StringTag<DoubleSlabVerticalHalf>;
+}
+
+export type DoubleSlabVerticalHalf = "bottom" | "top";
+
+export interface CandleLike extends LightLike {
+  candles: IntTag<0 | 1 | 2 | 3>;
+}
+
+export interface CardinalDirectionLike {
+  "minecraft:cardinal_direction": StringTag<"south" | "west" | "north" | "east">;
+}
+
+export interface DirectionLike {
+  direction: IntTag<Direction>;
+}
+
+export interface DoorLike extends DirectionLike {
+  door_hinge_bit: BooleanTag;
+  open_bit: BooleanTag;
+  upper_block_bit: BooleanTag;
+}
+
+export interface FacingDirectionLike {
+  facing_direction: IntTag<FacingDirection>;
+}
+
+export interface FenceGateLike extends DirectionLike {
+  in_wall_bit: BooleanTag;
+  open_bit: BooleanTag;
+}
+
+export interface GlazedTerracottaLike extends FacingDirectionLike {}
+
+export interface HangingSignLike extends FacingDirectionLike {
+  attached_bit: BooleanTag;
+  ground_sign_direction: IntTag<SignDirection>;
+  hanging: BooleanTag;
+}
+
+export interface LeavesLike {
+  persistent_bit: BooleanTag;
+  update_bit: BooleanTag;
+}
+
+export interface LightLike {
+  lit: BooleanTag;
+}
+
+export interface PillarLike {
+  pillar_axis: StringTag<PillarAxis>;
+}
+
+export interface Powerable {
+  redstone_signal: IntTag<RedstoneSignal>;
+}
+
+export interface SignLike {
+  ground_sign_direction: IntTag<SignDirection>;
+}
+
+export interface StairsLike {
+  upside_down_bit: BooleanTag;
+  weirdo_direction: IntTag<Direction>;
+}
+
+export interface TorchLike {
+  torch_facing_direction: StringTag<"unknown" | "west" | "east" | "north" | "south" | "top">;
+}
+
+export interface TrapdoorLike extends DirectionLike {
+  open_bit: BooleanTag;
+  upside_down_bit: BooleanTag;
+}
+
+export interface WallLike {
+  wall_connection_type_east: StringTag<WallConnectionType>;
+  wall_connection_type_north: StringTag<WallConnectionType>;
+  wall_connection_type_south: StringTag<WallConnectionType>;
+  wall_connection_type_west: StringTag<WallConnectionType>;
+  wall_post_bit: BooleanTag;
+}
+
+export type WallConnectionType = "none" | "short" | "tall";
+
+export interface WallSignLike extends FacingDirectionLike {}
 
 export type Direction = 0 | 1 | 2 | 3;
 

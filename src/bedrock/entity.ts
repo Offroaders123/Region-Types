@@ -118,6 +118,28 @@ export interface EntityNameMap {
   fireworks_rocket: FireworkRocket;
   fishing_hook: FishingBobber;
   chest_boat: ChestBoat;
+  agent: Agent;
+  armadillo: Armadillo;
+  balloon: Balloon;
+  boat: Boat;
+  bogged: Bogged;
+  breeze: Breeze;
+  breeze_wind_charge_projectile: BreezeWindChargeProjectile;
+  chalkboard: Chalkboard;
+  dragon_fireball: DragonFireball;
+  elder_guardian_ghost: ElderGuardianGhost;
+  evocation_fang: EvocationFang;
+  eye_of_ender_signal: EyeOfEnderSignal;
+  firefly: Firefly; // should I omit this?
+  ice_bomb: IceBomb;
+  leash_knot: LeashKnot;
+  lightning_bolt: LightningBolt;
+  moving_block: MovingBlock;
+  shield: Shield;
+  small_fireball: SmallFireball;
+  snow_golem: SnowGolem;
+  wind_charge_projectile: WindChargeProjectile;
+  wither_skull_dangerous: WitherSkullDangerous;
 }
 
 export interface Minecart extends EntityLike<EntityResource.minecart> {
@@ -622,6 +644,51 @@ export interface FishingBobber extends EntityLike<EntityResource.fishing_hook>, 
 export interface ChestBoat extends EntityLike<EntityResource.chest_boat>, InventoryLike<Item[]> {
   // 0-26 slots
 }
+
+// export interface Agent {}
+
+// export interface Armadillo {}
+
+// export interface Balloon {}
+
+// export interface Boat {}
+
+// export interface Bogged {}
+
+// export interface Breeze {}
+
+// export interface BreezeWindChargeProjectile {}
+
+// export interface Chalkboard {}
+
+// export interface DragonFireball {}
+
+// export interface ElderGuardianGhost {}
+
+// export interface EvocationFang {}
+
+// export interface EyeOfEnderSignal {}
+
+// should I omit this?
+// export interface Firefly {}
+
+// export interface IceBomb {}
+
+// export interface LeashKnot {}
+
+// export interface LightningBolt {}
+
+// export interface MovingBlock {}
+
+// export interface Shield {}
+
+// export interface SmallFireball {}
+
+// export interface SnowGolem {}
+
+// export interface WindChargeProjectile {}
+
+// export interface WitherSkullDangerous {}
 
 export interface VillagerLike {
   Willing: BooleanTag;

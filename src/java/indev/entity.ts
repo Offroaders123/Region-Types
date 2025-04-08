@@ -71,7 +71,7 @@ export interface MobLike {
   HurtTime: ShortTag;
 }
 
-export interface EntityLike<EntityID extends EntityResource> {
+export interface EntityLike<EntityID extends string> {
   Air: ShortTag;
   FallDistance: FloatTag;
   Fire: ShortTag;

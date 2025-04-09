@@ -1,4 +1,5 @@
 import type { BooleanTag, IntTag, LongTag, ByteArrayTag } from "nbtify";
+import type { Entity } from "./entity.js";
 
 export interface Chunk {
   xPos: IntTag;

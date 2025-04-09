@@ -15,7 +15,7 @@ export interface Chest extends BlockEntityLike<BlockEntityResource.Chest> {
 export interface Furnace extends BlockEntityLike<BlockEntityResource.Furnace> {
   BurnTime: ShortTag;
   CookTime: ShortTag;
-  // no items tag?
+  Items: [SlottedItem?, SlottedItem?, SlottedItem?];
 }
 
 export interface BlockEntityLike<BlockEntityID extends string> {

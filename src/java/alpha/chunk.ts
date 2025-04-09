@@ -1,4 +1,5 @@
 import type { BooleanTag, IntTag, LongTag, ByteArrayTag } from "nbtify";
+import type { BlockEntity } from "./block-entity.js";
 import type { Entity } from "./entity.js";
 
 export interface Chunk {
